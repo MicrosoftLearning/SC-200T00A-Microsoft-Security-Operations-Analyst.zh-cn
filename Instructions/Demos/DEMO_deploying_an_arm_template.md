@@ -1,12 +1,17 @@
 ---
 demo:
-    title: 'Demo: Deploying an ARM Template'
-    module: 'Module 1: Exploring Azure Resource Manager'
+  title: 演示：部署 ARM 模板
+  module: 'Module 1: Exploring Azure Resource Manager'
+ms.openlocfilehash: ff5a4aa30cb206ef4a1f6623232d3718a542592a
+ms.sourcegitcommit: 20cbc7b52187d61fca294ac2c00146c2c7c6d337
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/13/2022
+ms.locfileid: "137899118"
 ---
+# <a name="demo-deploying-an-arm-template"></a>演示：部署 ARM 模板
 
-# Demo: Deploying an ARM Template
-
-## Instructions
+## <a name="instructions"></a>Instructions
 
 1. Quisque dictum convallis metus, vitae vestibulum turpis dapibus non.
 
@@ -30,7 +35,7 @@ demo:
 
 1. Fusce tincidunt sapien nec dolor congue facilisis lacinia quis urna.
 
-    > **Note**: Ut feugiat est id ultrices gravida.
+    > **注意**：Ut feugiat est id ultrices gravida.
 
 1. Phasellus urna lacus, luctus at suscipit vitae, maximus ac nisl. 
 
