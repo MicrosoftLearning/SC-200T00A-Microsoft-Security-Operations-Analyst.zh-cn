@@ -2,12 +2,12 @@
 lab:
   title: 练习 1 - 使用 Kusto 查询语言 (KQL) 为 Microsoft Sentinel 创建查询
   module: Module 4 - Create queries for Microsoft Sentinel using Kusto Query Language (KQL)
-ms.openlocfilehash: d8e30c273d52f8f12147a8ea52edbca50855bfe9
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: a9b6a745f40b18744bc520ca542c052ec28d5a11
+ms.sourcegitcommit: 1535118acb3c18e55bb160b79728a772a84f9fbe
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025441"
+ms.lasthandoff: 03/25/2022
+ms.locfileid: "140880370"
 ---
 # <a name="module-4---lab-1---exercise-1---create-queries-for-microsoft-sentinel-using-kusto-query-language-kql"></a>模块 4 - 实验室 1 - 练习 1 - 使用 Kusto 查询语言 (KQL) 为 Microsoft Sentinel 创建查询
 
@@ -45,7 +45,7 @@ ms.locfileid: "138025441"
 1. 下面的语句演示了将 let 语句用于声明变量的用法。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
 
     ```KQL
-    let timeOffset = 7d;
+    let timeOffset = 1h;
     let discardEventId = 4688;
     SecurityEvent
     | where TimeGenerated > ago(timeOffset*2) and TimeGenerated < ago(timeOffset)
@@ -59,9 +59,11 @@ ms.locfileid: "138025441"
       @"\administrator", 
       @"NT AUTHORITY\SYSTEM"
     ];
-    SecurityEvent | where Account in (suspiciousAccounts)
+    SecurityEvent | where TimeGenerated > ago(1h) and Account in (suspiciousAccounts)
     ```
 
+    >**** 提示：在“查询”窗口中选择省略号 (...)，然后选择“设置查询格式”，可以轻松地重新设置查询格式。
+    
 1. 以下语句演示了将 let 语句用于声明动态表的用法。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
 
     ```KQL
@@ -72,7 +74,9 @@ ms.locfileid: "138025441"
     LowActivityAccounts | where Account contains "sql"
     ```
 
-1. 以下语句演示 search 运算符，该运算符在表的所有列中搜索值。 运行此脚本前，在查询窗口中将“时间范围”更改为“过去 1 小时” 。 输入以下语句并选择“运行”： 
+1. 在“查询”窗口中将“时间范围”更改为“过去 1 小时” 。 这将限制以下语句的结果。
+
+1. 以下语句演示 search 运算符，该运算符在表的所有列中搜索值。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
 
     ```KQL
     search "err"
@@ -91,7 +95,7 @@ ms.locfileid: "138025441"
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1d)
+    | where TimeGenerated > ago(1h)
     ```
 
     ```KQL
@@ -108,16 +112,16 @@ ms.locfileid: "138025441"
 
     ```KQL
     SecurityEvent  
-    | where EventID in (4624, 4625)
+    | where TimeGenerated > ago(1h) and EventID in (4624, 4625)
     ```
 
 1. 以下语句演示了 extend 运算符，该运算符创建计算列，并将其添加到结果集。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
 
     ```KQL
     SecurityAlert  
-    | where TimeGenerated > ago(7d)
-    | extend severityOrder = case (
-      AlertSeverity == "High",3,
+    | where TimeGenerated > ago(90d)
+    | extend severityOrder = case (  
+    AlertSeverity == "High",3,
     AlertSeverity == "Medium",2,
     AlertSeverity == "Low",1,
     AlertSeverity == "Informational",0,
@@ -128,9 +132,9 @@ ms.locfileid: "138025441"
 
     ```KQL
     SecurityAlert  
-    | where TimeGenerated > ago(7d)
-    | extend severityOrder = case (
-      AlertSeverity == "High",3,
+    | where TimeGenerated > ago(90d)
+    | extend severityOrder = case (  
+    AlertSeverity == "High",3,
     AlertSeverity == "Medium",2,
     AlertSeverity == "Low",1,
     AlertSeverity == "Informational",0,
@@ -142,6 +146,7 @@ ms.locfileid: "138025441"
 
     ```KQL
     SecurityEvent  
+    | where TimeGenerated > ago(1h)
     | project Computer, Account
     ```
 
@@ -149,9 +154,9 @@ ms.locfileid: "138025441"
 
     ```KQL
     SecurityAlert  
-    | where TimeGenerated > ago(7d)
-    | extend severityOrder = case (
-      AlertSeverity == "High",3,
+    | where TimeGenerated > ago(90d)
+    | extend severityOrder = case (  
+    AlertSeverity == "High",3,
     AlertSeverity == "Medium",2, 
     AlertSeverity == "Low",1,
     AlertSeverity == "Informational",0,
@@ -169,7 +174,7 @@ ms.locfileid: "138025441"
 
     ```KQL
     SecurityEvent  
-    | where EventID == 4688
+    | where TimeGenerated > ago(1h) and EventID == 4688
     | summarize count() by Process, Computer
     ```
 
@@ -177,8 +182,7 @@ ms.locfileid: "138025441"
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h)
-    | where EventID == 4624
+    | where TimeGenerated > ago(1h) and EventID == 4624
     | summarize cnt=count() by AccountType, Computer
     ```
 
@@ -186,6 +190,7 @@ ms.locfileid: "138025441"
 
     ```KQL
     SecurityEvent  
+    | where TimeGenerated > ago(1h)
     | summarize dcount(IpAddress)
     ```
 
@@ -229,6 +234,7 @@ ms.locfileid: "138025441"
 
     ```KQL
     SecurityEvent  
+    | where TimeGenerated > ago(1h)
     | where EventID == 4624 
     | summarize make_list(Account) by Computer
     ```
@@ -237,6 +243,7 @@ ms.locfileid: "138025441"
 
     ```KQL
     SecurityEvent  
+    | where TimeGenerated > ago(1h)
     | where EventID == 4624 
     | summarize make_set(Account) by Computer
     ```
@@ -250,6 +257,7 @@ ms.locfileid: "138025441"
 
     ```KQL
     SecurityEvent  
+    | where TimeGenerated > ago(1h)
     | summarize count() by Account
     | render barchart
     ```
@@ -258,7 +266,8 @@ ms.locfileid: "138025441"
 
     ```KQL
     SecurityEvent  
-    | summarize count() by bin(TimeGenerated, 1h)
+    | where TimeGenerated > ago(1h)
+    | summarize count() by bin(TimeGenerated, 1m)
     | render timechart
     ```
 
@@ -269,26 +278,27 @@ ms.locfileid: "138025441"
 
 1. 以下语句演示了 union 运算符，该运算符采用两个或更多个表，并返回所有表的行。 有必要了解结果是如何通过管道符号传递的，又是如何受到该字符影响的。 在“查询”窗口中，输入以下语句，并分别针对每个查询选择“运行”以查看结果： 
 
-    1. 查询 1 将返回 SecurityAlert 所有的行和 SecurityEvent 所有的行。
+1. 在“查询”窗口中将“时间范围”更改为“过去 1 小时” 。 这将限制以下语句的结果。
+
+    1. 查询 1 将返回 SecurityBaseline 所有的行和 SecurityEvent 所有的行。
 
         ```KQL
-        SecurityAlert  
+        SecurityBaseline  
         | union SecurityEvent
         ```
 
-    1. 查询 2 将返回一行和一列，也就是 SecurityAlert 所有的行和 SecurityEvent 所有的行的计数。
+    1. 查询 2 将返回一行和一列，也就是 SecurityBaseline 所有的行和 SecurityEvent 所有的行的计数。
 
         ```KQL
-        SecurityAlert  
+        SecurityBaseline  
         | union SecurityEvent
         | summarize count() 
-        | project count_
         ```
 
-    1. 查询 3 将返回 SecurityAlert 所有的行和 SecurityEvent 的一个（最后）行。 SecurityEvent 的最后一行将包含总行数的汇总计数。
+    1. 查询 3 将返回 SecurityBaseline 所有的行和 SecurityEvent 的一个（最后的）行。 SecurityEvent 的最后一行将包含总行数的汇总计数。
 
         ```KQL
-        SecurityAlert  
+        SecurityBaseline  
         | union (SecurityEvent | summarize count() | project count_)
         ```
 
@@ -303,11 +313,11 @@ ms.locfileid: "138025441"
 
     ```KQL
     SecurityEvent  
-    | where EventID == "4624"
+    | where EventID == "4624" 
     | summarize LogOnCount=count() by EventID, Account
     | project LogOnCount, Account
-    | join kind = inner(
-      SecurityEvent  
+    | join kind = inner( 
+     SecurityEvent  
     | where EventID == "4634" 
     | summarize LogOffCount=count() by EventID, Account
     | project LogOffCount, Account
@@ -315,6 +325,8 @@ ms.locfileid: "138025441"
     ```
 
 >**重要提示：** 联接中指定的第一个表被看作是左表。 join 运算符后面的表被看作是右表。 处理表中的列时，名称 $left.Column 和 $right.Column 用于区分正在引用哪个表的列。 join 运算度支持一系列完整的类型：flouter、inner、innerunique、leftanti、leftantisemi、leftouter、leftsemi、rightanti、rightantisemi、rightouter、rightsemi。
+
+1. 在“查询”窗口中将“事件范围”更改回“过去 24 小时” 。
 
 
 ### <a name="task-6-work-with-string-data-in-kql"></a>任务 6：使用 KQL 处理字符串数据
@@ -378,29 +390,35 @@ ms.locfileid: "138025441"
 
     >**重要提示：** 尽管动态类型看起来类似于 JSON，但它可以保存 JSON 模型不表示的值，因为它们在 JSON 中不存在。 因此，在将动态值序列化为 JSON 表示形式时，JSON 无法表示的值将序列化为字符串值。 
 
-1. 以下语句演示了用于操作存储在字符串字段中的 JSON 的运算符。 许多日志以 JSON 格式提交数据，这要求了解如何将 JSON 数据转换为可查询的字段。 在“查询”窗口中，分别输入以下语句并选择“运行”： 
+1. 以下语句演示了用于操作存储在字符串字段中的 JSON 的运算符。 许多日志以 JSON 格式提交数据，这要求了解如何将 JSON 数据转换为可查询的字段。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
 
     ```KQL
-    SecurityAlert  
-    | extend ExtendedProperties = todynamic(ExtendedProperties) 
-    | extend ActionTaken = ExtendedProperties.ActionTaken
-    | extend AttackerIP = ExtendedProperties["Attacker IP"]
+    ContainerInventory  
+    | where TimeGenerated > ago(1h) 
+    | extend Command = todynamic(Command) 
+    | extend Cmd = Command.[0]
+    | extend Param1 = Command.[1]
+    | extend Param2 = Command.[2]
+    | project-away Command 
+    | order by tostring(Cmd)
     ```
 
 1. 以下语句演示了 mv-expand 运算符，该运算符将动态数组转换为行（多值展开）。
 
     ```KQL
-    SecurityAlert  
-    | mv-expand entity = todynamic(Entities)
+    ContainerInventory  
+    | where TimeGenerated > ago(1h)
+    | mv-expand Command = todynamic(Command) 
+    | project ContainerHostname,Command
     ```
 
 1. 以下语句演示了 mv-apply 运算符，该运算符将子查询应用于每条记录并返回所有子查询结果的并集。
 
     ```KQL
     SecurityAlert  
-    | where TimeGenerated >= ago(7d)
+    | where TimeGenerated >= ago(90d)
     | mv-apply entity = todynamic(Entities) on 
-    ( where entity.Type == "account" | extend account = strcat (entity.NTDomain, "\\", entity.Name))
+    ( where entity.Type == "host" | extend AffectedHost = strcat (entity.DnsDomain, "\\", entity.HostName))
     ```
 
 1. 函数是一种日志查询，可使用保存的名称作为命令在其他日志查询中使用。 若要创建函数，请在运行查询后，选择“保存”按钮，然后从下拉列表中选择“另存为函数”  。 在“函数名称”框中输入所需的名称（例如：MailboxForward），然后输入一个旧类别（例如 ：“常规”），然后选择“保存”。 通过使用函数别名，该功能将以 KQL 提供：

@@ -2,12 +2,12 @@
 lab:
   title: 练习 1 - 部署 Microsoft Defender for Endpoint
   module: Module 2 - Mitigate threats using Microsoft Defender for Endpoint
-ms.openlocfilehash: 55d34a12be8028af19201a113d23ffbbd870a150
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: 6db9e431414750e41f7caccc587bfdbc41071210
+ms.sourcegitcommit: 1535118acb3c18e55bb160b79728a772a84f9fbe
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025420"
+ms.lasthandoff: 03/25/2022
+ms.locfileid: "140880373"
 ---
 # <a name="module-2---lab-1---exercise-1---deploy-microsoft-defender-for-endpoint"></a>模块 2 - 实验室 1 - 练习 1 - 部署 Microsoft Defender for Endpoint
 
@@ -75,9 +75,9 @@ ms.locfileid: "138025420"
 
 1. 粘贴脚本的方法是右键单击“管理员:**命令提示符”窗口，并按 Enter 键运行** 。 **注意：** 窗口在运行脚本后自动关闭。
 
-1. 在 Microsoft 365 Defender 门户的左侧菜单中，在“终结点”区域下，选择“设备清单”。 该列表中现在应列出了你的设备。
+1. 在 Microsoft 365 Defender 门户的左侧菜单中，在“终结点”区域下，选择“设备清单”。 如果设备未显示，请完成下一任务，稍后再回来查看。 设备首次显示在门户上可能需要 60 分钟。
 
-    >**注意：** 可能需要多达 5 分钟，设备才会显示在门户中。 如果设备未显示，请完成下一任务，稍后再回来查看。
+    >**注意：** 如果你已完成载入过程，但在一小时后未在“设备”列表中看到设备，这可能指示存在载入或连接问题。
 
 
 ### <a name="task-3-configure-roles"></a>任务 3：配置角色
@@ -125,7 +125,7 @@ ms.locfileid: "138025420"
 
 1. 在“设备”选项卡中，对操作系统条件选择“Windows 10”，然后选择“下一步” 。
 
-1. 在“预览设备”选项卡上，选择“显示预览”以查看 WIN1 虚拟机。  选择“下一步”  。
+1. 在“预览设备”选项卡上，选择“显示预览”以查看 WIN1 虚拟机。 选择“下一步”  。 提示：如果没有在预览列表中看到虚拟机，请返回并同时为操作系统条件选择“无”。 尚未填充 VM 的数据。
 
 1. 对于“用户访问”选项卡，选择“sg-IT”，然后选择“添加所选组”按钮 。 请确保它显示在“Azure AD 可访问此设备组的用户组”下。
 
