@@ -2,12 +2,12 @@
 lab:
   title: 练习 5 - 进行攻击
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: 6cdec4c87437cc8962c5386a9110f847c5ef944b
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: e884305f1880725d3308c1a594322ac8e301e3e5
+ms.sourcegitcommit: e0fd7a9cf2e15a900d71fccfca58a14cb967f474
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025468"
+ms.lasthandoff: 03/25/2022
+ms.locfileid: "141143186"
 ---
 # <a name="module-7---lab-1---exercise-5---conduct-attacks"></a>模块 7 - 实验室 1 - 练习 5 - 进行攻击
 
@@ -101,7 +101,7 @@ ms.locfileid: "138025468"
     >**注意：** 系统将打开一个新的 PowerShell 窗口，你将看到解决错误。 这是正常情况。
 
     ```CommandPrompt
-    Start PowerShell.exe c2.ps1
+    Start PowerShell.exe -file c2.ps1
     ```
 
 >**重要提示：** 请勿关闭这些窗口。 让此 PowerShell 脚本在后台运行。 该命令需要在数小时内生成日志条目。 在此脚本运行期间，你可以继续进行下一项任务和下一个练习。 此任务创建的数据稍后将在威胁搜寻中使用。 此过程不会创造大量的数据或处理。

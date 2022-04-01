@@ -2,12 +2,12 @@
 lab:
   title: 练习 1 - 使用 Kusto 查询语言 (KQL) 为 Microsoft Sentinel 创建查询
   module: Module 4 - Create queries for Microsoft Sentinel using Kusto Query Language (KQL)
-ms.openlocfilehash: a9b6a745f40b18744bc520ca542c052ec28d5a11
-ms.sourcegitcommit: 1535118acb3c18e55bb160b79728a772a84f9fbe
+ms.openlocfilehash: 1cc85bbf03b5cab48f400e98d07a0f71b97ddc3f
+ms.sourcegitcommit: e0fd7a9cf2e15a900d71fccfca58a14cb967f474
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/25/2022
-ms.locfileid: "140880370"
+ms.locfileid: "141143195"
 ---
 # <a name="module-4---lab-1---exercise-1---create-queries-for-microsoft-sentinel-using-kusto-query-language-kql"></a>模块 4 - 实验室 1 - 练习 1 - 使用 Kusto 查询语言 (KQL) 为 Microsoft Sentinel 创建查询
 
@@ -276,9 +276,9 @@ ms.locfileid: "140880370"
 
 在此任务中，你将生成多表 KQL 语句。
 
-1. 以下语句演示了 union 运算符，该运算符采用两个或更多个表，并返回所有表的行。 有必要了解结果是如何通过管道符号传递的，又是如何受到该字符影响的。 在“查询”窗口中，输入以下语句，并分别针对每个查询选择“运行”以查看结果： 
-
 1. 在“查询”窗口中将“时间范围”更改为“过去 1 小时” 。 这将限制以下语句的结果。
+
+1. 以下语句演示了 union 运算符，该运算符采用两个或更多个表，并返回所有表的行。 有必要了解结果是如何通过管道符号传递的，又是如何受到该字符影响的。 在“查询”窗口中，输入以下语句，并分别针对每个查询选择“运行”以查看结果： 
 
     1. 查询 1 将返回 SecurityBaseline 所有的行和 SecurityEvent 所有的行。
 
@@ -324,7 +324,7 @@ ms.locfileid: "140880370"
     ) on Account
     ```
 
->**重要提示：** 联接中指定的第一个表被看作是左表。 join 运算符后面的表被看作是右表。 处理表中的列时，名称 $left.Column 和 $right.Column 用于区分正在引用哪个表的列。 join 运算度支持一系列完整的类型：flouter、inner、innerunique、leftanti、leftantisemi、leftouter、leftsemi、rightanti、rightantisemi、rightouter、rightsemi。
+    >**重要提示：** 联接中指定的第一个表被看作是左表。 join 运算符后面的表被看作是右表。 处理表中的列时，名称 $left.Column 和 $right.Column 用于区分正在引用哪个表的列。 join 运算度支持一系列完整的类型：flouter、inner、innerunique、leftanti、leftantisemi、leftouter、leftsemi、rightanti、rightantisemi、rightouter、rightsemi。
 
 1. 在“查询”窗口中将“事件范围”更改回“过去 24 小时” 。
 
@@ -416,7 +416,7 @@ ms.locfileid: "140880370"
 
     ```KQL
     SecurityAlert  
-    | where TimeGenerated >= ago(90d)
+    | where TimeGenerated > ago(90d)
     | mv-apply entity = todynamic(Entities) on 
     ( where entity.Type == "host" | extend AffectedHost = strcat (entity.DnsDomain, "\\", entity.HostName))
     ```
