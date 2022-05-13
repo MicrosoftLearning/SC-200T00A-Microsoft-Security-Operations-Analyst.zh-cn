@@ -2,16 +2,18 @@
 lab:
   title: 练习 7 - 调查事件
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: 1ccd67c04a1b30ec97e9f075c7a196b11d48656f
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: 99676b594e2c1ea5b47eccb3a3e603f6ff9a8f93
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025462"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493900"
 ---
 # <a name="module-7---lab-1---exercise-7---investigate-incidents"></a>模块 7 - 实验室 1 - 练习 7 - 调查事件
 
 ## <a name="lab-scenario"></a>实验室方案
+
+![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex7.png)
 
 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你已创建“计划”规则和“Microsoft 安全分析”规则。 环境中也启用了“融合”和“异常分析”规则。 现在，可以调查他们创建的事件。
 
@@ -52,13 +54,13 @@ ms.locfileid: "138025462"
 
 1. 在注释框中键入：“我将调查此事件”，然后选择“注释”按钮提交新注释。
 
-1. 选择“实体”选项卡，然后查看我们在上一个练习中的 KQL 查询中映射的“帐户”和“主机”实体 。
+1. 选择“实体”选项卡，然后查看我们在上一个练习中的 KQL 查询中映射的“帐户”和“主机”实体 。 提示：如果未显示任何实体，请刷新页面。
 
 1. 选择“警报”选项卡。对于 Sysmon Startup RegKey 警报，请使用栏向右滑动，并注意“查看 playbook”链接。 这样可以从警报中手动执行 playbook，而不是从“分析”规则中的“自动响应”选项卡触发该 playbook。
 
 1. 在左窗格中向下滚动并选择“调查”按钮。 提示：如果图标对于屏幕来说太小，请选择 (+) 来放大它们。
 
-1. 选择 WIN2 实体图标并等待显示新的浏览查询。 看起来“相关警报”包含更多数据。 选择探索查询的名称“相关警报”以将其引入调查图，或选择“事件 >”以使用 KQL 查询对其进行调查 。
+1. 将鼠标悬停在 WIN2 实体图标上并等待显示新的浏览查询。 看起来“相关警报”包含更多数据。 选择探索查询的名称“相关警报”以将其引入调查图，或选择“事件 >”以使用 KQL 查询对其进行调查 。
 
 1.  选择实体时，将打开右侧的窗口以获取更多详细信息。 查看“信息”页。
 

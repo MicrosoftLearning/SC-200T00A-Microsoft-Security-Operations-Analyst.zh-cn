@@ -2,16 +2,18 @@
 lab:
   title: 练习 2 - 使用 Notebook 通过 Microsoft Sentinel 进行威胁搜寻
   module: Module 8 - Perform threat hunting in Microsoft Sentinel
-ms.openlocfilehash: 78e9f168c1c512da4fe3217009b2d9f9ba90a5fd
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: 27db8985c2581a04345396e47ee0f0d2e97eb931
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025492"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493953"
 ---
 # <a name="module-8---lab-1---exercise-2---threat-hunting-using-notebooks-with-microsoft-sentinel"></a>模块 8 - 实验室 1 - 练习 2 - 使用 Microsoft Sentinel 的 Notebook 进行威胁搜寻
 
 ## <a name="lab-scenario"></a>实验室方案
+
+
 
 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你需要探索通过 Microsoft Sentinel 笔记本进行威胁搜寻的好处。 可以使用笔记本来：
 
@@ -46,14 +48,14 @@ ms.locfileid: "138025492"
 
 1. 在“工作区详细信息”部分中，执行以下任务：
 
-    - 为工作区指定唯一的名称。
-    - 选择你的区域（或在合理的情况下保留默认选项）
-    - 保存默认的“存储帐户”、“密钥保管库”和“应用程序见解”信息。
-    - “容器注册表”选项可以保留为“无”。
+     - 为工作区指定唯一的名称。
+     - 将“区域”的默认值保留为“(US) 美国东部”。
+     - 保存默认的“存储帐户”、“密钥保管库”和“应用程序见解”信息。
+     - “容器注册表”选项可以保留为“无”。
 
 1. 在页面底部，选择“查看 + 创建”。 当看到“验证通过”消息时，选择“创建”。 
 
-    >**注意：** 部署机器学习工作区可能需要几分钟时间。
+     >**注意：** 部署机器学习工作区可能需要几分钟时间。
 
 1. 显示“部署已完成”消息后，返回 Microsoft Sentinel 门户。
 

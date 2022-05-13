@@ -2,16 +2,18 @@
 lab:
   title: 练习 3 - 使用数据连接器将 Linux 主机连接到 Microsoft Sentinel
   module: Module 6 - Connect logs to Microsoft Sentinel
-ms.openlocfilehash: 5d2aa7f11949f5fd011d6ca2ae612c158e8a1d58
-ms.sourcegitcommit: e0fd7a9cf2e15a900d71fccfca58a14cb967f474
+ms.openlocfilehash: bf3774978dc5c6cef158d5f1288577854000d944
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2022
-ms.locfileid: "141143189"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493969"
 ---
 # <a name="module-6---lab-1---exercise-3---connect-linux-hosts-to-microsoft-sentinel-using-data-connectors"></a>模块 6 - 实验室 1 - 练习 3 - 使用数据连接器将 Linux 主机连接到 Microsoft Sentinel
 
 ## <a name="lab-scenario"></a>实验室方案
+
+![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod6_L1_Ex3.png)
 
 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你需要了解如何连接来自组织中多个数据源的日志数据。 下一个数据源是使用通用事件格式化 (CEF) 和 Syslog 连接器的 Linux 虚拟机。
 

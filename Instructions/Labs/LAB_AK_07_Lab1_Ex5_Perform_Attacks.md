@@ -2,16 +2,18 @@
 lab:
   title: 练习 5 - 进行攻击
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: e884305f1880725d3308c1a594322ac8e301e3e5
-ms.sourcegitcommit: e0fd7a9cf2e15a900d71fccfca58a14cb967f474
+ms.openlocfilehash: ff595199e034f5779ecd1c982609858a6c677a87
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2022
-ms.locfileid: "141143186"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493840"
 ---
 # <a name="module-7---lab-1---exercise-5---conduct-attacks"></a>模块 7 - 实验室 1 - 练习 5 - 进行攻击
 
 ## <a name="lab-scenario"></a>实验室方案
+
+![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex5.png)
 
 你将模拟稍后将用于在 Microsoft Sentinel 中检测和调查的攻击。
 

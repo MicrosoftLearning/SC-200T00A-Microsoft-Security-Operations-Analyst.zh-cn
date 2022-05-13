@@ -2,16 +2,18 @@
 lab:
   title: 练习 2 - 使用数据连接器将 Windows 设备连接到 Microsoft Sentinel
   module: Module 6 - Connect logs to Microsoft Sentinel
-ms.openlocfilehash: 91e038a226219fbd411855158f1449d92995ff5f
-ms.sourcegitcommit: 320cb9d3ce20c75731418e03eb86916841cecc69
+ms.openlocfilehash: 9605e4624286654c8d99e1c1fdfc7c88e9508f54
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2022
-ms.locfileid: "140742095"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493924"
 ---
 # <a name="module-6---lab-1---exercise-2---connect-windows-devices-to-microsoft-sentinel-using-data-connectors"></a>模块 6 - 实验室 1 - 练习 2 - 使用数据连接器将 Windows 设备连接到 Microsoft Sentinel
 
 ## <a name="lab-scenario"></a>实验室方案
+
+![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod6_L1_Ex2.png)
 
 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你需要了解如何连接来自组织中多个数据源的日志数据。 下一个数据源是 Azure 内部和外部的 Windows 虚拟机，例如本地环境或其他公共云。
 
@@ -32,7 +34,7 @@ ms.locfileid: "140742095"
 
 1. 在“搜索服务和市场”框中，输入“Windows 10”并从下拉列表中选择“Microsoft Window 10”。
 
-1. 打开“计划”下拉列表，然后选择“Windows 10 企业版，版本 20H2”。 选择“开始使用预设置配置”以继续。
+1. 打开“计划”下拉列表，然后选择“Windows 10 企业版，版本 21H2”。 选择“开始使用预设置配置”以继续。
 
 1. 选择“开发/测试”，然后选择“继续创建 VM” 。
 
@@ -42,9 +44,9 @@ ms.locfileid: "140742095"
 
 1. 在“虚拟机名称”处输入 AZWIN01。
 
-1. 将“区域”设置为所在地区的相应区域。 相应区域将为默认区域。
+1. 将“区域”的默认值保留为“(US) 美国东部”。
 
-1. 向下滚动并查看虚拟机的“大小”。 如果显示为空，请选择“查看所有大小”，然后选择“B2ms”并单击“选择”  。
+1. 向下滚动并查看虚拟机的“大小”。 如果它显示为空，请选择“查看所有大小”，在“Azure 用户使用最多的”下选择一个 VM 大小，然后单击“选择”。
 
 1. 输入你选择的用户名。 提示：避免使用保留字，如 admin 或 root。
 

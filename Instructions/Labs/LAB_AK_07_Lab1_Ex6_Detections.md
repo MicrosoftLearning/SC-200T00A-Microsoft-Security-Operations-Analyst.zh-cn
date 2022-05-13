@@ -2,16 +2,18 @@
 lab:
   title: 练习 6 - 创建检测
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: a78585ad2c3b175ab0277ad76fe417307f8374f7
-ms.sourcegitcommit: 320cb9d3ce20c75731418e03eb86916841cecc69
+ms.openlocfilehash: 5512edc50ccfb34c75e4b5658d71f1d3042d7d2c
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2022
-ms.locfileid: "140742101"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493941"
 ---
 # <a name="module-7---lab-1---exercise-6---create-detections"></a>模块 7 - 实验室 1 - 练习 6 - 创建检测
 
 ## <a name="lab-scenario"></a>实验室方案
+
+![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex6.png)
 
 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你将使用 Log Analytics KQL 查询，并从这里创建自定义分析规则，以帮助发现环境中的威胁和异常行为。
 
@@ -44,7 +46,7 @@ ms.locfileid: "140742101"
     search "temp\\startup.bat"
     ```
 
-1. 结果显示来自三个不同表的数据：
+1. 结果应显示来自四个表的数据：
 
     - DeviceProcessEvents。 源：Defender for Endpoint 连接器。
     - DeviceRegistryEvents。 源：Defender for Endpoint 连接器。
@@ -180,7 +182,7 @@ ms.locfileid: "140742101"
 
 1. 将其余选项保留为默认值。 选择“下一页:**事件设置 >”按钮**。
 
-1. 对于事件设置（预览版）选项卡，保留默认值并选择“下一页: **自动响应 >”按钮**。
+1. 对于“事件设置”选项卡，保留默认值并选择“下一页: “下一步: 自动响应 >”按钮。
 
 1. 对于“自动响应”选项卡，选择“警报自动化”下的“PostMessageTeams-OnAlert”，然后选择“下一页: **查看 >”按钮**。
 
@@ -272,7 +274,7 @@ ms.locfileid: "140742101"
 
 1. 将其余选项保留为默认值。 选择“下一页:**事件设置 >”按钮**。
 
-1. 对于事件设置（预览版）选项卡，保留默认值并选择“下一页: **自动响应 >”按钮**。
+1. 对于“事件设置”选项卡，保留默认值并选择“下一页: “下一步: 自动响应 >”按钮。
 
 1. 对于“自动响应”选项卡，选择“警报自动化”下的“PostMessageTeams-OnAlert”，然后选择“下一页: 审阅”按钮。
 
@@ -353,7 +355,7 @@ ms.locfileid: "140742101"
 
 1. 将其余选项保留为默认值。 选择“下一页:**事件设置 >”按钮**。
 
-1. 对于事件设置（预览版）选项卡，保留默认值并选择“下一页: **自动响应 >”按钮**。
+1. 对于“事件设置”选项卡，保留默认值并选择“下一页: “下一步: 自动响应 >”按钮。
 
 1. 对于“自动响应”选项卡，选择“警报自动化”下的“PostMessageTeams-OnAlert”，然后选择“下一页: 审阅”按钮。
 

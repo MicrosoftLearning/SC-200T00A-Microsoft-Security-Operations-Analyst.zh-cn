@@ -2,16 +2,18 @@
 lab:
   title: 练习 1 - 在 Microsoft Sentinel 中执行威胁搜寻
   module: Module 8 - Perform threat hunting in Microsoft Sentinel
-ms.openlocfilehash: 5fe3c20f10e420294fdb2b1048daec19ce359f02
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: 04861267f93df1fe9a9adc019d553b436a4aeee5
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025498"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493937"
 ---
 # <a name="module-8---lab-1---exercise-1---perform-threat-hunting-in-microsoft-sentinel"></a>模块 8 - 实验室 1 - 练习 1 - 在 Azure Sentinel 中执行威胁搜寻
 
 ## <a name="lab-scenario"></a>实验室方案
+
+![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod8_L1_Ex1.png)
 
 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你收到了关于命令和控制（C2 或 C&C）技术的威胁情报。 你需要执行搜寻并监视威胁。
 
@@ -42,18 +44,18 @@ ms.locfileid: "138025498"
 
    >**重要提示：** 请首先将任意 KQL 查询粘贴到记事本，然后从此处复制到“新建查询 1 日志”窗口以避免任何错误。
 
-   ```KQL
-   let lookback = 2d;
-   DeviceEvents | where TimeGenerated >= ago(lookback) 
-   | where ActionType == "DnsQueryResponse"
-   | extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),"."))
-   | where c2 startswith "sub"
-   | summarize count() by bin(TimeGenerated, 3m), c2
-   | where count_ > 5
-   | render timechart 
-   ```
+    ```KQL
+    let lookback = 2d;
+    DeviceEvents | where TimeGenerated >= ago(lookback) 
+    | where ActionType == "DnsQueryResponse"
+    | extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),"."))
+    | where c2 startswith "sub"
+    | summarize count() by bin(TimeGenerated, 3m), c2
+    | where count_ > 5
+    | render timechart 
+    ```
 
-   ![屏幕快照](../Media/SC200_hunting1.png)
+    ![屏幕快照](../Media/SC200_hunting1.png)
 
 1. 上一个 KQL 查询的目标是为 C2 信标提供一致的可视化效果。 将 bin () 中的 3m 设置设置为 30s 以调整值的分组，然后再次运行查询 。
 
@@ -61,19 +63,19 @@ ms.locfileid: "138025498"
 
 1. 你现已确定要向 C2 服务器发送信标的 DNS 请求。 接下来，请确定要发送信标的设备。 运行以下 KQL 语句：
 
-   ```KQL
-   let lookback = 2d;
-   DeviceEvents | where TimeGenerated >= ago(lookback) 
-   | where ActionType == "DnsQueryResponse"
-   | extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),".")) 
-   | where c2 startswith "sub"
-   | summarize cnt=count() by bin(TimeGenerated, 5m), c2, DeviceName
-   | where cnt > 15
-   ```
+    ```KQL
+    let lookback = 2d;
+    DeviceEvents | where TimeGenerated >= ago(lookback) 
+    | where ActionType == "DnsQueryResponse"
+    | extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),".")) 
+    | where c2 startswith "sub"
+    | summarize cnt=count() by bin(TimeGenerated, 5m), c2, DeviceName
+    | where cnt > 15
+    ```
 
-   ![屏幕快照](../Media/SC200_hunting2.png)
+    ![屏幕快照](../Media/SC200_hunting2.png)
 
-   >**注意：** 生成的日志数据仅来自 WIN1 设备。
+    >**注意：** 生成的日志数据仅来自 WIN1 设备。
 
 1. 通过选择窗口右上方的“X”关闭“日志”窗口，然后选择“确定”以放弃更改 。 
 
@@ -85,15 +87,15 @@ ms.locfileid: "138025498"
 
 1. 对于“自定义查询”，输入以下 KQL 语句：
 
-   ```KQL
-   let lookback = 2d;
-   DeviceEvents | where TimeGenerated >= ago(lookback) 
-   | where ActionType == "DnsQueryResponse"
-   | extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),"."))
-   | where c2 startswith "sub"
-   | summarize cnt=count() by bin(TimeGenerated, 5m), c2, DeviceName
-   | where cnt > 15
-   ```
+    ```KQL
+    let lookback = 2d;
+    DeviceEvents | where TimeGenerated >= ago(lookback) 
+    | where ActionType == "DnsQueryResponse"
+    | extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),"."))
+    | where c2 startswith "sub"
+    | summarize cnt=count() by bin(TimeGenerated, 5m), c2, DeviceName
+    | where cnt > 15
+    ```
 
 1. 向下滚动，在“实体映射（预览）”下，选择：
 
@@ -125,7 +127,7 @@ ms.locfileid: "138025498"
 
 1. 从结果列表中选择刚刚创建的“C2 Hunt”书签。
 
-1. 在右窗格中，向下滚动并选择“调查”按钮。
+1. 在右窗格中，向下滚动并选择“调查”按钮。 提示：可能需要几分钟时间才能显示调查图。
 
 1. 像在上一模块中一样浏览调查图。
 

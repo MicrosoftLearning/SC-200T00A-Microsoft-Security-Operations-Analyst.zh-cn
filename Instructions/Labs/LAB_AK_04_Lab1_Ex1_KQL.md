@@ -2,16 +2,19 @@
 lab:
   title: 练习 1 - 使用 Kusto 查询语言 (KQL) 为 Microsoft Sentinel 创建查询
   module: Module 4 - Create queries for Microsoft Sentinel using Kusto Query Language (KQL)
-ms.openlocfilehash: 1cc85bbf03b5cab48f400e98d07a0f71b97ddc3f
-ms.sourcegitcommit: e0fd7a9cf2e15a900d71fccfca58a14cb967f474
+ms.openlocfilehash: e96c19613f6379217a12392cd39ac916d022c880
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2022
-ms.locfileid: "141143195"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493906"
 ---
 # <a name="module-4---lab-1---exercise-1---create-queries-for-microsoft-sentinel-using-kusto-query-language-kql"></a>模块 4 - 实验室 1 - 练习 1 - 使用 Kusto 查询语言 (KQL) 为 Microsoft Sentinel 创建查询
 
 ## <a name="lab-scenario"></a>实验室方案
+
+![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod4_L1_Ex1.png)
+
 你是一位安全运营分析师，你所在公司正在实现 Microsoft Sentinel。 你负责执行日志数据分析，以便搜索恶意活动、显示可视化效果并执行威胁搜寻。 为了查询日志数据，你使用 Kusto 查询语言 (KQL)。
 
 >**重要提示：** 此实验室需要将大量 KQL 脚本输入到 Microsoft Sentinel 中。 这些脚本是在此实验室开始时的文件中提供的。 另一个下载这些脚本的位置是： https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/tree/master/Allfiles

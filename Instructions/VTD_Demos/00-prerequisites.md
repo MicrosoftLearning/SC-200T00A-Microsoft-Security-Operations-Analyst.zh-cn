@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: df81f5e8d80eed38acc020e9c904d1bff1a70da2
-ms.sourcegitcommit: 20cbc7b52187d61fca294ac2c00146c2c7c6d337
+ms.openlocfilehash: fb8d611ee9301793d2f051799f9128892f868e25
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2022
-ms.locfileid: "137899162"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493890"
 ---
 
 # <a name="microsoft-security-operations-analyst"></a>Microsoft 安全运营分析师

@@ -2,16 +2,18 @@
 lab:
   title: 练习 1 - 修改 Microsoft 安全规则
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: b96e2326ab5169c9ca6a8cd6e561d964c5d30201
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: d433e3425f961862a2f51538bb73bd9705c6cc03
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025480"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493846"
 ---
 # <a name="module-7---lab-1---exercise-1---modify-a-microsoft-security-rule"></a>模块 7 - 实验室 1 - 练习 1 - 修改 Microsoft 安全规则
 
 ## <a name="lab-scenario"></a>实验室方案
+
+![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex1.png)
 
 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你需要了解如何使用 Microsoft Sentinel 检测和缓解威胁。 首先，需要按严重性将来自 Defender for Cloud 的警报筛选到 Microsoft Sentinel 中。 
 

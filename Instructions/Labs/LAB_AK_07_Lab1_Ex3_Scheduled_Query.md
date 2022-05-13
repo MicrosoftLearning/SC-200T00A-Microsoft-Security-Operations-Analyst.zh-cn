@@ -2,16 +2,18 @@
 lab:
   title: 练习 3 - 创建计划查询
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: c76ba6f5bdd5c1f380393b3f0ebbdb16c85626c1
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: 6e8d5655639433928d1c52d7c49077dead6121b4
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025477"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493987"
 ---
 # <a name="module-7---lab-1---exercise-3---create-a-scheduled-query"></a>模块 7 - 实验室 1 - 练习 3 - 创建计划查询
 
 ## <a name="lab-scenario"></a>实验室方案
+
+![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex3.png)
 
 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你需要了解如何使用 Microsoft Sentinel 检测和缓解威胁。 将数据源连接到 Microsoft Sentinel 后，可以创建自定义分析规则来帮助发现环境中的威胁和异常行为。
 
@@ -87,7 +89,7 @@ ms.locfileid: "138025477"
 
 1. 选择底部的“下一步: 事件设置 >”按钮。 
 
-1. 在“事件设置(预览版)”选项卡上，查看默认选项。
+1. 在“事件设置”选项卡上，查看默认选项。
 
 1. 选择底部的“下一步: 自动响应 >”按钮。
 

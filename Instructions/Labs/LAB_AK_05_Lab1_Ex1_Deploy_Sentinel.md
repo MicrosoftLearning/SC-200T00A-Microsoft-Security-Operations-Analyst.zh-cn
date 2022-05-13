@@ -2,16 +2,18 @@
 lab:
   title: 练习 1 - 配置 Microsoft Sentinel 环境
   module: Module 5 - Configure your Microsoft Sentinel environment
-ms.openlocfilehash: e8d4347932306ebfab7b75dd110e3ae3a0e4cca9
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: 3dc3670a58758c2d7de37878ba5b9413804596c4
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025408"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493963"
 ---
 # <a name="module-5---lab-1---exercise-1---configure-your-microsoft-sentinel-environment"></a>模块 5 - 实验室 1 - 练习 1 - 配置 Microsoft Sentinel 环境
 
 ## <a name="lab-scenario"></a>实验室方案
+
+![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod5_L1_Ex1.png)
 
 你是一位安全运营分析师，你所在公司正在实现 Microsoft Sentinel。 你负责设置满足公司要求的 Microsoft Sentinel 环境，并最大程度降低成本、符合法规要求，同时为安全团队提供最易于管理的环境，以便其履行日常工作职责。
 

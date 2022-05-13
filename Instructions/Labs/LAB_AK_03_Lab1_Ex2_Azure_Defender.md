@@ -2,16 +2,18 @@
 lab:
   title: 练习 2 - 使用 Microsoft Defender for Cloud 缓解威胁
   module: Module 3 - Mitigate threats using Microsoft Defender for Cloud
-ms.openlocfilehash: 5970d1d528ffc320e6b7e379b8deb011e58fca8c
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: 50d77067c70634a4f887a7c8669b38fa7977b860
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025414"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493957"
 ---
 # <a name="module-3---lab-1---exercise-2---mitigate-threats-using-microsoft-defender-for-cloud"></a>模块 3 - 实验室 1 - 练习 2 - 使用 Microsoft Defender for Cloud 缓解威胁
 
 ## <a name="lab-scenario"></a>实验室方案
+
+![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod3_L1_Ex2.png)
 
 你是一位安全运营分析师，你所在公司已实现 Microsoft Defender for Cloud。 你负责应对由 Microsoft Defender for Cloud 生成的安全警报。
 

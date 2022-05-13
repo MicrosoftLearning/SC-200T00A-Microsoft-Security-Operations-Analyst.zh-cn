@@ -2,16 +2,18 @@
 lab:
   title: 练习 1 - 探索 Microsoft 365 Defender
   module: Module 1 - Mitigate threats using Microsoft 365 Defender
-ms.openlocfilehash: e49efce29c61889db8a0cafb012a714940dea563
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: dc37672bc32d41439aec72056ed1530196cbcfc6
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025417"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493834"
 ---
 # <a name="module-1---lab-1---exercise-1---explore-microsoft-365-defender"></a>模块 1 - 实验室 1 - 练习 1 - 探索 Microsoft 365 Defender 
 
 ## <a name="lab-scenario"></a>实验室方案
+
+![M365 Defender](../Media/SC-200-Lab_M1_L1_Ex1.png)
 
 你是一家公司的安全运营分析师，你所在公司正在实现 Microsoft 365 Defender。 首先，在 EOP 和 Microsoft Defender for Office 365 中分配预设的安全策略。
 

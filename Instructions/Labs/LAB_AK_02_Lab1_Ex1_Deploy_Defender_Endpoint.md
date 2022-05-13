@@ -2,16 +2,18 @@
 lab:
   title: 练习 1 - 部署 Microsoft Defender for Endpoint
   module: Module 2 - Mitigate threats using Microsoft Defender for Endpoint
-ms.openlocfilehash: 6db9e431414750e41f7caccc587bfdbc41071210
-ms.sourcegitcommit: 1535118acb3c18e55bb160b79728a772a84f9fbe
+ms.openlocfilehash: 7ecad955c59395014fbf39c2f9836d734137ed74
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2022
-ms.locfileid: "140880373"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493911"
 ---
 # <a name="module-2---lab-1---exercise-1---deploy-microsoft-defender-for-endpoint"></a>模块 2 - 实验室 1 - 练习 1 - 部署 Microsoft Defender for Endpoint
 
 ## <a name="lab-scenario"></a>实验室方案
+
+![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod2_L1_Ex1.png)
 
 你是一家公司的安全操作分析师，你的公司正在实施 Microsoft Defender for Endpoint。 你的主管计划加入一些设备，以深入了解安全运营 (SecOps) 团队响应程序所需的更改。
 
@@ -75,7 +77,7 @@ ms.locfileid: "140880373"
 
 1. 粘贴脚本的方法是右键单击“管理员:**命令提示符”窗口，并按 Enter 键运行** 。 **注意：** 窗口在运行脚本后自动关闭。
 
-1. 在 Microsoft 365 Defender 门户的左侧菜单中，在“终结点”区域下，选择“设备清单”。 如果设备未显示，请完成下一任务，稍后再回来查看。 设备首次显示在门户上可能需要 60 分钟。
+1. 在 Microsoft 365 Defender 门户的左侧菜单中，在“终结点”区域下，选择“设备清单”。 如果设备未显示，请完成下一任务，稍后再回来查看。 可能需要多达 60 分钟，第一台设备才会显示在门户中。
 
     >**注意：** 如果你已完成载入过程，但在一小时后未在“设备”列表中看到设备，这可能指示存在载入或连接问题。
 

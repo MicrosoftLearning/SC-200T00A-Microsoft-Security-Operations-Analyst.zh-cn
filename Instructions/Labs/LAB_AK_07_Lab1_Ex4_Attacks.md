@@ -2,15 +2,16 @@
 lab:
   title: 练习 4 - 了解检测建模
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: f2b41a44b3661f89f27ff8d22063244ce497fa5a
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: 4b3da97ade23e0dbc1f7efb54ce830de21a4e194
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025495"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493828"
 ---
 # <a name="module-7---lab-1---exercise-4---understand-detection-modeling"></a>模块 7 - 实验室 1 - 练习 4 - 连接检测建模
 
+![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex4.png)
 ### <a name="task-1-understand-the-attacks"></a>任务 1：了解攻击
 
 >**重要说明：在此练习中你不会执行任何操作。**  这些说明只说明了在后续练习中将执行的攻击。 请仔细阅读本页。

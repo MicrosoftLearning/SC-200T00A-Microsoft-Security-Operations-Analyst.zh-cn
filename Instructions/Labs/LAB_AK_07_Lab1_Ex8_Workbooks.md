@@ -2,16 +2,18 @@
 lab:
   title: 练习 8 - 创建工作簿
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: e57f2d5fbb83fbd88c51ca551cd2838d9a35411b
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: 504b1964c0b950d4ddd76cb143b56d82858bec09
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025448"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493918"
 ---
 # <a name="module-7---lab-1---exercise-8---create-workbooks"></a>模块 7 - 实验室 1 - 练习 8 - 创建工作簿
 
 ## <a name="lab-scenario"></a>实验室方案
+
+![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex8.png)
 
 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 将数据源连接到 Microsoft Sentinel 后，可以使用采用 Microsoft Sentinel 的 Azure Monitor 工作簿来可视化和监视数据，这在创建自定义仪表板方面提供了多样性。 
 
@@ -24,7 +26,7 @@ Microsoft Sentinel 可让你跨数据创建自定义工作簿，并且还附带�
 
 1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：**Pa55w.rd**。  
 
-1. 在 Edge 浏览器中，导航到 Azure 门户 (https://portal.azure.com )。
+1. 在 Microsoft Edge 浏览器中，导航到 Azure 门户 (https://portal.azure.com )。
 
 1. 在“登录”对话框中，复制粘贴实验室托管提供者提供的租户电子邮件帐户，然后选择“下一步”  。
 
@@ -49,7 +51,7 @@ Microsoft Sentinel 可让你跨数据创建自定义工作簿，并且还附带�
 
 1. 应返回“Microsoft Sentinel - 工作簿 - 模板”选项卡。搜索并选择“Azure AD 审核日志”，然后在右侧窗格中，向下滚动选择“保存”按钮 。 
 
-1. 选择合适位置，然后选择“确定”。 该位置将为默认位置。
+1. 将“区域”的默认值保留为“美国东部”，然后选择“确定”。
 
 1. 选择“查看保存的工作簿”按钮。
 
@@ -75,7 +77,7 @@ Microsoft Sentinel 可让你跨数据创建自定义工作簿，并且还附带�
 
 1. 查看“选择这些项目时，请导出参数”设置。 请注意，已选中用户信息”字段。
 
-1. 向下滚动并选择查询底部（不是顶部菜单）的“完成编辑”。
+1. 向下滚动并选择查询底部（不是顶部菜单）的“完成编辑”。 查看“操作计数”和“趋势”的更改后颜色 。
 
 1. 选择屏幕右侧的“最活跃的用户”饼图下的“编辑”。  
 
@@ -100,7 +102,7 @@ Microsoft Sentinel 可让你跨数据创建自定义工作簿，并且还附带�
 
 1. 选择工作簿第一段下面的“编辑”按钮 
 
-1. 键入“# 我的工作簿”以替换“## 新工作簿” 。
+1. 在“## 新建工作簿”顶部键入“# 我的工作簿” 。
 
 1. 对于“编辑文本项: 文本 - 2”，选择底部菜单中的“完成编辑”。 请注意，标题已变大并且名称已更改。
 

@@ -2,16 +2,18 @@
 lab:
   title: 练习 1 - 使用数据连接器将数据连接到 Microsoft Sentinel
   module: Module 6 - Connect logs to Microsoft Sentinel
-ms.openlocfilehash: 1f946958246be76294aa75463b5f9877905d6090
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: 783cc6d5cb6b7a2e962a60ad6654b8a900a04581
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025444"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493975"
 ---
 # <a name="module-6---lab-1---exercise-1---connect-data-to-microsoft-sentinel-using-data-connectors"></a>模块 6 - 实验室 1 - 练习 1 - 使用数据连接器将数据连接到 Microsoft Sentinel
 
 ## <a name="lab-scenario"></a>实验室方案
+
+![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod6_L1_Ex1.png)
 
 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你需要了解如何连接来自组织中多个数据源的日志数据。 组织的数据来自 Microsoft 365、Microsoft 365 Defender、Azure 资源、非 Azure 虚拟机等。首先开始连接 Microsoft 源。
 
