@@ -2,12 +2,12 @@
 lab:
   title: 练习 1 - 修改 Microsoft 安全规则
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: d433e3425f961862a2f51538bb73bd9705c6cc03
-ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
+ms.openlocfilehash: 92e54277d1d8c51dd0ddde982409f991bfbe0766
+ms.sourcegitcommit: 1b122762798f79fe9862bc662a7dc55f40b15dd5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2022
-ms.locfileid: "141493846"
+ms.lasthandoff: 05/27/2022
+ms.locfileid: "145912161"
 ---
 # <a name="module-7---lab-1---exercise-1---modify-a-microsoft-security-rule"></a>模块 7 - 实验室 1 - 练习 1 - 修改 Microsoft 安全规则
 
@@ -36,7 +36,7 @@ ms.locfileid: "141493846"
 
 1. 从“配置”区域选择“分析”。 默认情况下，会显示“有效规则”。
 
-1. 选择“基于 Azure Defender 警报创建事件”。 此警报是由“模块 6 - 练习 1 - 任务 4”中配置的 Defender for Cloud 连接器自动创建的。 
+1. **选择“基于 Microsoft Defender for CLoud 创建事件**”。 此警报是由“模块 6 - 练习 1 - 任务 4”中配置的 Defender for Cloud 连接器自动创建的。 
 
 1. 在右侧边栏选项卡上，选择“编辑”按钮。
 
