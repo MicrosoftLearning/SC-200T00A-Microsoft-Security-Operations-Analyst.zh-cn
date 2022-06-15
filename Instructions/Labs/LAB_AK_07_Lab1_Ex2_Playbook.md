@@ -2,12 +2,12 @@
 lab:
   title: 练习 2 - 创建 Playbook
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: 8017ba4ba215da42fce83151d80756e441e480df
-ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
+ms.openlocfilehash: db4d3e74419475539b412afdb1b3e935f89d95b1
+ms.sourcegitcommit: 1b122762798f79fe9862bc662a7dc55f40b15dd5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2022
-ms.locfileid: "141493930"
+ms.lasthandoff: 05/27/2022
+ms.locfileid: "145912158"
 ---
 # <a name="module-7---lab-1---exercise-2---create-a-playbook"></a>模块 7 - 实验室 1 - 练习 2 - 创建 Playbook
 
@@ -104,7 +104,7 @@ ms.locfileid: "141493930"
 
 1. 在 PostMessageTeams-OnAlert 的逻辑应用页的命令菜单中，选择“编辑”。
 
-1. 对 Microsoft Sentinel 警报触发响应时，选择第一个块。
+1. 选择第一个块，Microsoft Sentinel 警报。
 
 1. 选择“更改连接”链接。
 

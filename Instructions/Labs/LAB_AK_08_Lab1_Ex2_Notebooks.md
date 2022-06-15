@@ -2,12 +2,12 @@
 lab:
   title: 练习 2 - 使用 Notebook 通过 Microsoft Sentinel 进行威胁搜寻
   module: Module 8 - Perform threat hunting in Microsoft Sentinel
-ms.openlocfilehash: 27db8985c2581a04345396e47ee0f0d2e97eb931
-ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
+ms.openlocfilehash: 3f48ff448906532c93fcb3a1b3478ca445dad777
+ms.sourcegitcommit: 1b122762798f79fe9862bc662a7dc55f40b15dd5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2022
-ms.locfileid: "141493953"
+ms.lasthandoff: 05/27/2022
+ms.locfileid: "145912155"
 ---
 # <a name="module-8---lab-1---exercise-2---threat-hunting-using-notebooks-with-microsoft-sentinel"></a>模块 8 - 实验室 1 - 练习 2 - 使用 Microsoft Sentinel 的 Notebook 进行威胁搜寻
 
@@ -63,7 +63,7 @@ ms.locfileid: "141493953"
 
 1. 选择“Microsoft Sentinel ML Notebooks 入门指南”。 
 
-1. 在右侧窗格中，向下滚动并选择“克隆笔记本模板”按钮。 查看默认选项，然后选择“保存”。
+1. 在右侧窗格中，向下滚动并选择“从模板创建”按钮。 查看默认选项，然后选择“保存”。
 
 1. 保存完成后，选择“启动笔记本”按钮。 这会将你带至 Microsoft Azure 机器学习工作室。
 

@@ -2,12 +2,12 @@
 lab:
   title: 练习 3 - 创建计划查询
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: 6e8d5655639433928d1c52d7c49077dead6121b4
-ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
+ms.openlocfilehash: 97e0ead1d3b79493deda54a3e268fc8f72f4070f
+ms.sourcegitcommit: 1b122762798f79fe9862bc662a7dc55f40b15dd5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2022
-ms.locfileid: "141493987"
+ms.lasthandoff: 05/27/2022
+ms.locfileid: "145912152"
 ---
 # <a name="module-7---lab-1---exercise-3---create-a-scheduled-query"></a>模块 7 - 实验室 1 - 练习 3 - 创建计划查询
 
@@ -114,9 +114,9 @@ ms.locfileid: "141493987"
 
 1. 从命令栏中选择“+ 添加分配”。
 
-1. 在“添加分配”页的“成员身份”选项卡的“选择角色”下，选择“用户管理员”  。 然后选择“下一步 >”。
+1. 在“添加分配”页的“成员身份”选项卡的“选择角色”下，选择“用户管理员”  。 并选择“添加”。
 
-1. 查看“设置”选项卡中的默认“分配类型”，然后选择“分配” 。 如果分配无法完成，请重试。
+    >**注意：** 可能需要单击“刷新”按钮才能看到新的角色分配。 
 
 1. 通过选择两次右上方的“x”来关闭“Christie Cline - 分配角色”和“用户 - 所有用户”页。
 

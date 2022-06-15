@@ -2,12 +2,12 @@
 lab:
   title: 练习 1 - 使用 Kusto 查询语言 (KQL) 为 Microsoft Sentinel 创建查询
   module: Module 4 - Create queries for Microsoft Sentinel using Kusto Query Language (KQL)
-ms.openlocfilehash: e96c19613f6379217a12392cd39ac916d022c880
-ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
+ms.openlocfilehash: 15469ce769f9c3655c9c8c35ea33d70f43d8ef2e
+ms.sourcegitcommit: ac5992dcbc64a608d24a33e084c71f456327b07d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2022
-ms.locfileid: "141493906"
+ms.lasthandoff: 05/26/2022
+ms.locfileid: "145892526"
 ---
 # <a name="module-4---lab-1---exercise-1---create-queries-for-microsoft-sentinel-using-kusto-query-language-kql"></a>模块 4 - 实验室 1 - 练习 1 - 使用 Kusto 查询语言 (KQL) 为 Microsoft Sentinel 创建查询
 
@@ -231,7 +231,7 @@ ms.locfileid: "141493906"
         | summarize arg_max(TimeGenerated, *) by Account
         ```
 
-    >**注意：** 也可以通过选择“已完成”栏来查看“总 CPU”和“用于已处理查询的数据”，并对两种语句之间的数据进行比较。
+    >**注意：** 还可以通过选择右下角的“查询详细信息”链接查看“总 CPU”和“用于已处理查询的数据”，并对两种语句之间的数据进行比较。
 
 1. 以下语句演示了 make_list() 函数，该函数返回组中所有值的列。 此 KQL 查询将首先使用 where 运算符筛选 EventID。 接下来，对于每台计算机，结果都是帐户的 JSON 数组。 生成的 JSON 数组将包含重复的帐户。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
 

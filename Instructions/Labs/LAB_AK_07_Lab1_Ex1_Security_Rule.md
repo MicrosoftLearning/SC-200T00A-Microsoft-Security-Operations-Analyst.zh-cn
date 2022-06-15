@@ -36,7 +36,7 @@ ms.locfileid: "145912161"
 
 1. 从“配置”区域选择“分析”。 默认情况下，会显示“有效规则”。
 
-1. **选择“基于 Microsoft Defender for CLoud 创建事件**”。 此警报是由“模块 6 - 练习 1 - 任务 4”中配置的 Defender for Cloud 连接器自动创建的。 
+1. 选择“基于 Microsoft Defender for CLoud 创建事件”。 此警报是由“模块 6 - 练习 1 - 任务 4”中配置的 Defender for Cloud 连接器自动创建的。 
 
 1. 在右侧边栏选项卡上，选择“编辑”按钮。
 
