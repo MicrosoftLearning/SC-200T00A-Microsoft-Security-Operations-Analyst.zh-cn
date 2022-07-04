@@ -2,12 +2,12 @@
 lab:
   title: 练习 1 - 使用数据连接器将数据连接到 Microsoft Sentinel
   module: Module 6 - Connect logs to Microsoft Sentinel
-ms.openlocfilehash: 783cc6d5cb6b7a2e962a60ad6654b8a900a04581
-ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
+ms.openlocfilehash: ba1ab1fbfbc322357395fc6d78ba124eda9d00cc
+ms.sourcegitcommit: 190d5d493301a8c8d98c86772d2500128637ad2d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2022
-ms.locfileid: "141493975"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "146650236"
 ---
 # <a name="module-6---lab-1---exercise-1---connect-data-to-microsoft-sentinel-using-data-connectors"></a>模块 6 - 实验室 1 - 练习 1 - 使用数据连接器将数据连接到 Microsoft Sentinel
 
@@ -67,9 +67,9 @@ ms.locfileid: "141493975"
 
 1. 在连接器信息边栏选项卡上选择“打开连接器页面”。
 
-1. 在“配置”区域的“订阅”下，选择“Azure Pass - 赞助”订阅复选框，然后选择“连接”。
+1. 在“配置”区域的“订阅”下，选中“Azure Pass - 赞助”订阅的复选框，并将“状态”选项滑动到右侧以指示“已连接” 。
 
-1. 阅读“连接”消息并选择“确定”以继续。 现在，“状态”应该是“已连接”，并且“双向同步”应该是“已启用” 。
+1. 现在，“状态”应该是“已连接”，并且“双向同步”应该是“已启用” 。
 
 1. 向下滚动，在“创建事件 - 推荐!” 区域下，选择“启用”。 此选项会自动为此服务创建“分析”规则。 如果此处未启用，可稍后手动添加它，或者在“分析”边栏选项卡中更改其配置。
 
