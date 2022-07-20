@@ -2,12 +2,12 @@
 lab:
   title: 练习 3 - 创建计划查询
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: 97e0ead1d3b79493deda54a3e268fc8f72f4070f
-ms.sourcegitcommit: 1b122762798f79fe9862bc662a7dc55f40b15dd5
+ms.openlocfilehash: ca549d6d3770e1a220c51b4e411ab0913a443e69
+ms.sourcegitcommit: f8918eddeaa7a7a480e92d0e5f2f71143c729d60
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2022
-ms.locfileid: "145912152"
+ms.lasthandoff: 07/08/2022
+ms.locfileid: "147038013"
 ---
 # <a name="module-7---lab-1---exercise-3---create-a-scheduled-query"></a>模块 7 - 实验室 1 - 练习 3 - 创建计划查询
 
@@ -94,6 +94,10 @@ ms.locfileid: "145912152"
 1. 选择底部的“下一步: 自动响应 >”按钮。
 
 1. 在“自动响应”选项卡的“警报自动化”区域下，选择在上一个练习中创建的“PostMessageTeams-OnAlert”playbook 。
+1. 在“事件自动化”选项卡上，选择“新增”
+1. 对于“自动化规则名称”，请输入“第 2 层”
+1. 对于“操作”，请选择“分配所有者”
+1. 然后，选择“分配给我”。 然后，选择“应用”。
 
 1. 选择底部的“下一步: 查看 >”按钮。
   

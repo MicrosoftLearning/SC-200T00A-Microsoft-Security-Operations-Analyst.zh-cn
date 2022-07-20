@@ -2,12 +2,12 @@
 lab:
   title: 练习 2 - 使用数据连接器将 Windows 设备连接到 Microsoft Sentinel
   module: Module 6 - Connect logs to Microsoft Sentinel
-ms.openlocfilehash: 9605e4624286654c8d99e1c1fdfc7c88e9508f54
-ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
+ms.openlocfilehash: 30ebc048c00a28680d7539692c442a2c399a8c01
+ms.sourcegitcommit: f8918eddeaa7a7a480e92d0e5f2f71143c729d60
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2022
-ms.locfileid: "141493924"
+ms.lasthandoff: 07/08/2022
+ms.locfileid: "147037995"
 ---
 # <a name="module-6---lab-1---exercise-2---connect-windows-devices-to-microsoft-sentinel-using-data-connectors"></a>模块 6 - 实验室 1 - 练习 2 - 使用数据连接器将 Windows 设备连接到 Microsoft Sentinel
 
@@ -67,24 +67,27 @@ ms.locfileid: "141493924"
 
 1. 选择之前创建的 Microsoft Sentinel 工作区。
 
-1. 在“数据连接器”选项卡中，搜索“通过旧版代理程序的安全事件”连接器，并从列表中选择它。
+1. 在“数据连接器”选项卡中，搜索“通过 AMA 的 Windows 安全事件”连接器，并从列表中选择它。
 
 1. 在连接器信息边栏选项卡上选择“打开连接器页面”。
 
-1. 在“配置”部分中的“1. 下载并安装代理”下，选择“在 Azure Windows 虚拟机上安装代理”选项。
-
-1. 选择“为 Azure Windows 虚拟机下载和安装代理”。 此时会显示 Azure 订阅中的可用虚拟机。
-
-1. 选择刚才在上一个任务中创建的 AZWIN01 虚拟机，然后选择“连接” 。 等待直到“状态”显示“此工作区”。
-
-1. 选择“x”关闭窗口。 在“配置”部分中的“2. 选择要流式传输的事件”下，选择“所有事件”，然后选择“应用更改” 。
+1. 在“配置”部分，选择“创建数据收集规则”。
+1. 为规则名称输入“AZWIN01DCR”，然后选择“下一步:**资源”** 。
+1. 选择“+添加资源”
+1. 展开“rg-azwin01”，然后选择“AZWIN01”。
+1. 选择“应用”。
+1. 选择“下一页:**收集”，然后选择“下一步:** **审阅并创建”**
+1. 选择“创建”
+1. 等待几分钟，然后选择“刷新”以查看列出的新数据收集规则。
 
 
 ### <a name="task-3-connect-a-non-azure-windows-machine"></a>任务 3：连接非 Azure Windows 计算机
 
-在此任务中，需要将非 Azure Windows 虚拟机连接到 Microsoft Sentinel。
+在此任务中，需要安装 Azure Arc 并将非 Azure Windows 虚拟机连接到 Microsoft Sentinel。  
 
 >**重要提示：** 接下来的步骤将在另一台计算机上完成，而不是你之前使用的计算机。 查找虚拟机名称引用。
+
+>**重要提示：** “通过 AMA 的 Windows 安全中心事件”需要针对非 Azure 设备的 Azure Arc。 
 
 1. 以管理员身份使用密码登录到 WIN2 虚拟机：**Pa55w.rd**。  
 
@@ -92,85 +95,87 @@ ms.locfileid: "141493924"
 
 1. 打开浏览器，并使用在先前的实验室中使用的凭据登录 Azure 门户 (https://portal.azure.com )。
 
-1. 在 Azure 门户的“搜索”栏中，键入 Sentinel，然后选择 Microsoft Sentinel。
 
-1. 选择 Microsoft Sentinel 工作区。
+1. 在“登录”对话框中，复制粘贴实验室托管提供者提供的租户电子邮件帐户，然后选择“下一步”  。
 
-1. 选择“数据连接器”，然后搜索“通过旧版代理程序的安全事件”连接器，并从列表中选择它 。
+1. 在“输入密码”对话框中，复制粘贴实验室托管提供者提供的租户密码，然后选择“登录”  。
+
+1. 在 Azure 门户的搜索栏中，键入“Arc”，然后选择“Azure Arc”。
+
+1. 在“基础结构”下的导航窗格中，选择“服务器” 
+
+1. 选择“+ 添加”。
+
+1. 在“添加单个服务器”部分中选择“生成脚本”。
+
+1. 选择“下一步”，转到“资源详细信息”选项卡。
+
+1. 选择之前创建的资源组。 提示：RG-Defender
+
+    >**注意：** 如果尚未创建资源组，请打开另一个选项卡并创建资源组，然后重新开始。
+
+1. 查看“服务器详细信息”和“连接方法”选项 。 保留默认值并选择“下一步”，以转到“标记”选项卡。
+
+1. 选择“下一步”，转到“下载并运行脚本”选项卡。
+
+1. 如果有“注册”选项，则选择以下位置中的“注册”，步骤 1.*选择“注册”* 。
+
+    >**注意：** 等待处理完成，至少需要三 (3) 分钟。
+
+1. 向下滚动并选择“下载”按钮。 提示：如果浏览器阻止下载，请在浏览器中执行操作以允许下载。 在 Microsoft Edge 浏览器中，根据需要选择省略号按钮 (...)，然后选择“保留”。 
+
+1. 右键单击 Windows 的“开始”按钮，然后选择“Windows PowerShell (管理员)”。
+
+1. 在“用户名”中输入“Administrator”，在“密码”中输入“Passw0rd!”  （如果收到 UAC 提示）。
+
+1. 输入：cd C:\Users\Admin\Downloads
+
+1. 键入“Set-ExecutionPolicy -ExecutionPolicy Unrestricted”，然后按 Enter。
+
+1. 输入“A”，表示全部接受，然后按 Enter。
+
+1. 键入“.\OnboardingScript.ps1”，然后按 Enter。  
+
+    >**重要提示：** 如果收到错误“无法识别术语 .\OnboardingScript.ps1...”，请确保是在 WINServer 虚拟机中执行任务 4 的步骤。 其他问题可能是由于多次下载导致文件名称更改，请在运行目录中搜索“.\OnboardingScript (1).ps1”或其他文件编号。
+
+1. 输入 R 以运行一次，然后按 Enter（这可能需要几分钟时间）。
+
+1. 返回到 Microsoft Edge 浏览器，打开一个新选项卡，并在地址栏中输入 https://microsoft.com/devicelogin 。
+
+1. 返回到 Windows PowerShell 窗口，复制在脚本最后一行“...enter the code”之后显示的代码，以对代理进行身份验证。
+
+1. 返回到 Microsoft Edge 浏览器，将其粘贴到“代码”框中，然后选择“下一步” 。 选择租户管理员帐户，然后在“是否尝试登录 Azure Connected Machine Agent？”窗口中选择“继续”。 
+
+1. 返回到 Windows PowerShell 窗口，等待消息“已成功将资源加入 Azure”。 **注意：** 如果看到带有新身份验证代码的消息行，则需要再次重复最后 3 步。
+
+1. 返回到下载脚本的 Azure 门户页面，然后选择“关闭”。 关闭“使用 Azure Arc 添加服务器”，返回到 Azure Arc 服务器页面 。
+
+1. 选择“刷新”，直到 WIN2 名称出现。
+
+    >**注意：** 这可能需要几分钟时间。
+
+
+
+1. 在 Azure 门户的搜索栏中，键入“Sentinel”，然后选择“Microsoft Sentinel”。
+
+1. 选择之前创建的 Microsoft Sentinel 工作区。
+
+1. 在“数据连接器”选项卡中，搜索“通过 AMA 的 Windows 安全事件”连接器，并从列表中选择它。
 
 1. 在连接器信息边栏选项卡上选择“打开连接器页面”。
 
-1. 在“配置”部分中的“1. 下载并安装代理”下，现在，请选择“在非 Azure Windows 计算机上安装代理”选项。
-
-1. 选择“为 Azure Windows 计算机下载和安装代理”。 
-
-    >**注意：** Log Analytics 工作区会显示 2 台 Windows 计算机已连接。 分别对应于之前连接的 WINServer 和 AZWIN01 虚拟机。
-
-1. 选择“下载 Windows 代理(64 位)”的链接。
-
-1. 选择已下载的 MMASetup-AMD64.exe 文件下的“打开文件”，然后选择“是”，以允许可执行文件在显示的“用户帐户控制”窗口中运行。
-
-1. 在欢迎对话框中选择“下一步”，在“Microsoft 软件许可条款”页面上选择“我同意”，然后在目标提示中选择“下一步”，以接受默认路径  。
-
-1. 在“代理安装选项”提示上，选择“将代理连接到 Azure Log Analytics (OMS)”选项，然后选择“下一步”。 
-
-1. 在打开了 Microsoft Sentinel 的浏览器中，从“代理管理”页复制工作区 ID，然后粘贴到对话框的“工作区 ID”中。 
-
-1. 在打开了 Microsoft Sentinel 的浏览器中，从“代理管理”页复制主键，然后粘贴到对话框的“工作区密钥”中。 
-
-1. 选择“下一步”以保存配置。
-
-1. 在“Microsoft 更新”页上选择“下一步”。
-
-1. 然后选择“安装”。 等待 Microsoft Monitoring Agent 安装完成。
-
-1. 完成后，选择“完成”。
+1. 在“配置”部分，选择“创建数据收集规则”。
+1. 为规则名称输入“WIN2”，然后选择“下一步:**资源”** 。
+1. 选择“+添加资源”
+1. 展开“rg-defender”（或创建的资源组），然后选择“WIN2”。
+1. 选择“应用”。
+1. 选择“下一页:**收集”，然后选择“下一步:** **审阅并创建”**
+1. 选择“创建”
+1. 等待几分钟，然后选择“刷新”以查看列出的新数据收集规则。
 
 
-### <a name="task-4-install-and-collect-sysmon-logs"></a>任务 4：安装并收集 Sysmon 日志
 
-在此任务中，你将安装并收集 Sysmon 日志。
-
->**注意：** 以下说明将使用默认配置安装 Sysmon。 应研究基于社区的配置，以便在生产计算机上使用 Sysmon。
-
-1. 在浏览器中打开新选项卡，转到 https://docs.microsoft.com/sysinternals/downloads/sysmon
-
-1. 从页面上选择“下载 Sysmon”以下载 Sysmon。
-
-1. 将鼠标悬停在 Sysmon.zip 上，然后选择文件夹图标。 右键单击下载的文件并选择“全部提取...”；在“文件将被提取到此文件夹”下输入 C:\Sysmon，然后选择“提取” 。 
-
-1. 在适用于 WIN2 的 Windows 任务栏搜索框中，输入“命令”。 搜索结果将显示命令提示符应用。 右键单击命令提示符应用，并选择“以管理员身份运行”。 选择“是”，允许应用在显示的“用户帐户控制”窗口中运行。
-
-1. 键入 cd \sysmon
-
-1. 键入“notepad sysmon.xml”以创建新文件。 选择“是”，以确认文件创建。
-
-1. 在浏览器中打开新选项卡，转到： https://github.com/SwiftOnSecurity/sysmon-config/blob/master/sysmonconfig-export.xml
-
-1. 选择“原始”按钮。 选择全文，然后从 GitHub 复制该文件的内容，并将其粘贴回刚刚创建的 sysmon.xml 记事本文件中。
-
-1. 在记事本中，选择“文件”，然后选择“保存”以保存文件 。
-
-1. 返回命令提示符，键入以下命令，然后按 Enter：sysmon.exe -accepteula -i sysmon.xml
-
-    >**重要提示：** 验证输出中是否出现“已验证配置文件”和“已启动 Sysmon”消息。 如果不是这种情况，请验证数据是否正确复制，以及 sysmon.xml 文件是否已保存。
-
-1. 在浏览器中，导航回打开 Azure 门户的选项卡 (https://portal.azure.com ) 
-
-1. 在 Azure 门户的“搜索”栏中，键入 Sentinel，然后选择 Microsoft Sentinel，并选择之前创建的 Microsoft Sentinel 工作区。
-
-1. 在 Microsoft Sentinel 中，从“配置”区域中选择“设置”，然后选择“工作区设置 >”选项卡 。
-
-1. 在“设置”区域中，选择“代理配置”。 默认情况下应选择“Windows 事件日志”选项卡。
-
-1. 选择“+ 添加 Windows 事件日志”按钮。
-
-1. 在“日志名称”字段中键入“Microsoft-Windows-Sysmon/Operational”。
-
-1. 选择“应用”。 这样，我们将可以从事件查看器收集 Sysmon 生成的所有事件。
-
-
-### <a name="task-5-onboard-microsoft-defender-for-endpoint-device"></a>任务 5：加入 Microsoft Defender for Endpoint 设备
+### <a name="task-4-onboard-microsoft-defender-for-endpoint-device"></a>任务 4：加入 Microsoft Defender for Endpoint 设备
 
 在此任务中，你需要将设备加入 Microsoft Defender for Endpoint。
 

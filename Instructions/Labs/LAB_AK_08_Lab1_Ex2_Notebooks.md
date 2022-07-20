@@ -2,12 +2,12 @@
 lab:
   title: 练习 2 - 使用 Notebook 通过 Microsoft Sentinel 进行威胁搜寻
   module: Module 8 - Perform threat hunting in Microsoft Sentinel
-ms.openlocfilehash: 3f48ff448906532c93fcb3a1b3478ca445dad777
-ms.sourcegitcommit: 1b122762798f79fe9862bc662a7dc55f40b15dd5
+ms.openlocfilehash: 6691a1bec1d9499c8e7741332ea827260bc3b816
+ms.sourcegitcommit: f8918eddeaa7a7a480e92d0e5f2f71143c729d60
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2022
-ms.locfileid: "145912155"
+ms.lasthandoff: 07/08/2022
+ms.locfileid: "147038016"
 ---
 # <a name="module-8---lab-1---exercise-2---threat-hunting-using-notebooks-with-microsoft-sentinel"></a>模块 8 - 实验室 1 - 练习 2 - 使用 Microsoft Sentinel 的 Notebook 进行威胁搜寻
 
@@ -49,7 +49,7 @@ ms.locfileid: "145912155"
 1. 在“工作区详细信息”部分中，执行以下任务：
 
      - 为工作区指定唯一的名称。
-     - 将“区域”的默认值保留为“(US) 美国东部”。
+     - 将“区域”的默认值保留为“美国东部”。
      - 保存默认的“存储帐户”、“密钥保管库”和“应用程序见解”信息。
      - “容器注册表”选项可以保留为“无”。
 

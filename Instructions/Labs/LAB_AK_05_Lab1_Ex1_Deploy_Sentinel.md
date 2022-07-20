@@ -2,12 +2,12 @@
 lab:
   title: 练习 1 - 配置 Microsoft Sentinel 环境
   module: Module 5 - Configure your Microsoft Sentinel environment
-ms.openlocfilehash: 3dc3670a58758c2d7de37878ba5b9413804596c4
-ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
+ms.openlocfilehash: c95a8bd0e358a7ca09dd2f7644c27779d3baa9f1
+ms.sourcegitcommit: f8918eddeaa7a7a480e92d0e5f2f71143c729d60
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2022
-ms.locfileid: "141493963"
+ms.lasthandoff: 07/08/2022
+ms.locfileid: "147038010"
 ---
 # <a name="module-5---lab-1---exercise-1---configure-your-microsoft-sentinel-environment"></a>模块 5 - 实验室 1 - 练习 1 - 配置 Microsoft Sentinel 环境
 
@@ -131,5 +131,17 @@ ms.locfileid: "141493963"
     ```KQL
     ThreatIntelligenceIndicator | project DomainName
     ```
+
+### <a name="task-4-configure-log-retention"></a>任务 4：配置日志保留期
+
+在此任务中，将更改 SecurityEvent 表的保持期。
+
+1. 在 Microsoft Sentinel 的“配置”区域中，选择“设置”选项。
+1. 选择“工作区设置”
+1. 在 Log Analytics 工作区中，选择“设置”区域中的“表(预览)”选项。
+1. 选择表名称“SecurityEvent”，然后选择“...”。
+1. 选择“管理表”。
+1. 为“总保持期”选择“180 天”。 然后“保存”。
+
 
 ## <a name="you-have-completed-the-lab"></a>你已完成本实验室。

@@ -2,12 +2,12 @@
 lab:
   title: 练习 1 - 修改 Microsoft 安全规则
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: 92e54277d1d8c51dd0ddde982409f991bfbe0766
-ms.sourcegitcommit: 1b122762798f79fe9862bc662a7dc55f40b15dd5
+ms.openlocfilehash: 266335a86b6ee3c1d86aaa4acf67cd1785aa5d2f
+ms.sourcegitcommit: f8918eddeaa7a7a480e92d0e5f2f71143c729d60
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2022
-ms.locfileid: "145912161"
+ms.lasthandoff: 07/08/2022
+ms.locfileid: "147038004"
 ---
 # <a name="module-7---lab-1---exercise-1---modify-a-microsoft-security-rule"></a>模块 7 - 实验室 1 - 练习 1 - 修改 Microsoft 安全规则
 
@@ -36,7 +36,7 @@ ms.locfileid: "145912161"
 
 1. 从“配置”区域选择“分析”。 默认情况下，会显示“有效规则”。
 
-1. 选择“基于 Microsoft Defender for CLoud 创建事件”。 此警报是由“模块 6 - 练习 1 - 任务 4”中配置的 Defender for Cloud 连接器自动创建的。 
+1. 选择“基于 Microsoft Defender for Cloud 创建事件”。 此规则是由“模块 6 - 练习 1 - 任务 4”中配置的 Defender for Cloud 连接器激活的。 
 
 1. 在右侧边栏选项卡上，选择“编辑”按钮。
 
@@ -48,4 +48,4 @@ ms.locfileid: "145912161"
 
 1. 查看所做的更改并选择“保存”按钮。 分析规则会保存。
 
-# <a name="proceed-to-exercise-2"></a>继续进行练习 2
+## <a name="proceed-to-exercise-2"></a>继续进行练习 2

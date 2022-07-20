@@ -2,12 +2,12 @@
 lab:
   title: 练习 2 - 使用 Microsoft Defender for Cloud 缓解威胁
   module: Module 3 - Mitigate threats using Microsoft Defender for Cloud
-ms.openlocfilehash: 50d77067c70634a4f887a7c8669b38fa7977b860
-ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
+ms.openlocfilehash: 2d08f56492a17cbf2606a51a56ce039e33417442
+ms.sourcegitcommit: f8918eddeaa7a7a480e92d0e5f2f71143c729d60
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2022
-ms.locfileid: "141493957"
+ms.lasthandoff: 07/08/2022
+ms.locfileid: "147037998"
 ---
 # <a name="module-3---lab-1---exercise-2---mitigate-threats-using-microsoft-defender-for-cloud"></a>模块 3 - 实验室 1 - 练习 2 - 使用 Microsoft Defender for Cloud 缓解威胁
 
@@ -15,12 +15,12 @@ ms.locfileid: "141493957"
 
 ![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod3_L1_Ex2.png)
 
-你是一位安全运营分析师，你所在公司已实现 Microsoft Defender for Cloud。 你负责应对由 Microsoft Defender for Cloud 生成的安全警报。
+你是一位安全运营分析师，你所在公司已实现 Microsoft Defender for Cloud。 你负责应对由 Microsoft Defender for Cloud 生成的建议和安全警报。
 
 
-### <a name="task-1-mitigate-security-alerts"></a>任务 1：缓解安全警报
+### <a name="task-1-explore-regulatory-compliance"></a>任务 1：探索法规符合性
 
-在此任务中，你将加载示例安全警报并查看警报详细信息。
+在此任务中，你将在 Microsoft Defender for Cloud 中查看法规符合性配置。 
 
 >**重要提示：** 接下来的步骤将在另一台计算机上完成，而不是你之前使用的计算机。 查找虚拟机名称引用。
 
@@ -33,6 +33,33 @@ ms.locfileid: "141493957"
 1. 在“输入密码”对话框中，复制粘贴实验室托管提供者提供的租户密码，然后选择“登录”  。
 
 1. 在 Azure 门户的搜索栏中，键入 Defender，然后选择“Microsoft Defender for Cloud”。
+
+1. 在“云安全”下，选择门户菜单中的“法规符合性”。
+1. 对于“法规符合性体验是否明确?”，请选择“是”。
+1. 在“法规符合性反馈”边栏选项卡中输入“类”。 然后选择“提交”。
+1. 在工具栏上选择“托管的符合性策略”。
+1. 选择订阅。
+1. 在“策略设置”下，在门户菜单中选择“安全策略”。
+1. 对于“法规符合性体验是否明确?”，请选择“是”。
+1. 查看支持你的环境的可用计划。
+1. 选择“Microsoft Defender for Cloud”以返回到主边栏选项卡。
+
+### <a name="task-2-explore-security-posture-and-recommendations"></a>任务 2：探索安全状况和建议
+
+在此任务中，你将查看云安全态势管理。  安全功能分数信息需要 24 小时才会重新计算。  在 24 小时内再次执行此任务会有好处。
+
+1. 在“云安全”下，选择门户菜单中的“安全状况”。
+1. 在计算安全功能分数之前，该分数很可能显示为“N/A”。
+1. 在“常规”下，选择门户菜单中的“建议”。
+1. 浏览提供的建议（24 小时后）。
+
+
+
+
+### <a name="task-3-mitigate-security-alerts"></a>任务 3：缓解安全警报
+
+在此任务中，你将加载示例安全警报并查看警报详细信息。
+
 
 1. 在门户菜单的“常规”下选择“安全警报”。
 

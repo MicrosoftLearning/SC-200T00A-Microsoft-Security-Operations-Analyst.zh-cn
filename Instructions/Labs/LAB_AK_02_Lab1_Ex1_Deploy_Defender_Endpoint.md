@@ -2,12 +2,12 @@
 lab:
   title: 练习 1 - 部署 Microsoft Defender for Endpoint
   module: Module 2 - Mitigate threats using Microsoft Defender for Endpoint
-ms.openlocfilehash: 7ecad955c59395014fbf39c2f9836d734137ed74
-ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
+ms.openlocfilehash: ddc1d68a0d0a8f7df50ae3a6e0b6a6e205391905
+ms.sourcegitcommit: f8918eddeaa7a7a480e92d0e5f2f71143c729d60
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2022
-ms.locfileid: "141493911"
+ms.lasthandoff: 07/08/2022
+ms.locfileid: "147038007"
 ---
 # <a name="module-2---lab-1---exercise-1---deploy-microsoft-defender-for-endpoint"></a>模块 2 - 实验室 1 - 练习 1 - 部署 Microsoft Defender for Endpoint
 
@@ -21,7 +21,7 @@ ms.locfileid: "141493911"
 
 >**重要提示：** 通过不同的模块使用实验室虚拟机。 请保存你的虚拟机。 如果在不保存的情况下退出实验室，将需要再次重新运行某些配置。
 
->**注意：** 请确保已成功完成前一模块的最后 3 个步骤。
+>**注意：** 请确保已成功完成前一模块的任务 3。
 
 
 ### <a name="task-1-initialize-microsoft-defender-for-endpoint"></a>任务 1：初始化 Microsoft Defender for Endpoint
