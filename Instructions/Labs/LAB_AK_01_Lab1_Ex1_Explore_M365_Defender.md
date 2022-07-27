@@ -2,12 +2,12 @@
 lab:
   title: 练习 1 - 探索 Microsoft 365 Defender
   module: Module 1 - Mitigate threats using Microsoft 365 Defender
-ms.openlocfilehash: e725991b72e1b7258c91ab8aef15b0c85e5e4a53
-ms.sourcegitcommit: f8918eddeaa7a7a480e92d0e5f2f71143c729d60
+ms.openlocfilehash: 024beb607208ed4b5a93f298ba8085ec7389d3ef
+ms.sourcegitcommit: 8c0ae4aec8425a85e0ba6dc8964406bf5d79e4d4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2022
-ms.locfileid: "147037983"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "147154476"
 ---
 # <a name="module-1---lab-1---exercise-1---explore-microsoft-365-defender"></a>模块 1 - 实验室 1 - 练习 1 - 探索 Microsoft 365 Defender 
 
@@ -30,7 +30,7 @@ ms.locfileid: "147037983"
 
 ### <a name="task-2-apply-microsoft-defender-for-office-365-preset-security-policies"></a>任务 2：应用 Microsoft Defender for Office 365 预设的安全策略
 
-在此任务中，将在 Microsoft 365 安全门户中为 EOP 和 Microsoft Defender for Office 365 分配预设策略。
+在此任务中，你将在 Microsoft 365 安全门户中为 Exchange Online Protection (EOP) 和 Microsoft Defender for Office 365 分配预设安全策略。
 
 1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：**Pa55w.rd**。  
 

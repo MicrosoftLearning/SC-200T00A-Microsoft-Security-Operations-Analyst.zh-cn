@@ -2,12 +2,12 @@
 lab:
   title: 练习 9 - 创建 ASIM 分析程序
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: bd90c61e55ce8324ada00d2ac533c569c628f15a
-ms.sourcegitcommit: f8918eddeaa7a7a480e92d0e5f2f71143c729d60
+ms.openlocfilehash: 5f115627b8d915bfb31e34532d3a2a7d79a23499
+ms.sourcegitcommit: 8c0ae4aec8425a85e0ba6dc8964406bf5d79e4d4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2022
-ms.locfileid: "147038031"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "147154479"
 ---
 # <a name="module-7---lab-1---exercise-9---create-asim-parsers"></a>模块 7 - 实验室 1 - 练习 9 - 创建 ASIM 分析程序
 
@@ -15,8 +15,7 @@ ms.locfileid: "147038031"
 
 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 需要为特定 Windows 注册表事件建模 ASIM 分析程序。  这些简化的分析程序将稍后按照 ASIM 分析程序注册表事件规范化标准完成（ https://docs.microsoft.com/en-us/azure/sentinel/registry-event-normalization-schema) 。
 
-
-
+>重要提示：此实验室需要将较长的 KQL ASIM 分析程序脚本输入到 Microsoft Sentinel 中。 这些脚本是在此实验室开始时通过下载文件提供的。 另一个下载这些脚本的位置是： https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/tree/master/Allfiles
 
 ### <a name="task-1-develop-kql-function-for-microsoft-365-defender-registry-event"></a>任务 1：为 Microsoft 365 Defender 注册表事件开发 KQL 函数 
 
@@ -35,7 +34,10 @@ ms.locfileid: "147038031"
 1. 选择之前创建的 Microsoft Sentinel 工作区。
 
 1. 选择“日志”页。
-1. 在“新建查询”选项卡中输入以下 KQL 语句：
+
+1. 打开已下载的 SC200_module7_ASIM_Parser_scripts.txt，然后复制任务 1 脚本 KQL 语句并将其粘贴到新的查询选项卡。
+
+>注意：下面的脚本仅供参考。
 
     ```KQL
     let RegistryType = datatable (TypeCode: string, TypeName: string) [
@@ -136,7 +138,9 @@ ms.locfileid: "147038031"
 在此任务中，将创建一个函数，它是 SecurityEvent 的工作区分析程序。
 
 1. 新建查询选项卡。
-1. 在“新建查询”选项卡中输入以下 KQL 语句：
+1. 打开已下载的 SC200_module7_ASIM_Parser_scripts.txt，然后复制任务 2 脚本 KQL 语句并将其粘贴到新的查询选项卡。
+
+>注意：下面的脚本仅供参考。
 
     ```KQL
     let RegistryType = datatable (TypeCode: string, TypeName: string) [

@@ -2,12 +2,12 @@
 lab:
   title: 练习 7 - 创建检测
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: 03e10d1275742f70b1b2871400a2002b4732f460
-ms.sourcegitcommit: f8918eddeaa7a7a480e92d0e5f2f71143c729d60
+ms.openlocfilehash: f94b4d459a9af82751b774f572db69df3c01bf7f
+ms.sourcegitcommit: 8c0ae4aec8425a85e0ba6dc8964406bf5d79e4d4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2022
-ms.locfileid: "147038030"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "147154503"
 ---
 # <a name="module-7---lab-1---exercise-7---create-detections"></a>模块 7 - 实验室 1 - 练习 7 - 创建检测
 
@@ -78,7 +78,7 @@ ms.locfileid: "147038030"
     | extend timestamp = TimeGenerated, HostCustomEntity = DeviceName, AccountCustomEntity = InitiatingProcessAccountName
     ```
 
-1. 你现在有一个不错的检测规则，接下来请在“日志”窗口中，选择命令栏中的“+ 新建警报规则”，然后选择“创建 Azure Sentinel 警报” 。 随后会创建新的计划规则。
+1. 你现在有一个不错的检测规则，接下来请在“日志”窗口中，选择命令栏中的“+ 新建预警规则”，然后选择“创建 Microsoft Sentinel 警报” 。 随后会创建新的计划规则。
 
 1. 这会启动“分析规则向导”。 在“常规”选项卡中，键入以下内容：
 
@@ -159,7 +159,7 @@ ms.locfileid: "147038030"
     | extend timestamp = TimeGenerated, HostCustomEntity = Computer, AccountCustomEntity = UserName1
     ```
 
-1. 你现在有一个不错的检测规则，接下来请在“日志”窗口中，选择命令栏中的“+ 新建警报规则”，然后选择“创建 Azure Sentinel 警报” 。
+1. 你现在有一个不错的检测规则，接下来请在“日志”窗口中，选择命令栏中的“+ 新建预警规则”，然后选择“创建 Microsoft Sentinel 警报” 。
 
 1. 这会启动“分析规则向导”。 在“常规”选项卡中，键入以下内容：
 
