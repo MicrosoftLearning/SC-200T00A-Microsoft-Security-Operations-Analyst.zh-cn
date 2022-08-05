@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: 5e75d2ffcd04176cbb1957d6597c425efb693fd6
-ms.sourcegitcommit: 6934bbcd5d9774aa44dd949cf9523e8a43a505d1
+ms.openlocfilehash: 48e003310cefa01ba3d20f56d4aedf8855656e07
+ms.sourcegitcommit: c026d30237cf9a0efdc6e7bbc58a395ecbc9e250
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/18/2022
-ms.locfileid: "147168437"
+ms.lasthandoff: 08/03/2022
+ms.locfileid: "147449891"
 ---
-# <a name="module-5-create-detections-and-perform-investigations-with-microsoft-sentinel"></a>模块 5 使用 Microsoft Sentinel 创建检测并执行调查
+# <a name="module-6-create-detections-and-perform-investigations-with-microsoft-sentinel"></a>模块 6 使用 Microsoft Sentinel 创建检测并执行调查
 
 备注：能否成功完成本演示取决于是否完成[先决条件文档](00-prerequisites.md)中的所有步骤。 
 

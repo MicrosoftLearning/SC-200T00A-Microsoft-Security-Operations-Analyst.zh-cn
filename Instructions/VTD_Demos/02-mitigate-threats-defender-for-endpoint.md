@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: 2fd744791ec4df2757b90424801e90101dee6382
-ms.sourcegitcommit: 6934bbcd5d9774aa44dd949cf9523e8a43a505d1
+ms.openlocfilehash: 456c138ac13d09fa836cdbb430b74c74569cddbc
+ms.sourcegitcommit: c026d30237cf9a0efdc6e7bbc58a395ecbc9e250
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/18/2022
-ms.locfileid: "147168434"
+ms.lasthandoff: 08/03/2022
+ms.locfileid: "147449888"
 ---
-# <a name="module-1-demo---mitigate-attacks-with-microsoft-defender-for-endpoint"></a>模块 1 演示 - 使用 Microsoft Defender for Endpoint 缓解攻击
+# <a name="module-2-demo---mitigate-attacks-with-microsoft-defender-for-endpoint"></a>模块 2 演示 - 使用 Microsoft Defender for Endpoint 缓解攻击
 
 
 

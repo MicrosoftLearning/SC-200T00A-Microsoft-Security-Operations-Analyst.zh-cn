@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: 97cfe7875df23dba8d3481430fbdbc5444702fd6
-ms.sourcegitcommit: 6934bbcd5d9774aa44dd949cf9523e8a43a505d1
+ms.openlocfilehash: 7153be471268ce4c563dd3445e17b58336850485
+ms.sourcegitcommit: c026d30237cf9a0efdc6e7bbc58a395ecbc9e250
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/18/2022
-ms.locfileid: "147168440"
+ms.lasthandoff: 08/03/2022
+ms.locfileid: "147449897"
 ---
-# <a name="module-2---mitigate-threats-using-microsoft-defender-for-cloud"></a>模块 2 - 使用 Microsoft Defender for Cloud 缓解威胁
+# <a name="module-3---mitigate-threats-using-microsoft-defender-for-cloud"></a>模块 3 - 使用 Microsoft Defender for Cloud 缓解威胁
 
 备注：能否成功完成本演示取决于是否完成[先决条件文档](00-prerequisites.md)中的所有步骤。 
 

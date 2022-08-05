@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: 395fef9928cfb7773a5b46a8c534f26d28a5e3ed
-ms.sourcegitcommit: 6934bbcd5d9774aa44dd949cf9523e8a43a505d1
+ms.openlocfilehash: f17cb18612147dbb60efe9cbcbad87819bd2a352
+ms.sourcegitcommit: c026d30237cf9a0efdc6e7bbc58a395ecbc9e250
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/18/2022
-ms.locfileid: "147168439"
+ms.lasthandoff: 08/03/2022
+ms.locfileid: "147449900"
 ---
-# <a name="module-6---threat-hunting-in-microsoft-sentinel"></a>模块 6 - 在 Microsoft Sentinel 中执行威胁搜寻
+# <a name="module-7---threat-hunting-in-microsoft-sentinel"></a>模块 7 - 在 Microsoft Sentinel 中执行威胁搜寻
 
 备注：能否成功完成本演示取决于是否完成[先决条件文档](00-prerequisites.md)中的所有步骤。 
 

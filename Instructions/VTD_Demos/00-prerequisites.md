@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: f0a0dac7e3f900c9c7f0a4a3f33de4d9ee06cdff
-ms.sourcegitcommit: 8c0ae4aec8425a85e0ba6dc8964406bf5d79e4d4
+ms.openlocfilehash: bac4babf32bbf62213da667426ce4644fdd88ef9
+ms.sourcegitcommit: c026d30237cf9a0efdc6e7bbc58a395ecbc9e250
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "147154506"
+ms.lasthandoff: 08/03/2022
+ms.locfileid: "147449894"
 ---
 
 # <a name="microsoft-security-operations-analyst"></a>Microsoft 安全运营分析师
@@ -17,7 +17,8 @@ ms.locfileid: "147154506"
 ## <a name="demo-prerequisites"></a>演示先决条件
 
 本课程的实验室需要 Microsoft 365 E5 许可的租户以及 Azure 订阅。
-* 你可以为自己申请 Microsoft Learning Azure Pass
+
+* 你可以为自己申请 Microsoft Learning Azure Pass。
 * 确保至少在进行演示前两周申请上述 Azure Pass。 收到 Pass 后，需要激活它。 
 * Azure Pass 的实际功能与公开可用的 Microsoft Azure 试用版订阅相同。 这意味着通行证的功能有限。
 * 实验室说明在 [SC-200 Microsoft Learning GitHub 存储库](https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/tree/master/Instructions/VTD_Demos/)中。

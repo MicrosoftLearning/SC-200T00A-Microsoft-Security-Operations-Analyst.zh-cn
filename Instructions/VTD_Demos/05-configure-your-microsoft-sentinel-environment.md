@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: 9267efde7b1d184fa4201ba07be947ffff21311e
-ms.sourcegitcommit: 6934bbcd5d9774aa44dd949cf9523e8a43a505d1
+ms.openlocfilehash: 8b5dbb31b0de6f493d9eb51a4a2e998aa248ce46
+ms.sourcegitcommit: c026d30237cf9a0efdc6e7bbc58a395ecbc9e250
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/18/2022
-ms.locfileid: "147168438"
+ms.lasthandoff: 08/03/2022
+ms.locfileid: "147449885"
 ---
-# <a name="module-4-configure-your-microsoft-sentinel-environment"></a>模块 4 配置 Microsoft Sentinel 环境
+# <a name="module-5-configure-your-microsoft-sentinel-environment"></a>模块 5 配置 Microsoft Sentinel 环境
 
 备注：能否成功完成本演示取决于是否完成[先决条件文档](00-prerequisites.md)中的所有步骤。 
 
