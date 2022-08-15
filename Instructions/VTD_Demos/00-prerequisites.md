@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: bac4babf32bbf62213da667426ce4644fdd88ef9
-ms.sourcegitcommit: c026d30237cf9a0efdc6e7bbc58a395ecbc9e250
+ms.openlocfilehash: 198d029e03950b40e9850b3552c5d448867b73f0
+ms.sourcegitcommit: 8bd0d3a1384dafb6db097ad5bff4ec65ee8b4d4b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2022
-ms.locfileid: "147449894"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "147541853"
 ---
 
 # <a name="microsoft-security-operations-analyst"></a>Microsoft 安全运营分析师
@@ -110,14 +110,18 @@ ms.locfileid: "147449894"
 
 1. 选择“添加项”。
 
-1. 在“添加角色”对话框中输入以下内容：角色名称：Tier  Live Response capabilities: select checkbox  Advanced: select。
+1. 在“添加角色”对话框中输入以下内容：
+
+    |常规设置|值|
+    |---|---|
+    |角色名称|**第 1 层支持**|
+    |权限|实时响应功能 - 高级|
 
 1. 选择“**下一步**”。
 
 1. 在“分配的用户组”选项卡中，选择“sg-IT”，然后选择“添加所选组”。
 
 1. 选择“保存”  。
-
 
 ### <a name="configure-device-groups"></a>配置设备组
 
@@ -131,20 +135,28 @@ ms.locfileid: "147449894"
 
 1. 在“常规”选项卡中输入以下信息：
 
-- 设备组名称：定期
-- 自动化级别：全面 - 自动修正威胁
-- 成员：名称 = TESTLAB
+    |常规设置|值|
+    |---|---|
+    |设备组名称|**常规**|
+    |自动化级别|全面 - 自动修正威胁|
 
-1. 选择“**下一步**”。
+1. 选择“下一步”  。
+
+1. . 在“设备”选项卡中，对操作系统条件选择“Windows 10”，然后选择“下一步” 。
+
+1. 在“预览设备”选项卡上，选择“显示预览”以查看 WIN1 虚拟机。 选择“下一步”  。 
+提示：如果没有在预览列表中看到虚拟机，请返回并同时为操作系统条件选择“无”。 尚未填充 VM 的数据。
 
 1. 在“用户访问权限”选项卡中，依次选择“sg-IT”和“添加所选组”
 
 1. 选择“完成”。
 
-1. 设备组配置已更改。 应用更改，以检查匹配项并重新计算分组。
+1. 设备组配置已更改。 选择“应用更改”，检查匹配项并重新计算分组。
+
+1. 现在，你将有两个设备组；刚创建的“常规”设备组和具有相同修正级别的“未分组的设备（默认）”设备组。
 
 
-## <a name="deploy-sample-alerts-for-demo-in-module-2"></a>为模块 2 中的演示部署示例警报
+## <a name="deploy-sample-alerts-for-demo-in-module-3"></a>为模块 3 中的演示部署示例警报
 
 在此任务中，你将加载示例安全警报并查看警报详细信息。
 
@@ -170,7 +182,7 @@ ms.locfileid: "147449894"
 
 在此任务中，你将创建 Microsoft Sentinel 工作区。
 
-1.  在 Microsoft Edge 浏览器中，导航到 Azure 门户 (https://portal.azure.com )。
+1. 在 Microsoft Edge 浏览器中，导航到 Azure 门户 (https://portal.azure.com )。
 
 1. 在“登录”对话框中，复制粘贴实验室托管提供者提供的租户电子邮件帐户，然后选择“下一步”  。
 
@@ -412,7 +424,7 @@ cd temp
 REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "SOC Test" /t REG_SZ /F /D "C:\temp\startup.bat"
 ```
 
-1. 攻击 3 - 复制并运行此命令：
+1. 攻击 2 - 复制并运行此命令：
 
 ```
 notepad c2.ps1

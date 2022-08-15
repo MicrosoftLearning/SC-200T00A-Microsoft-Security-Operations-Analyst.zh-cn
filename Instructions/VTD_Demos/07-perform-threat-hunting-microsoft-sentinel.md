@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: f17cb18612147dbb60efe9cbcbad87819bd2a352
-ms.sourcegitcommit: c026d30237cf9a0efdc6e7bbc58a395ecbc9e250
+ms.openlocfilehash: 6d1aeaf4445af8d38a6fe9f1689771c8243e67ed
+ms.sourcegitcommit: 8bd0d3a1384dafb6db097ad5bff4ec65ee8b4d4b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2022
-ms.locfileid: "147449900"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "147541856"
 ---
 # <a name="module-7---threat-hunting-in-microsoft-sentinel"></a>模块 7 - 在 Microsoft Sentinel 中执行威胁搜寻
 
@@ -16,107 +16,109 @@ ms.locfileid: "147449900"
 
 1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：**Pa55w.rd**。  
 
-2. 在 Microsoft Edge 浏览器中，导航到 Azure 门户 (https://portal.azure.com )。
+1. 在 Microsoft Edge 浏览器中，导航到 Azure 门户 (https://portal.azure.com )。
 
-3. 在“登录”对话框中，复制粘贴实验室托管提供者提供的租户电子邮件帐户，然后选择“下一步”  。
+1. 在“登录”对话框中，复制粘贴实验室托管提供者提供的租户电子邮件帐户，然后选择“下一步”  。
 
-4. 在“输入密码”对话框中，复制粘贴实验室托管提供者提供的租户密码，然后选择“登录”  。
+1. 在“输入密码”对话框中，复制粘贴实验室托管提供者提供的租户密码，然后选择“登录”  。
 
-5. 在 Azure 门户的搜索栏中，键入“Sentinel”，然后选择“Microsoft Sentinel”。
+1. 在 Azure 门户的搜索栏中，键入“Sentinel”，然后选择“Microsoft Sentinel”。
 
-6. 选择 Microsoft Sentinel 工作区。
+1. 选择 Microsoft Sentinel 工作区。
 
-7. 选择“日志” 
+1. 选择“日志” 
 
-8. 在新查询 1 区域输入以下 KQL 语句：
+1. 在新查询 1 区域输入以下 KQL 语句：
 
 ```KQL
 let lookback = 2d;
-DeviceEvents
-| where TimeGenerated >= ago(lookback) 
-| where ActionType == "DnsQueryResponse"
-| extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),"."))
-| where c2 startswith "sub"
-| summarize count() by bin(TimeGenerated, 3m), c2
+DeviceEvents | where TimeGenerated >= ago(lookback) 
+| where ActionType == "DnsQueryResponse"
+| extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),"."))
+| where c2 startswith "sub"
+| summarize count() by bin(TimeGenerated, 3m), c2
 | where count_ > 5
-| render timechart 
+| render timechart 
 ```
 
-9. 该语句是为了提供一个可视化效果，用于在一致基础上检查 C2 信标输出。  花点时间将“3 分钟”设置调整为 30 秒或更长时间。  将 count_ > 5 设置更改为其他阈值计数来观察影响。
+1. 该语句是为了提供一个可视化效果，用于在一致基础上检查 C2 信标输出。  花点时间将“3 分钟”设置调整为 30 秒或更长时间。  将 count_ > 5 设置更改为其他阈值计数来观察影响。
 
-10. 你现已确定要向 C2 服务器发送信标的 DNS 请求。  接下来，请确定要发送信标的设备。  输入以下 KQL 语句：
+1. 你现已确定要向 C2 服务器发送信标的 DNS 请求。  接下来，请确定要发送信标的设备。  输入以下 KQL 语句：
 
 ```KQL
 let lookback = 2d;
-DeviceEvents
-| where TimeGenerated >= ago(lookback) 
-| where ActionType == "DnsQueryResponse"
-| extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),"."))
-| where c2 startswith "sub"
-| summarize cnt=count() by bin(TimeGenerated, 5m), c2, DeviceName
+DeviceEvents | where TimeGenerated >= ago(lookback) 
+| where ActionType == "DnsQueryResponse"
+| extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),".")) 
+| where c2 startswith "sub"
+| summarize cnt=count() by bin(TimeGenerated, 5m), c2, DeviceName
 | where cnt > 15
 ```
 
-备注：生成日志数据仅来自一台设备。
+注意：生成的日志数据仅来自加入的设备。
 
-11. 在 Microsoft Sentinel 门户的“威胁管理”区域中选择“搜寻”页面。
+1. 通过选择窗口右上方的“X”关闭“日志”窗口，然后选择“确定”以放弃更改 。 
 
-12. 从命令栏选择“新建查询”。
+1. 在 Microsoft Sentinel 门户的“威胁管理”区域中选择“搜寻”页面。
 
-13. 对于查询，输入以下 KQL 语句：
+1. 从命令栏选择“新建查询”。
+
+1. 在“创建自定义查询”窗口中，为“名称”输入“C2 Hunt” 
+
+1. 对于“自定义查询”，输入以下 KQL 语句：
 
 ```KQL
 let lookback = 2d;
-DeviceEvents
-| where TimeGenerated >= ago(lookback) 
-| where ActionType == "DnsQueryResponse"
-| extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),"."))
-| where c2 startswith "sub"
-| summarize cnt=count() by bin(TimeGenerated, 5m), c2, DeviceName
+DeviceEvents | where TimeGenerated >= ago(lookback) 
+| where ActionType == "DnsQueryResponse"
+| extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),"."))
+| where c2 startswith "sub"
+| summarize cnt=count() by bin(TimeGenerated, 5m), c2, DeviceName
 | where cnt > 15
 ```
 
-14. 对于名称，输入“C2 搜寻”类型
+1. 向下滚动，在“实体映射（预览）”下，选择：
 
-15. 对于实体映射，输入：
+    - 对于“实体类型”下拉列表，请选择“Host”。
+    - 对于“标识符”下拉列表，选择“HostName”。
+    - 对于“值”下拉列表，选择“DeviceName”。
 
-    对于主机，选择“DeviceName”，然后选择“添加” 。
-    对于时间戳，选择“TimeGenerated”，然后选择“添加” 。
+1. 向下滚动，然后在“策略与技术”下选择“命令和控制”，然后选择“创建”以创建搜寻查询 。
 
-16. 选择“创建”。
+1. 在“Microsoft Sentinel - 搜寻”边栏选项卡中，在列表中搜索刚刚创建的查询“C2 Hunt” 。
 
-17. 在“Microsoft Sentinel | 搜寻”边栏选项卡中，在列表中搜索刚刚创建的查询“C2 Hunt”。
+1. 从列表中选择“C2 Hunt”。
 
-18. 在列表中选择“C2 搜寻”。
+1. 在右窗格中，向下滚动并选择“运行查询”按钮。
 
-19.  选择页面右侧的“运行查询”按钮。
+1. 结果数显示在“结果”列下的中间窗格中。 或者，向上滚动以查看“结果”框的计数。
 
-20. 结果计数显示在弹出窗口顶部。
+1. 选择“查看结果”。
 
-21. 选择“查看结果”。
+1. 选择结果中的第一行。 
 
-22. 选择结果中的第一行。 
+1. 选择“添加书签”。
 
-23. 选择“添加书签”。
+1. 在显示的窗格中选择“创建”。
 
-24. 在显示的窗格中选择“创建”。
+1. 返回到 Microsoft Sentinel 门户中的“搜寻”页面。
 
-25. 返回到 Microsoft Sentinel 门户中的“搜寻”页面。
+1. 选择“书签”选项卡。
 
-26. 选择“书签”选项卡。
+1. 在结果列表中选择书签。
 
-27. 在结果列表中选择书签。
+1. 在弹出窗格中选择“调查”。
 
-28. 在弹出窗格中选择“调查”。
+1. 浏览调查图。
 
-29. 浏览调查图。
+1. 返回到 Microsoft Sentinel 门户中的“搜寻”页面。
 
-30. 返回到 Microsoft Sentinel 门户中的“搜寻”页面。
+1. 选择“查询”选项卡
 
-31. 选择“查询”选项卡
+1. 选择“C2 搜寻”查询。
 
-32. 选择“C2 搜寻”查询。
+1. 选择该行末尾的 ...，打开上下文菜单。
 
-33. 选择该行末尾的 ...，打开上下文菜单。
+1. 选择“添加到 livestream”。
 
-34. 选择“添加到 livestream”。
+## <a name="you-have-completed-the-demo"></a>你已完成本演示。
