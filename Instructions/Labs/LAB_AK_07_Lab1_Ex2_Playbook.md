@@ -2,12 +2,12 @@
 lab:
   title: 练习 2 - 创建 Playbook
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: db4d3e74419475539b412afdb1b3e935f89d95b1
-ms.sourcegitcommit: 1b122762798f79fe9862bc662a7dc55f40b15dd5
+ms.openlocfilehash: c06fe1fd5adcf236783083c2870249560f61e73c
+ms.sourcegitcommit: 5bf676e43973b883b6d350ee061b6bbc292e528e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2022
-ms.locfileid: "145912158"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "147718803"
 ---
 # <a name="module-7---lab-1---exercise-2---create-a-playbook"></a>模块 7 - 实验室 1 - 练习 2 - 创建 Playbook
 
@@ -69,7 +69,9 @@ ms.locfileid: "145912158"
 
 1. 在右窗格中，选择“加入社区内容”链接。 这会在 Microsoft Edge 浏览器中打开一个新选项卡展示 Microsoft Sentinel GitHub 内容。
 
-1. 选择“Playbooks”文件夹。
+1. 选择“Solutions”文件夹。
+
+1. 接下来，选择“Teams”文件夹，然后选择“Playbooks”文件夹。
 
 1. 选择“Post-Message-Teams”文件夹。
 
