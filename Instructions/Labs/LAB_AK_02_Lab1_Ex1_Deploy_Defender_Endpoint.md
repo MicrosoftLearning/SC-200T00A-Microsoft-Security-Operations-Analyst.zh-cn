@@ -2,12 +2,12 @@
 lab:
   title: 练习 1 - 部署 Microsoft Defender for Endpoint
   module: Module 2 - Mitigate threats using Microsoft Defender for Endpoint
-ms.openlocfilehash: ddc1d68a0d0a8f7df50ae3a6e0b6a6e205391905
-ms.sourcegitcommit: f8918eddeaa7a7a480e92d0e5f2f71143c729d60
+ms.openlocfilehash: 70f7966e8584760ca61a7b15217b9db13bf1076d
+ms.sourcegitcommit: 8d2ac5382c9f5dc03a7171e0afa587fa84b0a8b2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2022
-ms.locfileid: "147038007"
+ms.lasthandoff: 09/06/2022
+ms.locfileid: "147854628"
 ---
 # <a name="module-2---lab-1---exercise-1---deploy-microsoft-defender-for-endpoint"></a>模块 2 - 实验室 1 - 练习 1 - 部署 Microsoft Defender for Endpoint
 
@@ -28,7 +28,7 @@ ms.locfileid: "147038007"
 
 在此任务中，你将执行 Microsoft Defender for Endpoint 门户的初始化。
 
-1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：**Pa55w.rd**。  
+1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：Pa55w.rd 。  
 
 1. 如果尚未处于 Microsoft 365 Defender 门户，请启动 Microsoft Edge 浏览器。
 
@@ -77,7 +77,7 @@ ms.locfileid: "147038007"
 
 1. 粘贴脚本的方法是右键单击“管理员:**命令提示符”窗口，并按 Enter 键运行** 。 **注意：** 窗口在运行脚本后自动关闭。
 
-1. 在 Microsoft 365 Defender 门户的左侧菜单中，在“终结点”区域下，选择“设备清单”。 如果设备未显示，请完成下一任务，稍后再回来查看。 可能需要多达 60 分钟，第一台设备才会显示在门户中。
+1. 在 Microsoft 365 Defender 门户的左侧菜单中，在“资产”区域下选择“设备” 。 如果设备未显示，请完成下一任务，稍后再回来查看。 可能需要多达 60 分钟，第一台设备才会显示在门户中。
 
     >**注意：** 如果你已完成载入过程，但在一小时后未在“设备”列表中看到设备，这可能指示存在载入或连接问题。
 

@@ -2,12 +2,12 @@
 lab:
   title: 练习 1 - 启用 Microsoft Defender for Cloud
   module: Module 3 - Mitigate threats using Microsoft Defender for Cloud
-ms.openlocfilehash: 3e8dfc8cf07fbc398ab2ee84f32b54a3313b62f8
-ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
+ms.openlocfilehash: e37191fb2c95e6d9c443dcb4e5a6a14e7ed0de62
+ms.sourcegitcommit: 8d2ac5382c9f5dc03a7171e0afa587fa84b0a8b2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2022
-ms.locfileid: "141493894"
+ms.lasthandoff: 09/06/2022
+ms.locfileid: "147854631"
 ---
 # <a name="module-3---lab-1---exercise-1---enable-microsoft-defender-for-cloud"></a>模块 3 - 实验室 1 - 练习 1 - 启用 Microsoft Defender for Cloud
 
@@ -22,7 +22,7 @@ ms.locfileid: "141493894"
 
 在此任务中，你将设置完成本实验室和以后的实验室所需的 Azure 订阅。
 
-1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：**Pa55w.rd**。  
+1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：Pa55w.rd 。  
 
 1. 打开 Microsoft Edge 浏览器，如果已打开浏览器，则打开新选项卡。
 
@@ -91,7 +91,7 @@ ms.locfileid: "141493894"
 
 >**重要提示：** 接下来的步骤将在另一台计算机上完成，而不是你之前使用的计算机。 查找虚拟机名称引用。
 
-1. 使用以下密码以管理员身份登录到 WINServer 虚拟机：Passw0rd! （如果需要）。  
+1. 使用以下密码以管理员身份登录到 WINServer 虚拟机：Passw0rd!  （如果需要）。  
 
 1. 打开 Microsoft Edge 浏览器并导航到 Azure 门户 (https://portal.azure.com )。
 
