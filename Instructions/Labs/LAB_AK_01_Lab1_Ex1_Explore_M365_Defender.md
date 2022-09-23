@@ -2,23 +2,25 @@
 lab:
   title: 练习 1 - 探索 Microsoft 365 Defender
   module: Module 1 - Mitigate threats using Microsoft 365 Defender
-ms.openlocfilehash: e49efce29c61889db8a0cafb012a714940dea563
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: 024beb607208ed4b5a93f298ba8085ec7389d3ef
+ms.sourcegitcommit: 8c0ae4aec8425a85e0ba6dc8964406bf5d79e4d4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025417"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "147154476"
 ---
 # <a name="module-1---lab-1---exercise-1---explore-microsoft-365-defender"></a>模块 1 - 实验室 1 - 练习 1 - 探索 Microsoft 365 Defender 
 
 ## <a name="lab-scenario"></a>实验室方案
+
+![M365 Defender](../Media/SC-200-Lab_M1_L1_Ex1.png)
 
 你是一家公司的安全运营分析师，你所在公司正在实现 Microsoft 365 Defender。 首先，在 EOP 和 Microsoft Defender for Office 365 中分配预设的安全策略。
 
 
 ### <a name="task-1-obtain-your-microsoft-365-credentials"></a>任务 1：获取 Microsoft 365 凭据
 
-启动实验室后，你将获得一个免费试用版租户，可在 Microsoft 虚拟实验室环境中访问。 系统会自动向该租户分配一个唯一用户名和密码。 你需要检索此用户名和密码，以便在 Microsoft 虚拟实验室环境中登录 Azure 和 Microsoft 365。 
+启动实验室后，你将获得一个免费试用版租户，可在 Microsoft 虚拟实验室环境中访问。 系统会自动向该租户分配一个唯一用户名和密码。 你必须检索此用户名和密码，以便在 Microsoft 虚拟实验室环境中登录 Azure 和 Microsoft 365。 
 
 由于学习合作伙伴可以通过多家授权实验室托管 (ALH) 提供商中的任何一家来提供本课程，因此检索与租户关联的租户 ID 所涉及的实际步骤可能因实验室托管提供商而异。 因此，讲师需要向你提供必要的指导，介绍如何检索课程的此类信息。 你应该记录以供稍后使用的信息包括：
 
@@ -28,7 +30,7 @@ ms.locfileid: "138025417"
 
 ### <a name="task-2-apply-microsoft-defender-for-office-365-preset-security-policies"></a>任务 2：应用 Microsoft Defender for Office 365 预设的安全策略
 
-在此任务中，将在 Microsoft 365 安全门户中为 EOP 和 Microsoft Defender for Office 365 分配预设策略。
+在此任务中，你将在 Microsoft 365 安全门户中为 Exchange Online Protection (EOP) 和 Microsoft Defender for Office 365 分配预设安全策略。
 
 1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：**Pa55w.rd**。  
 
@@ -40,7 +42,7 @@ ms.locfileid: "138025417"
 
 1. 在“输入密码”对话框中，复制粘贴实验室托管提供者提供的管理员的租户密码，然后选择“登录” 。
 
-    >注意：如果收到消息“无法访问此部分。” 请等待 5 分钟，再重试。 有时访问规则需传播租户，这可能需要几分钟时间。  
+    >**注意：** 如果收到消息“操作无法完成。 请稍后再试。 如果问题持续出现，请联系 Microsoft 支持部门。”， 单击“确定”即可继续。  
 
 1. 如果显示，请关闭 Microsoft 365 Defender 快速导览。
 
@@ -52,27 +54,35 @@ ms.locfileid: "138025417"
 
     >**注意：** 如果收到消息“客户端错误 - 收到 bip 规则时出错”，请选择“确定”以继续。 此错误是由于 Office 365 在默认情况下未启用租户的冻结状态。
 
-1. 在“标准保护”下，选择“管理”。
+    >**注意：** 如果你收到消息“客户端错误 - 检索预设的安全策略时发生错误。*请稍后重试。”* ， 选择“确定”继续。 使用 Ctrl+F5 刷新浏览器。
 
-1. 在“EOP 保护适用范围”部分，在“域”下，写入租户的域名，选中它，然后选择“下一步” 。 提示：租户的域名与管理员帐户的域名相同，可能与 WWLx####.onmicrosoft.com 类似。 请注意，此配置适用于防垃圾邮件、出站垃圾邮件筛选器、防恶意软件和防钓鱼的策略。 
+1. 在“标准保护”下，选择“管理保护设置”。 提示：如果看到此选项灰显，请使用 Ctrl+F5 刷新浏览器。
 
-1. 在“Defender for Office 365 保护适用范围”部分，应用与上一步相同的配置，然后选择“下一步”。 请注意，此配置适用于防钓鱼、安全附件、安全链接的策略。
+1. 在“应用 Exchange Online Protection”部分中，选择“特定收件人”，然后在“域”下开始编写租户的域名，选择它，然后选择“下一步”。 提示：租户的域名与管理员帐户的域名相同，可能与 WWLx####.onmicrosoft.com 类似。 请注意，此配置适用于防垃圾邮件、出站垃圾邮件筛选器、防恶意软件和防钓鱼的策略。 
 
-1. 阅读“查看并确认更改”下的内容，选择“确认”以应用更改，然后选择“完成”以完成 。
+1. 在“应用 Defender for Office 365 保护”部分，应用与上一步相同的配置，然后选择“下一步”。 请注意，此配置适用于防钓鱼、安全附件、安全链接的策略。
 
-1. 在“严格保护”下，选择“管理”。 提示：在“电子邮件与协作 - 策略与规则 - 威胁策略 - 预设安全策略”下找到“严格保护”。
+1. 在“模拟保护”部分，选择“下一步”四次（4 次）继续。
 
-1. 在“EOP 保护适用范围”中，在“组”下写入“领导层”，选择它，然后选择“下一步”  。 请注意，此配置适用于防垃圾邮件、出站垃圾邮件筛选器、防恶意软件和防钓鱼的策略。
-
-1. 在“Defender for Office 365 保护适用范围”部分，应用与上一步相同的配置，然后选择“下一步”。 请注意，此配置适用于防钓鱼、安全附件、安全链接的策略。
+1. 在“策略模式”部分，确保选中“完成后启用策略”单选按钮，然后选择“下一步” 。
 
 1. 阅读“查看并确认更改”下的内容，选择“确认”以应用更改，然后选择“完成”以完成 。
 
-1. 在顶部中间菜单中，选择“威胁策略”以返回，在“策略”下，选择“安全附件”。 请注意，这两个预设策略都显示在此处，状态为“开启”。
+    >**注意：** 如果你收到信息“URI 'https://outlook.office365.com/psws/service.svc/AntiPhishPolicy ' 对 PUT 操作无效。*对于 PUT 操作，URI 必须指向单个资源。”* ， 只需选择“确定”并取消操作。 你将看到“标准保护已启用”选项启用。
 
-1. 在菜单中，选择“全局设置”的“齿轮”图标 。
+1. 在“严格保护”下，选择“管理保护设置”。 提示：在“电子邮件与协作 - 策略与规则 - 威胁策略 - 预设安全策略”下找到“严格保护”。
 
-1. 通读可用的集成选项，然后选择“取消”以返回。
+1. 在“应用 Exchange Online Protection”中，选择“特定收件人”，然后在“组”下开始写入“领导力”，选择它，然后选择”下一步”。 请注意，此配置适用于防垃圾邮件、出站垃圾邮件筛选器、防恶意软件和防钓鱼的策略。
+
+1. 在“应用 Defender for Office 365 保护”部分，应用与上一步相同的配置，然后选择“下一步”。 请注意，此配置适用于防钓鱼、安全附件、安全链接的策略。
+
+1. 在“模拟保护”部分，选择“下一步”四次（4 次）继续。
+
+1. 在“策略模式”部分，确保选中“完成后启用策略”单选按钮，然后选择“下一步” 。
+
+1. 阅读“查看并确认更改”下的内容，选择“确认”以应用更改，然后选择“完成”以完成 。
+
+    >**注意：** 如果你收到信息“URI 'https://outlook.office365.com/psws/service.svc/AntiPhishPolicy ' 对 PUT 操作无效。*对于 PUT 操作，URI 必须指向单个资源。”* ， 只需选择“确定”并取消操作。 你将看到“严格保护已启用”选项启用。
 
 1. 在 Microsoft 365 Defender 门户中，从左侧“导航”菜单中选择“设置” 。
 

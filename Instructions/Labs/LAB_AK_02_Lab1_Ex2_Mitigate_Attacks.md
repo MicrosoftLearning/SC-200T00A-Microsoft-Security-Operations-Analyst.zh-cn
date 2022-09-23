@@ -2,16 +2,18 @@
 lab:
   title: 练习 2 - 使用 Microsoft Defender for Endpoint 缓解攻击
   module: Module 2 - Mitigate threats using Microsoft Defender for Endpoint
-ms.openlocfilehash: 0f79ef27e27b989481d50b9ff617c21ba6770705
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: 75d7cb14ee90aeaafd539a3cd7ad32163f53474f
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025411"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493852"
 ---
 # <a name="module-2---lab-1---exercise-2---mitigate-attacks-with-microsoft-defender-for-endpoint"></a>模块 2 - 实验室 1 - 练习 2 - 使用 Microsoft Defender for Endpoint 缓解攻击
 
 ## <a name="lab-scenario"></a>实验室方案
+
+![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod2_L1_Ex2.png)
 
 你是一家公司的安全操作分析师，你的公司正在实施 Microsoft Defender for Endpoint。 你的主管计划加入一些设备，以深入了解安全运营 (SecOps) 团队响应程序所需的更改。
 
@@ -44,9 +46,9 @@ ms.locfileid: "138025411"
 
 1. 选择切换“分配给我”，将用户帐户添加为事件所有者。 
 
-1. 在“分类”下的下拉菜单中，选择“真警报” 。 
+1. 在“分类”下，展开下拉菜单。 
 
-1. 在“确定”下的下拉菜单中，选择“安全测试” 。 
+1. 在“参考性预期活动”下，选择“安全测试” 。 
 
 1. 如果需要，请添加注释，然后单击“保存”完成操作。
 

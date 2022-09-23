@@ -2,16 +2,18 @@
 lab:
   title: 练习 1 - 配置 Microsoft Sentinel 环境
   module: Module 5 - Configure your Microsoft Sentinel environment
-ms.openlocfilehash: e8d4347932306ebfab7b75dd110e3ae3a0e4cca9
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: c95a8bd0e358a7ca09dd2f7644c27779d3baa9f1
+ms.sourcegitcommit: f8918eddeaa7a7a480e92d0e5f2f71143c729d60
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025408"
+ms.lasthandoff: 07/08/2022
+ms.locfileid: "147038010"
 ---
 # <a name="module-5---lab-1---exercise-1---configure-your-microsoft-sentinel-environment"></a>模块 5 - 实验室 1 - 练习 1 - 配置 Microsoft Sentinel 环境
 
 ## <a name="lab-scenario"></a>实验室方案
+
+![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod5_L1_Ex1.png)
 
 你是一位安全运营分析师，你所在公司正在实现 Microsoft Sentinel。 你负责设置满足公司要求的 Microsoft Sentinel 环境，并最大程度降低成本、符合法规要求，同时为安全团队提供最易于管理的环境，以便其履行日常工作职责。
 
@@ -129,5 +131,17 @@ ms.locfileid: "138025408"
     ```KQL
     ThreatIntelligenceIndicator | project DomainName
     ```
+
+### <a name="task-4-configure-log-retention"></a>任务 4：配置日志保留期
+
+在此任务中，将更改 SecurityEvent 表的保持期。
+
+1. 在 Microsoft Sentinel 的“配置”区域中，选择“设置”选项。
+1. 选择“工作区设置”
+1. 在 Log Analytics 工作区中，选择“设置”区域中的“表(预览)”选项。
+1. 选择表名称“SecurityEvent”，然后选择“...”。
+1. 选择“管理表”。
+1. 为“总保持期”选择“180 天”。 然后“保存”。
+
 
 ## <a name="you-have-completed-the-lab"></a>你已完成本实验室。

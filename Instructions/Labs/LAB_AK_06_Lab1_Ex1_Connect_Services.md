@@ -2,16 +2,18 @@
 lab:
   title: 练习 1 - 使用数据连接器将数据连接到 Microsoft Sentinel
   module: Module 6 - Connect logs to Microsoft Sentinel
-ms.openlocfilehash: 1f946958246be76294aa75463b5f9877905d6090
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: ba1ab1fbfbc322357395fc6d78ba124eda9d00cc
+ms.sourcegitcommit: 190d5d493301a8c8d98c86772d2500128637ad2d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025444"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "146650236"
 ---
 # <a name="module-6---lab-1---exercise-1---connect-data-to-microsoft-sentinel-using-data-connectors"></a>模块 6 - 实验室 1 - 练习 1 - 使用数据连接器将数据连接到 Microsoft Sentinel
 
 ## <a name="lab-scenario"></a>实验室方案
+
+![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod6_L1_Ex1.png)
 
 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你需要了解如何连接来自组织中多个数据源的日志数据。 组织的数据来自 Microsoft 365、Microsoft 365 Defender、Azure 资源、非 Azure 虚拟机等。首先开始连接 Microsoft 源。
 
@@ -65,9 +67,9 @@ ms.locfileid: "138025444"
 
 1. 在连接器信息边栏选项卡上选择“打开连接器页面”。
 
-1. 在“配置”区域的“订阅”下，选择“Azure Pass - 赞助”订阅复选框，然后选择“连接”。
+1. 在“配置”区域的“订阅”下，选中“Azure Pass - 赞助”订阅的复选框，并将“状态”选项滑动到右侧以指示“已连接” 。
 
-1. 阅读“连接”消息并选择“确定”以继续。 现在，“状态”应该是“已连接”，并且“双向同步”应该是“已启用” 。
+1. 现在，“状态”应该是“已连接”，并且“双向同步”应该是“已启用” 。
 
 1. 向下滚动，在“创建事件 - 推荐!” 区域下，选择“启用”。 此选项会自动为此服务创建“分析”规则。 如果此处未启用，可稍后手动添加它，或者在“分析”边栏选项卡中更改其配置。
 

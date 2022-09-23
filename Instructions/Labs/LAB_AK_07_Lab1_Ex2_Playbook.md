@@ -2,16 +2,18 @@
 lab:
   title: 练习 2 - 创建 Playbook
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: 8a8117e90593c1c2a022169551b7a13df2cfcff4
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: c06fe1fd5adcf236783083c2870249560f61e73c
+ms.sourcegitcommit: 5bf676e43973b883b6d350ee061b6bbc292e528e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025474"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "147718803"
 ---
 # <a name="module-7---lab-1---exercise-2---create-a-playbook"></a>模块 7 - 实验室 1 - 练习 2 - 创建 Playbook
 
 ## <a name="lab-scenario"></a>实验室方案
+
+![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex2.png)
 
 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你需要了解如何使用 Microsoft Sentinel 检测和缓解威胁。 现在，你想要响应和修正可以从 Microsoft Sentinel 作为例程运行的操作。
 
@@ -44,7 +46,7 @@ ms.locfileid: "138025474"
 
 1. 在“向 SOC 添加成员”屏幕中，选择“跳过”按钮。 
 
-1. 向下滚动“团队”边栏选项卡以找到新创建的 SOC 团队，选择名称右侧的“...”，然后选择“添加频道” 。
+1. 向下滚动“团队”边栏选项卡以找到新创建的 SOC 团队，选择名称右侧的省略号“...”，然后选择“添加频道” 。
 
 1. 输入频道名称“新建警报”，然后选择“添加”按钮。
 
@@ -67,7 +69,9 @@ ms.locfileid: "138025474"
 
 1. 在右窗格中，选择“加入社区内容”链接。 这会在 Microsoft Edge 浏览器中打开一个新选项卡展示 Microsoft Sentinel GitHub 内容。
 
-1. 选择“Playbooks”文件夹。
+1. 选择“Solutions”文件夹。
+
+1. 接下来，选择“Teams”文件夹，然后选择“Playbooks”文件夹。
 
 1. 选择“Post-Message-Teams”文件夹。
 
@@ -79,9 +83,9 @@ ms.locfileid: "138025474"
 
 1. 对于资源组，选择“新建”并输入“RG-Playbooks”，然后选择“确定”。
 
-1. 对于区域，选择适合你的情况的区域。 默认区域是最优的。
+1. 将“区域”的默认值保留为“(US) 美国东部”。
 
-1. 确保“Playbook 名称”为 PostMessageTeams-OnAlert，然后选择“查看 + 创建”。
+1. 确保“Playbook 名称”为 PostMessageTeams-OnAlert，然后选择“查看 + 创建”。 提示：如果名称不同，请返回到 GitHub 并选择“使用警报触发器部署”playbook。
 
 1. 现在选择“创建”。 
 
@@ -102,7 +106,7 @@ ms.locfileid: "138025474"
 
 1. 在 PostMessageTeams-OnAlert 的逻辑应用页的命令菜单中，选择“编辑”。
 
-1. 对 Microsoft Sentinel 警报触发响应时，选择第一个块。
+1. 选择第一个块，Microsoft Sentinel 警报。
 
 1. 选择“更改连接”链接。
 

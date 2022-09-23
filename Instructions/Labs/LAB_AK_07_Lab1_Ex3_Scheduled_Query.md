@@ -2,16 +2,18 @@
 lab:
   title: 练习 3 - 创建计划查询
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: c76ba6f5bdd5c1f380393b3f0ebbdb16c85626c1
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: ca549d6d3770e1a220c51b4e411ab0913a443e69
+ms.sourcegitcommit: f8918eddeaa7a7a480e92d0e5f2f71143c729d60
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025477"
+ms.lasthandoff: 07/08/2022
+ms.locfileid: "147038013"
 ---
 # <a name="module-7---lab-1---exercise-3---create-a-scheduled-query"></a>模块 7 - 实验室 1 - 练习 3 - 创建计划查询
 
 ## <a name="lab-scenario"></a>实验室方案
+
+![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex3.png)
 
 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你需要了解如何使用 Microsoft Sentinel 检测和缓解威胁。 将数据源连接到 Microsoft Sentinel 后，可以创建自定义分析规则来帮助发现环境中的威胁和异常行为。
 
@@ -87,11 +89,15 @@ ms.locfileid: "138025477"
 
 1. 选择底部的“下一步: 事件设置 >”按钮。 
 
-1. 在“事件设置(预览版)”选项卡上，查看默认选项。
+1. 在“事件设置”选项卡上，查看默认选项。
 
 1. 选择底部的“下一步: 自动响应 >”按钮。
 
 1. 在“自动响应”选项卡的“警报自动化”区域下，选择在上一个练习中创建的“PostMessageTeams-OnAlert”playbook 。
+1. 在“事件自动化”选项卡上，选择“新增”
+1. 对于“自动化规则名称”，请输入“第 2 层”
+1. 对于“操作”，请选择“分配所有者”
+1. 然后，选择“分配给我”。 然后，选择“应用”。
 
 1. 选择底部的“下一步: 查看 >”按钮。
   
@@ -112,9 +118,9 @@ ms.locfileid: "138025477"
 
 1. 从命令栏中选择“+ 添加分配”。
 
-1. 在“添加分配”页的“成员身份”选项卡的“选择角色”下，选择“用户管理员”  。 然后选择“下一步 >”。
+1. 在“添加分配”页的“成员身份”选项卡的“选择角色”下，选择“用户管理员”  。 并选择“添加”。
 
-1. 查看“设置”选项卡中的默认“分配类型”，然后选择“分配” 。 如果分配无法完成，请重试。
+    >**注意：** 可能需要单击“刷新”按钮才能看到新的角色分配。 
 
 1. 通过选择两次右上方的“x”来关闭“Christie Cline - 分配角色”和“用户 - 所有用户”页。
 

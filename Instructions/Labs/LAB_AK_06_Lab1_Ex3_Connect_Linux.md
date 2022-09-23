@@ -2,16 +2,18 @@
 lab:
   title: 练习 3 - 使用数据连接器将 Linux 主机连接到 Microsoft Sentinel
   module: Module 6 - Connect logs to Microsoft Sentinel
-ms.openlocfilehash: b4ab3cbac9e48dbda18b9daa58739b878e5661a0
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: bf3774978dc5c6cef158d5f1288577854000d944
+ms.sourcegitcommit: a90325f86a3497319b3dc15ccf49e0396c4bf749
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025486"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "141493969"
 ---
 # <a name="module-6---lab-1---exercise-3---connect-linux-hosts-to-microsoft-sentinel-using-data-connectors"></a>模块 6 - 实验室 1 - 练习 3 - 使用数据连接器将 Linux 主机连接到 Microsoft Sentinel
 
 ## <a name="lab-scenario"></a>实验室方案
+
+![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod6_L1_Ex3.png)
 
 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你需要了解如何连接来自组织中多个数据源的日志数据。 下一个数据源是使用通用事件格式化 (CEF) 和 Syslog 连接器的 Linux 虚拟机。
 
@@ -51,30 +53,30 @@ ms.locfileid: "138025486"
 
 1. 请注意 LIN1 服务器的 IP 地址。 以下面的屏幕截图为例：
 
-   ![linux 登录](../Media/LinuxLoginExample.png)
+    ![linux 登录](../Media/LinuxLoginExample.png)
 
 1. 返回到 WIN1 虚拟机。 通过右键单击“开始”菜单图标以管理员身份启动 Windows PowerShell，然后选择“Windows PowerShell(管理员)”。 选择“是”，允许应用在显示的“用户帐户控制”窗口中运行。 提示：你可能已从前面的练习中打开了一个 Windows PowerShell 窗口。
 
 1. 输入以下 PowerShell 命令，根据你的具体 Linux 服务器信息进行调整，然后按 Enter：
 
-   ```PowerShell
-   ssh insert-your-linux-IP-address-here -l insert-linux-user-name-here
-   ```
+    ```PowerShell
+    ssh insert-your-linux-IP-address-here -l insert-linux-user-name-here
+    ```
 
 1. 输入“yes”以确认连接，然后键入用户密码，并按 Enter 键。 屏幕应如下所示：
 
-   ![linux 登录](../Media/PSconnectLinux.png)
+    ![linux 登录](../Media/PSconnectLinux.png)
 
 1. 现在可以粘贴前面的步骤中的“1.2 在 Linux 计算机上安装 CEF 收集器”命令。 确保来自 Azure 的脚本在剪贴板中。 在 PowerShell 中右键单击顶部栏并依次选择“编辑”、“粘贴” 。 
 
 1. 粘贴后，在按 Enter 键之前，将字符 3 添加到单词 python，如下所示：
 
-   ![连接器脚本](../Media/ConnectorScript.png)
+    ![连接器脚本](../Media/ConnectorScript.png)
 
 
 1. 调整脚本后，按 Enter 键。 该脚本将在 Linux 服务器上远程运行。 如果脚本处理得当，它应如以下屏幕所示：
 
-   ![连接器脚本](../Media/LinuxConnected.png)
+    ![连接器脚本](../Media/LinuxConnected.png)
 
 1. 键入“exit”以关闭与 LIN1 的远程 Shell 连接。
 
@@ -105,19 +107,19 @@ ms.locfileid: "138025486"
 
 1. 请注意 LIN2 服务器的 IP 地址。 以下面的屏幕截图为例：
 
-   ![linux 登录](../Media/LinuxLoginExample.png)
+    ![linux 登录](../Media/LinuxLoginExample.png)
 
 1. 返回到 WIN1 虚拟机。 选择上一个任务中使用的 Windows PowerShell。
 
 1. 输入以下 PowerShell 命令，根据你的具体 Linux 服务器信息进行调整，然后按 Enter：
 
-   ```PowerShell
-   ssh insert-your-linux-IP-address-here -l insert-linux-user-name-here
-   ```
+    ```PowerShell
+    ssh insert-your-linux-IP-address-here -l insert-linux-user-name-here
+    ```
 
 1. 输入“yes”以确认连接，然后键入用户密码，并按 Enter 键。 屏幕应如下所示：
 
-   ![linux 登录](../Media/PSconnectLinux.png)
+    ![linux 登录](../Media/PSconnectLinux.png)
 
 1. 现在可以粘贴前面的步骤中的“下载和加入适用于 Linux 的代理”命令。 确保脚本在剪贴板中。 在 PowerShell 中右键单击顶部栏并依次选择“编辑”、“粘贴” 。
 

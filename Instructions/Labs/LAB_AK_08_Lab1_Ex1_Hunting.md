@@ -2,16 +2,18 @@
 lab:
   title: 练习 1 - 在 Microsoft Sentinel 中执行威胁搜寻
   module: Module 8 - Perform threat hunting in Microsoft Sentinel
-ms.openlocfilehash: 5fe3c20f10e420294fdb2b1048daec19ce359f02
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: 3e2631435122423265dbef3f56f06340706abc9f
+ms.sourcegitcommit: f8918eddeaa7a7a480e92d0e5f2f71143c729d60
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025498"
+ms.lasthandoff: 07/08/2022
+ms.locfileid: "147038019"
 ---
 # <a name="module-8---lab-1---exercise-1---perform-threat-hunting-in-microsoft-sentinel"></a>模块 8 - 实验室 1 - 练习 1 - 在 Azure Sentinel 中执行威胁搜寻
 
 ## <a name="lab-scenario"></a>实验室方案
+
+![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod8_L1_Ex1.png)
 
 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你收到了关于命令和控制（C2 或 C&C）技术的威胁情报。 你需要执行搜寻并监视威胁。
 
@@ -42,18 +44,18 @@ ms.locfileid: "138025498"
 
    >**重要提示：** 请首先将任意 KQL 查询粘贴到记事本，然后从此处复制到“新建查询 1 日志”窗口以避免任何错误。
 
-   ```KQL
-   let lookback = 2d;
-   DeviceEvents | where TimeGenerated >= ago(lookback) 
-   | where ActionType == "DnsQueryResponse"
-   | extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),"."))
-   | where c2 startswith "sub"
-   | summarize count() by bin(TimeGenerated, 3m), c2
-   | where count_ > 5
-   | render timechart 
-   ```
+    ```KQL
+    let lookback = 2d;
+    DeviceEvents | where TimeGenerated >= ago(lookback) 
+    | where ActionType == "DnsQueryResponse"
+    | extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),"."))
+    | where c2 startswith "sub"
+    | summarize count() by bin(TimeGenerated, 3m), c2
+    | where count_ > 5
+    | render timechart 
+    ```
 
-   ![屏幕快照](../Media/SC200_hunting1.png)
+    ![屏幕快照](../Media/SC200_hunting1.png)
 
 1. 上一个 KQL 查询的目标是为 C2 信标提供一致的可视化效果。 将 bin () 中的 3m 设置设置为 30s 以调整值的分组，然后再次运行查询 。
 
@@ -61,19 +63,19 @@ ms.locfileid: "138025498"
 
 1. 你现已确定要向 C2 服务器发送信标的 DNS 请求。 接下来，请确定要发送信标的设备。 运行以下 KQL 语句：
 
-   ```KQL
-   let lookback = 2d;
-   DeviceEvents | where TimeGenerated >= ago(lookback) 
-   | where ActionType == "DnsQueryResponse"
-   | extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),".")) 
-   | where c2 startswith "sub"
-   | summarize cnt=count() by bin(TimeGenerated, 5m), c2, DeviceName
-   | where cnt > 15
-   ```
+    ```KQL
+    let lookback = 2d;
+    DeviceEvents | where TimeGenerated >= ago(lookback) 
+    | where ActionType == "DnsQueryResponse"
+    | extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),".")) 
+    | where c2 startswith "sub"
+    | summarize cnt=count() by bin(TimeGenerated, 5m), c2, DeviceName
+    | where cnt > 15
+    ```
 
-   ![屏幕快照](../Media/SC200_hunting2.png)
+    ![屏幕快照](../Media/SC200_hunting2.png)
 
-   >**注意：** 生成的日志数据仅来自 WIN1 设备。
+    >**注意：** 生成的日志数据仅来自 WIN1 设备。
 
 1. 通过选择窗口右上方的“X”关闭“日志”窗口，然后选择“确定”以放弃更改 。 
 
@@ -85,15 +87,15 @@ ms.locfileid: "138025498"
 
 1. 对于“自定义查询”，输入以下 KQL 语句：
 
-   ```KQL
-   let lookback = 2d;
-   DeviceEvents | where TimeGenerated >= ago(lookback) 
-   | where ActionType == "DnsQueryResponse"
-   | extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),"."))
-   | where c2 startswith "sub"
-   | summarize cnt=count() by bin(TimeGenerated, 5m), c2, DeviceName
-   | where cnt > 15
-   ```
+    ```KQL
+    let lookback = 2d;
+    DeviceEvents | where TimeGenerated >= ago(lookback) 
+    | where ActionType == "DnsQueryResponse"
+    | extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),"."))
+    | where c2 startswith "sub"
+    | summarize cnt=count() by bin(TimeGenerated, 5m), c2, DeviceName
+    | where cnt > 15
+    ```
 
 1. 向下滚动，在“实体映射（预览）”下，选择：
 
@@ -125,7 +127,7 @@ ms.locfileid: "138025498"
 
 1. 从结果列表中选择刚刚创建的“C2 Hunt”书签。
 
-1. 在右窗格中，向下滚动并选择“调查”按钮。
+1. 在右窗格中，向下滚动并选择“调查”按钮。 提示：可能需要几分钟时间才能显示调查图。
 
 1. 像在上一模块中一样浏览调查图。
 
@@ -139,4 +141,69 @@ ms.locfileid: "138025498"
 
 1. 查看“状态”现在为“正在运行” 。 如果找到结果，将在 Azure 门户（钟形图标）中收到通知。
 
-# <a name="proceed-to-exercise-2"></a>继续进行练习 2
+
+### <a name="task-2-create-a-nrt-query-rule"></a>任务 2：创建 NRT 查询规则
+
+在此任务中，你将创建 NRT 分析查询规则，而不是使用 LiveStream。 NRT 规则每分钟运行一次，并回溯一分钟。  NRT 规则的优点是可以使用警报和事件创建逻辑。
+
+
+1. 在 Microsoft Sentinel 中选择“分析”页面。 
+
+1. 选择“创建”选项卡，然后选择“NRT 查询规则”
+1. 这会启动“分析规则向导”。 在“常规”选项卡中，键入以下内容：
+
+    |设置|值|
+    |---|---|
+    |名称|**NRT C2 搜寻**|
+    |说明|**NRT C2 搜寻**|
+    |策略|**命令和控制**|
+    |Severity|**高**|
+
+1. 选择“下一页:**设置规则逻辑 >”按钮**。 
+
+
+1. 对于“规则查询”，输入以下 KQL 语句：
+
+    ```KQL
+    DeviceEvents | where TimeGenerated >= ago(lookback) 
+    | where ActionType == "DnsQueryResponse"
+    | extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),"."))
+    | where c2 startswith "sub"
+    | summarize cnt=count() by bin(TimeGenerated, 5m), c2, DeviceName
+    | where cnt > 15
+    ```
+
+>**注意：** 我们特意针对同一数据生成了多个事件。 这样，实验室就可使用这些警报。
+
+1. 将其余选项保留为默认值。 选择“下一页:**事件设置 >”按钮**。
+
+1. 对于“事件设置”选项卡，保留默认值并选择“下一页: “下一步: 自动响应 >”按钮。
+
+1. 对于“自动响应”选项卡，选择“警报自动化”下的“PostMessageTeams-OnAlert”，然后选择“下一页: 审阅”按钮。
+
+1. 在“查看”选项卡上，选择“创建”按钮以新建计划分析规则。
+
+
+
+### <a name="task-3-create-a-search"></a>任务 3：创建搜索
+
+在此任务中，你将使用搜索作业查找 C2。 
+
+
+1. 在 Microsoft Sentinel 中选择“搜索”页。 
+
+1. 选择“还原”选项卡。
+
+>**注意：** 实验室不会有要从中还原的存档表。  正常过程将还原已存档的表，以包含在搜索作业中。
+1. 选择“取消”。
+1. 选择“搜索”选项卡。
+1. 选择表并更改为“DeviceRegistryEvents”
+1. 在搜索框中输入“reg.exe”  
+1. 选择“保存的搜索”。 
+1. 搜索作业将创建名为“DeviceRegistryEvents_####_SRCH”的新表。 
+1. 等待搜索作业完成。  状态将显示“正在更新”。 然后显示“正在进行”。 随后显示“搜索完成”。 
+1. 选择“查看搜索结果”
+1. 在“日志”中打开一个新选项卡。
+1. 输入新的表名称“DeviceRegistryEvents_####_SRCH”并运行。
+
+## <a name="proceed-to-exercise-2"></a>继续进行练习 2

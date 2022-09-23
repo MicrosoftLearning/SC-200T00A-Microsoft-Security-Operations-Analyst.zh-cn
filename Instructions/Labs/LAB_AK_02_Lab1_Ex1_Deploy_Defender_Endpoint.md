@@ -2,16 +2,18 @@
 lab:
   title: 练习 1 - 部署 Microsoft Defender for Endpoint
   module: Module 2 - Mitigate threats using Microsoft Defender for Endpoint
-ms.openlocfilehash: 55d34a12be8028af19201a113d23ffbbd870a150
-ms.sourcegitcommit: 175df7de88c9a609f8caf39840664bf992c5b6dc
+ms.openlocfilehash: 70f7966e8584760ca61a7b15217b9db13bf1076d
+ms.sourcegitcommit: 8d2ac5382c9f5dc03a7171e0afa587fa84b0a8b2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2022
-ms.locfileid: "138025420"
+ms.lasthandoff: 09/06/2022
+ms.locfileid: "147854628"
 ---
 # <a name="module-2---lab-1---exercise-1---deploy-microsoft-defender-for-endpoint"></a>模块 2 - 实验室 1 - 练习 1 - 部署 Microsoft Defender for Endpoint
 
 ## <a name="lab-scenario"></a>实验室方案
+
+![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod2_L1_Ex1.png)
 
 你是一家公司的安全操作分析师，你的公司正在实施 Microsoft Defender for Endpoint。 你的主管计划加入一些设备，以深入了解安全运营 (SecOps) 团队响应程序所需的更改。
 
@@ -19,14 +21,14 @@ ms.locfileid: "138025420"
 
 >**重要提示：** 通过不同的模块使用实验室虚拟机。 请保存你的虚拟机。 如果在不保存的情况下退出实验室，将需要再次重新运行某些配置。
 
->**注意：** 请确保已成功完成前一模块的最后 3 个步骤。
+>**注意：** 请确保已成功完成前一模块的任务 3。
 
 
 ### <a name="task-1-initialize-microsoft-defender-for-endpoint"></a>任务 1：初始化 Microsoft Defender for Endpoint
 
 在此任务中，你将执行 Microsoft Defender for Endpoint 门户的初始化。
 
-1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：**Pa55w.rd**。  
+1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：Pa55w.rd 。  
 
 1. 如果尚未处于 Microsoft 365 Defender 门户，请启动 Microsoft Edge 浏览器。
 
@@ -75,9 +77,9 @@ ms.locfileid: "138025420"
 
 1. 粘贴脚本的方法是右键单击“管理员:**命令提示符”窗口，并按 Enter 键运行** 。 **注意：** 窗口在运行脚本后自动关闭。
 
-1. 在 Microsoft 365 Defender 门户的左侧菜单中，在“终结点”区域下，选择“设备清单”。 该列表中现在应列出了你的设备。
+1. 在 Microsoft 365 Defender 门户的左侧菜单中，在“资产”区域下选择“设备” 。 如果设备未显示，请完成下一任务，稍后再回来查看。 可能需要多达 60 分钟，第一台设备才会显示在门户中。
 
-    >**注意：** 可能需要多达 5 分钟，设备才会显示在门户中。 如果设备未显示，请完成下一任务，稍后再回来查看。
+    >**注意：** 如果你已完成载入过程，但在一小时后未在“设备”列表中看到设备，这可能指示存在载入或连接问题。
 
 
 ### <a name="task-3-configure-roles"></a>任务 3：配置角色
@@ -125,7 +127,7 @@ ms.locfileid: "138025420"
 
 1. 在“设备”选项卡中，对操作系统条件选择“Windows 10”，然后选择“下一步” 。
 
-1. 在“预览设备”选项卡上，选择“显示预览”以查看 WIN1 虚拟机。  选择“下一步”  。
+1. 在“预览设备”选项卡上，选择“显示预览”以查看 WIN1 虚拟机。 选择“下一步”  。 提示：如果没有在预览列表中看到虚拟机，请返回并同时为操作系统条件选择“无”。 尚未填充 VM 的数据。
 
 1. 对于“用户访问”选项卡，选择“sg-IT”，然后选择“添加所选组”按钮 。 请确保它显示在“Azure AD 可访问此设备组的用户组”下。
 
