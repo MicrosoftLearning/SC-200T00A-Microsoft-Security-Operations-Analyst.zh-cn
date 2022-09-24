@@ -2,22 +2,17 @@
 lab:
   title: 练习 1 - 在 Microsoft Sentinel 中执行威胁搜寻
   module: Module 8 - Perform threat hunting in Microsoft Sentinel
-ms.openlocfilehash: 3e2631435122423265dbef3f56f06340706abc9f
-ms.sourcegitcommit: f8918eddeaa7a7a480e92d0e5f2f71143c729d60
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2022
-ms.locfileid: "147038019"
 ---
+
 # <a name="module-8---lab-1---exercise-1---perform-threat-hunting-in-microsoft-sentinel"></a>模块 8 - 实验室 1 - 练习 1 - 在 Azure Sentinel 中执行威胁搜寻
 
 ## <a name="lab-scenario"></a>实验室方案
 
 ![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod8_L1_Ex1.png)
 
-你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你收到了关于命令和控制（C2 或 C&C）技术的威胁情报。 你需要执行搜寻并监视威胁。
+You are a Security Operations Analyst working at a company that implemented Microsoft Sentinel. You have received threat intelligence about a Command and Control (C2 or C&amp;C) technique. You need to perform a hunt and watch for the threat.
 
->**重要提示：** 本实验室使用的日志数据是在上一个模块中创建的。 请参阅练习 5 中 WIN1 服务器上的攻击 3。
+><bpt id="p1">**</bpt>Important:<ept id="p1">**</ept> The log data used in the lab was created in the previous module. See <bpt id="p1">**</bpt>Attack 3<ept id="p1">**</ept> on WIN1 server in Exercise 5.
 
 >**注意：** 你已在上一模块中体验过探索数据的过程，因此本实验室提供 KQL 语句供你开始操作。 
 
@@ -57,11 +52,11 @@ ms.locfileid: "147038019"
 
     ![屏幕快照](../Media/SC200_hunting1.png)
 
-1. 上一个 KQL 查询的目标是为 C2 信标提供一致的可视化效果。 将 bin () 中的 3m 设置设置为 30s 以调整值的分组，然后再次运行查询 。
+1. The goal of the previous KQL query is to provide a visualization for a C2 beaconing on a consistent basis. Adjust grouping of values by changing the <bpt id="p1">*</bpt>3m<ept id="p1">*</ept> setting to <bpt id="p2">**</bpt>30s<ept id="p2">**</ept> within bin() and <bpt id="p3">**</bpt>Run<ept id="p3">**</ept> the query again.
 
-1. 请改回 3m。 现在，将 count_ 阈值更改为 10，然后再次运行查询以见证影响 。
+1. Change it back to <bpt id="p1">*</bpt>3m<ept id="p1">*</ept>. Now change the <bpt id="p1">*</bpt>count_<ept id="p1">*</ept> threshold to <bpt id="p2">**</bpt>10<ept id="p2">**</ept> and <bpt id="p3">**</bpt>Run<ept id="p3">**</ept> the query again to witness the impact.
 
-1. 你现已确定要向 C2 服务器发送信标的 DNS 请求。 接下来，请确定要发送信标的设备。 运行以下 KQL 语句：
+1. You have now identified DNS requests that are beaconing to a C2 server. Next, determine which devices are beaconing. <bpt id="p1">**</bpt>Run<ept id="p1">**</ept> the following KQL Statement:
 
     ```KQL
     let lookback = 2d;
@@ -111,9 +106,9 @@ ms.locfileid: "147038019"
 
 1. 在右窗格中，向下滚动并选择“运行查询”按钮。
 
-1. 结果数显示在“结果”列下的中间窗格中。 或者，向上滚动以查看“结果”框的计数。
+1. 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。
 
-1. 选择“查看结果”按钮。 KQL 查询将自动运行。
+1. 你收到了关于命令和控制（C2 或 C&C）技术的威胁情报。
 
 1. 选中结果中第一行的复选框。 
 
@@ -127,7 +122,7 @@ ms.locfileid: "147038019"
 
 1. 从结果列表中选择刚刚创建的“C2 Hunt”书签。
 
-1. 在右窗格中，向下滚动并选择“调查”按钮。 提示：可能需要几分钟时间才能显示调查图。
+1. 你需要执行搜寻并监视威胁。
 
 1. 像在上一模块中一样浏览调查图。
 
@@ -137,20 +132,20 @@ ms.locfileid: "147038019"
 
 1. 再次搜索并选择“C2 Hunt”查询。
 
-1. 右键单击查询，然后选择“添加到直播”。 提示：也可通过向右滑动并选择行末尾的省略号 (...) 打开上下文菜单完成此操作。
+1. Right-click your query and select <bpt id="p1">**</bpt>Add to livestream<ept id="p1">**</ept>. <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> This also can be done by sliding right and selecting the ellipsis <bpt id="p2">**</bpt>(...)<ept id="p2">**</ept> at the end of the row to open a context menu.
 
-1. 查看“状态”现在为“正在运行” 。 如果找到结果，将在 Azure 门户（钟形图标）中收到通知。
+1. **重要提示：** 本实验室使用的日志数据是在上一个模块中创建的。
 
 
 ### <a name="task-2-create-a-nrt-query-rule"></a>任务 2：创建 NRT 查询规则
 
-在此任务中，你将创建 NRT 分析查询规则，而不是使用 LiveStream。 NRT 规则每分钟运行一次，并回溯一分钟。  NRT 规则的优点是可以使用警报和事件创建逻辑。
+请参阅练习 5 中 WIN1 服务器上的攻击 3。
 
 
 1. 在 Microsoft Sentinel 中选择“分析”页面。 
 
 1. 选择“创建”选项卡，然后选择“NRT 查询规则”
-1. 这会启动“分析规则向导”。 在“常规”选项卡中，键入以下内容：
+1. This starts the "Analytics rule wizard". For the <bpt id="p1">*</bpt>General<ept id="p1">*</ept> tab type:
 
     |设置|值|
     |---|---|
@@ -173,9 +168,9 @@ ms.locfileid: "147038019"
     | where cnt > 15
     ```
 
->**注意：** 我们特意针对同一数据生成了多个事件。 这样，实验室就可使用这些警报。
+><bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> We are purposely generating many incidents for the same data. This enables the Lab to use these alerts.
 
-1. 将其余选项保留为默认值。 选择“下一页:**事件设置 >”按钮**。
+1. Leave the rest of the options with the defaults. Select <bpt id="p1">**</bpt>Next: Incident settings&gt;<ept id="p1">**</ept> button.
 
 1. 对于“事件设置”选项卡，保留默认值并选择“下一页: “下一步: 自动响应 >”按钮。
 
@@ -194,14 +189,14 @@ ms.locfileid: "147038019"
 
 1. 选择“还原”选项卡。
 
->**注意：** 实验室不会有要从中还原的存档表。  正常过程将还原已存档的表，以包含在搜索作业中。
+><bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> The lab will not have Archived tables to restore from.  The normal process would restore archived tables to include in the Search job.
 1. 选择“取消”。
 1. 选择“搜索”选项卡。
 1. 选择表并更改为“DeviceRegistryEvents”
 1. 在搜索框中输入“reg.exe”  
 1. 选择“保存的搜索”。 
 1. 搜索作业将创建名为“DeviceRegistryEvents_####_SRCH”的新表。 
-1. 等待搜索作业完成。  状态将显示“正在更新”。 然后显示“正在进行”。 随后显示“搜索完成”。 
+1. Wait for the search job to complete.  The status will display <bpt id="p1">*</bpt>Updating<ept id="p1">*</ept>. Then <bpt id="p1">*</bpt>In progress<ept id="p1">*</ept>. Then <bpt id="p1">*</bpt>Search completed<ept id="p1">*</ept>. 
 1. 选择“查看搜索结果”
 1. 在“日志”中打开一个新选项卡。
 1. 输入新的表名称“DeviceRegistryEvents_####_SRCH”并运行。

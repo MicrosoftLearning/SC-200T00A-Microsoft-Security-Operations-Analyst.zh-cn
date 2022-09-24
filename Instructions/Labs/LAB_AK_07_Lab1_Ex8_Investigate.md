@@ -2,21 +2,16 @@
 lab:
   title: 练习 8 - 调查事件
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: 9965c1246f76c4b2b8441e61600e2f305ce4590d
-ms.sourcegitcommit: f8918eddeaa7a7a480e92d0e5f2f71143c729d60
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2022
-ms.locfileid: "147038024"
 ---
+
 # <a name="module-7---lab-1---exercise-8---investigate-incidents"></a>模块 7 - 实验室 1 - 练习 8 - 调查事件
 
 ## <a name="lab-scenario"></a>实验室方案
 
 
-你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你已创建“计划”规则和“Microsoft 安全分析”规则。 环境中也启用了“融合”和“异常分析”规则。 现在，可以调查他们创建的事件。
+You are a Security Operations Analyst working at a company that implemented Microsoft Sentinel. You already created Scheduled and Microsoft Security Analytics rules. The Fusion and Anomalies Analytics rules are also enabled in your environment. Now is the time to investigate the Incidents created by them.
 
-一个事件可以包含多个警报。 其中聚合了特定调查的所有相关证据。 在事件级别设置与警报相关的属性，例如严重性和状态。 让 Microsoft Sentinel 知道要查找的威胁种类以及如何找到它们之后，可以通过调查事件来监视检测到的威胁。
+An incident can include multiple alerts. It is an aggregation of all the relevant evidence for a specific investigation. The properties related to the alerts, such as severity and status, are set at the incident level. After you let Microsoft Sentinel know what kinds of threats you are looking for and how to find them, you can monitor detected threats by investigating incidents.
 
 
 ### <a name="task-1-investigate-an-incident"></a>任务 1：调查一个事件
@@ -39,11 +34,11 @@ ms.locfileid: "147038024"
 
 1. 查看事件列表。
 
-    >**注意：** “分析”规则会在同一特定日志项上生成警报和事件。 请记住，这是在“查询计划”配置中完成的，以生成更多要在实验室中使用的警报和事件。
+    ><bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> The Analytics rules are generating alerts and incidents on the same specific log entry. Remember that this was done in the <bpt id="p1">*</bpt>Query scheduling<ept id="p1">*</ept> configuration to generate more alerts and incidents to be utilized in the lab.
   
 1. 选择其中一个 MDE Startup RegKey 事件。
 
-1. 在打开的右侧边栏选项卡上查看事件详细信息。 向下滚动并选择“查看全部详细信息”按钮。
+1. Review the incident details on the right blade that opened. Scroll down and select the <bpt id="p1">**</bpt>View full details<ept id="p1">**</ept> button.
 
 1. 在事件的左侧边栏选项卡上，将状态更改为“活动”，然后选择“应用” 。
 
@@ -53,24 +48,24 @@ ms.locfileid: "147038024"
 
 1. 在注释框中键入：“我将调查此事件”，然后选择“注释”按钮提交新注释。
 
-1. 选择“实体”选项卡，然后查看我们在上一个练习中的 KQL 查询中映射的“帐户”和“主机”实体 。 提示：如果未显示任何实体，请刷新页面。
+1. 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。
 
-1. 选择“警报”选项卡。对于 MDE Startup RegKey 警报，请使用栏向右滑动，并注意“查看 playbook”链接。 这样可以从警报中手动执行 playbook，而不是从“分析”规则中的“自动响应”选项卡触发该 playbook。
+1. 你已创建“计划”规则和“Microsoft 安全分析”规则。
 
-1. 在左窗格中向下滚动并选择“调查”按钮。 提示：如果图标对于屏幕来说太小，请选择 (+) 来放大它们。
+1. 环境中也启用了“融合”和“异常分析”规则。
 
-1. 将鼠标悬停在 WIN1 实体图标上并等待显示新的浏览查询。 看起来“相关警报”包含更多数据。 选择探索查询的名称“相关警报”以将其引入调查图，或选择“事件 >”以使用 KQL 查询对其进行调查 。
+1. 现在，可以调查他们创建的事件。
 
-1.  选择实体时，将打开右侧的窗口以获取更多详细信息。 查看“信息”页。
+1.  When you select an entity, a window on the right opens for more detailed information. Review the <bpt id="p1">**</bpt>Info<ept id="p1">**</ept> page.
 
-1. 选择“时间线”按钮。 将鼠标悬停在前两个事件上，查看图上的哪些事情发生在哪个时间点。
+1. 一个事件可以包含多个警报。
 
 1. 选择“实体”按钮，然后查看与 WIN1 相关的实体和警报  。
 
 1. 通过选择页面右上方的 X 关闭调查图。
 
-1. 返回到事件页的左侧窗格中，依次选择“未分配的所有者”、“分配给我”和“应用”  。 你的帐户现在将显示为事件所有者。
+1. 其中聚合了特定调查的所有相关证据。
 
-1. 最后，选择“活动状态”，然后选择“已关闭” 。 在“选择分类”中，查看不同的选项。 之后，选择“真正 - 可疑活动”，然后选择“应用” 。
+1. 在事件级别设置与警报相关的属性，例如严重性和状态。
 
 ## <a name="proceed-to-exercise-9"></a>继续完成练习 9

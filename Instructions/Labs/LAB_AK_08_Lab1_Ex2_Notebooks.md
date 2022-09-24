@@ -2,20 +2,15 @@
 lab:
   title: 练习 2 - 使用 Notebook 通过 Microsoft Sentinel 进行威胁搜寻
   module: Module 8 - Perform threat hunting in Microsoft Sentinel
-ms.openlocfilehash: 6691a1bec1d9499c8e7741332ea827260bc3b816
-ms.sourcegitcommit: f8918eddeaa7a7a480e92d0e5f2f71143c729d60
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2022
-ms.locfileid: "147038016"
 ---
+
 # <a name="module-8---lab-1---exercise-2---threat-hunting-using-notebooks-with-microsoft-sentinel"></a>模块 8 - 实验室 1 - 练习 2 - 使用 Microsoft Sentinel 的 Notebook 进行威胁搜寻
 
 ## <a name="lab-scenario"></a>实验室方案
 
 
 
-你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你需要探索通过 Microsoft Sentinel 笔记本进行威胁搜寻的好处。 可以使用笔记本来：
+You are a Security Operations Analyst working at a company that implemented Microsoft Sentinel. You need to explore the benefits of threat hunting with Microsoft Sentinel Notebooks. You can use notebooks to:
 
 - 执行 Microsoft Sentinel 中未直接提供的分析，例如一些 Python 机器学习功能。
 - 创建 Microsoft Sentinel 中未直接提供的数据可视化，例如自定义时间线和流程树。
@@ -40,7 +35,7 @@ ms.locfileid: "147038016"
 
 1. 在 Microsoft Sentinel 工作区中，选择“笔记本”。
 
-1. 接下来，需要创建 AzureML 工作区。 选择“配置 Azure 机器学习”，然后在命令栏中选择“创建新的 Azure ML 工作区”按钮 。
+1. Next, you need to create an AzureML Workspace. Select <bpt id="p1">**</bpt>Configure Azure Machine Learning<ept id="p1">**</ept> and then select <bpt id="p2">**</bpt>Create new Azure ML workspace<ept id="p2">**</ept> button in the command bar.
 
 1. 在“订阅”框中，选择自己的订阅。
 
@@ -53,7 +48,7 @@ ms.locfileid: "147038016"
      - 保存默认的“存储帐户”、“密钥保管库”和“应用程序见解”信息。
      - “容器注册表”选项可以保留为“无”。
 
-1. 在页面底部，选择“查看 + 创建”。 当看到“验证通过”消息时，选择“创建”。 
+1. At the bottom of the page, select <bpt id="p1">**</bpt>Review + create<ept id="p1">**</ept>. When you see the <bpt id="p1">*</bpt>"Validation passed"<ept id="p1">*</ept> message, select <bpt id="p2">**</bpt>Create<ept id="p2">**</ept>. 
 
      >**注意：** 部署机器学习工作区可能需要几分钟时间。
 
@@ -63,24 +58,24 @@ ms.locfileid: "147038016"
 
 1. 选择“Microsoft Sentinel ML Notebooks 入门指南”。 
 
-1. 在右侧窗格中，向下滚动并选择“从模板创建”按钮。 查看默认选项，然后选择“保存”。
+1. On the right pane, scroll down and select <bpt id="p1">**</bpt>Create from template<ept id="p1">**</ept> button. Review the default option and select <bpt id="p1">**</bpt>Save<ept id="p1">**</ept>.
 
-1. 保存完成后，选择“启动笔记本”按钮。 这会将你带至 Microsoft Azure 机器学习工作室。
+1. 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。
 
 1. 如果 Microsoft Azure 机器学习工作室中显示信息窗口，请选择“关闭”。
 
 1. 在命令栏中的“计算: 实例选择器”的右侧，选择“+”符号，创建新的计算实例 。
 
-1. 在“计算名称”字段中输入唯一名称。 这将标识你的计算实例。
+1. 你需要探索通过 Microsoft Sentinel 笔记本进行威胁搜寻的好处。
 
-1. 向下滚动并选择第一个可用选项。 提示：工作负载类型：笔记本开发和轻型测试。
+1. 可以使用笔记本来：
 
-1. 选择屏幕底部的“创建”按钮。 关闭可能显示的任何反馈窗口。 这将需要几分钟，完成后会看到通知（铃铛图标）。
+1. Select the <bpt id="p1">**</bpt>Create<ept id="p1">**</ept> button at the bottom of the screen. Close any feedback window that may appear. This will take a few minutes, you will see a notification (bell icon) when it is done.
 
-1. 创建并运行计算后，请验证要使用的内核是否为 Python 3.8 - AzureML。 提示：这显示在命令栏的右侧。 还可以通过选择“笔记本”菜单下的“<<”来增加屏幕大小。
+1. Once the Compute has been created and running, verify that the kernel to use is <bpt id="p1">*</bpt>Python 3.8 - AzureML<ept id="p1">*</ept>. <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> This is shown in the right of the command bar. You can also increase your screen size by selecting <bpt id="p1">**</bpt><ph id="ph1">&lt;&lt;</ph><ept id="p1">**</ept> under the <bpt id="p2">*</bpt>Notebooks<ept id="p2">*</ept> menu.
 
 1. 通过从命令栏中选择“橡皮擦”图标，清除笔记本中的所有结果，然后按照“入门”教程进行操作。
 
->**注意：** 如果无法完成上述步骤来访问 Notebook，可以改为根据其 GitHub 页进行操作。 在此处查看笔记本文件：[GitHub 上的 Microsoft Sentinel Notebook](https://github.com/Azure/Azure-Sentinel-Notebooks/blob/8122bca32387d60a8ee9c058ead9d3ab8f4d61e6/A%20Getting%20Started%20Guide%20For%20Azure%20Sentinel%20ML%20Notebooks.ipynb) 
+><bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> If you cannot complete the steps above to access the Notebook, you can follow it on its GitHub page instead. See the notebook file here: <bpt id="p1">[</bpt>Microsoft Sentinel Notebooks on GitHub<ept id="p1">](https://github.com/Azure/Azure-Sentinel-Notebooks/blob/8122bca32387d60a8ee9c058ead9d3ab8f4d61e6/A%20Getting%20Started%20Guide%20For%20Azure%20Sentinel%20ML%20Notebooks.ipynb)</ept> 
 
 ## <a name="you-have-completed-the-lab"></a>你已完成本实验室。

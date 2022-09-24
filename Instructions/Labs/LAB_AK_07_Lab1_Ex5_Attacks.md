@@ -2,26 +2,21 @@
 lab:
   title: 练习 5 - 了解检测建模
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: c18f6a316629356bc831cef78f08fd6b6a26cefe
-ms.sourcegitcommit: f8918eddeaa7a7a480e92d0e5f2f71143c729d60
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2022
-ms.locfileid: "147038028"
 ---
+
 # <a name="module-7---lab-1---exercise-5---understand-detection-modeling"></a>模块 7 - 实验室 1 - 练习 5 - 了解检测建模
 
 ![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex4.png)
 ### <a name="task-1-understand-the-attacks"></a>任务 1：了解攻击
 
->**重要说明：在此练习中你不会执行任何操作。**  这些说明只说明了在后续练习中将执行的攻击。 请仔细阅读本页。
+><bpt id="p1">**</bpt>Important: You will perform no actions in this exercise.<ept id="p1">**</ept>  These instructions are only an explanation of the attacks you will perform in the next exercise. Please carefully read this page.
 
 攻击模式基于开源项目： https://github.com/redcanaryco/atomic-red-team
 
 
 #### <a name="attack-1---persistence-with-registry-key-add"></a>攻击 1 - 通过注册表项添加实现的持久性攻击
 
-攻击者会在运行注册表项中添加一个程序。 这通过使程序在用户每次登录时都能运行来实现持久性。
+Attackers will add a program in the Run Registry key. This achieves persistence by making the program run every time the user logs on.
 
 ```
 REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "SOC Test" /t REG_SZ /F /D "C:\temp\startup.bat"
@@ -29,7 +24,7 @@ REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "SOC Test" /t RE
 
 #### <a name="attack-2---user-add-and-elevate-privilege"></a>攻击 2 - 用户添加和特权提升
 
-攻击将添加新建用户并将新用户提升到管理员组。 这会让攻击者能够使用有特权的其他帐户登录。
+Attackers will add new users and elevate the new user to the Administrators group. This enables the attacker to logon with a different account that is privileged.
 
 ```
 net user theusernametoadd /add
@@ -39,7 +34,7 @@ net localgroup administrators theusernametoadd /add
 
 #### <a name="attack-3---dns--c2"></a>攻击 3 - DNS / C2 
 
-攻击者会向命令发送大量 DNS 查询，并控制 (C2) 服务器。 目的是对来自单个源系统或发往单个目标域的 DNS 查询的数目触发基于阈值的检测。
+Attacker will send a large volume of DNS queries to a command and control (C2) server. The intent is to trigger threshold-based detection on the number of DNS queries either from a single source system or to a single target domain.
 
 ```
 param(
@@ -88,7 +83,7 @@ Until ($TimeNow -ge $RunEnd)
 
 本实验室中使用的攻击检测配置循环代表所有数据源，虽然你仅专注于两个特定数据源。
 
-要构建检测，从构建 KQL 语句开始。 你将开始攻击主机，因此将使用代表数据开始构建 KQL 语句。
+To build a detection, you first start with building a KQL statement. Since you will attack a host, you will have representative data to start building the KQL statement.
 
 
 有 KQL 语句后，即可创建分析规则。

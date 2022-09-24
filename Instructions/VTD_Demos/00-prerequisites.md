@@ -1,26 +1,18 @@
----
-ms.openlocfilehash: 198d029e03950b40e9850b3552c5d448867b73f0
-ms.sourcegitcommit: 8bd0d3a1384dafb6db097ad5bff4ec65ee8b4d4b
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "147541853"
----
 
 # <a name="microsoft-security-operations-analyst"></a>Microsoft 安全运营分析师
 培训师准备指南
 
 ## <a name="purpose"></a>目的 
 
-本文档适用于准备在 Microsoft 安全虚拟培训日讲授“防御威胁和保护云环境安全”的演示者。 本文档是“SC-200：Microsoft 安全操作分析师”认证课程的一部分。
+This document is for presenters preparing to teach the Microsoft Security Virtual Training Day for "Defend against threats and Secure CLoud Environments". This material is a subset of the SC-200: Microsoft Security Operations Analyst certification course.
 
 ## <a name="demo-prerequisites"></a>演示先决条件
 
 本课程的实验室需要 Microsoft 365 E5 许可的租户以及 Azure 订阅。
 
 * 你可以为自己申请 Microsoft Learning Azure Pass。
-* 确保至少在进行演示前两周申请上述 Azure Pass。 收到 Pass 后，需要激活它。 
-* Azure Pass 的实际功能与公开可用的 Microsoft Azure 试用版订阅相同。 这意味着通行证的功能有限。
+* Ensure that you request these passes at least two weeks before you will be performing the demos. After receiving the pass, you will need to activate it. 
+* The Azure pass effectively functions in the same way as the publicly available Microsoft Azure Trial Subscription. This means there are limitations on what you can do with the pass.
 * 实验室说明在 [SC-200 Microsoft Learning GitHub 存储库](https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/tree/master/Instructions/VTD_Demos/)中。
 * 确保将用于演示的计算机安装了新的 Microsoft Edge 浏览器。
 
@@ -30,12 +22,12 @@ ms.locfileid: "147541853"
 
 ### <a name="obtain-your-microsoft-365-credentials"></a>获取 Microsoft 365 凭据
 
-启动实验室后，Microsoft 虚拟实验室环境中将提供一个免费试用租户可供你访问。 系统会自动向该租户分配一个唯一用户名和密码。 你需要检索此用户名和密码，以便在 Microsoft 虚拟实验室环境中登录 Azure 和 Microsoft 365。 
+Once you launch the lab, a free trial tenant will be made available to you to access in the Microsoft Virtual Lab environment. This tenant will be automatically assigned a unique username and password. You must retrieve this username and password so that you can sign in to Azure and Microsoft 365 within the Microsoft Virtual Lab environment. 
 
-由于此课程可能由学习合作伙伴使用几个授权实验室托管提供者中的任何一个提供，因此，检索与租户关联的租户 ID 的相关实际步骤可能会因实验室托管提供者而有所不同。 因此，讲师将在课程中为你提供有关如何检索此信息的必要说明。 你应该记录以供稍后使用的信息包括：
+本文档适用于准备在 Microsoft 安全虚拟培训日讲授“防御威胁和保护云环境安全”的演示者。
 
-    - 租户后缀 ID。 此 ID 适用于将在整个实验室中用于登录 Microsoft 365 的 onmicrosoft.com 帐户。 其格式为 {username}@M365xZZZZZZ.onmicrosoft.com，其中 ZZZZZZ 是实验室托管提供者提供的唯一租户后缀 ID。 记录此 ZZZZZZ 值以供稍后使用。 当有任何实验室步骤指示你登录 Microsoft 365 门户时，都必须输入在此处获取的 ZZZZZZ 值。
-    - 租户密码。 这是由实验室托管提供者提供的管理员帐户的密码。
+    - 本文档是“SC-200：Microsoft 安全操作分析师”认证课程的一部分。
+    - <bpt id="p1">**</bpt>Tenant password.<ept id="p1">**</ept> This is the password for the admin account provided by your lab hosting provider.
     
 
 ### <a name="initialize-microsoft-defender-for-endpoint"></a>初始化 Microsoft Defender for Endpoint。
@@ -45,7 +37,7 @@ ms.locfileid: "147541853"
 
 1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：**Pa55w.rd**。  
 
-1. 打开 Microsoft Edge 浏览器，搜索“Edge 浏览器更新”，然后下载并安装新版 Microsoft Edge 浏览器。 必须执行此操作，以确保在托管虚拟机中运行最新版本的 Microsoft Edge。 启动新的 Edge 浏览器。
+1. Open the Microsoft Edge browser, search for "edge browser update", download, and install the new Microsoft Edge browser. This is necessary to ensure you're running the latest version of Microsoft Edge in your hosted virtual machine. Start the new Edge browser.
 
 1. 在 Microsoft Edge 浏览器中，转到 Microsoft 365 Defender 门户 (https://security.microsoft.com) )。
 
@@ -53,7 +45,7 @@ ms.locfileid: "147541853"
 
 1. 在“输入密码”对话框中，复制粘贴实验室托管提供者提供的管理员的租户密码，然后选择“登录” 。
 
-备注：如果你收到消息“你无法访问此会话。”请等待 5 分钟，然后重试。  有时，访问规则需要传播租户。
+<bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: if you receive a message "You can't access this section.",  wait 5 minutes and try again.  Sometimes the access rules need to propagate the tenant.
 
 1. 在 Microsoft 365 Defender 门户中，在左侧的菜单部分中，向下滚动到“设置”。
 
@@ -61,7 +53,7 @@ ms.locfileid: "147541853"
 
 1. 你将看到“常规”部分中的“数据保留”选项。
 
-注意：在托管实验室环境中，系统应已为你选择数据存储位置。 它应位于适当的地理位置，用于管理此培训租户。 你仍可以选择数据保留长度，但这不是必需的。
+<bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: In the hosted lab environment your data storage location should be selected for you. And, it should be in the appropriate Geography for where this training tenant is being managed. You can still select the Data Retention length, but it is not required.
 
 1. 在“终结点”下的“常规”中，选择“高级功能”。
 
@@ -69,7 +61,7 @@ ms.locfileid: "147541853"
 
 1. 如果未启用，请将滑块移到“开”位置，然后选择“保存首选项”。  
 
-**注意**：已完成设置。  在下一个任务中，你将加入设备。  
+确保至少在进行演示前两周申请上述 Azure Pass。  
 
 ### <a name="onboard-a-device"></a>加入设备。
 
@@ -85,15 +77,15 @@ ms.locfileid: "147541853"
 
 1. 将下载的 zip 文件解压缩到本地文件夹（如 Documents 文件夹）。
 
-1. 右键单击解压缩的文件 WindowsDefenderATPLocalOnboardingScript.cmd，然后选择“以管理员身份运行”。  如果出现 Windows SmartScreen，请选择“仍然运行”。
+1. 收到 Pass 后，需要激活它。
 
 备注：默认情况下，该文件应位于 c:\users\admin\downloads 目录中。
     
-1. 对于脚本呈现的问题回答 Y。 完成后，命令屏幕中应该会出现一条消息，显示类似“已成功加入计算机…”的内容 
+1. Answer <bpt id="p1">**</bpt>Y<ept id="p1">**</ept> to questions presented by the script. When complete you should see a message in the command screen that says something like "Successfully onboarded machine..." 
 
-1. 从门户的“加入”页面中，复制检测测试脚本，并在一个打开的命令窗口中运行该脚本。  你可能需要通过在 Windows 搜索栏中键入 **CMD，然后选择“以管理员身份运行”来打开新的“管理员: 命令提示符”** 窗口。
+1. Azure Pass 的实际功能与公开可用的 Microsoft Azure 试用版订阅相同。
 
-1. 在 Microsoft 365 Defender 门户菜单中，选择“设备库存”。 该列表中现在应列出了你的设备。
+1. 这意味着通行证的功能有限。
 
 备注：可能需要多达 5 分钟，设备才会显示在门户中。
 
@@ -142,16 +134,16 @@ ms.locfileid: "147541853"
 
 1. 选择“下一步”  。
 
-1. . 在“设备”选项卡中，对操作系统条件选择“Windows 10”，然后选择“下一步” 。
+1. . On the Devices tab, for the OS condition select <bpt id="p1">**</bpt>Windows 10<ept id="p1">**</ept> and select <bpt id="p2">**</bpt>Next<ept id="p2">**</ept>.
 
-1. 在“预览设备”选项卡上，选择“显示预览”以查看 WIN1 虚拟机。 选择“下一步”  。 
-提示：如果没有在预览列表中看到虚拟机，请返回并同时为操作系统条件选择“无”。 尚未填充 VM 的数据。
+1. On the Preview devices tab, select <bpt id="p1">**</bpt>Show preview<ept id="p1">**</ept> to see the WIN1 virtual machine. Select <bpt id="p1">**</bpt>Next<ept id="p1">**</ept>. 
+<bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> If you do not see the virtual machine in the preview list, go back and select also <bpt id="p2">*</bpt>None<ept id="p2">*</ept> for the OS condition. The data for the VM is not populated yet.
 
 1. 在“用户访问权限”选项卡中，依次选择“sg-IT”和“添加所选组”
 
 1. 选择“完成”。
 
-1. 设备组配置已更改。 选择“应用更改”，检查匹配项并重新计算分组。
+1. Device group configuration has changed. Select <bpt id="p1">**</bpt>Apply changes<ept id="p1">**</ept> to check matches and recalculate groupings.
 
 1. 现在，你将有两个设备组；刚创建的“常规”设备组和具有相同修正级别的“未分组的设备（默认）”设备组。
 
@@ -174,7 +166,7 @@ ms.locfileid: "147541853"
 
 1. 从命令栏选择“示例警报”。
 
-1. 在“创建示例警报(预览)”窗格中，确保已选择你的订阅。  确保已选择所有示例警报，然后选择“创建示例警报”。  
+1. In the Create sample alerts (Preview) pane make sure your subscription is selected.  Make sure all sample alerts are selected and select <bpt id="p1">**</bpt>Create sample alerts<ept id="p1">**</ept>.  
 
 备注：此操作可能需要几分钟才能完成。
 
@@ -204,11 +196,11 @@ ms.locfileid: "147541853"
 
 注意：此名称应是唯一的，也是 Microsoft Sentinel 工作区名称。
 
-1. 选择适合你的区域。  适当的区域可采用默认区域，或者讲师可能会对选择哪个区域提供具体建议。  
+1. Select the region that is appropriate for you.  The appropriate region may default or your instructor may have specific advice on which region to select.  
 
 1. 选择“查看 + 创建”  。
 
-1. 选择“创建”。 等待“将 Microsoft Sentinel 添加到工作区”页面上的列表中显示新的 Log Analytics 工作区。  这可能需要一点时间。
+1. Select <bpt id="p1">**</bpt>Create<ept id="p1">**</ept>. Wait for the new Log Analytics workspace to appear in the list on the Add Microsoft Sentinel to a workspace page.  This may take a minute.
 
 1. 在新建的工作区出现时将其选中，然后选择“添加”。
 
@@ -220,7 +212,7 @@ ms.locfileid: "147541853"
 
 1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：**Pa55w.rd**。  
 
-1. 打开浏览器，搜索、下载并安装新的 Microsoft Edge 浏览器。 启动新的 Edge 浏览器。
+1. 启动实验室后，Microsoft 虚拟实验室环境中将提供一个免费试用租户可供你访问。
 
 1. 在 Microsoft Edge 浏览器中，导航到 Azure 门户 (https://portal.azure.com )。
 
@@ -236,7 +228,7 @@ ms.locfileid: "147541853"
 
 在此任务中，你将连接 Azure Active Directory 连接器。
 
-1. 在“配置”区域，选择“数据连接器”。  在“数据连接器”页面中，从列表中选择“Azure Active Directory”连接器。
+1. 系统会自动向该租户分配一个唯一用户名和密码。
 
 1. 在连接器信息边栏选项卡上选择“打开连接器页面”。
 
@@ -260,7 +252,7 @@ ms.locfileid: "147541853"
 
 1. 在连接器信息边栏选项卡上选择“打开连接器页面”。
 
-1. 查看连接选项。 请不要连接。 这仅用于了解信息。
+1. 你需要检索此用户名和密码，以便在 Microsoft 虚拟实验室环境中登录 Azure 和 Microsoft 365。
 
 ### <a name="task-5-connect-the-microsoft-defender-for-cloud-apps-connector"></a>任务 5：连接 Microsoft Defender for Cloud Apps 连接器。
 
@@ -290,7 +282,7 @@ ms.locfileid: "147541853"
 
 1. 在连接器信息边栏选项卡上选择“打开连接器页面”。
 
-1. 查看连接选项。 请不要连接。 这仅用于了解信息。
+1. Review the Connecting Options. Don't connect. This is for informational purposes only.
 
 ### <a name="task-8-connect-the-microsoft-defender-for-endpoint-connector"></a>任务 8：连接 Microsoft Defender for Endpoint 连接器。
 
@@ -320,7 +312,7 @@ ms.locfileid: "147541853"
 
 1. 以管理员身份使用密码登录到 WIN2 虚拟机：**Pa55w.rd**。  
 
-1. 打开浏览器，搜索、下载并安装新的 Microsoft Edge 浏览器。 启动新的 Edge 浏览器。
+1. 由于此课程可能由学习合作伙伴使用几个授权实验室托管提供者中的任何一个提供，因此，检索与租户关联的租户 ID 的相关实际步骤可能会因实验室托管提供者而有所不同。
 
 1. 打开浏览器并使用你的凭据登录到 Azure 门户 (https://portal.azure.com )。
 
@@ -336,7 +328,7 @@ ms.locfileid: "147541853"
 
 1. 选择“在非 Azure Windows 计算机上安装代理”。
 
-**注意：** 在 Windows 虚拟机上安装代理和在非 Azure Windows 计算机上安装代理的说明可能相反。 即使显示的文字相反，链接也可指向适当的位置。
+因此，讲师将在课程中为你提供有关如何检索此信息的必要说明。
 
 1. 选择“为 Azure Windows 计算机下载和安装代理”。 
 
@@ -346,7 +338,7 @@ ms.locfileid: "147541853"
 
 1. 在“欢迎”对话上，选择“下一步”。
 
-1. 在“Microsoft 软件许可条款”页面上选择“我同意”。  在“目标”提示上选择“下一步”。
+1. 你应该记录以供稍后使用的信息包括：
 
 1. 在“代理安装选项”提示上，选择“将代理连接到 Azure Log Analytics (OMS)”选项，然后选择“下一步”。 
 
@@ -364,7 +356,7 @@ ms.locfileid: "147541853"
 
 在此任务中，你将安装并收集 Sysmon 日志。
 
-此时应仍连接到 WIN2 虚拟机。  以下说明将使用默认配置安装 Sysmon。  应研究基于社区的配置，以便在生产计算机上使用 Sysmon。
+You should still be connected to the WIN2 virtual machine.  The following instructions will install Sysmon with the default configuration.  You should research community based configurations for Sysmon to be used on production machines.
 
 1. 在浏览器中，转到 https://docs.microsoft.com/sysinternals/downloads/sysmon
 
@@ -372,7 +364,7 @@ ms.locfileid: "147541853"
 
 1. 打开下载文件并将文件提取到新目录 c:\sysmon
 
-1. 在适用于 WIN2 的 Windows 任务栏搜索框中，输入“命令”。  搜索结果将显示命令提示符应用。  右键单击命令提示符应用并选择“以管理员身份运行”。  确认显示的任何用户帐户控制提示。
+1. 租户后缀 ID。
 
 1. 输入 cd \sysmon
 
@@ -410,7 +402,7 @@ ms.locfileid: "147541853"
 
 1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：**Pa55w.rd**。  
 
-1. 在任务栏的搜索框中，输入“Command”。  命令提示符将显示在搜索结果中。  右键单击命令提示符，并选择“以管理员身份运行”。 确认显示的任何用户帐户控制提示。
+1. 此 ID 适用于将在整个实验室中用于登录 Microsoft 365 的 onmicrosoft.com 帐户。
 
 1. 在命令提示符中，在每一行中输入命令，并在每一行后按 Enter 键：
 ```
@@ -431,7 +423,7 @@ notepad c2.ps1
 ```
 选择“是”以创建新文件并将以下 PowerShell 脚本复制到 c2.ps1，然后选择“保存”。 
 
-**备注** 粘贴到虚拟机可能有长度限制。  将此脚本分为三部分进行粘贴，以便将所有脚本粘贴到虚拟机中。  确保脚本在记事本 c2.ps1 文件中的外观与在这些说明中一致。
+其格式为 {username}@M365xZZZZZZ.onmicrosoft.com，其中 ZZZZZZ 是实验室托管提供者提供的唯一租户后缀 ID。
 
 ```
 
@@ -495,8 +487,7 @@ Until ($TimeNow -ge $RunEnd)
 powershell
 .\c2.ps1
 ```
-**注意：** 你将看到解析错误。 这是预期会出现的。
-让此命令/powershell 脚本在后台运行。 不要关闭窗口。  该命令需要在数小时内生成日志条目。  在此脚本运行期间，你可以继续进行下一项任务和下一个练习。  此任务创建的数据稍后将在威胁搜寻中使用。  此过程不会创造大量的数据或处理。
+记录此 ZZZZZZ 值以供稍后使用。
 
 ### <a name="task-2-attack-windows-configured-with-sysmon"></a>任务 2：攻击配置了 Sysmon 的 Windows
 
@@ -504,7 +495,7 @@ powershell
 
 1. 以管理员身份使用密码登录到 WIN2 虚拟机：**Pa55w.rd**。  
 
-1. 在任务栏的搜索框中，输入“CMD”。  命令提示符将显示在搜索结果中。  右键单击命令提示符，并选择“以管理员身份运行”。
+1. 当有任何实验室步骤指示你登录 Microsoft 365 门户时，都必须输入在此处获取的 ZZZZZZ 值。
 
 1. 在命令提示符中，在每一行中输入命令，并在每一行后按 Enter 键：
 ```
