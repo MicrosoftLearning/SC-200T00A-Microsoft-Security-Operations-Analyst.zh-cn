@@ -2,24 +2,19 @@
 lab:
   title: 练习 1 - 部署 Microsoft Defender for Endpoint
   module: Module 2 - Mitigate threats using Microsoft Defender for Endpoint
-ms.openlocfilehash: 70f7966e8584760ca61a7b15217b9db13bf1076d
-ms.sourcegitcommit: 8d2ac5382c9f5dc03a7171e0afa587fa84b0a8b2
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2022
-ms.locfileid: "147854628"
 ---
+
 # <a name="module-2---lab-1---exercise-1---deploy-microsoft-defender-for-endpoint"></a>模块 2 - 实验室 1 - 练习 1 - 部署 Microsoft Defender for Endpoint
 
 ## <a name="lab-scenario"></a>实验室方案
 
 ![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod2_L1_Ex1.png)
 
-你是一家公司的安全操作分析师，你的公司正在实施 Microsoft Defender for Endpoint。 你的主管计划加入一些设备，以深入了解安全运营 (SecOps) 团队响应程序所需的更改。
+You are a Security Operations Analyst working at a company that is implementing Microsoft Defender for Endpoint. Your manager plans to onboard a few devices to provide insight into required changes to the Security Operations (SecOps) team response procedures.
 
-首先初始化 Defender for Endpoint 环境。 接下来，通过对初始设备运行加入脚本，为你的部署加入这些设备。 配置环境的安全性。 最后，创建设备组并分配适当的设备。
+You start by initializing the Defender for Endpoint environment. Next, you onboard the initial devices for your deployment by running the onboarding script on the devices. You configure security for the environment. Lastly, you create Device groups and assign the appropriate devices.
 
->**重要提示：** 通过不同的模块使用实验室虚拟机。 请保存你的虚拟机。 如果在不保存的情况下退出实验室，将需要再次重新运行某些配置。
+><bpt id="p1">**</bpt>Important:<ept id="p1">**</ept>  The lab Virtual Machines are used through different modules. SAVE your virtual machines. If you exit the lab without saving, you will be required to re-run some configurations again.
 
 >**注意：** 请确保已成功完成前一模块的任务 3。
 
@@ -42,9 +37,9 @@ ms.locfileid: "147854628"
 
 1. 在“设置”页面上，选择“设备发现” 。 
 
-    >**注意：** 如果“设置”下面没有显示“设备发现”选项，可通过选择右上角包含帐户首字母缩写的圆圈，然后选择“注销”进行注销  。可能想尝试的其他选项是使用 Ctrl+F5 刷新页面或打开页面 InPrivate。 使用“租户电子邮件”凭据重新登录。
+    ><bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> If you do not see the <bpt id="p2">**</bpt>Device discovery<ept id="p2">**</ept> option under <bpt id="p3">**</bpt>Settings<ept id="p3">**</ept>, logout by selecting the top-right circle with your account initials and select <bpt id="p4">**</bpt>Sign out<ept id="p4">**</ept>. Other options that you might want to try is to refresh the page with Ctrl+F5 or open the page InPrivate. Login again with the <bpt id="p1">**</bpt>Tenant Email<ept id="p1">**</ept> credentials.
 
-1. 在“发现”设置中，确保选中“标准发现(推荐)”。 提示：如果看不到该选项，请刷新页面。
+1. In Discovery setup make sure <bpt id="p1">**</bpt>Standard discovery (recommended)<ept id="p1">**</ept> is selected. <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> If you do not see the option, refresh the page.
 
 
 ### <a name="task-2-onboard-a-device"></a>任务 2：加入设备。
@@ -57,27 +52,27 @@ ms.locfileid: "147854628"
 
 1. 在“设备管理”部分选择“加入”。
 
-1. 在“1. 加入设备”区域中，确保“部署方法”下拉列表中包含“本地脚本(用于最多 10 台设备)”，然后选择“下载加入包”按钮。 用鼠标突出显示“WindowsDefenderATPOnboardingPackage.zip”文件，然后选择文件夹图标“在文件夹中显示”。 提示：默认情况下，该文件应位于 c:\users\admin\downloads 目录中。
+1. 你是一家公司的安全操作分析师，你的公司正在实施 Microsoft Defender for Endpoint。
 
 1. 右键单击已下载的 zip 文件，然后选择“全部提取...”，确保选中“完成时显示提取的文件”，然后选择“提取”。
 
-1. 右键单击解压缩的文件 WindowsDefenderATPLocalOnboardingScript.cmd，然后选择“属性”。 选择“属性”窗口右下角的“解除阻止”复选框，然后选择“确定” 。
+1. 你的主管计划加入一些设备，以深入了解安全运营 (SecOps) 团队响应程序所需的更改。
 
-1. 再次右键单击解压缩文件“WindowsDefenderATPLocalOnboardingScript.cmd”，然后选择“以管理员身份运行”。  提示：如果遇到 Windows SmartScreen 窗口，请选择“详细信息”，然后选择“仍要运行” 。 
+1. Right-click on the extracted file "WindowsDefenderATPLocalOnboardingScript.cmd" again and choose <bpt id="p1">**</bpt>Run as Administrator<ept id="p1">**</ept>.  <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> If you encounter the Windows SmartScreen window, select on <bpt id="p2">**</bpt>More info<ept id="p2">**</ept>, and choose <bpt id="p3">**</bpt>Run anyway<ept id="p3">**</ept>. 
     
-1. 显示“用户帐户控制”窗口时，请选择“是”以允许脚本运行，并对脚本提供的问题回答“Y”，然后按 Enter 键  。 完成后，命令屏幕上会显示一条“已成功将计算机加入 Microsoft Defender for Endpoint”的消息。
+1. 首先初始化 Defender for Endpoint 环境。
 
-1. 按任意键继续。 这将关闭命令提示符窗口。
+1. 接下来，通过对初始设备运行加入脚本，为你的部署加入这些设备。
 
-1. 从 Microsoft 365 Defender 门户返回到“加入”页面，在“2. 运行检测测试”部分下，通过选择“复制”按钮复制检测测试脚本。  
+1. 配置环境的安全性。  
 
 1. 在 WIN1 虚拟机的 Windows 搜索栏中，键入“CMD”，然后在命令提示符应用的右窗格上，选择“以管理员身份运行” 。 
 
 1. 显示“用户帐户控制”窗口时，选择“是”以允许应用运行。 
 
-1. 粘贴脚本的方法是右键单击“管理员:**命令提示符”窗口，并按 Enter 键运行** 。 **注意：** 窗口在运行脚本后自动关闭。
+1. 最后，创建设备组并分配适当的设备。
 
-1. 在 Microsoft 365 Defender 门户的左侧菜单中，在“资产”区域下选择“设备” 。 如果设备未显示，请完成下一任务，稍后再回来查看。 可能需要多达 60 分钟，第一台设备才会显示在门户中。
+1. In the Microsoft 365 Defender portal, in the left-hand menu, under the <bpt id="p1">**</bpt>Assets<ept id="p1">**</ept> area, select <bpt id="p2">**</bpt>Devices<ept id="p2">**</ept>. If the device is not shown, complete the next task and come back to check it back later. It can take up to 60 minutes for the first device to be displayed in the portal.
 
     >**注意：** 如果你已完成载入过程，但在一小时后未在“设备”列表中看到设备，这可能指示存在载入或连接问题。
 
@@ -101,7 +96,7 @@ ms.locfileid: "147854628"
     |角色名称|**第 1 层支持**|
     |权限|实时响应功能 - 高级|
 
-1. 选择顶部的“分配的用户组”选项卡。 选择“sg-IT”，然后选择“添加所选组”。 请确保它显示在“Azure AD 具有此角色的用户组”下。
+1. **重要提示：** 通过不同的模块使用实验室虚拟机。
 
 1. 选择“保存”。
 
@@ -127,13 +122,13 @@ ms.locfileid: "147854628"
 
 1. 在“设备”选项卡中，对操作系统条件选择“Windows 10”，然后选择“下一步” 。
 
-1. 在“预览设备”选项卡上，选择“显示预览”以查看 WIN1 虚拟机。 选择“下一步”  。 提示：如果没有在预览列表中看到虚拟机，请返回并同时为操作系统条件选择“无”。 尚未填充 VM 的数据。
+1. 请保存你的虚拟机。
 
-1. 对于“用户访问”选项卡，选择“sg-IT”，然后选择“添加所选组”按钮 。 请确保它显示在“Azure AD 可访问此设备组的用户组”下。
+1. 如果在不保存的情况下退出实验室，将需要再次重新运行某些配置。
 
 1. 选择“完成”  。
 
-1. 设备组配置已更改。 选择“应用更改”，检查匹配项并重新计算分组。
+1. Device group configuration has changed. Select <bpt id="p1">**</bpt>Apply changes<ept id="p1">**</ept> to check matches and recalculate groupings.
 
 1. 现在，你将有两个设备组；刚创建的“常规”设备组和具有相同修正级别的“未分组的设备（默认）”设备组。
 

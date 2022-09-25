@@ -2,20 +2,15 @@
 lab - Do not use. Temporarily not operational!:
   title: 练习 4 - 使用数据连接器将威胁情报连接到 Microsoft Sentinel
   module: Module 6 - Connect logs to Microsoft Sentinel
-ms.openlocfilehash: 235d07e9e56a964a914f6354d9b52bcd144d491f
-ms.sourcegitcommit: 9c40f5cb317f89cba455283e03bdd3d1c8cfe5c3
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2022
-ms.locfileid: "147705089"
 ---
+
 # <a name="module-6---lab-1---exercise-4---connect-threat-intelligence-to-microsoft-sentinel-using-data-connectors"></a>模块 6 - 实验室 1 - 练习 4 - 使用数据连接器将威胁情报连接到 Microsoft Sentinel
 
 ## <a name="lab-scenario"></a>实验室方案
 
 ![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod6_L1_Ex4.png)
 
-你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你需要了解如何连接来自组织中多个数据源的日志数据。 最后，将连接威胁情报源，以提高检测已知威胁和和确定其优先级的能力。
+You are a Security Operations Analyst working at a company that implemented Microsoft Sentinel. You must learn how to connect log data from the many data sources in your organization. Finally, you connect a threat intelligence feed to enhance your ability to detect and prioritize known threats.
 
 ### <a name="task-1-connect-threat-intelligence"></a>任务 1：连接威胁情报
 
@@ -47,7 +42,7 @@ ms.locfileid: "147705089"
 
 1. 输入 guest 作为密码。
 
-1. 现在，选择“添加”按钮。  将拉取钓鱼 URL 并用其填充 ThreatIntelligenceIndicator 表。
+1. Now select the <bpt id="p1">**</bpt>Add<ept id="p1">**</ept> button.  Phishing URLs will be pulled and populate the ThreatIntelligenceIndicator table.
 
 >**注意：** 如果要添加其他集合，请在 Microsoft Edge 浏览器中打开 <https://limo.anomali.com/api/v1/taxii2/feeds/collections/> ，并使用来宾用户名和密码查看可用的不同 ID。
 

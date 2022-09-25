@@ -2,20 +2,15 @@
 lab:
   title: 练习 2 - 创建 Playbook
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: c06fe1fd5adcf236783083c2870249560f61e73c
-ms.sourcegitcommit: 5bf676e43973b883b6d350ee061b6bbc292e528e
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2022
-ms.locfileid: "147718803"
 ---
+
 # <a name="module-7---lab-1---exercise-2---create-a-playbook"></a>模块 7 - 实验室 1 - 练习 2 - 创建 Playbook
 
 ## <a name="lab-scenario"></a>实验室方案
 
 ![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex2.png)
 
-你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你需要了解如何使用 Microsoft Sentinel 检测和缓解威胁。 现在，你想要响应和修正可以从 Microsoft Sentinel 作为例程运行的操作。
+You are a Security Operations Analyst working at a company that implemented Microsoft Sentinel. You must learn how to detect and mitigate threats using Microsoft Sentinel. Now, you want to respond and reMediate actions that can be run from Microsoft Sentinel as a routine.
 
 使用 playbook，可以帮助自动执行和协调威胁响应，与其他内部系统和外部系统集成，并可以设置为自动运行以响应特定警报或事件（分别由分析规则或自动化规则触发时）。 
 
@@ -67,7 +62,7 @@ ms.locfileid: "147718803"
 
 1. 在页面左侧的“内容管理”区域下，选择“社区”页。
 
-1. 在右窗格中，选择“加入社区内容”链接。 这会在 Microsoft Edge 浏览器中打开一个新选项卡展示 Microsoft Sentinel GitHub 内容。
+1. On the right pane, select the <bpt id="p1">**</bpt>Onboard community content<ept id="p1">**</ept> link. This will open a new tab in the Edge Browser for Microsoft Sentinel GitHub content.
 
 1. 选择“Solutions”文件夹。
 
@@ -77,7 +72,7 @@ ms.locfileid: "147718803"
 
 1. 在“readme.md”框中，向下滚动到第二个“快速部署”选项“使用警报触发器进行部署”，并选择“部署到 Azure”按钮 。  
 
-    >**非常重要**：请注意，“事件”和“警报”是两个不同的 Microsoft Sentinel 触发器。 请确保选择“警报”（第二个）。
+    ><bpt id="p1">**</bpt>VERY IMPORTANT<ept id="p1">**</ept>: Be aware that they are two different Microsoft Sentinel triggers to use, Incident and Alert. Make sure you are selecting the Alert (second) one.
 
 1. 确保已选择 Azure 订阅。
 
@@ -85,7 +80,7 @@ ms.locfileid: "147718803"
 
 1. 将“区域”的默认值保留为“(US) 美国东部”。
 
-1. 确保“Playbook 名称”为 PostMessageTeams-OnAlert，然后选择“查看 + 创建”。 提示：如果名称不同，请返回到 GitHub 并选择“使用警报触发器部署”playbook。
+1. Make sure the <bpt id="p1">*</bpt>Playbook Name<ept id="p1">*</ept> is "PostMessageTeams-OnAlert" and select <bpt id="p2">**</bpt>Review + create<ept id="p2">**</ept>. <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> If the name is different, go back to GitHub and select the <bpt id="p2">**</bpt>Deploy with alert trigger<ept id="p2">**</ept> playbook.
 
 1. 现在选择“创建”。 
 
@@ -102,7 +97,7 @@ ms.locfileid: "147718803"
 
 1. 在“配置”区域下选择“自动化”，然后选择“可用的 Playbook”选项卡。
 
-1. 选择“PostMessageTeams-OnAlert”playbook。 提示：如果未看到 playbook，请按 Ctrl+F5 刷新 Azure 门户页面。
+1. Select the <bpt id="p1">**</bpt>PostMessageTeams-OnAlert<ept id="p1">**</ept> playbook. <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> If you do not see the playbook, refresh the Azure portal page by pressing Ctrl+F5.
 
 1. 在 PostMessageTeams-OnAlert 的逻辑应用页的命令菜单中，选择“编辑”。
 
@@ -110,21 +105,21 @@ ms.locfileid: "147718803"
 
 1. 选择“更改连接”链接。
 
-1. 选择“添加新项”，然后选择“登录” 。 当系统提示时，在新窗口中，选择 Azure 订阅管理员凭据。 现在，块的最后一行应显示“已连接到 your-admin-username”。
+1. 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。
 
 1. 现在，选择第二个块“警报 - 获取事件”。
 
 1. 选择“更改连接”链接。
 
-1. 在“显示名称”下选择具有 Azure 管理员用户名的连接。 提示：admin@ZZZZZZ.onmicrosoft.com。 现在，块的最后一行应显示“已连接到 your-admin-username”。
+1. 你需要了解如何使用 Microsoft Sentinel 检测和缓解威胁。
 
 1. 现在，选择第三个块“连接”。
 
-1. 选择“添加新项”，在系统提示时选择 Azure 管理员凭据。 现在，块的最后一行应显示“已连接到 your-admin-username”。
+1. 现在，你想要响应和修正可以从 Microsoft Sentinel 作为例程运行的操作。
 
-1. 该块现已重命名为“发布消息 (V3)”，在“团队”字段的末尾，选择“X”以清除内容。 该字段将改为列出 Microsoft Teams 中各个可用团队的下拉列表。 选择“SOC”。
+1. The block has now been renamed to <bpt id="p1">**</bpt>Post a message (V3)<ept id="p1">**</ept>, at the end of the <bpt id="p2">*</bpt>Team<ept id="p2">*</ept> field, select the <bpt id="p3">**</bpt>X<ept id="p3">**</ept> to clear the contents. The field will be changed to a drop-down with a listing of the available Teams from Microsoft Teams. Select <bpt id="p1">**</bpt>SOC<ept id="p1">**</ept>.
 
-1. 对“频道”字段进行相同的选择，选择字段末尾的“X”以清除内容。 字段将更改为一个下拉列表，其中列出了 SOC 团队的频道。 选择“新建警报”。
+1. Do the same for the <bpt id="p1">*</bpt>Channel<ept id="p1">*</ept> field, select the <bpt id="p2">**</bpt>X<ept id="p2">**</ept> at the end of the field to clear the contents. The field will be changed to a drop-down with a listing of the Channels of the SOC Teams. Select <bpt id="p1">**</bpt>New Alerts<ept id="p1">**</ept>.
 
 1. 在命令栏上选择“保存”。
 

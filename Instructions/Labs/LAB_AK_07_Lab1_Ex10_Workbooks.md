@@ -2,20 +2,15 @@
 lab:
   title: 练习 10 - 创建工作簿
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: 265718067e07c114f7d03bb1fde109994a522b47
-ms.sourcegitcommit: f8918eddeaa7a7a480e92d0e5f2f71143c729d60
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2022
-ms.locfileid: "147038022"
 ---
+
 # <a name="module-7---lab-1---exercise-10---create-workbooks"></a>模块 7 - 实验室 1 - 练习 10 - 创建工作簿
 
 ## <a name="lab-scenario"></a>实验室方案
 
 ![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex8.png)
 
-你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 将数据源连接到 Microsoft Sentinel 后，可以使用采用 Microsoft Sentinel 的 Azure Monitor 工作簿来可视化和监视数据，这在创建自定义仪表板方面提供了多样性。 
+You are a Security Operations Analyst working at a company that implemented Microsoft Sentinel. Once you have connected your data sources to Microsoft Sentinel, you can visualize and monitor the data using the Microsoft Sentinel adoption of Azure Monitor Workbooks, which provides versatility in creating custom dashboards. 
 
 Microsoft Sentinel 可让你跨数据创建自定义工作簿，并且还附带了内置的工作簿模板，使你可以在连接数据源后快速获得对数据的见解。
 
@@ -36,11 +31,11 @@ Microsoft Sentinel 可让你跨数据创建自定义工作簿，并且还附带�
 
 1. 选择 Microsoft Sentinel 工作区。
 
-1. 选择“工作簿”。 “模板”选项卡默认处于选中状态。
+1. Select <bpt id="p1">**</bpt>Workbooks<ept id="p1">**</ept>. The <bpt id="p1">*</bpt>Templates<ept id="p1">*</ept> tab is selected by default.
 
-1. 搜索并选择“标识和访问”模板工作簿。 在右侧窗格中，向下滚动并选择“查看模板”按钮。
+1. Search for and select the <bpt id="p1">**</bpt>Identity &amp; Access<ept id="p1">**</ept> template workbook. In the right pane, scroll down and select the <bpt id="p1">**</bpt>View template<ept id="p1">**</ept> button.
 
-1. 查看工作簿的内容。 它通过收集和分析安全日志，并使用审核日志和登录日志收集对 Microsoft 产品使用的见解，从而显示对标识和访问操作的见解。
+1. Review the contents of the workbook. It shows insights into Identity and access operations by collecting and analyzing security logs, using the audit and sign-in logs to gather insights into use of Microsoft products.
 
 1. 选择右上角的“X”关闭工作簿。
 
@@ -57,35 +52,35 @@ Microsoft Sentinel 可让你跨数据创建自定义工作簿，并且还附带�
 
 1. 在命令栏中选择“编辑”以对工作簿进行更改。
 
-1. 阅读用于告知新功能的横幅以比较工作簿。 选择该横幅以关闭消息。
+1. Read the banner that informs you of a new feature to compare workbooks. Dismiss the message by selecting the banner.
 
-1. 向下滚动到“用户活动”区域，查看图中“操作计数”和“趋势”的颜色，因为我们将对这些列进行格式设置。 选择网格下面的“编辑”按钮。
+1. 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。
 
-1. 选择“列设置”按钮，该按钮位于“运行查询”命令栏的右侧。 提示：仅当 KQL 查询中有数据时，此按钮才会显示。
+1. 将数据源连接到 Microsoft Sentinel 后，可以使用采用 Microsoft Sentinel 的 Azure Monitor 工作簿来可视化和监视数据，这在创建自定义仪表板方面提供了多样性。
 
 1. 在显示的“编辑列设置”边栏选项卡中，选择“列”中的“操作计数(热度地图 + 已设置格式)” 。
 
-1. 查看设置，特别是“列呈现器”的选项。 对于“调色板”，请选择“32 色分类”。
+1. Review the settings, in particular the options for <bpt id="p1">*</bpt>Column renderer<ept id="p1">*</ept>. For <bpt id="p1">*</bpt>Color palette<ept id="p1">*</ept>, select <bpt id="p2">**</bpt>32-color categorical<ept id="p2">**</ept>.
 
 1. 在“列”中，选择“趋势(迷你图 + 已设置格式)”。
 
 1. 查看设置，对于“列呈现器”，选择“迷你图区域”，然后在“调色板”中选择你所选的颜色。
 
-1. 选择“保存并关闭”。 现在我们将回顾如何使用一个磁贴/网格控件来筛选另一个磁贴/网格中的结果。
+1. Select <bpt id="p1">**</bpt>Save and Close<ept id="p1">**</ept>. Now we are going to review how one tile/grid control can be used to filter the results in another tile/grid.
 
 1. 选择“编辑查询项: 查询 - 2”的命令栏中的“高级设置”按钮。
 
-1. 查看“选择这些项目时，请导出参数”设置。 请注意，已选中用户信息”字段。
+1. Review the <bpt id="p1">*</bpt>When items are selected, export parameters<ept id="p1">*</ept> setting. Notice the <bpt id="p1">*</bpt>UserInfo<ept id="p1">*</ept> field is selected.
 
-1. 向下滚动并选择查询底部（不是顶部菜单）的“完成编辑”。 查看“操作计数”和“趋势”的更改后颜色 。
+1. Scroll down and select <bpt id="p1">**</bpt>Done Editing<ept id="p1">**</ept> at the bottom of the query (not the top menu). Look at the changed colors for <bpt id="p1">*</bpt>Operations count<ept id="p1">*</ept> and <bpt id="p2">*</bpt>Trend<ept id="p2">*</ept>.
 
 1. 选择屏幕右侧的“最活跃的用户”饼图下的“编辑”。  
 
-1. 在“日志查询”中，找到“用户信息” 。 查询将使用从另一查询导出的参数来筛选结果。
+1. In the <bpt id="p1">*</bpt>Logs query<ept id="p1">*</ept>, locate <bpt id="p2">*</bpt>UserInfo<ept id="p2">*</ept>. The query is using the parameter exported from the other query to filter results.
 
 1. 向下滚动并选择查询底部（不是顶部菜单）的“完成编辑”。
 
-1. 向上滚动并选择顶部菜单中的“完成编辑”，然后选择“保存”图标 。 选择右上角的“X”关闭工作簿。
+1. Scroll up and select <bpt id="p1">**</bpt>Done Editing<ept id="p1">**</ept> at the top menu and select the <bpt id="p2">**</bpt>Save<ept id="p2">**</ept> icon. Close the workbook by selecting the <bpt id="p1">**</bpt>X<ept id="p1">**</ept> in the top-right corner.
 
 
 ### <a name="task-3-create-a-workbook"></a>任务 3：创建工作簿
@@ -104,7 +99,7 @@ Microsoft Sentinel 可让你跨数据创建自定义工作簿，并且还附带�
 
 1. 在“## 新建工作簿”顶部键入“# 我的工作簿” 。
 
-1. 对于“编辑文本项: 文本 - 2”，选择底部菜单中的“完成编辑”。 请注意，标题已变大并且名称已更改。
+1. Select <bpt id="p1">**</bpt>Done Editing<ept id="p1">**</ept> on the bottom menu, for the <bpt id="p2">*</bpt>Editing text item: text - 2<ept id="p2">*</ept>. Notice that your header increased size and name changed.
 
 1. 在唯一可见的条形图下，选择“编辑”。
 
@@ -150,7 +145,7 @@ Microsoft Sentinel 可让你跨数据创建自定义工作簿，并且还附带�
 
 1. 在工作簿的命令栏中选择“完成编辑”。
 
-1. 选择“保存”图标，将“标题”更改为“我的工作簿”，将其他值保留为默认值。 再次选择“保存”以提交更改。 
+1. Select the <bpt id="p1">**</bpt>Save<ept id="p1">**</ept> icon, change the <bpt id="p2">*</bpt>Title<ept id="p2">*</ept> to <bpt id="p3">**</bpt>My Workbook<ept id="p3">**</ept> and leave other values as default. Select <bpt id="p1">**</bpt>Save<ept id="p1">**</ept> again to commit the changes. 
 
 1. 选择右上角的“X”关闭工作簿，也可在 Microsoft Sentinel 门户中选择“工作簿”来关闭 。
 

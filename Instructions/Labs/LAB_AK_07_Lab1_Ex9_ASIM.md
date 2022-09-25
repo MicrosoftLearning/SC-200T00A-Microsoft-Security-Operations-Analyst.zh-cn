@@ -2,20 +2,15 @@
 lab:
   title: 练习 9 - 创建 ASIM 分析程序
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: 5f115627b8d915bfb31e34532d3a2a7d79a23499
-ms.sourcegitcommit: 8c0ae4aec8425a85e0ba6dc8964406bf5d79e4d4
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "147154479"
 ---
+
 # <a name="module-7---lab-1---exercise-9---create-asim-parsers"></a>模块 7 - 实验室 1 - 练习 9 - 创建 ASIM 分析程序
 
 ## <a name="lab-scenario"></a>实验室方案
 
-你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 需要为特定 Windows 注册表事件建模 ASIM 分析程序。  这些简化的分析程序将稍后按照 ASIM 分析程序注册表事件规范化标准完成（ https://docs.microsoft.com/en-us/azure/sentinel/registry-event-normalization-schema) 。
+You are a Security Operations Analyst working at a company that implemented Microsoft Sentinel. You need to model ASIM parsers for a specific Windows registry event.  These simplified parsers will be finalized at a later time following the ASIM parser registry event normalization standard (<ph id="ph1">https://docs.microsoft.com/en-us/azure/sentinel/registry-event-normalization-schema)</ph>.
 
->重要提示：此实验室需要将较长的 KQL ASIM 分析程序脚本输入到 Microsoft Sentinel 中。 这些脚本是在此实验室开始时通过下载文件提供的。 另一个下载这些脚本的位置是： https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/tree/master/Allfiles
+><bpt id="p1">**</bpt>Important:<ept id="p1">**</ept> This lab involves entering lengthy KQL ASIM parser scripts into Microsoft Sentinel. The scripts were provided via download files at the beginning of this lab. An alternate location to download them is:  <ph id="ph1">https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/tree/master/Allfiles</ph>
 
 ### <a name="task-1-develop-kql-function-for-microsoft-365-defender-registry-event"></a>任务 1：为 Microsoft 365 Defender 注册表事件开发 KQL 函数 
 

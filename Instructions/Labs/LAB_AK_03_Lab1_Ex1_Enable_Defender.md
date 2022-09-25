@@ -2,20 +2,15 @@
 lab:
   title: 练习 1 - 启用 Microsoft Defender for Cloud
   module: Module 3 - Mitigate threats using Microsoft Defender for Cloud
-ms.openlocfilehash: e37191fb2c95e6d9c443dcb4e5a6a14e7ed0de62
-ms.sourcegitcommit: 8d2ac5382c9f5dc03a7171e0afa587fa84b0a8b2
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2022
-ms.locfileid: "147854631"
 ---
+
 # <a name="module-3---lab-1---exercise-1---enable-microsoft-defender-for-cloud"></a>模块 3 - 实验室 1 - 练习 1 - 启用 Microsoft Defender for Cloud
 
 ## <a name="lab-scenario"></a>实验室方案
 
 ![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod3_L1_Ex1.png)
 
-你是一名安全运营分析师，你所在公司正在使用 Microsoft Defender for Cloud 实现云工作负载保护。  在此实验室中，你将启用 Microsoft Defender for Cloud。
+You are a Security Operations Analyst working at a company that is implementing cloud workload protection with Microsoft Defender for Cloud.  In this lab you will enable Microsoft Defender for Cloud.
 
 
 ### <a name="task-1-access-the-azure-portal-and-set-up-a-subscription"></a>任务 1：访问 Azure 门户，然后设置订阅
@@ -34,7 +29,7 @@ ms.locfileid: "147854631"
 
 1. 在 Azure 门户的搜索栏中，键入“订阅”，然后选择“订阅”。 
 
-1. 如果显示“Azure Pass - 赞助”订阅（或所选语言的等效名称），请继续执行任务 #2。 否则，请向讲师咨询如何创建包含租户管理员用户凭据的 Azure 订阅。 **注意：** 订阅创建过程可能需要长达 10 分钟的时间。 
+1. If the <bpt id="p1">*</bpt>"Azure Pass - Sponsorship"<ept id="p1">*</ept> subscription is shown (or equivalent name in your selected language), proceed to Task #2. Otherwise, ask your instructor on how to create the Azure subscription with your tenant admin user credentials. <bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> The subscription creation process could take up to 10 minutes. 
 
     >**重要提示：** 这些实验室已设计为在上课期间使用低于 10 美元的 Azure 服务。
 
@@ -55,7 +50,7 @@ ms.locfileid: "147854631"
 
 1. 选择“查看 + 创建”  。
 
-1. 工作区验证通过后，选择“创建”。 等待新工作区进行预配，这可能需要几分钟时间。
+1. Once the workspace validation has passed, select <bpt id="p1">**</bpt>Create<ept id="p1">**</ept>. Wait for the new workspace to be provisioned, this may take a few minutes.
 
 
 ### <a name="task-3-enable-microsoft-defender-for-cloud"></a>任务 3：启用 Microsoft Defender for Cloud
@@ -64,9 +59,9 @@ ms.locfileid: "147854631"
 
 1. 在 Azure 门户的搜索栏中，输入 Defender，然后选择“Microsoft Defender for Cloud”。
 
-1. 在“开始”页面的“升级”选项卡下，确保订阅已选中，然后选择页面底部的“升级”按钮  。 等待显示“试用已启动”通知，大约需要 2 分钟。 提示：可以单击顶部栏中的铃声按钮，查看 Azure 门户通知。
+1. On the <bpt id="p1">**</bpt>Getting started<ept id="p1">**</ept> page, under the <bpt id="p2">**</bpt>Upgrade<ept id="p2">**</ept> tab, make sure your subscription is selected, and then select the <bpt id="p3">**</bpt>Upgrade<ept id="p3">**</ept> button at the bottom of the page. Wait for the <bpt id="p1">*</bpt>Trial started<ept id="p1">*</ept> notification to appear, it takes about 2 minutes. <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> You can click the bell button on the top bar to review your Azure portal notifications.
 
-1. 下一页显示了用于在订阅中已有的虚拟机上安装代理的选项。 选择“继续(不安装代理)”或“在此处不执行任何操作” 。
+1. The next page shows the option to install the agent on virtual machines already in the subscription. Select <bpt id="p1">**</bpt>Continue without installing agents<ept id="p1">**</ept> or <bpt id="p2">**</bpt>Do nothing here<ept id="p2">**</ept>.
 
 1. 在门户菜单的管理区域下，选择“环境设置”。
 
@@ -76,11 +71,11 @@ ms.locfileid: "147854631"
 
 1. 从“设置”区域中选择“自动设置”。
 
-1. 查看自动设置 - 扩展。 确认用于 Azure VM 的 Log Analytics 代理已关闭。
+1. 你是一名安全运营分析师，你所在公司正在使用 Microsoft Defender for Cloud 实现云工作负载保护。
 
 1. 选择页面右上角的“x”关闭设置页面，再次返回“环境设置”，然后选择订阅左侧的“>”。
 
-1. 选择之前创建的 Log Analytics 工作区“uniquenameDefender”，查看可用选项和定价。 选择“启用所有 Microsoft Defender for Cloud 计划”，然后选择“保存” 。 等待显示“已成功保存工作区 uniquenameDefender 的 Azure Defender 计划！” 通知。
+1. 在此实验室中，你将启用 Microsoft Defender for Cloud。
 
     >**注意：** 如果页面未显示，请刷新 Microsoft Edge 浏览器，然后重试。
 
@@ -89,9 +84,9 @@ ms.locfileid: "147854631"
 
 在此任务中，你将在本地服务器上安装 Azure Arc，以便更轻松地加入。
 
->**重要提示：** 接下来的步骤将在另一台计算机上完成，而不是你之前使用的计算机。 查找虚拟机名称引用。
+><bpt id="p1">**</bpt>Important:<ept id="p1">**</ept> The next steps are done in a different machine than the one you were previously working. Look for the Virtual Machine name references.
 
-1. 使用以下密码以管理员身份登录到 WINServer 虚拟机：Passw0rd!  （如果需要）。  
+1. Log in to <bpt id="p1">**</bpt>WINServer<ept id="p1">**</ept> virtual machine as Administrator with the password: <bpt id="p2">**</bpt>Passw0rd!<ept id="p2">**</ept> if required.  
 
 1. 打开 Microsoft Edge 浏览器并导航到 Azure 门户 (https://portal.azure.com )。
 
@@ -109,11 +104,11 @@ ms.locfileid: "147854631"
 
 1. 选择“下一步”，转到“资源详细信息”选项卡。
 
-1. 选择之前创建的资源组。 提示：RG-Defender
+1. Select the Resource group you created earlier. <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> <bpt id="p2">*</bpt>RG-Defender<ept id="p2">*</ept>
 
     >**注意：** 如果尚未创建资源组，请打开另一个选项卡并创建资源组，然后重新开始。
 
-1. 查看“服务器详细信息”和“连接方法”选项 。 保留默认值并选择“下一步”，以转到“标记”选项卡。
+1. Review the <bpt id="p1">*</bpt>Server details<ept id="p1">*</ept> and <bpt id="p2">*</bpt>Connectivity method<ept id="p2">*</ept> options. Keep the default values and select <bpt id="p1">**</bpt>Next<ept id="p1">**</ept> to get to the Tags tab.
 
 1. 选择“下一步”，转到“下载并运行脚本”选项卡。
 
@@ -121,11 +116,11 @@ ms.locfileid: "147854631"
 
     >**注意：** 等待处理完成，至少需要三 (3) 分钟。
 
-1. 向下滚动并选择“下载”按钮。 提示：如果浏览器阻止下载，请在浏览器中执行操作以允许下载。 在 Microsoft Edge 浏览器中，根据需要选择省略号按钮 (...)，然后选择“保留”。 
+1. Scroll down and select the <bpt id="p1">**</bpt>Download<ept id="p1">**</ept> button. <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> if your browser blocks the download, take action in the browser to allow it. In Edge Browser, select the ellipsis button (...) if needed and then select <bpt id="p1">**</bpt>Keep<ept id="p1">**</ept>. 
 
 1. 右键单击 Windows 的“开始”按钮，然后选择“Windows PowerShell (管理员)”。
 
-1. 在“用户名”中输入“Administrator”，在“密码”中输入“Passw0rd!”  （如果收到 UAC 提示）。
+1. Enter <bpt id="p1">*</bpt>Administrator<ept id="p1">*</ept> for "Username" and <bpt id="p2">*</bpt>Passw0rd!<ept id="p2">*</ept> for "Password" if you get a UAC prompt.
 
 1. 输入：cd C:\Users\Administrator\Downloads
 
@@ -135,7 +130,7 @@ ms.locfileid: "147854631"
 
 1. 键入“.\OnboardingScript.ps1”，然后按 Enter。  
 
-    >**重要提示：** 如果收到错误“无法识别术语 .\OnboardingScript.ps1...”，请确保是在 WINServer 虚拟机中执行任务 4 的步骤。 其他问题可能是由于多次下载导致文件名称更改，请在运行目录中搜索“.\OnboardingScript (1).ps1”或其他文件编号。
+    ><bpt id="p1">**</bpt>Important:<ept id="p1">**</ept> If you get the error <bpt id="p2">*</bpt>"The term .\OnboardingScript.ps1 is not recognized..."<ept id="p2">*</ept>, make sure you are doing the steps for Task 4 in the WINServer virtual machine. Other issue might be that the name of the file changed due to multiple downloads, search for <bpt id="p1">*</bpt>".\OnboardingScript (1).ps1"<ept id="p1">*</ept> or other file numbers in the running directory.
 
 1. 输入 R 以运行一次，然后按 Enter（这可能需要几分钟时间）。
 
@@ -143,11 +138,11 @@ ms.locfileid: "147854631"
 
 1. 返回到 Windows PowerShell 窗口，复制在脚本最后一行“...enter the code”之后显示的代码，以对代理进行身份验证。
 
-1. 返回到 Microsoft Edge 浏览器，将其粘贴到“代码”框中，然后选择“下一步” 。 选择租户管理员帐户，然后在“是否尝试登录 Azure Connected Machine Agent？”窗口中选择“继续”。 
+1. Go back to the Edge browser and paste it in the <bpt id="p1">**</bpt>Code<ept id="p1">**</ept> box and select <bpt id="p2">**</bpt>Next<ept id="p2">**</ept>. Select your tenant admin account and select <bpt id="p1">**</bpt>Continue<ept id="p1">**</ept> in the <bpt id="p2">*</bpt>Are you trying to sign in to Azure Connected Machine Agent?<ept id="p2">*</ept> window. 
 
-1. 返回到 Windows PowerShell 窗口，等待消息“已成功将资源加入 Azure”。 **注意：** 如果看到带有新身份验证代码的消息行，则需要再次重复最后 3 步。
+1. Go back to the Windows PowerShell window and wait for the message <bpt id="p1">*</bpt>"Successfully Onboarded Resource to Azure"<ept id="p1">*</ept>. <bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> If you see a message line with a new authentication code, you need to repeat the last 3 steps again.
 
-1. 返回到下载脚本的 Azure 门户页面，然后选择“关闭”。 关闭“使用 Azure Arc 添加服务器”，返回到 Azure Arc 服务器页面 。
+1. 如果显示“Azure Pass - 赞助”订阅（或所选语言的等效名称），请继续执行任务 #2。
 
 1. 选择“刷新”，直到显示 WINServer 服务器名称。
 
@@ -164,7 +159,7 @@ ms.locfileid: "147854631"
 
 1. 向下滚动并选择“添加非 Azure 服务器”部分下的“配置”。
 
-1. 选择之前创建的工作区旁边的“升级”。 可能需要几分钟，请等待，直到看到通知“工作区 uniquenameDefender 的 Azure Defender 计划已成功保存！”。
+1. 否则，请向讲师咨询如何创建包含租户管理员用户凭据的 Azure 订阅。
 
 1. 选择之前创建的工作区旁边的“+ 添加服务器”。
 
@@ -176,11 +171,11 @@ ms.locfileid: "147854631"
 
 1. 从 Azure 门户的“工作区密钥”文本框中，将“工作区 ID”和“主键”值复制并粘贴到相应的向导页面字段中，然后选择“下一步”   。
 
-1. 继续安装。 完成后选择“完成”。
+1. **注意：** 订阅创建过程可能需要长达 10 分钟的时间。
 
 1. 转到“Microsoft Defender for Cloud”门户并选择“清单”。
 
-1. 5 分多钟后将显示 WINServer 虚拟机。 可能需要选择“刷新”才能看到。 提示：如果在“资源总数”下看到数字 1，请删除筛选器，以显示 WINServer 虚拟机 。
+1. The <bpt id="p1">**</bpt>WINServer<ept id="p1">**</ept> virtual machine will appear after at least 5 minutes. You may have to select <bpt id="p1">**</bpt>Refresh<ept id="p1">**</ept> to see it. <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> If you see the number 1 under <bpt id="p2">*</bpt>Total resources<ept id="p2">*</ept> remove the filter to show the <bpt id="p3">*</bpt>WINServer<ept id="p3">*</ept> virtual machine.
 
 1. 可以继续下一个实验室，稍后再返回查看 Microsoft Defender for Cloud 的“清单”部分 。
 

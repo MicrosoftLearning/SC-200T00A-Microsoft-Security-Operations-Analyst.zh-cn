@@ -2,30 +2,25 @@
 lab:
   title: 练习 1 - 探索 Microsoft 365 Defender
   module: Module 1 - Mitigate threats using Microsoft 365 Defender
-ms.openlocfilehash: 024beb607208ed4b5a93f298ba8085ec7389d3ef
-ms.sourcegitcommit: 8c0ae4aec8425a85e0ba6dc8964406bf5d79e4d4
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "147154476"
 ---
+
 # <a name="module-1---lab-1---exercise-1---explore-microsoft-365-defender"></a>模块 1 - 实验室 1 - 练习 1 - 探索 Microsoft 365 Defender 
 
 ## <a name="lab-scenario"></a>实验室方案
 
 ![M365 Defender](../Media/SC-200-Lab_M1_L1_Ex1.png)
 
-你是一家公司的安全运营分析师，你所在公司正在实现 Microsoft 365 Defender。 首先，在 EOP 和 Microsoft Defender for Office 365 中分配预设的安全策略。
+You are a Security Operations Analyst working at a company that is implementing Microsoft 365 Defender. You start by assigning preset security policies in EOP and Microsoft Defender for Office 365.
 
 
 ### <a name="task-1-obtain-your-microsoft-365-credentials"></a>任务 1：获取 Microsoft 365 凭据
 
-启动实验室后，你将获得一个免费试用版租户，可在 Microsoft 虚拟实验室环境中访问。 系统会自动向该租户分配一个唯一用户名和密码。 你必须检索此用户名和密码，以便在 Microsoft 虚拟实验室环境中登录 Azure 和 Microsoft 365。 
+Once you launch the lab, a free trial tenant will be made available to you to access in the Microsoft virtual Lab environment. This tenant will be automatically assigned a unique username and password. You must retrieve this username and password so that you can sign into Azure and Microsoft 365 within the Microsoft Virtual Lab environment. 
 
-由于学习合作伙伴可以通过多家授权实验室托管 (ALH) 提供商中的任何一家来提供本课程，因此检索与租户关联的租户 ID 所涉及的实际步骤可能因实验室托管提供商而异。 因此，讲师需要向你提供必要的指导，介绍如何检索课程的此类信息。 你应该记录以供稍后使用的信息包括：
+Because this course can be offered by learning partners using any one of several Authorized Lab Hosting (ALH) providers, the actual steps involved to retrieve the tenant ID associated with your tenant may vary by lab hosting provider. Therefore, your instructor will provide you with the necessary instructions for how to retrieve this information for your course. The information that you should note for later use includes:
 
-- 租户后缀 ID。 此 ID 适用于将在所有实验室中用来登录 Microsoft 365 的 onmicrosoft.com 帐户。 其格式为 {username}@ZZZZZZ.onmicrosoft.com，其中 ZZZZZZ 是实验室托管提供者提供的唯一租户后缀 ID。 记录此 ZZZZZZ 值以供稍后使用。 当有任何实验室步骤指示你登录 Microsoft 365 门户时，都必须输入在此处获取的 ZZZZZZ 值。
-- 租户密码。 这是由实验室托管提供者提供的管理员帐户的密码。
+- <bpt id="p1">**</bpt>Tenant suffix ID.<ept id="p1">**</ept> This ID is for the onmicrosoft.com accounts that you will use to sign into Microsoft 365 throughout the labs. This is in the format of <bpt id="p1">**</bpt>{username}<ph id="ph1">@ZZZZZZ.onmicrosoft.com</ph><ept id="p1">**</ept>, where ZZZZZZ is your unique tenant suffix ID provided by your lab hosting provider. Record this ZZZZZZ value for later use. When any of the lab steps direct you to sign into Microsoft 365 portals, you must enter the ZZZZZZ value that you obtained here.
+- <bpt id="p1">**</bpt>Tenant password.<ept id="p1">**</ept> This is the password for the admin account provided by your lab hosting provider.
 
 
 ### <a name="task-2-apply-microsoft-defender-for-office-365-preset-security-policies"></a>任务 2：应用 Microsoft Defender for Office 365 预设的安全策略
@@ -42,7 +37,7 @@ ms.locfileid: "147154476"
 
 1. 在“输入密码”对话框中，复制粘贴实验室托管提供者提供的管理员的租户密码，然后选择“登录” 。
 
-    >**注意：** 如果收到消息“操作无法完成。 请稍后再试。 如果问题持续出现，请联系 Microsoft 支持部门。”， 单击“确定”即可继续。  
+    >你是一家公司的安全运营分析师，你所在公司正在实现 Microsoft 365 Defender。  
 
 1. 如果显示，请关闭 Microsoft 365 Defender 快速导览。
 
@@ -52,29 +47,15 @@ ms.locfileid: "147154476"
 
 1. 在“威胁策略”仪表板上，选择“预设安全策略”。
 
-    >**注意：** 如果收到消息“客户端错误 - 收到 bip 规则时出错”，请选择“确定”以继续。 此错误是由于 Office 365 在默认情况下未启用租户的冻结状态。
+    >首先，在 EOP 和 Microsoft Defender for Office 365 中分配预设的安全策略。
 
-    >**注意：** 如果你收到消息“客户端错误 - 检索预设的安全策略时发生错误。*请稍后重试。”* ， 选择“确定”继续。 使用 Ctrl+F5 刷新浏览器。
+    ><bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> If you receive the message <bpt id="p2">*</bpt>"Client Error - An error occurred when retrieving preset security policies. Please try again later."<ept id="p2">*</ept> select <bpt id="p1">**</bpt>OK<ept id="p1">**</ept> to continue. Refresh your browser using <bpt id="p1">**</bpt>Ctrl+F5<ept id="p1">**</ept>.
 
-1. 在“标准保护”下，选择“管理保护设置”。 提示：如果看到此选项灰显，请使用 Ctrl+F5 刷新浏览器。
+1. Under <bpt id="p1">*</bpt>Standard protection<ept id="p1">*</ept>, select <bpt id="p2">**</bpt>Manage protection settings<ept id="p2">**</ept>. <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> If you see this option grayed out, refresh your browser using <bpt id="p2">**</bpt>Ctrl+F5<ept id="p2">**</ept>.
 
-1. 在“应用 Exchange Online Protection”部分中，选择“特定收件人”，然后在“域”下开始编写租户的域名，选择它，然后选择“下一步”。 提示：租户的域名与管理员帐户的域名相同，可能与 WWLx####.onmicrosoft.com 类似。 请注意，此配置适用于防垃圾邮件、出站垃圾邮件筛选器、防恶意软件和防钓鱼的策略。 
+1. 启动实验室后，你将获得一个免费试用版租户，可在 Microsoft 虚拟实验室环境中访问。 
 
-1. 在“应用 Defender for Office 365 保护”部分，应用与上一步相同的配置，然后选择“下一步”。 请注意，此配置适用于防钓鱼、安全附件、安全链接的策略。
-
-1. 在“模拟保护”部分，选择“下一步”四次（4 次）继续。
-
-1. 在“策略模式”部分，确保选中“完成后启用策略”单选按钮，然后选择“下一步” 。
-
-1. 阅读“查看并确认更改”下的内容，选择“确认”以应用更改，然后选择“完成”以完成 。
-
-    >**注意：** 如果你收到信息“URI 'https://outlook.office365.com/psws/service.svc/AntiPhishPolicy ' 对 PUT 操作无效。*对于 PUT 操作，URI 必须指向单个资源。”* ， 只需选择“确定”并取消操作。 你将看到“标准保护已启用”选项启用。
-
-1. 在“严格保护”下，选择“管理保护设置”。 提示：在“电子邮件与协作 - 策略与规则 - 威胁策略 - 预设安全策略”下找到“严格保护”。
-
-1. 在“应用 Exchange Online Protection”中，选择“特定收件人”，然后在“组”下开始写入“领导力”，选择它，然后选择”下一步”。 请注意，此配置适用于防垃圾邮件、出站垃圾邮件筛选器、防恶意软件和防钓鱼的策略。
-
-1. 在“应用 Defender for Office 365 保护”部分，应用与上一步相同的配置，然后选择“下一步”。 请注意，此配置适用于防钓鱼、安全附件、安全链接的策略。
+1. 系统会自动向该租户分配一个唯一用户名和密码。
 
 1. 在“模拟保护”部分，选择“下一步”四次（4 次）继续。
 
@@ -82,13 +63,27 @@ ms.locfileid: "147154476"
 
 1. 阅读“查看并确认更改”下的内容，选择“确认”以应用更改，然后选择“完成”以完成 。
 
-    >**注意：** 如果你收到信息“URI 'https://outlook.office365.com/psws/service.svc/AntiPhishPolicy ' 对 PUT 操作无效。*对于 PUT 操作，URI 必须指向单个资源。”* ， 只需选择“确定”并取消操作。 你将看到“严格保护已启用”选项启用。
+    >你必须检索此用户名和密码，以便在 Microsoft 虚拟实验室环境中登录 Azure 和 Microsoft 365。
+
+1. Under <bpt id="p1">*</bpt>Strict protection<ept id="p1">*</ept>, select <bpt id="p2">**</bpt>Manage protection settings<ept id="p2">**</ept>. <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> <bpt id="p2">*</bpt>Strict protection<ept id="p2">*</ept> is found under "Email &amp; Collaboration - Policies &amp; rules - Threat policies - Preset security policies".
+
+1. 由于学习合作伙伴可以通过多家授权实验室托管 (ALH) 提供商中的任何一家来提供本课程，因此检索与租户关联的租户 ID 所涉及的实际步骤可能因实验室托管提供商而异。
+
+1. 因此，讲师需要向你提供必要的指导，介绍如何检索课程的此类信息。
+
+1. 在“模拟保护”部分，选择“下一步”四次（4 次）继续。
+
+1. 在“策略模式”部分，确保选中“完成后启用策略”单选按钮，然后选择“下一步” 。
+
+1. 阅读“查看并确认更改”下的内容，选择“确认”以应用更改，然后选择“完成”以完成 。
+
+    >你应该记录以供稍后使用的信息包括：
 
 1. 在 Microsoft 365 Defender 门户中，从左侧“导航”菜单中选择“设置” 。
 
-1. 在“设置”页面上，选择“Microsoft 365 Defender” 。 你将看到一张咖啡杯图像和一条信息，消息的内容是:“稍等一下！ 我们正在为数据准备新空间并连接它们”。 需要几分钟才能完成，因此请让页面保持打开状态，直到下一个实验室。 
+1. On the <bpt id="p1">**</bpt>Settings<ept id="p1">**</ept> page select <bpt id="p2">**</bpt>Microsoft 365 Defender<ept id="p2">**</ept>. You are going to see an image of a coffee mug and a message that reads: "Hang on! We're preparing new spaces for your data and connecting them". It will take several minutes to finish, so leave the page open until the next lab. 
 
-    >**注意：** 如果收到错误消息“我们未计划到它会失败，但出现了问题。” 请稍后重试此步骤，或在下一实验室之前重试。
+    >租户后缀 ID。
 
 1. 当新空间成功完成时，你将看到 Microsoft 365 Defender 的帐户、电子邮件通知、预览功能和流式处理 API 的设置。
 

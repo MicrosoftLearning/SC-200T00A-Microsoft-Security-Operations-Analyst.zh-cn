@@ -2,20 +2,15 @@
 lab:
   title: 练习 3 - 创建计划查询
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: ca549d6d3770e1a220c51b4e411ab0913a443e69
-ms.sourcegitcommit: f8918eddeaa7a7a480e92d0e5f2f71143c729d60
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2022
-ms.locfileid: "147038013"
 ---
+
 # <a name="module-7---lab-1---exercise-3---create-a-scheduled-query"></a>模块 7 - 实验室 1 - 练习 3 - 创建计划查询
 
 ## <a name="lab-scenario"></a>实验室方案
 
 ![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex3.png)
 
-你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你需要了解如何使用 Microsoft Sentinel 检测和缓解威胁。 将数据源连接到 Microsoft Sentinel 后，可以创建自定义分析规则来帮助发现环境中的威胁和异常行为。
+You are a Security Operations Analyst working at a company that implemented Microsoft Sentinel. You must learn how to detect and mitigate threats using Microsoft Sentinel. After connecting your data sources to Microsoft Sentinel, you create custom analytics rules to help discover threats and anomalous behaviors in your environment.
 
 分析规则将在你的整个环境中搜索特定事件或事件集，在达到特定事件阈值或条件时发出警报，生成故障事件以供 SOC 进行会审和调查，并通过自动化跟踪和修正流程来响应威胁。
 
@@ -48,7 +43,7 @@ ms.locfileid: "147038013"
 
 1. 对于规则查询，粘贴以下 KQL 语句：
 
-    >**警告：** 使用粘贴功能时，可以向虚拟机添加额外（管道）字符。 请确保先使用记事本粘贴以下查询。
+    ><bpt id="p1">**</bpt>Warning:<ept id="p1">**</ept> When using the Paste function to the virtual machine extra (pipe) characters could be added. Make sure you use Notepad first to paste the following query.
 
     ```KQL
     AuditLogs  
@@ -60,7 +55,7 @@ ms.locfileid: "147038013"
     | project TimeGenerated, InitiatedByUPN, InitiatedFromIP, TargetUser, TargetRoleName, AADOperationType, OperationName
     ```
 
-1. 选择“查看查询结果”。 不应收到任何结果或任何错误。 如果收到错误，请查看查询是否与上一个 KQL 语句一样。 通过选择右上方的 X 关闭“日志”窗口，然后选择“确定”以放弃保存更改，并返回到向导 。
+1. Select <bpt id="p1">**</bpt>View query results<ept id="p1">**</ept>. You should not receive any results nor any errors. If you receive an error, please review that the query appears just like the previous KQL statement. Close the <bpt id="p1">*</bpt>Logs<ept id="p1">*</ept> window by selecting the upper right <bpt id="p2">**</bpt>X<ept id="p2">**</ept> and select <bpt id="p3">**</bpt>OK<ept id="p3">**</ept> to discard to save changes to go back to the wizard.
 
 1. 在“分析规则向导 - 创建新计划规则”选项卡中的“警报扩充”区域下，选择“实体映射”，然后选择以下值： 
 
@@ -81,7 +76,7 @@ ms.locfileid: "147038013"
     |运行查询的时间间隔|5 分钟|
     |查看最近多久的数据|1 天|
 
-    >**注意：** 我们特意针对同一数据生成了多个事件。 这样，实验室就可使用这些警报。
+    ><bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> We are purposely generating many incidents for the same data. This enables the Lab to use these alerts.
 
 1. 在“警报阈值”区域下，保留值不变，因为我们希望警报注册每个事件。
 
@@ -97,7 +92,7 @@ ms.locfileid: "147038013"
 1. 在“事件自动化”选项卡上，选择“新增”
 1. 对于“自动化规则名称”，请输入“第 2 层”
 1. 对于“操作”，请选择“分配所有者”
-1. 然后，选择“分配给我”。 然后，选择“应用”。
+1. Then select <bpt id="p1">**</bpt>Assign to me<ept id="p1">**</ept>. Then select <bpt id="p1">**</bpt>Apply<ept id="p1">**</ept>.
 
 1. 选择底部的“下一步: 查看 >”按钮。
   
@@ -108,7 +103,7 @@ ms.locfileid: "147038013"
 
 在此任务中，你将测试新的计划查询规则。
 
-1. 在 Azure 门户的搜索栏中，键入“Azure Active Directory”。 然后选择“Azure Active Directory”。
+1. 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。
 
 1. 选择“管理”区域中的“用户”，以便显示“用户 - 所有用户”页。
 
@@ -118,7 +113,7 @@ ms.locfileid: "147038013"
 
 1. 从命令栏中选择“+ 添加分配”。
 
-1. 在“添加分配”页的“成员身份”选项卡的“选择角色”下，选择“用户管理员”  。 并选择“添加”。
+1. 你需要了解如何使用 Microsoft Sentinel 检测和缓解威胁。
 
     >**注意：** 可能需要单击“刷新”按钮才能看到新的角色分配。 
 
@@ -126,7 +121,7 @@ ms.locfileid: "147038013"
 
 1. 在“Contoso - 概述”Azure Active Directory 页中的“监视”下，选择“审核日志”。
 
-1. 选择“导出数据设置”。 通过查看“诊断设置”下的信息，验证 Microsoft Sentinel 的“Azure Active Directory”数据连接器是否正确设置配置以将数据发送到 Log Analytics 工作区。
+1. 将数据源连接到 Microsoft Sentinel 后，可以创建自定义分析规则来帮助发现环境中的威胁和异常行为。
 
 1. 查看之前为 Sentinel 创建的 Log Analytics 工作区是否具有“诊断设置”条目 。
 
@@ -140,10 +135,10 @@ ms.locfileid: "147038013"
 
 1. 选择“事件”菜单选项。
 
-    >**注意：** 触发的警报可能需要 5+ 分钟来处理。 你可以继续进行下一个练习，稍后再返回到这里。 对于“事件”页的自动更新，请选择“自动刷新事件”开关。
+    ><bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> The alert triggered may take 5+ minutes to process. You may continue with the next exercise and return to this point later. For automatic updating of the Incidents page, select the <bpt id="p1">**</bpt>Auto-refresh incidents<ept id="p1">**</ept> toggle.
 
-1. 应该会看到新创建的事件。 选择“事件”并查看右侧边栏选项卡中的信息。
+1. You should see the newly created Incident. Select the Incident and review the information in the right blade.
 
-1. 通过在 Microsoft Edge 浏览器中选择选项卡来返回到 Microsoft Teams。 如果已关闭它，只需打开新选项卡并键入 https://teams.microsoft.com 。 转到 SOC Teams，选择“新建警报”频道，并查看有关事件的消息帖子 。
+1. Go back to Microsoft Teams by selecting the tab in your Edge browser. If you closed it, just open a new tab and type <ph id="ph1">https://teams.microsoft.com</ph>. Go to the <bpt id="p1">*</bpt>SOC<ept id="p1">*</ept> Teams, select the <bpt id="p2">*</bpt>New Alerts<ept id="p2">*</ept> channel and see the message post about the incident.
 
 ## <a name="proceed-to-exercise-4"></a>继续完成练习 4
