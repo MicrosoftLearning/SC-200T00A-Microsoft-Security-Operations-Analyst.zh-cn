@@ -10,9 +10,11 @@ lab:
 
 ![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod2_L1_Ex2.png)
 
-You are a Security Operations Analyst working at a company that is implementing Microsoft Defender for Endpoint. Your manager plans to onboard a few devices to provide insight into required changes to the Security Operations (SecOps) team response procedures.
+你是一家公司的安全操作分析师，你的公司正在实施 Microsoft Defender for Endpoint。 你的主管计划加入一些设备，以深入了解安全运营 (SecOps) 团队响应程序所需的更改。
 
 为了探索 Defender for Endpoint 的攻击缓解功能，你将运行两次模拟攻击。
+
+>**重要：** 请等待 WIN1 显示在“设备”页中，然后再继续。 否则，可能需要重复此任务才能查看稍后生成的警报。
 
 
 ### <a name="task-1-simulated-attacks"></a>任务 1：模拟攻击
@@ -25,15 +27,18 @@ You are a Security Operations Analyst working at a company that is implementing 
 
 1. 选择“教程”选项卡。
 
-1. Under <bpt id="p1">*</bpt>Automated investigation (backdoor)<ept id="p1">*</ept> you will see a message describing the scenario. Below this paragraph, click <bpt id="p1">**</bpt>Read the walkthrough<ept id="p1">**</ept>. A new browser tab opens which includes instructions to perform the simulation.
+1. 在“自动调查(后门)”下，你将看到一条描述方案的消息。 在此段落下，单击“阅读演练”。 此时将打开一个新的浏览器选项卡，其中包含执行模拟的说明。
 
-1. In the new browser tab, locate the section named <bpt id="p1">**</bpt>Run the simulation<ept id="p1">**</ept> (page 5, starting at step 2) and follow the steps to run the attack. <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> The simulation file <bpt id="p2">*</bpt>RS4_WinATP-Intro-Invoice.docm<ept id="p2">*</ept> can be found back in portal, just below the <bpt id="p3">**</bpt>Read the walkthrough<ept id="p3">**</ept> you selected in the previous step by selecting the <bpt id="p4">**</bpt>Get simulation file<ept id="p4">**</ept> button. 
+1. 在新浏览器选项卡中，找到名为“运行模拟”（第 5 页，从步骤 2 开始）的部分，并按步骤运行攻击。 提示：模拟文件 RS4_WinATP-Intro-Invoice.docm 可以在门户中找到，就在上一步中选择的“阅读演练”下方，通过选择“获取模拟文件”按钮获取 。 
 
 1. 重复最后 3 步，立即运行“自动调查(无文件攻击)”。
 
+
+### <a name="task-2-investigate-the-attacks"></a>任务 2：调查攻击
+
 1. 在 Microsoft 365 Defender 门户中，从左侧菜单栏中选择“事件和警报”，然后选择“事件” 。
 
-1. A new incident called "Multi-stage incident..." will appear in the right pane. Allow at least 5 minutes for the incident to appear. Click the incident name to load its details.
+1. 名为“多阶段事件...”的新事件将显示在右侧窗格中。 单击事件名称以加载其详细信息。
 
 1. 选中“管理事件”按钮，此时将显示一个新的窗口边栏选项卡。 
 
@@ -47,8 +52,8 @@ You are a Security Operations Analyst working at a company that is implementing 
 
 1. 如果需要，请添加注释，然后单击“保存”完成操作。
 
-1. Review the contents of the Alerts, Devices, Users, Investigations, Evidence and Response, Graph tabs. <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> Some tabs might be hidden due the size of your display. Select the ellipsis tab (...) to make them appear.
+1. 查看“警报”、“设备”、“用户”、“调查”、“证据和响应”、“图”选项卡的内容。 提示：某些选项卡可能由于显示器的大小而被隐藏。 选择省略号选项卡 (...) 显示它们。
 
->你是一家公司的安全操作分析师，你的公司正在实施 Microsoft Defender for Endpoint。
+>**警告：** 此处的模拟和教程非常适合实践式学习。  门户中会定期添加和修改模拟和教程。  但其中部分模拟和教程可能会影响为本培训课程设计的实验室的性能。  在使用 Azure 租户提供的课程时，请仅执行为本实验室提供的说明中推荐的模拟和教程。  使用此租户完成本培训课程后，可以参与其他模拟和租户教程。
 
 ## <a name="you-have-completed-the-lab"></a>你已完成本实验室。

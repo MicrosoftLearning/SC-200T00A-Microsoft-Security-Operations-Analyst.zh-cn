@@ -2,20 +2,15 @@
 lab:
   title: 练习 1 - 修改 Microsoft 安全规则
   module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
-ms.openlocfilehash: 266335a86b6ee3c1d86aaa4acf67cd1785aa5d2f
-ms.sourcegitcommit: f8918eddeaa7a7a480e92d0e5f2f71143c729d60
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2022
-ms.locfileid: "147038004"
 ---
+
 # <a name="module-7---lab-1---exercise-1---modify-a-microsoft-security-rule"></a>模块 7 - 实验室 1 - 练习 1 - 修改 Microsoft 安全规则
 
 ## <a name="lab-scenario"></a>实验室方案
 
 ![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex1.png)
 
-你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你需要了解如何使用 Microsoft Sentinel 检测和缓解威胁。 首先，需要按严重性将来自 Defender for Cloud 的警报筛选到 Microsoft Sentinel 中。 
+You are a Security Operations Analyst working at a company that implemented Microsoft Sentinel. You must learn how to detect and mitigate threats using Microsoft Sentinel. First, you need to filter the alerts coming from Defender for Cloud into Microsoft Sentinel, by Severity. 
 
 
 ### <a name="task-1-activate-a-microsoft-security-rule"></a>任务 1：激活 Microsoft 安全规则
@@ -34,9 +29,9 @@ ms.locfileid: "147038004"
 
 1. 选择你在前面实验室中创建的 Microsoft Sentinel 工作区。
 
-1. 从“配置”区域选择“分析”。 默认情况下，会显示“有效规则”。
+1. Select <bpt id="p1">**</bpt>Analytics<ept id="p1">**</ept> from the Configuration area. By default, you will see the <bpt id="p1">*</bpt>Active rules<ept id="p1">*</ept>. Click on <bpt id="p1">*</bpt>Rule templates<ept id="p1">*</ept>.
 
-1. 选择“基于 Microsoft Defender for Cloud 创建事件”。 此规则是由“模块 6 - 练习 1 - 任务 4”中配置的 Defender for Cloud 连接器激活的。 
+1. Search for and select <bpt id="p1">**</bpt>Create incidents based on Microsoft Defender for Cloud<ept id="p1">**</ept>. This rule was activated by the Defender for Cloud connector we configured in "Module 6 - Exercise 1 - Task 4". 
 
 1. 在右侧边栏选项卡上，选择“编辑”按钮。
 
@@ -46,6 +41,6 @@ ms.locfileid: "147038004"
 
 1. 选择底部的自动响应”按钮，然后选择“下一步:审阅”按钮。
 
-1. 查看所做的更改并选择“保存”按钮。 分析规则会保存。
+1. Review the changes made and select the <bpt id="p1">**</bpt>Save<ept id="p1">**</ept> button. The Analytics rule will be saved.
 
 ## <a name="proceed-to-exercise-2"></a>继续进行练习 2
