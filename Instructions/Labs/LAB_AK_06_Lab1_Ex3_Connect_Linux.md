@@ -10,10 +10,10 @@ lab:
 
 ![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod6_L1_Ex3.png)
 
-You are a Security Operations Analyst working at a company that implemented Microsoft Sentinel. You must learn how to connect log data from the many data sources in your organization. The next source of data are Linux virtual machines using the Common Event Formatting (CEF) and Syslog connectors.
+你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你需要了解如何连接来自组织中多个数据源的日志数据。 下一个数据源是使用通用事件格式化 (CEF) 和 Syslog 连接器的 Linux 虚拟机。
 
 
-><bpt id="p1">**</bpt>Important:<ept id="p1">**</ept> There are steps within the next Tasks that are done in different virtual machines. Look for the Virtual Machine name references.
+>**重要提示：** 下一个任务中有一些步骤是在不同的虚拟机中完成的。 查找虚拟机名称引用。
 
 ### <a name="task-1-access-the-microsoft-sentinel-workspace"></a>任务 1：访问 Microsoft Sentinel 工作区
 
@@ -38,19 +38,19 @@ You are a Security Operations Analyst working at a company that implemented Micr
 
 在此任务中，你将通过通用事件格式 (CEF) 连接器将 Linux 主机连接到 Microsoft Sentinel。
 
-1. Select <bpt id="p1">**</bpt>Data connectors<ept id="p1">**</ept> from the Configuration area in Microsoft Sentinel. From the Data Connectors tab, search for the <bpt id="p1">**</bpt>Common Event Format (CEF)<ept id="p1">**</ept> connector and select it from the list.
+1. 从 Microsoft Sentinel 的“配置”区域选择“数据连接器”。 在“数据连接器”选项卡中，搜索“通用事件格式(CEF)”连接器，并从列表中选择它。
 
 1. 在连接器信息边栏选项卡上选择“打开连接器页面”。
 
 1. 在“配置”下，将“1.2 在 Linux 计算机上安装 CEF 收集器”中显示的命令复制到剪贴板 。
 
-1. Launch your <bpt id="p1">**</bpt>LIN1<ept id="p1">**</ept> virtual machine. Login with the username and password provided by your lab hoster. <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> You might need to press the Enter key to see the login prompt. 
+1. 启动 LIN1 虚拟机。 使用实验室宿主提供的用户名和密码登录。 提示：你可能需要按 Enter 键以查看登录提示。 
 
-1. Note the IP address for your LIN1 server. See the screenshot below as an example:
+1. 请注意 LIN1 服务器的 IP 地址。 以下面的屏幕截图为例：
 
     ![linux 登录](../Media/LinuxLoginExample.png)
 
-1. 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。
+1. 返回到 WIN1 虚拟机。 通过右键单击“开始”菜单图标以管理员身份启动 Windows PowerShell，然后选择“Windows PowerShell(管理员)”。 选择“是”，允许应用在显示的“用户帐户控制”窗口中运行。 提示：你可能已从前面的练习中打开了一个 Windows PowerShell 窗口。
 
 1. 输入以下 PowerShell 命令，根据你的具体 Linux 服务器信息进行调整，然后按 Enter：
 
@@ -58,18 +58,18 @@ You are a Security Operations Analyst working at a company that implemented Micr
     ssh insert-your-linux-IP-address-here -l insert-linux-user-name-here
     ```
 
-1. 你需要了解如何连接来自组织中多个数据源的日志数据。
+1. 输入“yes”以确认连接，然后键入用户密码，并按 Enter 键。 屏幕应如下所示：
 
     ![linux 登录](../Media/PSconnectLinux.png)
 
-1. 下一个数据源是使用通用事件格式化 (CEF) 和 Syslog 连接器的 Linux 虚拟机。 
+1. 现在可以粘贴前面的步骤中的“1.2 在 Linux 计算机上安装 CEF 收集器”命令。 确保来自 Azure 的脚本在剪贴板中。 在 PowerShell 中右键单击顶部栏并依次选择“编辑”、“粘贴” 。 
 
 1. 粘贴后，在按 Enter 键之前，将字符 3 添加到单词 python，如下所示：
 
     ![连接器脚本](../Media/ConnectorScript.png)
 
 
-1. Once the script is adjusted press Enter. The script will run against your Linux server remotely. When the script processes properly it should look like this screen:
+1. 调整脚本后，按 Enter 键。 该脚本将在 Linux 服务器上远程运行。 如果脚本处理得当，它应如以下屏幕所示：
 
     ![连接器脚本](../Media/LinuxConnected.png)
 
@@ -90,21 +90,21 @@ You are a Security Operations Analyst working at a company that implemented Micr
 
 1. 选择“为非 Azure Linux 计算机下载和安装代理”的链接。 
 
-    >**重要提示：** 下一个任务中有一些步骤是在不同的虚拟机中完成的。
+    >**注意：** Log Analytics 工作区会显示 3 台 Windows 计算机已连接。 分别对应于之前连接的 WIN2、WINServer 和 AZWIN01 虚拟机。
 
 1. 选择“Linux 服务器”的选项卡。
 
-    >查找虚拟机名称引用。
+    >**注意：** Log Analytics 工作区会显示 1 台 Linux 计算机已连接。 对应于先前与 CEF 连接器连接的 LIN1 (ubuntu1) 虚拟机。
 
 1. 将“下载和加入适用于 Linux 的代理”区域中的命令复制到剪贴板。
 
-1. Launch your LIN2 virtual machine. Login with the username as password provided by your lab hoster. <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> You might need to press the Enter key to see the login prompt.
+1. 启动 LIN2 虚拟机。 使用实验室宿主提供的用户名和密码登录。 提示：你可能需要按 Enter 键以查看登录提示。
 
-1. Note the IP address for your LIN2 server. See the screenshot below as an example:
+1. 请注意 LIN2 服务器的 IP 地址。 以下面的屏幕截图为例：
 
     ![linux 登录](../Media/LinuxLoginExample.png)
 
-1. Go back to the <bpt id="p1">**</bpt>WIN1<ept id="p1">**</ept> virtual machine. Select the Windows PowerShell used in the previous task.
+1. 返回到 WIN1 虚拟机。 选择上一个任务中使用的 Windows PowerShell。
 
 1. 输入以下 PowerShell 命令，根据你的具体 Linux 服务器信息进行调整，然后按 Enter：
 
@@ -112,13 +112,13 @@ You are a Security Operations Analyst working at a company that implemented Micr
     ssh insert-your-linux-IP-address-here -l insert-linux-user-name-here
     ```
 
-1. Enter <bpt id="p1">*</bpt>yes<ept id="p1">*</ept> to confirm the connection and then type the user's password and press enter. Your screen should look something like this:
+1. 输入“yes”以确认连接，然后键入用户密码，并按 Enter 键。 屏幕应如下所示：
 
     ![linux 登录](../Media/PSconnectLinux.png)
 
-1. You are now ready to paste the <bpt id="p1">*</bpt>Download and onboard agent for Linux<ept id="p1">*</ept> command from the earlier step. Make sure that script is in the clipboard. In PowerShell right-click the top bar and choose <bpt id="p1">**</bpt>Edit<ept id="p1">**</ept> and then <bpt id="p2">**</bpt>Paste<ept id="p2">**</ept>.
+1. 现在可以粘贴前面的步骤中的“下载和加入适用于 Linux 的代理”命令。 确保脚本在剪贴板中。 在 PowerShell 中右键单击顶部栏并依次选择“编辑”、“粘贴” 。
 
-1. Once the script is pasted, press Enter. The script will run against your Linux server remotely. Wait
+1. 粘贴脚本后，按 Enter 键。 该脚本将在 Linux 服务器上远程运行。 Wait
 
 1. 完成后，键入“exit”以关闭与 LIN2 的远程 Shell 连接。
 

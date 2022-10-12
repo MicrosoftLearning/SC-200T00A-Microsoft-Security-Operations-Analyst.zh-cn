@@ -6,16 +6,16 @@
 
 在此任务中，你将加载示例安全警报并查看警报详细信息。
 
-1. Go the  <bpt id="p1">**</bpt>Microsoft Defender for Cloud<ept id="p1">**</ept><ph id="ph1"> &gt; </ph><bpt id="p2">**</bpt>Security Alerts<ept id="p2">**</ept> screen. If the sample alerts were created as directed in the <bpt id="p1">[</bpt>pre-requisites section<ept id="p1">](00-prerequisites.md#Deploy-sample-alerts-for-Demo-in-Module-2)</ept>, there should be multiple security alerts on this screen.
+1. 转到“Microsoft Defender for Cloud” > “安全警报”屏幕。 如果示例警报是按照[先决条件](00-prerequisites.md#Deploy-sample-alerts-for-Demo-in-Module-2)部分中的指示创建的，则此屏幕上应出现多个安全警报。
 
 1. 对于列出的若干警报，请执行以下操作：
 
-    A. Select the alert, information about the alert should appear in a pane on the right.  Click <bpt id="p1">**</bpt>View full details<ept id="p1">**</ept>.
+    A. 选择警报，有关警报的信息应出现在右侧窗格中。  单击“查看完整的详细信息”。
 
-    B. Review the Alert details.
+    B. 查看警报详细信息。
 
-    C. Select the <bpt id="p1">**</bpt>Take action<ept id="p1">**</ept> tab.
+    C. 选择“执行操作”选项卡。
 
-    D. Review the Take action information. Notice the buttons available to take action depend on the type of alert.
+    D. 查看“执行操作”信息。 请注意，可用于执行操作的按钮取决于警报类型。
 
 ## <a name="you-have-completed-the-lab"></a>你已完成本实验室。

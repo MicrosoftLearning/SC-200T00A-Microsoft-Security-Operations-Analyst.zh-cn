@@ -8,7 +8,7 @@ lab:
 
 ## <a name="lab-scenario"></a>实验室方案
 
-You are a Security Operations Analyst working at a company that implemented Microsoft Sentinel. You already created Scheduled and Microsoft Security Analytics rules. 
+你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你已创建“计划”规则和“Microsoft 安全分析”规则。 
 
 
 需要将 Microsoft Sentinel 配置为执行实体行为分析来发现异常并提供实体分析页面。
@@ -34,7 +34,7 @@ You are a Security Operations Analyst working at a company that implemented Micr
 1. 在“实体行为设置”的弹出窗口中，选择“设置 EUBA””。
 1. 在下一页上，选择“设置 UEBA”。
 1. 在“实体行为配置”页上，启用 #1 功能。 
-1. For <bpt id="p1">*</bpt>2.<ept id="p1">*</ept>, select <bpt id="p2">**</bpt>Azure Active Directory<ept id="p2">**</ept>. Then select <bpt id="p1">**</bpt>Apply<ept id="p1">**</ept>.
+1. 对于 2.，选择“Azure Active Directory”。 然后，选择“应用”。
 1. 对于 3.，请选择“审核日志”、“Azure 活动”、“安全事件”和“登录日志”。 
 1. 然后，选择“应用”。
 1. 经常在实验室期间返回此页面，查看根据引入的日志数据和创建的警报填充的实体。
@@ -47,9 +47,9 @@ You are a Security Operations Analyst working at a company that implemented Micr
 1. 选择“分析”页。
 1. 选择“异常”选项卡。
 1. 确认规则的状态列为“已启用”。
-1. Select any rule. Then select <bpt id="p1">**</bpt>Edit<ept id="p1">**</ept> on the rule blade.
-1. Review the <bpt id="p1">*</bpt>General<ept id="p1">*</ept> tab information. Then select <bpt id="p1">**</bpt>Next : Configuration<ept id="p1">**</ept>
-1. 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。
+1. 选择任何规则。 然后选择“规则”边栏选项卡上的“编辑”。
+1. 查看“常规”选项卡信息。 然后选择页面底部的“下一步:配置”
+1. 查看“配置”选项卡信息。 然后选择右上角的“X”以退出“分析规则”向导。
 
 
 ## <a name="proceed-to-exercise-5"></a>继续完成练习 5

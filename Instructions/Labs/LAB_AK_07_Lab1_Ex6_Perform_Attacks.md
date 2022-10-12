@@ -19,9 +19,9 @@ lab:
 
 1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：**Pa55w.rd**。  
 
-1. In the search of the task bar, enter <bpt id="p1">*</bpt>Command<ept id="p1">*</ept>. Command Prompt will be displayed in the search results. Right-click on the Command Prompt and select <bpt id="p1">**</bpt>Run as Administrator<ept id="p1">**</ept>. Select <bpt id="p1">**</bpt>Yes<ept id="p1">**</ept> in the User Account Control window that appears to allow the app to run.
+1. 在任务栏的搜索框中，输入“Command”。 命令提示符将显示在搜索结果中。 右键单击命令提示符，并选择“以管理员身份运行”。 在出现的“用户帐户控制”窗口中选择“是”以允许应用运行。
 
-1. In the Command Prompt, create a Temp folder in the root directory. Remember to press Enter after the last row:
+1. 在命令提示符的根目录中创建 Temp 文件夹。 请记住，在上一行后按 Enter 键：
 
     ```CommandPrompt
     cd \
@@ -47,7 +47,7 @@ lab:
 
 1. 选择“是”以创建新文件并将以下 PowerShell 脚本复制到 c2.ps1。
 
-    ><bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> Paste into the virtual machine might have a limited length. Make sure the script looks as it does in these instructions within the <bpt id="p1">*</bpt>c2.ps1<ept id="p1">*</ept> file.
+    >**注意：** 粘贴到虚拟机中的长度可能有限。 确保脚本在 c2.ps1 文件中的外观与在这些说明中一致。
 
     ```PowerShell
     param(
@@ -95,32 +95,32 @@ lab:
 
 1. 返回命令提示符窗口，输入以下命令并按 Enter 键。 
 
-    ><bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> A new PowerShell window will open and you will see resolve errors. This is expected.
+    >**注意：** 系统将打开一个新的 PowerShell 窗口，你将看到解决错误。 这是正常情况。
 
     ```CommandPrompt
     Start PowerShell.exe -file c2.ps1
     ```
 
-><bpt id="p1">**</bpt>Important:<ept id="p1">**</ept> Do not close these windows. Let this PowerShell script run in the background. The command needs to generate log entries for some hours. You can proceed to the next task and next exercises while this script runs. The data created by this task will be used in the Threat Hunting lab later. This process will not create substantial amounts of data or processing.
+>**重要提示：** 请勿关闭这些窗口。 让此 PowerShell 脚本在后台运行。 该命令需要在数小时内生成日志条目。 在此脚本运行期间，你可以继续进行下一项任务和下一个练习。 此任务创建的数据稍后将在威胁搜寻中使用。 此过程不会创造大量的数据或处理。
 
 
 ### <a name="task-2-attack-windows-configured-with-microsoft-sentinel-connector"></a>任务 2：攻击配置了 Microsoft Sentinel 连接器的 Windows
 
 在此任务中，你将通过 Microsoft Sentinel 攻击配置了安全事件连接器的主机。
 
-><bpt id="p1">**</bpt>Important:<ept id="p1">**</ept> The next steps are done in a different machine than the one you were previously working. Look for the Virtual Machine name references.
+>**重要提示：** 接下来的步骤将在另一台计算机上完成，而不是你之前使用的计算机。 查找虚拟机名称引用。
 
 1. 以管理员身份使用密码登录到 WIN2 虚拟机：**Pa55w.rd**。  
 
 >**重要提示：** 实验室的 SAVE 功能会导致 Win2 与 Azure Arc 断开连接。重启可以解决这个问题。  
 
-1. Select <bpt id="p1">**</bpt>Start<ept id="p1">**</ept> in Windows. Then <bpt id="p1">**</bpt>Power<ept id="p1">**</ept>, next <bpt id="p2">**</bpt>Restart<ept id="p2">**</ept>
+1. 在 Windows 中选择“开始”。 然后依次选择“电源”**和**“重启”
 1. 按照说明再次登录到 WIN2。
 
 
-1. In the search of the task bar, enter <bpt id="p1">*</bpt>Command<ept id="p1">*</ept>. Command Prompt will be displayed in the search results. Right-click on the Command Prompt and select <bpt id="p1">**</bpt>Run as Administrator<ept id="p1">**</ept>. Select <bpt id="p1">**</bpt>Yes<ept id="p1">**</ept> in the User Account Control window that appears to allow the app to run. <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> You might have a Command Prompt as Administrator open from a previous exercise.
+1. 在任务栏的搜索框中，输入“Command”。 命令提示符将显示在搜索结果中。 右键单击命令提示符，并选择“以管理员身份运行”。 在出现的“用户帐户控制”窗口中选择“是”以允许应用运行。 提示：你可能在上一练习中以管理员角色打开命令提示符。
 
-1. In the Command Prompt, create a Temp folder in the root directory. Remember to press Enter after the last row:
+1. 在命令提示符的根目录中创建 Temp 文件夹。 请记住，在上一行后按 Enter 键：
 
     ```CommandPrompt
     cd \
@@ -130,7 +130,7 @@ lab:
 
 #### <a name="attack-2---user-add-and-elevate-privilege"></a>攻击 2 - 用户添加和特权提升
 
-1. 在任务栏的搜索框中，输入“Command”。
+1. 复制并运行此命令以模拟管理员帐户的创建。 请记住，在上一行后按 Enter 键：
 
     ```CommandPrompt
     net user theusernametoadd /add

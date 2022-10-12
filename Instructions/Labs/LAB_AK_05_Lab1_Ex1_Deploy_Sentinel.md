@@ -10,7 +10,7 @@ lab:
 
 ![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod5_L1_Ex1.png)
 
-You are a Security Operations Analyst working at a company that is implementing Microsoft Sentinel. You are responsible for setting up the Microsoft Sentinel environment to meet the company requirement to minimize cost, meet compliance regulations, and provide the most manageable environment for your security team to perform their daily job responsibilities.
+你是一位安全运营分析师，你所在公司正在实现 Microsoft Sentinel。 你负责设置满足公司要求的 Microsoft Sentinel 环境，并最大程度降低成本、符合法规要求，同时为安全团队提供最易于管理的环境，以便其履行日常工作职责。
 
 
 ### <a name="task-1-initialize-the-microsoft-sentinel-workspace"></a>任务 1：初始化 Microsoft Sentinel 工作区
@@ -31,7 +31,7 @@ You are a Security Operations Analyst working at a company that is implementing 
 
 1. 选择“+ 新建”。 
 
-1. Next, select the Log Analytics workspace you created earlier, for example <bpt id="p1">*</bpt>uniquenameDefender<ept id="p1">*</ept> and select <bpt id="p2">**</bpt>Add<ept id="p2">**</ept>. The activation could take a few minutes.
+1. 接下来，选择之前创建的 Log Analytics 工作区（例如 uniquenameDefender），然后选择“添加”。 激活可能需要几分钟的时间。
 
     >**注意：** 如果在此处未看到 Log Analytics 工作区，请参阅模块 3 练习 1 任务 2 以创建一个工作区。
 
@@ -42,7 +42,7 @@ You are a Security Operations Analyst working at a company that is implementing 
 
 在此任务中，你将在 Microsoft Sentinel 中创建监视列表。
 
-1. In the search box at the bottom of the Windows 10 screen, enter <bpt id="p1">*</bpt>Notepad<ept id="p1">*</ept>. Select <bpt id="p1">**</bpt>Notepad<ept id="p1">**</ept> from the results.
+1. 在 Windows 10 屏幕底部的搜索框中，输入“记事本”。 从结果中选择“记事本”。
 
 1. 键入“主机名”，然后输入新行。
 
@@ -56,7 +56,7 @@ You are a Security Operations Analyst working at a company that is implementing 
     Host5
     ```
 
-1. From the menu select, <bpt id="p1">**</bpt>File - Save As<ept id="p1">**</ept>, Name the file <bpt id="p2">*</bpt>HighValue.csv<ept id="p2">*</ept>, change the file type to <bpt id="p3">**</bpt>All files(<bpt id="p4">*</bpt>.<ept id="p4">*</ept>)<ept id="p3">**</ept> and select <bpt id="p5">**</bpt>Save<ept id="p5">**</ept>. <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> The file can be saved in the <bpt id="p2">*</bpt>Documents<ept id="p2">*</ept> folder.
+1. 从菜单中选择“文件”-“另存为”，将文件命名为“HighValue.csv”，将文件类型更改为“所有文件”(.)，然后选择“保存”。 提示：文件可保存在 Documents 文件夹中。
 
 1. 关闭记事本。
 
@@ -86,9 +86,9 @@ You are a Security Operations Analyst working at a company that is implementing 
 
 1. 选择“HighValueHosts”监视列表，然后在右侧选项卡上，选择“在日志中查看”。
 
-    ><bpt id="p1">**</bpt>Important:<ept id="p1">**</ept> It could take some time for the watchlist to appear. <bpt id="p1">**</bpt>Please continue to with the following task and run this command on the next lab<ept id="p1">**</ept>.
+    >**重要提示：** 可能需要一些时间才能显示监视列表。 请继续执行以下任务，并在下一个实验室上运行此命令。
     
-    >你是一位安全运营分析师，你所在公司正在实现 Microsoft Sentinel。
+    >**注意：** 现在，可以在自己的 KQL 语句中使用 _GetWatchlist('HighValueHosts') 来访问列表。 要引用的列将是主机名。
 
 1. 通过选择右上方的“x”关闭“日志”窗口，然后选择“确定”以放弃未保存的编辑。
 
@@ -101,17 +101,17 @@ You are a Security Operations Analyst working at a company that is implementing 
 
 1. 从命令栏中选择“+ 新增”。
 
-1. 你负责设置满足公司要求的 Microsoft Sentinel 环境，并最大程度降低成本、符合法规要求，同时为安全团队提供最易于管理的环境，以便其履行日常工作职责。
+1. 查看“类型”下拉列表中的各种指标类型。 选择“domain-name”。 在“域”框中输入姓名首字母缩写。 例如 fmg.com。
 
 1. 对于威胁类型，请选择“恶意活动”。
 
-1. For the <bpt id="p1">*</bpt>Name<ept id="p1">*</ept>, enter the same value used for the Domain. An example would be <bpt id="p1">*</bpt>fmg.com<ept id="p1">*</ept>.
+1. 对于“名称”，输入用于域的同一个值。 例如 fmg.com。
 
 1. 将“有效期开始时间”字段设置为当天日期。
 
 1. 选择“应用”。
 
-1. Select the <bpt id="p1">**</bpt>Logs<ept id="p1">**</ept> option under the General area. You might want to disable the "Always show queries" option and close the <bpt id="p1">*</bpt>Queries<ept id="p1">*</ept> window to run the KQL statements.
+1. 在“常规”区域下选择“日志”选项。 你可能希望禁用“始终显示查询”选项，并关闭“查询”窗口以运行 KQL 语句。
 
 1. 运行以下 KQL 语句。
 
@@ -121,7 +121,7 @@ You are a Security Operations Analyst working at a company that is implementing 
 
     >**注意：** 设置可能需要几分钟时间才能显示。
 
-1. Scroll the results to the right to see the DomainName column. You can also run the following KQL statement to just see the DomainName column. 
+1. 向右滚动结果以查看“DomainName”列。 还可以运行以下 KQL 语句，这样就可以仅查看“DomainName”列。 
 
     ```KQL
     ThreatIntelligenceIndicator | project DomainName
@@ -136,7 +136,7 @@ You are a Security Operations Analyst working at a company that is implementing 
 1. 在 Log Analytics 工作区中，选择“设置”区域中的“表(预览)”选项。
 1. 选择表名称“SecurityEvent”，然后选择“...”。
 1. 选择“管理表”。
-1. Select <bpt id="p1">**</bpt>180 days<ept id="p1">**</ept> for <bpt id="p2">*</bpt>Total retention period<ept id="p2">*</ept>. Then <bpt id="p1">**</bpt>Save<ept id="p1">**</ept>.
+1. 为“总保持期”选择“180 天”。 然后“保存”。
 
 
 ## <a name="you-have-completed-the-lab"></a>你已完成本实验室。

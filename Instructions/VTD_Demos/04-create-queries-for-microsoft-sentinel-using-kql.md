@@ -8,11 +8,11 @@
 
 1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：**Pa55w.rd**。  
 
-2. Go to <ph id="ph1">https://aka.ms/lademo</ph> in your browser. Login with the MOD Administrator credentials. 
+2. 在浏览器中转到 https://aka.ms/lademo。 使用 MOD 管理员凭据登录。 
 
 3. 浏览屏幕左侧选项卡中列出的可用表。
 
-4. In the query editor, enter the following query and select the Run button.  You should see the query results in the bottom window.
+4. 在查询编辑器中，输入以下查询，然后选择“运行”按钮。  你应该会在底部窗口中看到查询结果。
 
     ```KQL
     SecurityEvent
@@ -24,7 +24,7 @@
 
 在此任务中，你将生成基本的 KQL 语句。
 
-1. The following statement demonstrates the use of the let statement to declare variables. In the Query Window, enter the following statement and select <bpt id="p1">**</bpt>run<ept id="p1">**</ept>: 
+1. 下面的语句演示了将 let 语句用于声明变量的用法。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
 
 
 ```KQL
@@ -35,7 +35,7 @@ SecurityEvent
 | where EventID != discardEventId
 ```
 
-1. The following statement demonstrates the use of the let statement to declare a dynamic list. In the Query Window enter the following statement and select <bpt id="p1">**</bpt>run<ept id="p1">**</ept>: 
+1. 以下语句演示了将 let 语句用于声明动态列表的用法。 在查询窗口中，输入以下语句，然后选择“运行”： 
 
 
 ```KQL
@@ -46,7 +46,7 @@ let suspiciousAccounts = datatable(account: string) [
 SecurityEvent | where Account in (suspiciousAccounts)
 ```
 
-1. The following statement demonstrates searching across all tables and columns for records within the query time range display in the query window. In the Query Window before running this script change the Time range to "Last hour". Enter the following statement and select <bpt id="p1">**</bpt>run<ept id="p1">**</ept>: 
+1. 以下语句演示了查询窗口中显示的在所有表和列中搜索查询时间范围内的记录。 在运行此脚本之前，在查询窗口中，将时间范围更改为“过去一小时”。 输入以下语句并选择“运行”： 
 
 ```KQL
 search "err"
@@ -58,7 +58,7 @@ search "err"
 
 在此任务中，你将使用 KQL 语句生成可视化效果。
 
-1. The following statement demonstrates the render function visualizing results with a barchart. In the Query Window. Enter the following statement and select <bpt id="p1">**</bpt>run<ept id="p1">**</ept>: 
+1. 以下语句演示了使用条形图直观呈现结果的 render 函数。 在查询窗口中， 输入以下语句并选择“运行”： 
 
 ```KQL
 SecurityEvent 
@@ -68,7 +68,7 @@ SecurityEvent
 
 2. 以下语句演示了使用时序直观呈现结果的 render 函数。
 
-在浏览器中转到 https://aka.ms/lademo。 
+bin() 函数将值向下舍入为给定装箱大小的整数倍数。  经常与汇总依据一起使用…如果你有一组分散的值，则这些值将分组为更小的一组特定值。  将生成的时序和 render 运算符的管道与一种时间图表类型结合，可以提供时序可视化效果。 在查询窗口中， 输入以下语句并选择“运行”： 
 
 ```KQL
 SecurityEvent 
