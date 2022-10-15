@@ -33,9 +33,9 @@ DeviceEvents | where TimeGenerated >= ago(lookback)
 | render timechart 
 ```
 
-1. The goal of this statement is to provide a visualization to check for a C2 beaconing out on a consistent basis.  Take time to adjust the 3m setting to 30s and more.  Change the count_ &gt; 5 setting to other threshold counts to witness the impact.
+1. 该语句是为了提供一个可视化效果，用于在一致基础上检查 C2 信标输出。  花点时间将“3 分钟”设置调整为 30 秒或更长时间。  将 count_ > 5 设置更改为其他阈值计数来观察影响。
 
-1. You have now identified DNS requests that are beaconing to a C2 server.  Next, determine which devices are beaconing.  Enter the following KQL Statement:
+1. 你现已确定要向 C2 服务器发送信标的 DNS 请求。  接下来，请确定要发送信标的设备。  输入以下 KQL 语句：
 
 ```KQL
 let lookback = 2d;
@@ -83,7 +83,7 @@ DeviceEvents | where TimeGenerated >= ago(lookback)
 
 1. 在右窗格中，向下滚动并选择“运行查询”按钮。
 
-1. The number of results is shown in the middle pane under the <bpt id="p1">*</bpt>Results<ept id="p1">*</ept> column. Alternatively, scroll up to see the count over the <bpt id="p1">*</bpt>Results<ept id="p1">*</ept> box..
+1. 结果数显示在“结果”列下的中间窗格中。 或者，向上滚动以查看“结果”框的计数。
 
 1. 选择“查看结果”。
 

@@ -8,7 +8,7 @@ lab:
 
 ## <a name="lab-scenario"></a>实验室方案
 
-You are a Security Operations Analyst working at a company that implemented Microsoft Sentinel. You already created Scheduled and Microsoft Security Analytics rules.  You need to centralize analytical rules in an Azure DevOps repository.  Then connect Sentinel to the Azure DevOps repository and import the content. 
+你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你已创建“计划”规则和“Microsoft 安全分析”规则。  需要在 Azure DevOps 存储库中集中分析规则。  然后将 Sentinel 连接到 Azure DevOps 存储库并导入内容。 
 
 
 ### <a name="task-1-create-and-export-an-analytical-rule"></a>任务 1：创建并导出分析规则
@@ -39,13 +39,13 @@ You are a Security Operations Analyst working at a company that implemented Micr
 
 1. 对于规则查询，粘贴以下 KQL 语句：
 
-    ><bpt id="p1">**</bpt>Warning:<ept id="p1">**</ept> When using the Paste function to the virtual machine extra (pipe) characters could be added. Make sure you use Notepad first to paste the following query.
+    >**警告：** 使用粘贴功能时，可以向虚拟机添加额外（管道）字符。 请确保先使用记事本粘贴以下查询。
 
     ```KQL
     SecurityEvent | where EventID == 4732
     ```
 
-1. Select <bpt id="p1">**</bpt>View query results<ept id="p1">**</ept>. You should not receive any results nor any errors. If you receive an error, please review that the query appears just like the previous KQL statement. Close the <bpt id="p1">*</bpt>Logs<ept id="p1">*</ept> window by selecting the upper right <bpt id="p2">**</bpt>X<ept id="p2">**</ept> and select <bpt id="p3">**</bpt>OK<ept id="p3">**</ept> to discard to save changes to go back to the wizard.
+1. 选择“查看查询结果”。 不应收到任何结果或任何错误。 如果收到错误，请查看查询是否与上一个 KQL 语句一样。 通过选择右上方的 X 关闭“日志”窗口，然后选择“确定”以放弃保存更改，并返回到向导 。
 
 
 1. 向下滚动并在“查询计划”下设置以下项：
@@ -55,7 +55,7 @@ You are a Security Operations Analyst working at a company that implemented Micr
     |运行查询的时间间隔|5 分钟|
     |查看最近多久的数据|1 天|
 
-    ><bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> We are purposely generating many incidents for the same data. This enables the Lab to use these alerts.
+    >**注意：** 我们特意针对同一数据生成了多个事件。 这样，实验室就可使用这些警报。
 
 1. 在“警报阈值”区域下，保留值不变，因为我们希望警报注册每个事件。
 
@@ -82,19 +82,19 @@ You are a Security Operations Analyst working at a company that implemented Micr
 1. 选择“登录到 Azure DevOps”链接
 1. 在“我们需要更多详细信息”页上，选择“继续” 。
 1. 在“Azure DevOps 入门”页上，选择“继续”。
-1. 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。  
+1. 在“几乎完成”页面上，输入 DevOps 组织的名称。  使用将来不想使用的名称。  
 
 1. 输入看到的字符，然后继续。
-1. 你已创建“计划”规则和“Microsoft 安全分析”规则。
+1. 在“创建项目以开始”页上，输入“我的 Sentinel 内容”。 选择“创建项目”。
 1. 导航到“存储库”。
 1. 在该区域的页面底部“使用 README 或 gitignore 初始化主分支”，选择“初始化”。
-1. 需要在 Azure DevOps 存储库中集中分析规则。
-1. 然后将 Sentinel 连接到 Azure DevOps 存储库并导入内容。
+1. 页面应显示存储库的文件。  唯一的文件是 README.me
+1. 在“文件”（页面右侧）边栏选项卡上，工具栏包括“设置生成”、“克隆”和“:”选项。  选择“:”显示更多选项。
 1. 选择“上传文件”
 1. 选择“浏览”，然后从“下载”目录中选择“Azure_Sentinel_analytic_rule.json”文件。 
 1. 选择“提交”。
 1. 
-1. Select <bpt id="p1">**</bpt>Azure DevOps<ept id="p1">**</ept> on the top left corner of the page.  This display your organization and projects.
+1. 选择页面左上角的“Azure DevOps”。  这将显示你的组织和项目。
 1. 选择左下角的“组织设置”。
 1. 在“安全”区域中选择“策略”。
 1. 在“应用程序连接策略”区域中，启用“通过 OAuth 的第三方应用程序访问”。 
@@ -107,7 +107,7 @@ You are a Security Operations Analyst working at a company that implemented Micr
 1. 在工具栏中选择“新增”。
 1. 对于名称，请输入“我的内容”。
 1. 对于源代码管理，选择“Azure DevOps”。
-1. Select <bpt id="p1">**</bpt>Authorize<ept id="p1">**</ept>.  Then <bpt id="p1">**</bpt>Accept<ept id="p1">**</ept>.
+1. 选择“授权”。****  然后选择“接受”。
 1. 选择之前创建的组织。
 1. 选择之前创建的项目。
 1. 选择之前创建的存储库。
@@ -116,9 +116,9 @@ You are a Security Operations Analyst working at a company that implemented Micr
 1. 然后选择“创建”。
 
 
-1. On the Repositories page, select <bpt id="p1">**</bpt>Refresh<ept id="p1">**</ept>.  Wait until <bpt id="p1">*</bpt>Last deployment status<ept id="p1">*</ept> is <bpt id="p2">*</bpt>Failed<ept id="p2">*</ept>.  
+1. 在“存储库”页，选择“刷新”。  等到“上次部署状态”变为“失败”。  
 
-><bpt id="p1">**</bpt>Important:<ept id="p1">**</ept> The <bpt id="p2">*</bpt>Failed<ept id="p2">*</ept> status is due to limitations in the hosted lab environment. You would normally see <bpt id="p1">*</bpt>Succeeded<ept id="p1">*</ept>. Then you can see in the <bpt id="p1">*</bpt>Analytics<ept id="p1">*</ept> the imported rule <bpt id="p2">*</bpt>Rule from Azure DevOps<ept id="p2">*</ept>.
+>**重要提示：** “失败”状态是由托管实验室环境中的限制造成的。 通常会看到“成功”。 然后，可以在“分析”中看到导入规则“来自 Azure DevOps 的规则”。
 
 
 ## <a name="you-have-completed-the-lab"></a>你已完成本实验室。

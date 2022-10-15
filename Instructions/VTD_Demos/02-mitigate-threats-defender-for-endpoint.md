@@ -14,12 +14,12 @@
 
 1. 选择“教程”选项卡。
 
-1. Under <bpt id="p1">*</bpt>Automated investigation (backdoor)<ept id="p1">*</ept> you will see a message describing the scenario. Below this paragraph, click <bpt id="p1">**</bpt>Read the walkthrough<ept id="p1">**</ept>. A new browser tab opens which includes instructions to perform the simulation.
+1. 在“自动调查(后门)”下，你将看到一条描述方案的消息。 在此段落下，单击“阅读演练”。 此时将打开一个新的浏览器选项卡，其中包含执行模拟的说明。
 
-1. In the new browser tab, locate the section named <bpt id="p1">**</bpt>Run the simulation<ept id="p1">**</ept> (page 5, starting at step 2) and follow the steps to run the attack. <bpt id="p1">**</bpt>Hint:<ept id="p1">**</ept> The simulation file <bpt id="p2">*</bpt>RS4_WinATP-Intro-Invoice.docm<ept id="p2">*</ept> can be found back in portal, just below the <bpt id="p3">**</bpt>Read the walkthrough<ept id="p3">**</ept> you selected in the previous step by selecting the <bpt id="p4">**</bpt>Get simulation file<ept id="p4">**</ept> button.
+1. 在新浏览器选项卡中，找到名为“运行模拟”（第 5 页，从步骤 2 开始）的部分，并按步骤运行攻击。 提示：模拟文件 RS4_WinATP-Intro-Invoice.docm 可以在门户中找到，就在上一步中选择的“阅读演练”下方，通过选择“获取模拟文件”按钮获取 。
 
-    1. <bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> After executing the file with the  exploit, you can return to the <bpt id="p2">[</bpt>Microsoft 365 Defender Security Center<ept id="p2">](https://security.microsoft.com)</ept> and click on the <bpt id="p3">**</bpt>Incidents<ept id="p3">**</ept> tab to see the alerts. The guide incorrectly references the <bpt id="p1">*</bpt>Microsoft Defender ATP portal<ept id="p1">*</ept> which has been migrated and rebranded.
-    1. Open the incident page and click <bpt id="p1">**</bpt>Manage Incident<ept id="p1">**</ept>. Click <bpt id="p1">**</bpt>Resolve incident<ept id="p1">**</ept> to resolve all of the active alerts.
+    1. **注意：** 执行带有漏洞的文件后，可以返回到 [Microsoft 365 Defender 安全中心](https://security.microsoft.com)，然后单击“事件”选项卡查看警报。 该指南错误地引用了已迁移且已更名的 Microsoft Defender ATP 门户。
+    1. 打开事件页面并单击“管理事件”。 单击“解决事件”以解决所有活动警报。
 
 
 ## <a name="you-have-completed-the-demo"></a>你已完成本演示。

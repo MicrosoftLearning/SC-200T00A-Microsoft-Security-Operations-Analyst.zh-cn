@@ -10,7 +10,7 @@ lab - Do not use. Temporarily not operational!:
 
 ![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod6_L1_Ex4.png)
 
-You are a Security Operations Analyst working at a company that implemented Microsoft Sentinel. You must learn how to connect log data from the many data sources in your organization. Finally, you connect a threat intelligence feed to enhance your ability to detect and prioritize known threats.
+你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你需要了解如何连接来自组织中多个数据源的日志数据。 最后，将连接威胁情报源，以提高检测已知威胁和和确定其优先级的能力。
 
 ### <a name="task-1-connect-threat-intelligence"></a>任务 1：连接威胁情报
 
@@ -42,7 +42,7 @@ You are a Security Operations Analyst working at a company that implemented Micr
 
 1. 输入 guest 作为密码。
 
-1. Now select the <bpt id="p1">**</bpt>Add<ept id="p1">**</ept> button.  Phishing URLs will be pulled and populate the ThreatIntelligenceIndicator table.
+1. 现在，选择“添加”按钮。  将拉取钓鱼 URL 并用其填充 ThreatIntelligenceIndicator 表。
 
 >**注意：** 如果要添加其他集合，请在 Microsoft Edge 浏览器中打开 <https://limo.anomali.com/api/v1/taxii2/feeds/collections/> ，并使用来宾用户名和密码查看可用的不同 ID。
 

@@ -25,7 +25,7 @@ REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "SOC Test" /t RE
 
 7. 从“常规”部分选择“日志”。
 
-8. First, you need to see where the data is stored. Since you just performed the attacks.  Set the Log Time Range to <bpt id="p1">**</bpt>Last 24 hours<ept id="p1">**</ept>.
+8. 首先需要查看存储数据的位置。 原因是你刚刚执行了攻击。  将日志时间范围设置为“过去 24 小时”。
 
 9. 运行以下 KQL 语句
 
@@ -35,18 +35,18 @@ search "temp\\startup.bat"
 
 10. 针对 3 个不同的表显示结果：DeviceProcessEvents DeviceRegistryEvents Event
 
-    The Device* tables are from Defender for Endpoint (Data Connector - Microsoft 365 Defender).  Event is from our Data Connector Security Events. 
+    设备*表来自 Defender for Endpoint（数据连接器 - Microsoft 365 Defender）。  事件来自数据连接器安全事件。 
 
-    Since we are receiving data from two different sources - Sysmon and Defender for Endpoint,  we will need to build two KQL statements that could be unioned later.  In our initial investigation, you will look at each separately.
+    我们将接收来自两个不同源（Sysmon 和 Defender for Endpoint）的数据，因此需要生成两个之后可联合的 KQL 语句。  初次调查时，你将分别查看每份数据。
 
-11. Our first data source is Sysmon from Windows hosts.  Run the following KQL Statement.
+11. 第一个数据源是 Windows 主机中的 Sysmon。  运行以下 KQL 语句。
 
 ```KQL
 search in (Event) "temp\\startup.bat"
 ```
 现在仅显示 Event 表的结果。  
 
-16. Create your own KQL statement to display all Registry Key Set Value rows.  Run the following KQL query:
+16. 创建你自己的 KQL 语句，显示所有“注册表项集值”行。  运行以下 KQL 查询：
 
 ```KQL
 
@@ -67,8 +67,8 @@ Event
 
 17.  可从这里继续生成检测规则，但该 KQL 语句似乎可在其他检测规则的 KQL 语句中重复使用。  
     
-    In the Log window, select <bpt id="p1">**</bpt>Save<ept id="p1">**</ept>, then <bpt id="p2">**</bpt>Save as function<ept id="p2">**</ept>.
-    In the Save flyout, enter the following:
+    在“日志”窗口中，选择“保存”，然后选择“保存为函数” 。
+    在“保存”弹出窗口中，输入以下内容：
 
     名称：Event_Reg_SetValue Save as:Function Function Alias:Event_Reg_SetValue Category:Sysmon
 
@@ -79,7 +79,7 @@ Event
 Event_Reg_SetValue
 
 ```
-Depending on the current data collection, you could receive many rows.  This is expected.  Our next task is to filter to our specific scenario.
+根据当前的数据集合，你可接收多个行。  这是正常情况。  下一个任务是筛选特定方案。
 
 19. 运行以下 KQL 语句：
 
@@ -89,7 +89,7 @@ Event_Reg_SetValue | search "startup.bat"
 
 ```
 
-22. It is important to help the Security Operations Analyst by providing as much context about the alert as you can. This includes projecting Entities for use in the investigation graph.  Run the following query:
+22. 请务必尽可能多地提供关于警报的上下文，为安全操作分析师提供帮助。 这包括投影在调查关系图中使用的实体。  运行以下查询：
 
 ```KQL
 Event_Reg_SetValue 

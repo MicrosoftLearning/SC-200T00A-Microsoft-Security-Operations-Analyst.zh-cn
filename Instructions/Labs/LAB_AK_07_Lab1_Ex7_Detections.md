@@ -9,7 +9,7 @@ lab:
 ## <a name="lab-scenario"></a>实验室方案
 
 
-You are a Security Operations Analyst working at a company that implemented Microsoft Sentinel. You are going to work with Log Analytics KQL queries and from there, you will create custom analytics rules to help discover threats and anomalous behaviors in your environment.
+你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你将使用 Log Analytics KQL 查询，并从这里创建自定义分析规则，以帮助发现环境中的威胁和异常行为。
 
 分析规则将在你的整个环境中搜索特定事件或事件集，在达到特定事件阈值或条件时发出警报，生成故障事件以供 SOC 进行会审和调查，并通过自动化跟踪和修正流程来响应威胁。
 
@@ -26,15 +26,15 @@ You are a Security Operations Analyst working at a company that implemented Micr
     search "temp\\startup.bat"
     ```
 
-1. This detection will focus on data from Defender for Endpoint. <bpt id="p1">**</bpt>Run<ept id="p1">**</ept> the following KQL Statement:
+1. 此检测将重点关注来自 Defender for Endpoint 的数据。 运行以下 KQL 语句：
 
     ```KQL
     search in (Device*) "temp\\startup.bat"
     ```
 
-1. The table <bpt id="p1">*</bpt>DeviceRegistryEvents<ept id="p1">*</ept> looks to have the data already normalized and easy for us to query. Expand the row to see all the columns related to the record.
+1. DeviceRegistryEvents 表中的数据已经规范化，便于进行查询。 展开该行以查看与记录相关的所有列。
 
-    ><bpt id="p1">**</bpt>Important:<ept id="p1">**</ept> If you do not see the <bpt id="p2">*</bpt>DeviceRegistryEvents<ept id="p2">*</ept> table in the results, an alternative for the following queries is to use the <bpt id="p3">*</bpt>DeviceProcessEvents<ept id="p3">*</ept> table as replacement. Being that said, use one of the two provided examples below.
+    >**重要提示：** 如果在结果中看不到 DeviceRegistryEvents 表，则以下查询的替代方法是使用 DeviceProcessEvents 表作为替换项 。 也就是说，可使用下面提供的两个示例之一。
 
 1. 从结果中，我们现在知道了 Threat Actor 正在使用 reg.exe 向注册表项添加项，程序位于 C:\temp。运行以下语句，将查询中的搜索运算符替换为 where 运算符 :
 
@@ -52,7 +52,7 @@ You are a Security Operations Analyst working at a company that implemented Micr
     | where ProcessCommandLine contains "c:\\temp"
     ```
 
-1. 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。
+1. 请务必尽可能多地提供关于警报的上下文，为安全运营中心分析师提供帮助。 这包括投影在调查关系图中使用的实体。 运行以下查询：
 
     ```KQL
     DeviceRegistryEvents
@@ -73,9 +73,9 @@ You are a Security Operations Analyst working at a company that implemented Micr
     | extend timestamp = TimeGenerated, HostCustomEntity = DeviceName, AccountCustomEntity = InitiatingProcessAccountName
     ```
 
-1. 你将使用 Log Analytics KQL 查询，并从这里创建自定义分析规则，以帮助发现环境中的威胁和异常行为。
+1. 你现在有一个不错的检测规则，接下来请在“日志”窗口中，选择命令栏中的“+ 新建预警规则”，然后选择“创建 Microsoft Sentinel 警报” 。 随后会创建新的计划规则。
 
-1. This starts the "Analytics rule wizard". For the <bpt id="p1">*</bpt>General<ept id="p1">*</ept> tab type:
+1. 这会启动“分析规则向导”。 在“常规”选项卡中，键入以下内容：
 
     |设置|值|
     |---|---|
@@ -95,9 +95,9 @@ You are a Security Operations Analyst working at a company that implemented Micr
     |运行查询的时间间隔|5 分钟|
     |查看最近多久的数据|1 天|
 
-    ><bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> We are purposely generating many incidents for the same data. This enables the Lab to use these alerts.
+    >**注意：** 我们特意针对同一数据生成了多个事件。 这样，实验室就可使用这些警报。
 
-1. Leave the rest of the options with the defaults. Select <bpt id="p1">**</bpt>Next: Incident settings&gt;<ept id="p1">**</ept> button.
+1. 将其余选项保留为默认值。 选择“下一页:**事件设置 >”按钮**。
 
 1. 对于“事件设置”选项卡，保留默认值并选择“下一页: “下一步: 自动响应 >”按钮。
 
@@ -118,14 +118,14 @@ You are a Security Operations Analyst working at a company that implemented Micr
     search "administrators" | summarize count() by $table
     ```
 
-1. The result might show events from different tables, but in our case, we want to investigate the SecurityEvent table. The EventID and Event that we are looking is "4732 - A member was added to a security-enabled local group". With this, we will identify adding a member to a privileged group. <bpt id="p1">**</bpt>Run<ept id="p1">**</ept> the following KQL query to confirm:
+1. 结果可能会显示不同表中的事件，但在我们的案例中，我们想要调查 SecurityEvent 表。 我们查找的 EventID 和 Event 为“4732 - 成员已添加到启用了安全性的本地组”。 通过此操作，我们将确定将成员添加到特权组。 运行以下 KQL 查询以确认：
 
     ```KQL
     SecurityEvent | where EventID == 4732
     | where TargetAccount == "Builtin\\Administrators"
     ```
 
-1. Expand the row to see all the columns related to the record. The username of the account added as Administrator does not show. The issue is that instead of storing the username, we have the Security IDentifier (SID). <bpt id="p1">**</bpt>Run<ept id="p1">**</ept> the following KQL to match the SID to the username that was added to the Administrators group:
+1. 展开该行以查看与记录相关的所有列。 不会显示添加为管理员的帐户的用户名。 问题在于未存储该用户名，我们具有的是安全标识符 (SID)。 运行以下 KQL，将 SID 与添加到 Administrators 组的用户名匹配：
 
     ```KQL
     SecurityEvent | where EventID == 4732
@@ -141,7 +141,7 @@ You are a Security Operations Analyst working at a company that implemented Micr
 
     >**注意：** 实验室使用的数据集较小，因此该 KQL 可能不会返回预期结果。
 
-1. Extend the row to show the resulting columns, in the last one, we see the name of the added user under the <bpt id="p1">*</bpt>UserName1<ept id="p1">*</ept> column we <bpt id="p2">*</bpt>project<ept id="p2">*</ept> within the KQL query. It is important to help the Security Operations Analyst by providing as much context about the alert as you can. This includes projecting Entities for use in the investigation graph. <bpt id="p1">**</bpt>Run<ept id="p1">**</ept> the following query:
+1. 扩展行以显示生成的列，在上一行中，我们在 KQL 查询投影的 UserName1 列下看到了添加的用户的名称 。 请务必尽可能多地提供关于警报的上下文，为安全操作分析师提供帮助。 这包括投影在调查关系图中使用的实体。 运行以下查询：
 
     ```KQL
     SecurityEvent | where EventID == 4732
@@ -156,7 +156,7 @@ You are a Security Operations Analyst working at a company that implemented Micr
 
 1. 你现在有一个不错的检测规则，接下来请在“日志”窗口中，选择命令栏中的“+ 新建预警规则”，然后选择“创建 Microsoft Sentinel 警报” 。
 
-1. 此检测将重点关注来自 Defender for Endpoint 的数据。
+1. 这会启动“分析规则向导”。 在“常规”选项卡中，键入以下内容：
 
     |设置|值|
     |---|---|
@@ -176,9 +176,9 @@ You are a Security Operations Analyst working at a company that implemented Micr
     |运行查询的时间间隔|5 分钟|
     |查看最近多久的数据|1 天|
 
-    >运行以下 KQL 语句：
+    >**注意：** 我们特意针对同一数据生成了多个事件。 这样，实验室就可使用这些警报。
 
-1. Leave the rest of the options with the defaults. Select <bpt id="p1">**</bpt>Next: Incident settings&gt;<ept id="p1">**</ept> button.
+1. 将其余选项保留为默认值。 选择“下一页:**事件设置 >”按钮**。
 
 1. 对于“事件设置”选项卡，保留默认值并选择“下一页: “下一步: 自动响应 >”按钮。
 
