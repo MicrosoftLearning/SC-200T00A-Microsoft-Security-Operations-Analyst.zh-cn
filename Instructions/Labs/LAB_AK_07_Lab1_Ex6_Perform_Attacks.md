@@ -115,12 +115,12 @@ lab:
 >**重要提示：** 实验室的 SAVE 功能会导致 Win2 与 Azure Arc 断开连接。重启可以解决这个问题。  
 
 1. 在 Windows 中选择“开始”。 然后依次选择“电源”**和**“重启”
+
 1. 按照说明再次登录到 WIN2。
 
+1. 在任务栏的搜索框中，输入“Command”。 命令提示符将显示在搜索结果中。 右键单击命令提示符，并选择“以管理员身份运行”。 在出现的“用户帐户控制”窗口中选择“是”以允许应用运行。
 
-1. 在任务栏的搜索框中，输入“Command”。 命令提示符将显示在搜索结果中。 右键单击命令提示符，并选择“以管理员身份运行”。 在出现的“用户帐户控制”窗口中选择“是”以允许应用运行。 提示：你可能在上一练习中以管理员角色打开命令提示符。
-
-1. 在命令提示符的根目录中创建 Temp 文件夹。 请记住，在上一行后按 Enter 键：
+1. 提示：你可能在上一练习中以管理员角色打开命令提示符。 在命令提示符的根目录中创建 Temp 文件夹。
 
     ```CommandPrompt
     cd \
@@ -128,9 +128,9 @@ lab:
     cd \temp
     ```
 
-#### <a name="attack-2---user-add-and-elevate-privilege"></a>攻击 2 - 用户添加和特权提升
+#### <a name="attack-2---user-add-and-elevate-privilege"></a>请记住，在上一行后按 Enter 键：
 
-1. 复制并运行此命令以模拟管理员帐户的创建。 请记住，在上一行后按 Enter 键：
+1. 攻击 2 - 用户添加和特权提升 复制并运行此命令以模拟管理员帐户的创建。
 
     ```CommandPrompt
     net user theusernametoadd /add
@@ -138,4 +138,4 @@ lab:
     net localgroup administrators theusernametoadd /add
     ```
 
-## <a name="proceed-to-exercise-7"></a>转到练习 7
+## <a name="proceed-to-exercise-7"></a>请记住，在上一行后按 Enter 键：

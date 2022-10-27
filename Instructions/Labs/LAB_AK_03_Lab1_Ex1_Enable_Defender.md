@@ -140,7 +140,6 @@ lab:
 
     >这可能需要几分钟。
 
-
 ### <a name="task-5-protect-an-on-premises-server"></a>任务 5：保护本地服务器
 
 在此任务中，你将在 WINServer 虚拟机上手动安装所需代理。
