@@ -98,36 +98,36 @@ lab:
 
 1. 将“下载和加入适用于 Linux 的代理”区域中的命令复制到剪贴板。
 
-1. 启动 LIN2 虚拟机。 使用实验室宿主提供的用户名和密码登录。 提示：你可能需要按 Enter 键以查看登录提示。
+1. 启动 LIN2 虚拟机。
 
-1. 请注意 LIN2 服务器的 IP 地址。 以下面的屏幕截图为例：
+1. 使用实验室宿主提供的用户名和密码登录。 提示：你可能需要按 Enter 键以查看登录提示。 请注意 LIN2 服务器的 IP 地址。
 
-    ![linux 登录](../Media/LinuxLoginExample.png)
+1. 以下面的屏幕截图为例： linux 登录
 
-1. 返回到 WIN1 虚拟机。 选择上一个任务中使用的 Windows PowerShell。
+    ![返回到 WIN1 虚拟机。](../Media/LinuxLoginExample.png)
 
-1. 输入以下 PowerShell 命令，根据你的具体 Linux 服务器信息进行调整，然后按 Enter：
+1. 选择上一个任务中使用的 Windows PowerShell。 输入以下 PowerShell 命令，根据你的具体 Linux 服务器信息进行调整，然后按 Enter：
+
+1. 输入“yes”以确认连接，然后键入用户密码，并按 Enter 键。
 
     ```PowerShell
     ssh insert-your-linux-IP-address-here -l insert-linux-user-name-here
     ```
 
-1. 输入“yes”以确认连接，然后键入用户密码，并按 Enter 键。 屏幕应如下所示：
+1. 屏幕应如下所示： linux 登录
 
-    ![linux 登录](../Media/PSconnectLinux.png)
+    ![现在可以粘贴前面的步骤中的“下载和加入适用于 Linux 的代理”命令。](../Media/PSconnectLinux.png)
 
-1. 现在可以粘贴前面的步骤中的“下载和加入适用于 Linux 的代理”命令。 确保脚本在剪贴板中。 在 PowerShell 中右键单击顶部栏并依次选择“编辑”、“粘贴” 。
+1. 确保脚本在剪贴板中。 在 PowerShell 中右键单击顶部栏并依次选择“编辑”、“粘贴” 。 粘贴脚本后，按 Enter 键。
 
-1. 粘贴脚本后，按 Enter 键。 该脚本将在 Linux 服务器上远程运行。 Wait
+1. 该脚本将在 Linux 服务器上远程运行。 Wait 完成后，键入“exit”以关闭与 LIN2 的远程 Shell 连接。
 
-1. 完成后，键入“exit”以关闭与 LIN2 的远程 Shell 连接。
+1. 任务 4：为 Syslog 连接器配置你想收集的设备及其严重性
 
 
-### <a name="task-4-configure-the-facilities-you-want-to-collect-and-their-severities-for-the-syslog-connector"></a>任务 4：为 Syslog 连接器配置你想收集的设备及其严重性
+### <a name="task-4-configure-the-facilities-you-want-to-collect-and-their-severities-for-the-syslog-connector"></a>在此任务中，你将配置 Syslog 收集设备。
 
-在此任务中，你将配置 Syslog 收集设备。
-
-1. 返回到打开 Microsoft Sentinel 门户的 Microsoft Edge 浏览器，并通过选择两次右上角的“x”关闭“Log Analytics 工作区”页和“Syslog”数据连接器页。
+返回到打开 Microsoft Sentinel 门户的 Microsoft Edge 浏览器，并通过选择两次右上角的“x”关闭“Log Analytics 工作区”页和“Syslog”数据连接器页。
 
 1. 在 Microsoft Sentinel 门户中，选择“配置”下的“设置”，然后选择“工作区设置”选项卡。
 
@@ -145,4 +145,6 @@ lab:
 
 1. 选择“应用”以保存所做的更改。
 
-## <a name="proceed-to-exercise-4"></a>继续完成练习 4
+1. 继续完成练习 4
+
+## <a name="proceed-to-exercise-4"></a>Proceed to Exercise 4

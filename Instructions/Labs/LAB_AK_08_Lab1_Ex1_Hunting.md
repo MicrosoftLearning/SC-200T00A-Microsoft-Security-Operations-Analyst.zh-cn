@@ -64,8 +64,8 @@ lab:
     | where ActionType == "DnsQueryResponse"
     | extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),".")) 
     | where c2 startswith "sub"
-    | summarize cnt=count() by bin(TimeGenerated, 5m), c2, DeviceName
-    | where cnt > 15
+    | summarize cnt=count() by bin(TimeGenerated, 3m), c2, DeviceName
+    | where cnt > 5
     ```
 
     ![屏幕快照](../Media/SC200_hunting2.png)
@@ -88,8 +88,8 @@ lab:
     | where ActionType == "DnsQueryResponse"
     | extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),"."))
     | where c2 startswith "sub"
-    | summarize cnt=count() by bin(TimeGenerated, 5m), c2, DeviceName
-    | where cnt > 15
+    | summarize cnt=count() by bin(TimeGenerated, 3m), c2, DeviceName
+    | where cnt > 5
     ```
 
 1. 向下滚动，在“实体映射（预览）”下，选择：
@@ -134,30 +134,40 @@ lab:
 
 1. 右键单击查询，然后选择“添加到直播”。 提示：也可通过向右滑动并选择行末尾的省略号 (...) 打开上下文菜单完成此操作。
 
-1. 查看“状态”现在为“正在运行” 。 如果找到结果，将在 Azure 门户（钟形图标）中收到通知。
+1. 查看“状态”现在为“正在运行” 。 
+
+1. 如果找到结果，将在 Azure 门户（钟形图标）中收到通知。 任务 2：创建 NRT 查询规则 
+
+    >在此任务中，你将创建 NRT 分析查询规则，而不是使用 LiveStream。 NRT 规则每分钟运行一次，并回溯一分钟。
+
+    ```CommandPrompt
+    Start PowerShell.exe -file c2.ps1
+    ```
+
+1. NRT 规则的优点是可以使用警报和事件创建逻辑。
 
 
-### <a name="task-2-create-a-nrt-query-rule"></a>任务 2：创建 NRT 查询规则
+### <a name="task-2-create-a-nrt-query-rule"></a>在 Microsoft Sentinel 中选择“分析”页面。
 
-在此任务中，你将创建 NRT 分析查询规则，而不是使用 LiveStream。 NRT 规则每分钟运行一次，并回溯一分钟。  NRT 规则的优点是可以使用警报和事件创建逻辑。
+选择“创建”选项卡，然后选择“NRT 查询规则” 这会启动“分析规则向导”。 在“常规”选项卡中，键入以下内容：
 
 
-1. 在 Microsoft Sentinel 中选择“分析”页面。 
+1. 设置 
 
-1. 选择“创建”选项卡，然后选择“NRT 查询规则”
-1. 这会启动“分析规则向导”。 在“常规”选项卡中，键入以下内容：
+1. 值
 
-    |设置|值|
-    |---|---|
-    |名称|**NRT C2 搜寻**|
+1. 名称 **NRT C2 搜寻**
+
     |说明|**NRT C2 搜寻**|
+    |---|---|
     |策略|**命令和控制**|
     |Severity|**高**|
+    |选择“下一页:**设置规则逻辑 >”按钮**。|对于“规则查询”，输入以下 KQL 语句：|
+    |**注意：** 我们特意针对同一数据生成了多个事件。|这样，实验室就可使用这些警报。|
 
-1. 选择“下一页:**设置规则逻辑 >”按钮**。 
+1. 将其余选项保留为默认值。 
 
-
-1. 对于“规则查询”，输入以下 KQL 语句：
+1. 选择“下一页:**事件设置 >”按钮**。
 
     ```KQL
     let lookback = 2d;
@@ -165,41 +175,46 @@ lab:
     | where ActionType == "DnsQueryResponse"
     | extend c2 = substring(tostring(AdditionalFields.DnsQueryString),0,indexof(tostring(AdditionalFields.DnsQueryString),"."))
     | where c2 startswith "sub"
-    | summarize cnt=count() by bin(TimeGenerated, 5m), c2, DeviceName
-    | where cnt > 15
+    | summarize cnt=count() by bin(TimeGenerated, 3m), c2, DeviceName
+    | where cnt > 5
     ```
 
->**注意：** 我们特意针对同一数据生成了多个事件。 这样，实验室就可使用这些警报。
-
-1. 将其余选项保留为默认值。 选择“下一页:**事件设置 >”按钮**。
-
-1. 对于“事件设置”选项卡，保留默认值并选择“下一页: “下一步: 自动响应 >”按钮。
-
-1. 对于“自动响应”选项卡，选择“警报自动化”下的“PostMessageTeams-OnAlert”，然后选择“下一页: 审阅”按钮。
+1. 对于“事件设置”选项卡，保留默认值并选择“下一页: “下一步: 自动响应 >”按钮。 对于“自动响应”选项卡，选择“警报自动化”下的“PostMessageTeams-OnAlert”，然后选择“下一页: 审阅”按钮。
 
 1. 在“查看”选项卡上，选择“创建”按钮以新建计划分析规则。
 
+1. 任务 3：创建搜索
+
+1. 在此任务中，你将使用搜索作业查找 C2。
+
+1. 在 Microsoft Sentinel 中选择“搜索”页。
 
 
-### <a name="task-3-create-a-search"></a>任务 3：创建搜索
+### <a name="task-3-create-a-search"></a>选择“还原”选项卡。
 
-在此任务中，你将使用搜索作业查找 C2。 
+**注意：** 实验室不会有要从中还原的存档表。 
 
+1. 正常过程将还原已存档的表，以包含在搜索作业中。 
 
-1. 在 Microsoft Sentinel 中选择“搜索”页。 
-
-1. 选择“还原”选项卡。
-
->**注意：** 实验室不会有要从中还原的存档表。  正常过程将还原已存档的表，以包含在搜索作业中。
 1. 选择“取消”。
-1. 选择“搜索”选项卡。
-1. 选择表并更改为“DeviceRegistryEvents”
-1. 在搜索框中输入“reg.exe”  
-1. 选择“保存的搜索”。 
-1. 搜索作业将创建名为“DeviceRegistryEvents_####_SRCH”的新表。 
-1. 等待搜索作业完成。  状态将显示“正在更新”。 然后显示“正在进行”。 随后显示“搜索完成”。 
-1. 选择“查看搜索结果”
-1. 在“日志”中打开一个新选项卡。
-1. 输入新的表名称“DeviceRegistryEvents_####_SRCH”并运行。
+
+    >选择“搜索”选项卡。 选择表并更改为“DeviceRegistryEvents”
+
+1. 在搜索框中输入“reg.exe”
+
+1. 选择“保存的搜索”。
+
+1. 搜索作业将创建名为“DeviceRegistryEvents_####_SRCH”的新表。
+
+1. 等待搜索作业完成。
+
+1. 状态将显示“正在更新”。
+
+1. 然后显示“正在进行”。
+
+1. 随后显示“搜索完成”。 选择“查看搜索结果”
+
+1. 在“日志”中打开一个新选项卡。 输入新的表名称“DeviceRegistryEvents_####_SRCH”并运行。
+
 
 ## <a name="proceed-to-exercise-2"></a>继续进行练习 2

@@ -32,7 +32,7 @@ lab:
 
 1. 打开已下载的 SC200_module7_ASIM_Parser_scripts.txt，然后复制任务 1 脚本 KQL 语句并将其粘贴到新的查询选项卡。
 
->注意：下面的脚本仅供参考。
+    >注意：下面的脚本仅供参考。
 
     ```KQL
     let RegistryType = datatable (TypeCode: string, TypeName: string) [
@@ -48,9 +48,9 @@ lab:
     DeviceRegistryEvents
     | extend
         // Event
-        EventOriginalUid = tostring(ReportId), 
+        EventOriginalUid = tostring(ReportId),
         EventCount = int(1), 
-        EventProduct = 'M365 Defender for Endpoint', 
+        EventProduct = 'M365 Defender for Endpoint',
         EventVendor = 'Microsoft', 
         EventSchemaVersion = '0.1.0', 
         EventStartTime = TimeGenerated, 
@@ -59,8 +59,8 @@ lab:
         // Registry
         RegistryKey = iff (ActionType in ("RegistryKeyDeleted", "RegistryValueDeleted"), PreviousRegistryKey, RegistryKey),
         RegistryValue = iff (ActionType == "RegistryValueDeleted", PreviousRegistryValueName, RegistryValueName),
-        // RegistryValueType -- original name is fine 
-        // RegistryValueData -- original name is fine 
+        // RegistryValueType -- original name is fine
+        // RegistryValueData -- original name is fine
         RegistryKeyModified = iff (ActionType == "RegistryKeyRenamed", PreviousRegistryKey, ""),
         RegistryValueModified = iff (ActionType == "RegistryValueSet", PreviousRegistryValueName, ""),
         // RegistryValueTypeModified -- Not provided by Defender
@@ -74,9 +74,9 @@ lab:
         PreviousRegistryValueData
     // Device
     | extend
-        DvcHostname = DeviceName, 
-        DvcId = DeviceId, 
-        Dvc = DeviceName 
+        DvcHostname = DeviceName,
+        DvcId = DeviceId,
+        Dvc = DeviceName
     // Users
     | extend
         ActorUsername = iff (InitiatingProcessAccountDomain == '', InitiatingProcessAccountName, strcat(InitiatingProcessAccountDomain, '\\', InitiatingProcessAccountName)), 
@@ -115,27 +115,32 @@ lab:
     };
     RegistryEvents_M365D
     ```
->**注意：** 花些时间逐行检查 KQL。  
+
+1. **注意：** 花些时间逐行检查 KQL。
+
 1. 选择“运行”以确认 KQL 有效。
+
 1. 选择“保存”，然后选择“另存为函数”。
-1. 向下滚动并在“查询计划”下设置以下项：
 
-    |设置|值|
+    |向下滚动并在“查询计划”下设置以下项：|设置|
     |---|---|
-    |函数名称|vimRegEvtM365D|
-    |旧类别|MyASIM|
+    |值|函数名称|
+    |vimRegEvtM365D|旧类别|
+
+1. MyASIM
+
 1. 再选择“保存”。
-1. 在“新建查询”选项卡中，输入“vimRegEvtM365D”，然后选择“运行”。
 
 
-### <a name="task-2-develop-kql-function-for-securityevent-table"></a>任务 2：为 SecurityEvent 表开发 KQL 函数。 
+### <a name="task-2-develop-kql-function-for-securityevent-table"></a>在“新建查询”选项卡中，输入“vimRegEvtM365D”，然后选择“运行”。 
 
-在此任务中，将创建一个函数，它是 SecurityEvent 的工作区分析程序。
+任务 2：为 SecurityEvent 表开发 KQL 函数。
+
+1. 在此任务中，将创建一个函数，它是 SecurityEvent 的工作区分析程序。
 
 1. 新建查询选项卡。
-1. 打开已下载的 SC200_module7_ASIM_Parser_scripts.txt，然后复制任务 2 脚本 KQL 语句并将其粘贴到新的查询选项卡。
 
->注意：下面的脚本仅供参考。
+    >打开已下载的 SC200_module7_ASIM_Parser_scripts.txt，然后复制任务 2 脚本 KQL 语句并将其粘贴到新的查询选项卡。
 
     ```KQL
     let RegistryType = datatable (TypeCode: string, TypeName: string) [
@@ -223,25 +228,29 @@ lab:
     RegistryEvents
     ```
 
->**注意：** 花些时间逐行检查 KQL。  
+1. 注意：下面的脚本仅供参考。
+
+1. **注意：** 花些时间逐行检查 KQL。
+
 1. 选择“运行”以确认 KQL 有效。
-1. 选择“保存”，然后选择“另存为函数”。
-1. 向下滚动并在“查询计划”下设置以下项：
 
-    |设置|值|
+    |选择“保存”，然后选择“另存为函数”。|向下滚动并在“查询计划”下设置以下项：|
     |---|---|
+    |设置|值|
     |函数名称|vimRegEvtSecurityEvent|
-    |旧类别|MyASIM|
-1. 再选择“保存”。
-1. 在新查询选项卡中，输入“vimRegEvtSecurityEvent”，然后选择“运行”
+
+1. 旧类别
+
+1. MyASIM
 
 
-### <a name="task-3-create-a-unifying-workspace-parser"></a>任务 3：创建一个统一的工作区分析程序。 
+### <a name="task-3-create-a-unifying-workspace-parser"></a>再选择“保存”。 
 
-在此任务中，将创建合并前两个函数的统一分析程序函数。  
+在新查询选项卡中，输入“vimRegEvtSecurityEvent”，然后选择“运行”  
 
-1. 新建查询选项卡。
-1. 在“新建查询”选项卡中输入以下 KQL 语句：
+1. 任务 3：创建一个统一的工作区分析程序。
+
+1. 在此任务中，将创建合并前两个函数的统一分析程序函数。
 
     ```KQL
     union isfuzzy=true
@@ -249,18 +258,27 @@ lab:
     vimRegEvtSecurityEvent
     ```
 
+1. 新建查询选项卡。
+
+1. 在“新建查询”选项卡中输入以下 KQL 语句：
+
 1. 选择“运行”以确认 KQL 有效。
-1. 选择“保存”，然后选择“另存为函数”。
-1. 向下滚动并在“查询计划”下设置以下项：
 
-    |设置|值|
+    |选择“保存”，然后选择“另存为函数”。|向下滚动并在“查询计划”下设置以下项：|
     |---|---|
+    |设置|值|
     |函数名称|imRegEvt|
-    |旧类别|MyASIM|
+
+1. 旧类别
+
+1. MyASIM
+
 1. 再选择“保存”。
-1. 在新查询选项卡中，输入“imRegEvt”并选择“运行”
-1. 将查询更新为“imRegEvt | where ActionType == 'RegistryValueSet'”并选择“运行”
 
+    ```KQL
+    imRegEvt
+    | where ActionType == 'RegistryValueSet'
+    ```
 
-## <a name="proceed-to-exercise-10"></a>继续完成练习 10
+## <a name="proceed-to-exercise-10"></a>在新查询选项卡中，输入“imRegEvt”并选择“运行”
 

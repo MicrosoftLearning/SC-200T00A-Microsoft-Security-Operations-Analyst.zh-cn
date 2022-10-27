@@ -127,15 +127,21 @@ lab:
     ThreatIntelligenceIndicator | project DomainName
     ```
 
+
 ### <a name="task-4-configure-log-retention"></a>任务 4：配置日志保留期
 
 在此任务中，将更改 SecurityEvent 表的保持期。
 
 1. 在 Microsoft Sentinel 的“配置”区域中，选择“设置”选项。
+
 1. 选择“工作区设置”
+
 1. 在 Log Analytics 工作区中，选择“设置”区域中的“表(预览)”选项。
+
 1. 选择表名称“SecurityEvent”，然后选择“...”。
+
 1. 选择“管理表”。
+
 1. 为“总保持期”选择“180 天”。 然后“保存”。
 
 
