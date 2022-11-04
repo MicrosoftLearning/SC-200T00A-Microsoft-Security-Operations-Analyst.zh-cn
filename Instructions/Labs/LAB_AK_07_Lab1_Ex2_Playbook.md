@@ -66,7 +66,7 @@ lab:
 
 1. 选择“Solutions”文件夹。
 
-1. 接下来，选择“Teams”文件夹，然后选择“Playbooks”文件夹。
+1. 接下来，选择“SentinelSOARessentials”文件夹，然后选择“Playbooks”文件夹。 
 
 1. 选择“Post-Message-Teams”文件夹。
 

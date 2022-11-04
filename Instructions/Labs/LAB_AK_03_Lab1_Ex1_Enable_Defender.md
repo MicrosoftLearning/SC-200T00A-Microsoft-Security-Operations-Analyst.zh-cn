@@ -61,21 +61,21 @@ lab:
 
 1. 在“开始”页面的“升级”选项卡下，确保订阅已选中，然后选择页面底部的“升级”按钮  。 等待显示“试用已启动”通知，大约需要 2 分钟。 提示：可以单击顶部栏中的铃声按钮，查看 Azure 门户通知。
 
-1. 在云Microsoft Defender的左侧菜单中，在“管理”下，选择“**环境设置**”。
+1. 在 Microsoft Defender for Cloud 的左侧菜单中的“管理”下，选择“环境设置”。
 
 1. 选择“Azure Pass - 赞助”订阅（或所选语言的等效名称）。 
 
-1. 查看现在受 Defender for Cloud 计划的保护的 Azure 资源。
+1. 查看现在受 Defender for Cloud 计划保护的 Azure 资源。
 
 1. 从“设置”区域中选择“自动设置”。
 
-1. 查看自动设置 - 扩展。 确认用于 Azure VM 的 Log Analytics 代理已关闭。
+1. 查看自动设置 - 扩展。 确认“Log Analytics 代理/Azure Monitor 代理”为“关闭” 。
 
 1. 选择页面右上角的“x”关闭设置页面，再次返回“环境设置”，然后选择订阅左侧的“>”。
 
 1. 选择之前创建的 Log Analytics 工作区“uniquenameDefender”，查看可用选项和定价。 
 
-1. 选择“启用所有 Microsoft Defender for Cloud 计划”，然后选择“保存” 。 等待 *“已成功保存工作区 uniquenameDefender Microsoft Defender 计划！”* 通知。
+1. 选择“启用所有 Microsoft Defender for Cloud 计划”，然后选择“保存” 。 等待显示“已成功保存工作区 uniquenameDefender 的 Microsoft Defender 计划！” 通知。
 
     >**注意：** 如果页面未显示，请刷新 Microsoft Edge 浏览器，然后重试。
 
@@ -120,7 +120,7 @@ lab:
 
 1. 输入：cd C:\Users\Administrator\Downloads
 
-    >**重要：** 如果没有此目录，最有可能意味着计算机处于错误状态。 返回任务 4 的开头，更改为 WINServer 并重新启动。
+    >重要提示：如果没有此目录，最有可能意味着你使用的是错误的计算机。 返回任务 4 的开头，更改为 WINServer 并重新启动。
 
 1. 键入“Set-ExecutionPolicy -ExecutionPolicy Unrestricted”，然后按 Enter。
 
@@ -132,13 +132,13 @@ lab:
 
 1. 输入 R 以运行一次，然后按 Enter（这可能需要几分钟时间）。
 
-1. 设置过程将打开新的 Edge 浏览器选项卡，以对 Azure Arc 代理进行身份验证。 选择管理员帐户，等待消息“身份验证完成”，然后返回到Windows PowerShell窗口。
+1. 安装过程将打开新的 Edge 浏览器标签页，以对 Azure Arc 代理进行身份验证。 选择管理员帐户，等待消息“身份验证完成”，然后返回到 Windows PowerShell 窗口。
 
-1. 返回到下载脚本的 Azure 门户页面，然后选择“关闭”。 关闭“使用 Azure Arc 添加服务器”，返回到 Azure Arc 服务器页面 。
+1. 安装完成后，返回到下载脚本的 Azure 门户页面，然后选择“关闭”。 关闭“使用 Azure Arc 添加服务器”，返回到 Azure Arc 服务器页面 。
 
-1. 选择 **“刷新** ”，直到显示 WINServer 服务器名称，状态为 *“已连接*”。
+1. 选择“刷新”，直到显示 WINServer 服务器名称，且状态为“已连接”。
 
-    >这可能需要几分钟。
+    >注意：这可能需要几分钟。
 
 ### <a name="task-5-protect-an-on-premises-server"></a>任务 5：保护本地服务器
 
@@ -154,7 +154,7 @@ lab:
 
 1. 选择之前创建的工作区旁边的“+ 添加服务器”。
 
-1. 选择 **Log Analytics 代理说明**
+1. 选择“Log Analytics 代理说明”。
 
 1. 选择“下载 Windows 代理(64 位)”。
 

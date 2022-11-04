@@ -74,10 +74,10 @@ lab:
 
 1. 创建并运行计算后，请验证要使用的内核是否为 Python 3.8 - AzureML。 提示：这显示在命令栏的右侧。 还可以通过选择“笔记本”菜单下的“<<”来增加屏幕大小。
 
-1. 通过从命令栏中选择“橡皮擦”图标，清除笔记本中的所有结果，然后按照“入门”教程进行操作。
+1. 选择“身份验证”按钮并等待身份验证完成。
 
-1. **注意：** 如果无法完成上述步骤来访问 Notebook，可以改为根据其 GitHub 页进行操作。 在此处查看笔记本文件：[GitHub 上的 Microsoft Sentinel Notebook](https://github.com/Azure/Azure-Sentinel-Notebooks/blob/8122bca32387d60a8ee9c058ead9d3ab8f4d61e6/A%20Getting%20Started%20Guide%20For%20Azure%20Sentinel%20ML%20Notebooks.ipynb)
+1. 通过从命令栏中选择“清除所有输出”图标，清除笔记本中的所有结果，然后按照“入门”教程进行操作。 提示：这可通过从命令栏中选择省略号 (...) 来找到。
 
->你已完成本实验室。 See the notebook file here: <bpt id="p1">[</bpt>Microsoft Sentinel Notebooks on GitHub<ept id="p1">](https://github.com/Azure/Azure-Sentinel-Notebooks/blob/8122bca32387d60a8ee9c058ead9d3ab8f4d61e6/A%20Getting%20Started%20Guide%20For%20Azure%20Sentinel%20ML%20Notebooks.ipynb)</ept> 
+>**注意：** 如果无法完成上述步骤来访问 Notebook，可以改为根据其 GitHub 页进行操作。 在此处查看笔记本文件：[GitHub 上的 Microsoft Sentinel Notebook](https://github.com/Azure/Azure-Sentinel-Notebooks/blob/8122bca32387d60a8ee9c058ead9d3ab8f4d61e6/A%20Getting%20Started%20Guide%20For%20Azure%20Sentinel%20ML%20Notebooks.ipynb) 
 
-## <a name="you-have-completed-the-lab"></a>You have completed the lab.
+## <a name="you-have-completed-the-lab"></a>你已完成本实验室。
