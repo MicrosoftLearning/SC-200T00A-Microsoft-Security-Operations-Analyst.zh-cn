@@ -41,7 +41,7 @@ lab:
 
 1. 将“区域”的默认值保留为“(US) 美国东部”。
 
-1. 向下滚动并查看虚拟机的“大小”。 如果它显示为空，请选择“查看所有大小”，在“Azure 用户使用最多的”下选择一个 VM 大小，然后单击“选择”。
+1. 向下滚动并查看虚拟机的“大小”。 如果它显示为空，请选择“查看所有大小”，在“Azure 用户最常用的大小”下选择第一个 VM 大小，然后单击“选择”。
 
 1. 输入你选择的用户名。 提示：避免使用保留字，如 admin 或 root。
 
@@ -70,15 +70,15 @@ lab:
 
 1. 为规则名称输入“AZWIN01DCR”，然后选择“下一步:**资源”** 。
 
-1. 选择“+添加资源”
+1. 选择“+添加资源”。
 
-1. 展开“rg-azwin01”，然后选择“AZWIN01”。
+1. 展开“RG-AZWIN01”，然后选择“AZWIN01” 。
 
 1. 选择“应用”。
 
-1. 选择“下一页:**收集”，然后选择“下一步:** **审阅并创建”**
+1. 依次选择“下一步: 收集”、“下一步: 查看 + 创建” 。
 
-1. 选择“创建”
+1. 选择“创建” 。
 
 1. 等待几分钟，然后选择“刷新”以查看列出的新数据收集规则。
 
@@ -119,37 +119,33 @@ lab:
 
 1. 选择“下一步”，转到“下载并运行脚本”选项卡。
 
-1. 如果有“注册”选项，则选择以下位置中的“注册”，步骤 1.*选择“注册”* 。 **注意：** 等待处理完成，至少需要三 (3) 分钟。 向下滚动并选择“下载”按钮。 
+1. 向下滚动并选择“下载”按钮。 提示：如果浏览器阻止下载，请在浏览器中执行操作以允许下载。 在 Microsoft Edge 浏览器中，根据需要选择省略号按钮 (...)，然后选择“保留”。 
 
-1. 提示：如果浏览器阻止下载，请在浏览器中执行操作以允许下载。
+1. 右键单击 Windows 的“开始”按钮，然后选择“Windows PowerShell (管理员)”。
 
-    >在 Microsoft Edge 浏览器中，根据需要选择省略号按钮 (...)，然后选择“保留”。 右键单击 Windows 的“开始”按钮，然后选择“Windows PowerShell (管理员)”。 如果收到 UAC 提示，请在“用户名”中输入“Administrator”，在“密码”中输入“Passw0rd!” 。 如果未收到，请跳到下一步。
+    >注意：可能需要搜索 Windows PowerShell。  在搜索框中，键入“PowerShell”。 此时会显示“Windows PowerShell 应用”。 选择“以管理员身份运行”选项。
 
-1. 输入：cd C:\Users\Admin\Downloads 键入“Set-ExecutionPolicy -ExecutionPolicy Unrestricted”，然后按 Enter。
+1. 如果收到 UAC 提示，请在“用户名”中输入“Administrator”，在“密码”中输入“Passw0rd!” 。 如果未收到，请跳到下一步。
+
+1. 输入：cd C:\Users\Admin\Downloads
+
+1. 键入“Set-ExecutionPolicy -ExecutionPolicy Unrestricted”，然后按 Enter。
 
 1. 输入“A”，表示全部接受，然后按 Enter。
 
-1. 键入“.\OnboardingScript.ps1”，然后按 Enter。
+1. 键入“.\OnboardingScript.ps1”，然后按 Enter。  
 
-1. **重要提示：** 如果收到错误“无法识别术语 .\OnboardingScript.ps1...”，请确保是在 WINServer 虚拟机中执行任务 4 的步骤。
+    >重要提示：如果收到错误“无法识别术语 .\OnboardingScript.ps1...”，请确保是在 WIN2 虚拟机中执行任务 3 的步骤。 其他问题可能是由于多次下载导致文件名称更改，请在运行目录中搜索“.\OnboardingScript (1).ps1”或其他文件编号。
 
-1. 其他问题可能是由于多次下载导致文件名称更改，请在运行目录中搜索“.\OnboardingScript (1).ps1”或其他文件编号。  
+1. 输入 R 以运行一次，然后按 Enter（这可能需要几分钟时间）。
 
-    >输入 R 以运行一次，然后按 Enter（这可能需要几分钟时间）。 返回到 Microsoft Edge 浏览器，打开一个新选项卡，并在地址栏中输入 https://microsoft.com/devicelogin 。
+1. 安装过程将打开新的 Edge 浏览器标签页，以对 Azure Arc 代理进行身份验证。 选择管理员帐户，等待消息“身份验证完成”，然后返回到 Windows PowerShell 窗口。
 
-1. 返回到 Windows PowerShell 窗口，复制在脚本最后一行“...enter the code”之后显示的代码，以对代理进行身份验证。
-
-1. 返回到 Microsoft Edge 浏览器，将其粘贴到“代码”框中，然后选择“下一步” 。 选择租户管理员帐户，然后在“是否尝试登录 Azure Connected Machine Agent？”窗口中选择“继续”。
-
-1. 返回到 Windows PowerShell 窗口，等待消息“已成功将资源加入 Azure”。 **注意：** 如果看到带有新身份验证代码的消息行，则需要再次重复最后 3 步。
-
-1. 返回到下载脚本的 Azure 门户页面，然后选择“关闭”。
-
-    >关闭“使用 Azure Arc 添加服务器”，返回到 Azure Arc 服务器页面 。
+1. 安装完成后，返回到下载脚本的 Azure 门户页面，然后选择“关闭”。 关闭“使用 Azure Arc 添加服务器”，返回到 Azure Arc 服务器页面 。
 
 1. 选择“刷新”，直到 WIN2 名称出现 。
 
-1. **注意：** 这可能需要几分钟时间。
+    >**注意：** 这可能需要几分钟时间。
 
 1. 在 Azure 门户的搜索栏中，键入“Sentinel”，然后选择“Microsoft Sentinel”。
 
@@ -163,28 +159,28 @@ lab:
 
 1. 为规则名称输入“WIN2”，然后选择“下一步:**资源”** 。
 
-1. 选择“+添加资源”
+1. 选择“+添加资源”。
 
 1. 展开“rg-defender”（或创建的资源组），然后选择“WIN2”。
 
 1. 选择“应用”。
 
-1. 选择“下一页:**收集”，然后选择“下一步:** **审阅并创建”**
+1. 依次选择“下一步: 收集”、“下一步: 查看 + 创建” 。
+
+1. 选择“创建” 。
+
+1. 等待几分钟，然后选择“刷新”以查看列出的新数据收集规则。
 
 
-### <a name="task-4-onboard-microsoft-defender-for-endpoint-device"></a>选择“创建”
+### <a name="task-4-onboard-microsoft-defender-for-endpoint-device"></a>任务 4：加入 Microsoft Defender for Endpoint 设备
 
-等待几分钟，然后选择“刷新”以查看列出的新数据收集规则。
-
->任务 4：加入 Microsoft Defender for Endpoint 设备 在此任务中，你需要将设备加入 Microsoft Defender for Endpoint。
+在此任务中，你需要将设备加入 Microsoft Defender for Endpoint。
 
 >重要提示：如果已完成本课程的“模块 2 - 练习 1”实验室，并且到目前为止一直在保存虚拟机，可以跳过此任务。 否则，需要再次将 WIN1 计算机加入 Defender for Endpoint。
 
-1. **重要提示：** 接下来的步骤将在另一台计算机上完成，而不是你之前使用的计算机。  
+>**重要提示：** 接下来的步骤将在另一台计算机上完成，而不是你之前使用的计算机。 查找虚拟机名称引用。
 
-1. 查找虚拟机名称引用。
-
-1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：**Pa55w.rd**。
+1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：**Pa55w.rd**。  
 
 1. 如果当前不在门户中，请通过 Microsoft Edge 浏览器转到 Microsoft 365 Defender 门户 (https://security.microsoft.com) )，并使用租户电子邮件凭据登录。
 
@@ -194,10 +190,14 @@ lab:
 
 1. 选择“下载载入包”。
 
-1. 提取下载的 .zip 文件。 以管理员身份运行 Windows 命令提示符，并同意显示的用户帐户控制提示。 运行你刚才以管理员身份提取的 WindowsDefenderATPLocalOnboardingScript.cmd 文件。 
+1. 提取下载的 .zip 文件。
 
-1. **注意：** 默认情况下，该文件应位于 c:\users\admin\downloads 目录中。 对于脚本呈现的问题回答 Y。
+1. 以管理员身份运行 Windows 命令提示符，并同意显示的用户帐户控制提示。
+
+1. 运行你刚才以管理员身份提取的 WindowsDefenderATPLocalOnboardingScript.cmd 文件。 **注意：** 默认情况下，该文件应位于 c:\users\admin\downloads 目录中。 对于脚本呈现的问题回答 Y。 
 
 1. 从门户的“加入”页面中，复制检测测试脚本，并在一个打开的命令窗口中运行该脚本。 你可能需要通过在 Windows 搜索栏中键入 **CMD，然后选择“以管理员身份运行”，来打开新的“管理员: 命令提示符”窗口**。
 
-## <a name="proceed-to-exercise-3"></a>在 Microsoft 365 Defender 门户的“终结点”区域中，选择“设备清单”。
+1. 在 Microsoft 365 Defender 门户的“终结点”区域中，选择“设备清单”。 该列表中现在应列出了你的设备。
+
+## <a name="proceed-to-exercise-3"></a>继续完成练习 3
