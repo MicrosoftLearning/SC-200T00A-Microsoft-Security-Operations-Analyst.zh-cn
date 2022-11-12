@@ -3,11 +3,8 @@
 此存储库包括以下课程的实验室说明：
 
 - SC-200T00：Microsoft 安全操作分析师
- 
 
-**[下载最新学生手册和 AllFiles 内容](../../releases/latest)**
-
-**你是 MCT 吗？** - 查看 [MCT GitHub 用户指南](https://microsoftlearning.github.io/MCT-User-Guide/)
+你是 MCT 吗？ - 查看 [MCT GitHub 用户指南](https://microsoftlearning.github.io/MCT-User-Guide/)
 
 **需要手动生成实验室说明？** - [MicrosoftLearning/Docker-Build ](https://github.com/MicrosoftLearning/Docker-Build) 存储库中提供了说明
 
