@@ -63,7 +63,7 @@ lab:
 
 1. 阅读“查看并确认更改”下的内容，选择“确认”以应用更改，然后选择“完成”以完成 。
 
-    >**注意：** 如果你收到信息“URI 'https://outlook.office365.com/psws/service.svc/AntiPhishPolicy ' 对 PUT 操作无效。*对于 PUT 操作，URI 必须指向单个资源。”* ， 只需选择 **“确定** ”，然后选择“ **取消** ”以返回到主页。 你将看到“标准保护已启用”选项启用。
+    >**注意：** 如果你收到信息“URI 'https://outlook.office365.com/psws/service.svc/AntiPhishPolicy ' 对 PUT 操作无效。*对于 PUT 操作，URI 必须指向单个资源。”* ， 只需选择“确定”，然后选择“取消”以返回到主页 。 你将看到“标准保护已启用”选项启用。
 
 1. 在“严格保护”下，选择“管理保护设置”。 提示：在“电子邮件与协作 - 策略与规则 - 威胁策略 - 预设安全策略”下找到“严格保护”。
 
@@ -77,13 +77,13 @@ lab:
 
 1. 阅读“查看并确认更改”下的内容，选择“确认”以应用更改，然后选择“完成”以完成 。
 
-    >**注意：** 如果你收到信息“URI 'https://outlook.office365.com/psws/service.svc/AntiPhishPolicy ' 对 PUT 操作无效。*对于 PUT 操作，URI 必须指向单个资源。”* ， 只需选择 **“确定** ”，然后选择“ **取消** ”以返回到主页。 你将看到“严格保护已启用”选项启用。
+    >**注意：** 如果你收到信息“URI 'https://outlook.office365.com/psws/service.svc/AntiPhishPolicy ' 对 PUT 操作无效。*对于 PUT 操作，URI 必须指向单个资源。”* ， 只需选择“确定”，然后选择“取消”以返回到主页 。 你将看到“严格保护已启用”选项启用。
 
-### <a name="task-3-preparing-the-microsoft-365-defender-workspace"></a>任务 3：准备Microsoft 365 Defender工作区
+### <a name="task-3-preparing-the-microsoft-365-defender-workspace"></a>任务 3：准备 Microsoft 365 Defender 工作区
 
 1. 在 Microsoft 365 Defender 门户中，从左侧“导航”菜单中选择“设置” 。
 
-1. 在“设置”页面上，选择“Microsoft 365 Defender” 。 你将看到咖啡杯的图像和一条消息，上面写着：*挂起！我们正在为数据准备新空间并连接它们。* 完成需要几分钟时间，因此请让页面保持打开状态，但请确保页面完成，因为下一个实验室需要它。 
+1. 在“设置”页面上，选择“Microsoft 365 Defender” 。 你将看到咖啡杯图像和一条消息，消息显示：挂起！我们正在为数据准备新空间并将其连接起来。 完成这一过程需要几分钟时间，因此请让页面保持打开状态，但要确保最终完成，因为它是下一个实验室所必需的。 
 
     >**注意：** 如果收到错误消息“我们未计划到它会失败，但出现了问题。” 请稍后重试此步骤，或在下一实验室之前重试。
 
