@@ -1,10 +1,10 @@
 ---
 lab - Do not use. Temporarily not operational!:
   title: 练习 4 - 使用数据连接器将威胁情报连接到 Microsoft Sentinel
-  module: Module 6 - Connect logs to Microsoft Sentinel
+  module: Learning Path 6 - Connect logs to Microsoft Sentinel
 ---
 
-# <a name="module-6---lab-1---exercise-4---connect-threat-intelligence-to-microsoft-sentinel-using-data-connectors"></a>模块 6 - 实验室 1 - 练习 4 - 使用数据连接器将威胁情报连接到 Microsoft Sentinel
+# <a name="learning-path-6---lab-1---exercise-4---connect-threat-intelligence-to-microsoft-sentinel-using-data-connectors"></a>学习路径 6 - 实验室 1 - 练习 4 - 使用数据连接器将威胁情报连接到 Microsoft Sentinel
 
 ## <a name="lab-scenario"></a>实验室方案
 

@@ -1,10 +1,10 @@
 ---
 lab:
   title: 练习 1 - 探索 Microsoft 365 Defender
-  module: Module 1 - Mitigate threats using Microsoft 365 Defender
+  module: Learning Path 1 - Mitigate threats using Microsoft 365 Defender
 ---
 
-# <a name="module-1---lab-1---exercise-1---explore-microsoft-365-defender"></a>模块 1 - 实验室 1 - 练习 1 - 探索 Microsoft 365 Defender 
+# <a name="learning-path-1---lab-1---exercise-1---explore-microsoft-365-defender"></a>学习路径 1 - 实验室 1 - 练习 1 - 探索 Microsoft 365 Defender
 
 ## <a name="lab-scenario"></a>实验室方案
 

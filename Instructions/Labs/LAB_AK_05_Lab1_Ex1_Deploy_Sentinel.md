@@ -1,10 +1,10 @@
 ---
 lab:
   title: 练习 1 - 配置 Microsoft Sentinel 环境
-  module: Module 5 - Configure your Microsoft Sentinel environment
+  module: Learning Path 5 - Configure your Microsoft Sentinel environment
 ---
 
-# <a name="module-5---lab-1---exercise-1---configure-your-microsoft-sentinel-environment"></a>模块 5 - 实验室 1 - 练习 1 - 配置 Microsoft Sentinel 环境
+# <a name="learning-path-5---lab-1---exercise-1---configure-your-microsoft-sentinel-environment"></a>学习路径 5 - 实验室 1 - 练习 1 - 配置 Microsoft Sentinel 环境
 
 ## <a name="lab-scenario"></a>实验室方案
 

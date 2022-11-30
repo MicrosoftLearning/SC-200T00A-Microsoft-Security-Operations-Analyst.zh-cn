@@ -1,10 +1,10 @@
 ---
 lab:
   title: 练习 2 - 创建 Playbook
-  module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
+  module: Learning Path 7 - Create detections and perform investigations using Microsoft Sentinel
 ---
 
-# <a name="module-7---lab-1---exercise-2---create-a-playbook"></a>模块 7 - 实验室 1 - 练习 2 - 创建 Playbook
+# <a name="learning-path-7---lab-1---exercise-2---create-a-playbook"></a>学习路径 7 - 实验室 1 - 练习 2 - 创建 Playbook
 
 ## <a name="lab-scenario"></a>实验室方案
 

@@ -1,10 +1,10 @@
 ---
 lab:
   title: 练习 1 - 使用 Kusto 查询语言 (KQL) 为 Microsoft Sentinel 创建查询
-  module: Module 4 - Create queries for Microsoft Sentinel using Kusto Query Language (KQL)
+  module: Learning Path 4 - Create queries for Microsoft Sentinel using Kusto Query Language (KQL)
 ---
 
-# <a name="module-4---lab-1---exercise-1---create-queries-for-microsoft-sentinel-using-kusto-query-language-kql"></a>模块 4 - 实验室 1 - 练习 1 - 使用 Kusto 查询语言 (KQL) 为 Microsoft Sentinel 创建查询
+# <a name="learning-path-4---lab-1---exercise-1---create-queries-for-microsoft-sentinel-using-kusto-query-language-kql"></a>学习路径 4 - 实验室 1 - 练习 1 - 使用 Kusto 查询语言 (KQL) 为 Microsoft Sentinel 创建查询
 
 ## <a name="lab-scenario"></a>实验室方案
 
@@ -19,7 +19,7 @@ lab:
 
 在此任务中，你将访问 Log Analytics 环境，可在其中练习编写 KQL 语句。
 
-1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：**Pa55w.rd**。  
+1. 使用密码 Pa55w.rd 以管理员身份登录到 WIN1 虚拟机 。  
 
 1. 在浏览器中转到 https://aka.ms/lademo。 使用 MOD 管理员凭据登录。 
 
@@ -33,49 +33,11 @@ lab:
 
 1. 在第一条记录旁边，选择“>”以展开该行的信息。
 
-
 ### <a name="task-2-run-basic-kql-statements"></a>任务 2：运行基本的 KQL 语句
 
 在此任务中，你将生成基本的 KQL 语句。
 
 >**重要提示：** 对于每个查询，都应先从查询窗口中清除之前的语句，或是在最后打开的选项卡之后选择“+”打开一个新的查询窗口（最多 25 个）。
-
-1. 下面的语句演示了将 let 语句用于声明变量的用法。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
-
-    ```KQL
-    let timeOffset = 1h;
-    let discardEventId = 4688;
-    SecurityEvent
-    | where TimeGenerated > ago(timeOffset*2) and TimeGenerated < ago(timeOffset)
-    | where EventID != discardEventId
-    ```
-
-1. 以下语句演示了将 let 语句用于声明动态列表的用法。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
-
-    ```KQL
-    let suspiciousAccounts = datatable(account: string) [
-      @"\administrator", 
-      @"NT AUTHORITY\SYSTEM"
-    ];
-    SecurityEvent  
-    | where TimeGenerated > ago(1h)
-    | where Account in (suspiciousAccounts)
-    ```
-
-    >**
-          **提示：在“查询”窗口中选择省略号 (...)，然后选择“设置查询格式”，可以轻松地重新设置查询格式****。
-    
-1. 以下语句演示了将 let 语句用于声明动态表的用法。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
-
-    ```KQL
-    let LowActivityAccounts =
-        SecurityEvent 
-        | summarize cnt = count() by Account 
-        | where cnt < 1000;
-    LowActivityAccounts | where Account contains "sql"
-    ```
-
-1. 在“查询”窗口中将“时间范围”更改为“过去 1 小时” 。 这将限制以下语句的结果。
 
 1. 以下语句演示 search 运算符，该运算符在表的所有列中搜索值。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
 
@@ -115,7 +77,45 @@ lab:
     ```KQL
     SecurityEvent  
     | where TimeGenerated > ago(1h) and EventID in (4624, 4625)
+ 
     ```
+
+1. 下面的语句演示了将 let 语句用于声明变量的用法。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
+
+    ```KQL
+    let timeOffset = 1h;
+    let discardEventId = 4688;
+    SecurityEvent
+    | where TimeGenerated > ago(timeOffset*2) and TimeGenerated < ago(timeOffset)
+    | where EventID != discardEventId
+    ```
+
+1. 以下语句演示了将 let 语句用于声明动态列表的用法。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
+
+    ```KQL
+    let suspiciousAccounts = datatable(account: string) [
+      @"\administrator", 
+      @"NT AUTHORITY\SYSTEM"
+    ];
+    SecurityEvent  
+    | where TimeGenerated > ago(1h)
+    | where Account in (suspiciousAccounts)
+    ```
+
+    >**
+          **提示：在“查询”窗口中选择省略号 (...)，然后选择“设置查询格式”，可以轻松地重新设置查询格式****。
+
+1. 以下语句演示了将 let 语句用于声明动态表的用法。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
+
+    ```KQL
+    let LowActivityAccounts =
+        SecurityEvent 
+        | summarize cnt = count() by Account 
+        | where cnt < 1000;
+    LowActivityAccounts | where Account contains "sql"
+    ```
+
+1. 在“查询”窗口中将“时间范围”更改为“过去 1 小时” 。 这将限制以下语句的结果。
 
 1. 以下语句演示了 extend 运算符，该运算符创建计算列，并将其添加到结果集。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
 

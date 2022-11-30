@@ -1,10 +1,10 @@
 ---
 lab:
   title: 练习 10 - 创建工作簿
-  module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
+  module: Learning Path 7 - Create detections and perform investigations using Microsoft Sentinel
 ---
 
-# <a name="module-7---lab-1---exercise-10---create-workbooks"></a>模块 7 - 实验室 1 - 练习 10 - 创建工作簿
+# <a name="learning-path-7---lab-1---exercise-10---create-workbooks"></a>学习路径 7 - 实验室 1 - 练习 10 - 创建工作簿
 
 ## <a name="lab-scenario"></a>实验室方案
 

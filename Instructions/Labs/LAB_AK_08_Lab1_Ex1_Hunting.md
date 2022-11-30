@@ -1,10 +1,10 @@
 ---
 lab:
   title: 练习 1 - 在 Microsoft Sentinel 中执行威胁搜寻
-  module: Module 8 - Perform threat hunting in Microsoft Sentinel
+  module: Learning Path 8 - Perform threat hunting in Microsoft Sentinel
 ---
 
-# <a name="module-8---lab-1---exercise-1---perform-threat-hunting-in-microsoft-sentinel"></a>模块 8 - 实验室 1 - 练习 1 - 在 Azure Sentinel 中执行威胁搜寻
+# <a name="learning-path-8---lab-1---exercise-1---perform-threat-hunting-in-microsoft-sentinel"></a>学习路径 8 - 实验室 1 - 练习 1 - 在 Azure Sentinel 中执行威胁搜寻
 
 ## <a name="lab-scenario"></a>实验室方案
 
@@ -158,7 +158,7 @@ lab:
 
 1. 这会启动“分析规则向导”。 在“常规”选项卡中，键入以下内容：
 
-    |设置|值|
+    |设置|Value|
     |---|---|
     |名称|**NRT C2 搜寻**|
     |说明|**NRT C2 搜寻**|

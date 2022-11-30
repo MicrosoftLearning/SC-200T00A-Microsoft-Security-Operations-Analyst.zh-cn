@@ -1,10 +1,10 @@
 ---
 lab:
   title: 练习 5 - 了解检测建模
-  module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
+  module: Learning Path 7 - Create detections and perform investigations using Microsoft Sentinel
 ---
 
-# <a name="module-7---lab-1---exercise-5---understand-detection-modeling"></a>模块 7 - 实验室 1 - 练习 5 - 了解检测建模
+# <a name="learning-path-7---lab-1---exercise-5---understand-detection-modeling"></a>学习路径 7 - 实验室 1 - 练习 5 - 了解检测建模
 
 ![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex4.png)
 ### <a name="task-1-understand-the-attacks"></a>任务 1：了解攻击

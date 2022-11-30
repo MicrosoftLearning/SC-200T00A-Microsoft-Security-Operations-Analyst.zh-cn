@@ -1,10 +1,10 @@
 ---
 lab:
   title: 练习 7 - 创建检测
-  module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
+  module: Learning Path 7 - Create detections and perform investigations using Microsoft Sentinel
 ---
 
-# <a name="module-7---lab-1---exercise-7---create-detections"></a>模块 7 - 实验室 1 - 练习 7 - 创建检测
+# <a name="learning-path-7---lab-1---exercise-7---create-detections"></a>学习路径 7 - 实验室 1 - 练习 7 - 创建检测
 
 ## <a name="lab-scenario"></a>实验室方案
 
@@ -75,7 +75,7 @@ lab:
 
 1. 这会启动“分析规则向导”。 在“常规”选项卡中，键入以下内容：
 
-    |设置|值|
+    |设置|Value|
     |---|---|
     |名称|MDE Startup RegKey|
     |说明|c:\temp 中的 MDE Startup Regkey|
@@ -156,7 +156,7 @@ lab:
 
 1. 这会启动“分析规则向导”。 在“常规”选项卡中，键入以下内容：
 
-    |设置|值|
+    |设置|Value|
     |---|---|
     |名称|SecurityEvents 本地管理员用户添加操作|
     |说明|添加到本地管理员组的用户|

@@ -1,10 +1,10 @@
 ---
 lab:
   title: 练习 2 - 使用数据连接器将 Windows 设备连接到 Microsoft Sentinel
-  module: Module 6 - Connect logs to Microsoft Sentinel
+  module: Learning Path 6 - Connect logs to Microsoft Sentinel
 ---
 
-# <a name="module-6---lab-1---exercise-2---connect-windows-devices-to-microsoft-sentinel-using-data-connectors"></a>模块 6 - 实验室 1 - 练习 2 - 使用数据连接器将 Windows 设备连接到 Microsoft Sentinel
+# <a name="learning-path-6---lab-1---exercise-2---connect-windows-devices-to-microsoft-sentinel-using-data-connectors"></a>学习路径 6 - 实验室 1 - 练习 2 - 使用数据连接器将 Windows 设备连接到 Microsoft Sentinel
 
 ## <a name="lab-scenario"></a>实验室方案
 
