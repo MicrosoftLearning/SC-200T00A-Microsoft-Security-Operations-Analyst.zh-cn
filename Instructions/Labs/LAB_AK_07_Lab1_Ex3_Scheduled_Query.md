@@ -1,10 +1,10 @@
 ---
 lab:
   title: 练习 3 - 创建计划查询
-  module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
+  module: Learning Path 7 - Create detections and perform investigations using Microsoft Sentinel
 ---
 
-# <a name="module-7---lab-1---exercise-3---create-a-scheduled-query"></a>模块 7 - 实验室 1 - 练习 3 - 创建计划查询
+# <a name="learning-path-7---lab-1---exercise-3---create-a-scheduled-query"></a>学习路径 7 - 实验室 1 - 练习 3 - 创建计划查询
 
 ## <a name="lab-scenario"></a>实验室方案
 

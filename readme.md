@@ -1,12 +1,8 @@
 # <a name="sc-200-microsoft-security-operations-analyst"></a>SC-200：Microsoft 安全运营分析师
 
-此存储库包括以下课程的实验室说明：
-
-- SC-200T00：Microsoft 安全操作分析师
-
-你是 MCT 吗？ - 查看 [MCT GitHub 用户指南](https://microsoftlearning.github.io/MCT-User-Guide/)
-
-**需要手动生成实验室说明？** - [MicrosoftLearning/Docker-Build ](https://github.com/MicrosoftLearning/Docker-Build) 存储库中提供了说明
+- [实验室的链接（HTML 格式）](https://microsoftlearning.github.io/SC-200T00A-Microsoft-Security-Operations-Analyst/)
+- 你是 MCT 吗？ - 查看 [MCT GitHub 用户指南](https://microsoftlearning.github.io/MCT-User-Guide/)
+- **需要手动生成实验室说明？** - [MicrosoftLearning/Docker-Build ](https://github.com/MicrosoftLearning/Docker-Build) 存储库中提供了说明
 
 ## <a name="what-are-we-doing"></a>我们要做什么？
 
@@ -32,7 +28,7 @@
 
 - 你可以提交 bug、更改、改进和想法。  先于我们找到了新的 Azure 功能？  提交新演示！
 
-## <a name="notes"></a>说明
+## <a name="notes"></a>注释
 
 ### <a name="classroom-materials"></a>课堂材料
 

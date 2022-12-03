@@ -1,10 +1,10 @@
 ---
 lab:
   title: 练习 1 - 启用 Microsoft Defender for Cloud
-  module: Module 3 - Mitigate threats using Microsoft Defender for Cloud
+  module: Learning Path 3 - Mitigate threats using Microsoft Defender for Cloud
 ---
 
-# <a name="module-3---lab-1---exercise-1---enable-microsoft-defender-for-cloud"></a>模块 3 - 实验室 1 - 练习 1 - 启用 Microsoft Defender for Cloud
+# <a name="learning-path-3---lab-1---exercise-1---enable-microsoft-defender-for-cloud"></a>学习路径 3 - 实验室 1 - 练习 1 - 启用 Microsoft Defender for Cloud
 
 ## <a name="lab-scenario"></a>实验室方案
 

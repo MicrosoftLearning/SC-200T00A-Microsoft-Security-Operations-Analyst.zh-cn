@@ -1,10 +1,10 @@
 ---
 lab:
   title: 练习 1 - 修改 Microsoft 安全规则
-  module: Module 7 - Create detections and perform investigations using Microsoft Sentinel
+  module: Learning Path 7 - Create detections and perform investigations using Microsoft Sentinel
 ---
 
-# <a name="module-7---lab-1---exercise-1---modify-a-microsoft-security-rule"></a>模块 7 - 实验室 1 - 练习 1 - 修改 Microsoft 安全规则
+# <a name="learning-path-7---lab-1---exercise-1---modify-a-microsoft-security-rule"></a>学习路径 7 - 实验室 1 - 练习 1 - 修改 Microsoft 安全规则
 
 ## <a name="lab-scenario"></a>实验室方案
 

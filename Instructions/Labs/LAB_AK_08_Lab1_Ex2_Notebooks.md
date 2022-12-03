@@ -1,10 +1,10 @@
 ---
 lab:
   title: 练习 2 - 使用 Notebook 通过 Microsoft Sentinel 进行威胁搜寻
-  module: Module 8 - Perform threat hunting in Microsoft Sentinel
+  module: Learning Path 8 - Perform threat hunting in Microsoft Sentinel
 ---
 
-# <a name="module-8---lab-1---exercise-2---threat-hunting-using-notebooks-with-microsoft-sentinel"></a>模块 8 - 实验室 1 - 练习 2 - 使用 Microsoft Sentinel 的 Notebook 进行威胁搜寻
+# <a name="learning-path-8---lab-1---exercise-2---threat-hunting-using-notebooks-with-microsoft-sentinel"></a>学习路径 8 - 实验室 1 - 练习 2 - 通过 Microsoft Sentinel 使用 Notebook 进行威胁搜寻
 
 ## <a name="lab-scenario"></a>实验室方案
 

@@ -1,10 +1,10 @@
 ---
 lab:
   title: 练习 2 - 使用 Microsoft Defender for Endpoint 缓解攻击
-  module: Module 2 - Mitigate threats using Microsoft Defender for Endpoint
+  module: Learning Path 2 - Mitigate threats using Microsoft Defender for Endpoint
 ---
 
-# <a name="module-2---lab-1---exercise-2---mitigate-attacks-with-microsoft-defender-for-endpoint"></a>模块 2 - 实验室 1 - 练习 2 - 使用 Microsoft Defender for Endpoint 缓解攻击
+# <a name="learning-path-2---lab-1---exercise-2---mitigate-attacks-with-microsoft-defender-for-endpoint"></a>学习路径 2 - 实验室 1 - 练习 2 - 使用 Microsoft Defender for Endpoint 缓解攻击
 
 ## <a name="lab-scenario"></a>实验室方案
 
