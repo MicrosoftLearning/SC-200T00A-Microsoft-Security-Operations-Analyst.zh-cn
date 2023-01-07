@@ -67,18 +67,19 @@ lab:
 
 1. 查看现在受 Defender for Cloud 计划保护的 Azure 资源。
 
-1. 从“设置”区域中选择“自动设置”。
+1. 从“设置”区域（“保存”旁边）选择“设置和监视”选项卡。
 
-1. 查看自动设置 - 扩展。 确认“Log Analytics 代理/Azure Monitor 代理”为“关闭” 。
+1. 查看监视扩展。 确认“Log Analytics 代理/Azure Monitor 代理”为“关闭” 。 选择页面右上角的“X”，关闭“设置和监视”页面。
 
-1. 选择页面右上角的“x”关闭设置页面，再次返回“环境设置”，然后选择订阅左侧的“>”。
+1. 选择页面右上角的“X”关闭设置页面，返回到“环境设置”，然后选择订阅左侧的“>”。
 
-1. 选择之前创建的 Log Analytics 工作区“uniquenameDefender”，查看可用选项和定价。 
+1. 选择之前创建的 Log Analytics 工作区“uniquenameDefender”，查看可用选项和定价。
 
-1. 选择“启用所有 Microsoft Defender for Cloud 计划”，然后选择“保存” 。 等待显示“已成功保存工作区 uniquenameDefender 的 Microsoft Defender 计划！” 通知。
+1. 选择“全部启用”（在“选择 Defender 计划”的右侧），然后选择“保存”。  等待显示“已成功保存工作区 uniquenameDefender 的 Microsoft Defender 计划！” 通知。
 
     >**注意：** 如果页面未显示，请刷新 Microsoft Edge 浏览器，然后重试。
 
+1. 选择页面右上角的“X”关闭 Defender 计划页面，返回到“环境设置”
 
 ### <a name="task-4-install-azure-arc-on-an-on-premises-server"></a>任务 4：在本地服务器上安装 Azure Arc
 
