@@ -187,31 +187,31 @@ lab:
     | summarize dcount(IpAddress)
     ```
 
-1. 以下语句是用于检测同一帐户的多个应用程序中的 MFA 故障的规则。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
+1. 以下语句是用于检测同一帐户的多个应用程序中的密码无效故障的规则。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
 
     ```KQL
     let timeframe = 30d;
     let threshold = 1;
     SigninLogs
     | where TimeGenerated >= ago(timeframe)
-    | where ResultDescription has "MFA"
+    | where ResultDescription has "Invalid password"
     | summarize applicationCount = dcount(AppDisplayName) by UserPrincipalName, IPAddress
     | where applicationCount >= threshold
     ```
 
-1. 以下语句演示了 arg_max() 函数，该函数在参数最大化时返回一个或多个表达式。 以下语句将从计算机 SQL12.NA.contosohotels.com 的 SecurityEvent 表中返回最新行。 arg_max 函数中的 * 请求该行的所有列。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
+1. 以下语句演示了 arg_max() 函数，该函数在参数最大化时返回一个或多个表达式。 以下语句将从计算机 SQL10.NA.contosohotels.com 的 SecurityEvent 表中返回最新行。 arg_max 函数中的 * 请求该行的所有列。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
 
     ```KQL
     SecurityEvent  
-    | where Computer == "SQL12.na.contosohotels.com"
+    | where Computer == "SQL10.na.contosohotels.com"
     | summarize arg_max(TimeGenerated,*) by Computer
     ```
 
-1. 以下语句演示了 arg_min() 函数，该函数在参数最小化时返回一个或多个表达式。 在此语句中，计算机 SQL12.NA.contosohotels.com 的最早 SecurityEvent 将作为结果集返回。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
+1. 以下语句演示了 arg_min() 函数，该函数在参数最小化时返回一个或多个表达式。 在此语句中，计算机 SQL10.NA.contosohotels.com 的最早 SecurityEvent 将作为结果集返回。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
 
     ```KQL
     SecurityEvent  
-    | where Computer == "SQL12.na.contosohotels.com"
+    | where Computer == "SQL10.na.contosohotels.com"
     | summarize arg_min(TimeGenerated,*) by Computer
     ```
 
