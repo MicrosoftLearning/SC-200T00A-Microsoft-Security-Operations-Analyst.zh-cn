@@ -4,18 +4,18 @@ lab:
   module: Learning Path 6 - Connect logs to Microsoft Sentinel
 ---
 
-# <a name="learning-path-6---lab-1---exercise-3---connect-linux-hosts-to-microsoft-sentinel-using-data-connectors"></a>学习路径 6 - 实验室 1 - 练习 3 - 使用数据连接器将 Linux 主机连接到 Microsoft Sentinel
+# 学习路径 6 - 实验室 1 - 练习 3 - 使用数据连接器将 Linux 主机连接到 Microsoft Sentinel
 
-## <a name="lab-scenario"></a>实验室方案
+## 实验室方案
 
 ![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod6_L1_Ex3.png)
 
-你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你需要了解如何连接来自组织中多个数据源的日志数据。 下一个数据源是使用通用事件格式化 (CEF) 和 Syslog 连接器的 Linux 虚拟机。
+你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你需要了解如何连接来自组织中多个数据源的日志数据。 下一个数据源是使用“通过旧版代理程序实现通用事件格式 (CEF)”连接器和 Syslog 连接器的 Linux 虚拟机。
 
 
 >**重要提示：** 下一个任务中有一些步骤是在不同的虚拟机中完成的。 查找虚拟机名称引用。
 
-### <a name="task-1-access-the-microsoft-sentinel-workspace"></a>任务 1：访问 Microsoft Sentinel 工作区
+### 任务 1：访问 Microsoft Sentinel 工作区
 
 在此任务中，你将访问 Microsoft Sentinel 工作区。
 
@@ -34,11 +34,11 @@ lab:
 1. 选择你在之前的实验室中创建的 Microsoft Sentinel 工作区。
 
 
-### <a name="task-2-connect-a-linux-host-using-the-common-event-format-connector"></a>任务 2：使用通用事件格式连接器连接 Linux 主机
+### 任务 2：使用通用事件格式连接器连接 Linux 主机
 
-在此任务中，你将通过通用事件格式 (CEF) 连接器将 Linux 主机连接到 Microsoft Sentinel。
+在此任务中，你将使用“通过旧版代理程序实现通用事件格式 (CEF)”连接器将 Linux 主机连接到 Microsoft Sentinel。
 
-1. 从 Microsoft Sentinel 的“配置”区域选择“数据连接器”。 在“数据连接器”选项卡中，搜索“通用事件格式(CEF)”连接器，并从列表中选择它。
+1. 从 Microsoft Sentinel 的“配置”区域选择“数据连接器”。 在“数据连接器”选项卡中，搜索“通过旧版代理程序实现通用事件格式(CEF)”连接器，并从列表中选择它。
 
 1. 在连接器信息边栏选项卡上选择“打开连接器页面”。
 
@@ -76,11 +76,11 @@ lab:
 1. 键入“exit”以关闭与 LIN1 的远程 Shell 连接。
 
 
-### <a name="task-3-connect-a-linux-host-using-the-syslog-connector"></a>任务 3：使用 Syslog 连接器连接 Linux 主机
+### 任务 3：使用 Syslog 连接器连接 Linux 主机
 
 在此任务中，你将通过 Syslog 连接器将 Linux 主机连接到 Microsoft Sentinel。
 
-1. 返回到打开 Microsoft Sentinel 门户的 Microsoft Edge 浏览器，并通过选择右上角的“x”关闭“通用事件格式 (CEF)”数据连接器页。 
+1. 返回到打开 Microsoft Sentinel 门户的 Edge 浏览器，并通过选择右上角的“x”关闭“通过旧版代理程序实现通用事件格式 (CEF)”数据连接器页。 
 
 1. 在“数据连接器”选项卡中，搜索“Syslog”连接器，并从列表中选择它。
 
@@ -125,7 +125,7 @@ lab:
 1. 完成后，键入“exit”以关闭与 LIN2 的远程 Shell 连接。
 
 
-### <a name="task-4-configure-the-facilities-you-want-to-collect-and-their-severities-for-the-syslog-connector"></a>任务 4：为 Syslog 连接器配置你想收集的设备及其严重性
+### 任务 4：为 Syslog 连接器配置你想收集的设备及其严重性
 
 在此任务中，你将配置 Syslog 收集设备。
 
@@ -147,4 +147,4 @@ lab:
 
 1. 选择“应用”以保存所做的更改。
 
-## <a name="proceed-to-exercise-4"></a>继续完成练习 4
+## 继续完成练习 4
