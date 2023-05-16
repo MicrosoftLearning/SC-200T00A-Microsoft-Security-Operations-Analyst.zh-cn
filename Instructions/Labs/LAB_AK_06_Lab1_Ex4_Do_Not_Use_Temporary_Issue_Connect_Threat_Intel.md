@@ -1,5 +1,5 @@
 ---
-lab - Do not use. Temporarily not operational!:
+lab00 - Do not use. Temporarily not operational!:
   title: 练习 4 - 使用数据连接器将威胁情报连接到 Microsoft Sentinel
   module: Learning Path 6 - Connect logs to Microsoft Sentinel
 ---
