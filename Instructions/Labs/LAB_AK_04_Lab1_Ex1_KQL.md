@@ -4,24 +4,28 @@ lab:
   module: Learning Path 4 - Create queries for Microsoft Sentinel using Kusto Query Language (KQL)
 ---
 
-# <a name="learning-path-4---lab-1---exercise-1---create-queries-for-microsoft-sentinel-using-kusto-query-language-kql"></a>学习路径 4 - 实验室 1 - 练习 1 - 使用 Kusto 查询语言 (KQL) 为 Microsoft Sentinel 创建查询
+# 学习路径 4 - 实验室 1 - 练习 1 - 使用 Kusto 查询语言 (KQL) 为 Microsoft Sentinel 创建查询
 
-## <a name="lab-scenario"></a>实验室方案
+## 实验室方案
 
 ![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod4_L1_Ex1.png)
 
 你是一位安全运营分析师，你所在公司正在实现 Microsoft Sentinel。 你负责执行日志数据分析，以便搜索恶意活动、显示可视化效果并执行威胁搜寻。 为了查询日志数据，你使用 Kusto 查询语言 (KQL)。
 
+>                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Create%20queries%20for%20Microsoft%20Sentinel%20using%20Kusto%20Query%20Language)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
+
 >**重要提示：** 此实验室需要将大量 KQL 脚本输入到 Microsoft Sentinel 中。 这些脚本是在此实验室开始时的文件中提供的。 另一个下载这些脚本的位置是： https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/tree/master/Allfiles
 
 
-### <a name="task-1-access-the-kql-testing-area"></a>任务 1：访问 KQL 测试区域
+### 任务 1：访问 KQL 测试区域
 
 在此任务中，你将访问 Log Analytics 环境，可在其中练习编写 KQL 语句。
 
 1. 使用密码 Pa55w.rd 以管理员身份登录到 WIN1 虚拟机 。  
 
-1. 在浏览器中转到 https://aka.ms/lademo。 使用 MOD 管理员凭据登录。 
+1. 在浏览器中转到 https://aka.ms/lademo。 使用 MOD 管理员凭据登录。
+
+1. 关闭出现的 Log Analytics 视频弹出窗口。
 
 1. 浏览屏幕左侧选项卡中列出的可用表。
 
@@ -31,46 +35,53 @@ lab:
     SecurityEvent
     ```
 
+1. 注意，你已达到最大结果数 (30,000)。
+
+1. 在查询窗口中将时间范围更改为“过去 30 分钟”。
+
 1. 在第一条记录旁边，选择“>”以展开该行的信息。
 
-### <a name="task-2-run-basic-kql-statements"></a>任务 2：运行基本的 KQL 语句
+
+### 任务 2：运行基本的 KQL 语句
 
 在此任务中，你将生成基本的 KQL 语句。
 
->**重要提示：** 对于每个查询，都应先从查询窗口中清除之前的语句，或是在最后打开的选项卡之后选择“+”打开一个新的查询窗口（最多 25 个）。
+>重要说明：对于每个查询，都应先从查询窗口中清除之前的语句，或是在最后打开的选项卡（最多 25 个）之后选择 + 打开一个新的查询窗口 。
 
 1. 以下语句演示 search 运算符，该运算符在表的所有列中搜索值。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
 
     ```KQL
-    search "err"
+    search "new"
     ```
 
 1. 以下语句演示了在 in 子句中列出的表中进行搜索 。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
 
     ```KQL
-    search in (SecurityEvent,SecurityAlert,A*) "err"
+    search in (SecurityEvent,App*) "new"
     ```
 
 1. 在“查询”窗口中将“事件范围”更改回“过去 24 小时” 。
 
 1. 以下语句演示了 where 运算符，该运算符按特定谓词进行筛选。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
 
-    >**注意：** 在从下面的代码块中输入每个查询后应选择“运行”。
+    >重要说明：从下面的代码块中输入每个查询后，应选择“运行” 。
 
     ```KQL
     SecurityEvent  
     | where TimeGenerated > ago(1h)
     ```
 
+    >注意：“时间范围”现在显示“在查询中设置”，因为我们使用 TimeGenerated 列进行筛选 。
+
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h) and EventID == "4624"
+    | where TimeGenerated > ago(1h) and EventID == 4624
     ```
 
     ```KQL
     SecurityEvent  
     | where TimeGenerated > ago(1h)
-    | where EventID == 4624
+    | where EventID == 4624  
     | where AccountType =~ "user"
     ```
 
@@ -94,7 +105,7 @@ lab:
 
     ```KQL
     let suspiciousAccounts = datatable(account: string) [
-      @"\administrator", 
+      @"NA\timadmin", 
       @"NT AUTHORITY\SYSTEM"
     ];
     SecurityEvent  
@@ -121,8 +132,8 @@ lab:
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h)
-    | where ProcessName != "" and Process != ""
+    | where TimeGenerated > ago(1h) 
+    | where ProcessName != "" and Process != "" 
     | extend StartDir =  substring(ProcessName,0, string_size(ProcessName)-string_size(Process))
     ```
 
@@ -130,9 +141,9 @@ lab:
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h)
-    | where ProcessName != "" and Process != ""
-    | extend StartDir =  substring(ProcessName,0, string_size(ProcessName)-string_size(Process))
+    | where TimeGenerated > ago(1h) 
+    | where ProcessName != "" and Process != "" 
+    | extend StartDir =  substring(ProcessName,0, string_size(ProcessName)-string_size(Process)) 
     | order by StartDir desc, Process asc
     ```
 
@@ -140,10 +151,10 @@ lab:
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h)
-    | where ProcessName != "" and Process != ""
-    | extend StartDir =  substring(ProcessName,0, string_size(ProcessName)-string_size(Process))
-    | order by StartDir desc, Process asc
+    | where TimeGenerated > ago(1h) 
+    | where ProcessName != "" and Process != "" 
+    | extend StartDir =  substring(ProcessName,0, string_size(ProcessName)-string_size(Process)) 
+    | order by StartDir desc, Process asc 
     | project Process, StartDir
     ```
 
@@ -151,15 +162,15 @@ lab:
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h)
-    | where ProcessName != "" and Process != ""
-    | extend StartDir =  substring(ProcessName,0, string_size(ProcessName)-string_size(Process))
-    | order by StartDir desc, Process asc
+    | where TimeGenerated > ago(1h) 
+    | where ProcessName != "" and Process != "" 
+    | extend StartDir =  substring(ProcessName,0, string_size(ProcessName)-string_size(Process)) 
+    | order by StartDir desc, Process asc 
     | project-away ProcessName
     ```
 
 
-### <a name="task-3-analyze-results-in-kql-with-the-summarize-operator"></a>任务 3：使用 Summarize 运算符分析 KQL 中的结果
+### 任务 3：使用 Summarize 运算符分析 KQL 中的结果
 
 在此任务中，你将生成 KQL 语句来聚合数据。 Summarize 根据 by 分组列对行进行分组，并计算每个组的聚合 。
 
@@ -167,7 +178,7 @@ lab:
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h) and EventID == '4688'  
+    | where TimeGenerated > ago(1h) and EventID == 4688  
     | summarize count() by Process, Computer
     ```
 
@@ -175,7 +186,7 @@ lab:
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h) and EventID == '4624'  
+    | where TimeGenerated > ago(1h) and EventID == 4624  
     | summarize cnt=count() by AccountType, Computer
     ```
 
@@ -221,15 +232,15 @@ lab:
 
         ```KQL
         SecurityEvent  
-        | summarize arg_max(TimeGenerated, *) by Account
-        | where EventID == '4624'  
+        | summarize arg_max(TimeGenerated, *) by Account 
+        | where EventID == 4624  
         ```
 
     1. 查询 2 将具有已登录的帐户的最新登录。 SecurityEvent 表将被筛选为仅包含 EventID = 4624。 然后，将按帐户为最新登录行汇总这些结果。
 
         ```KQL
         SecurityEvent  
-        | where EventID == '4624'  
+        | where EventID == 4624  
         | summarize arg_max(TimeGenerated, *) by Account
         ```
 
@@ -240,7 +251,7 @@ lab:
     ```KQL
     SecurityEvent  
     | where TimeGenerated > ago(1h)
-    | where EventID == '4624'  
+    | where EventID == 4624  
     | summarize make_list(Account) by Computer
     ```
 
@@ -249,12 +260,12 @@ lab:
     ```KQL
     SecurityEvent  
     | where TimeGenerated > ago(1h)
-    | where EventID == '4624'  
+    | where EventID == 4624  
     | summarize make_set(Account) by Computer
     ```
 
 
-### <a name="task-4-create-visualizations-in-kql-with-the-render-operator"></a>任务 4：使用 Render 运算符以 KQL 创建可视化效果
+### 任务 4：使用 Render 运算符以 KQL 创建可视化效果
 
 在此任务中，你将使用 KQL 语句生成可视化效果。
 
@@ -277,7 +288,7 @@ lab:
     ```
 
 
-### <a name="task-5-build-multi-table-statements-in-kql"></a>任务 5：使用 KQL 生成多表语句
+### 任务 5：使用 KQL 生成多表语句
 
 在此任务中，你将生成多表 KQL 语句。
 
@@ -307,10 +318,12 @@ lab:
         | union (SigninLogs | summarize count() | project count_)
         ```
 
+    >注意：结果中的“空行”将显示 SigninLogs 的汇总计数。
+
 1. 以下语句演示了 union 运算符支持将多个表与通配符联合。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
 
     ```KQL
-    union Security*  
+    union App*  
     | summarize count() by Type
     ```
 
@@ -318,13 +331,13 @@ lab:
 
     ```KQL
     SecurityEvent  
-    | where EventID == "4624" 
-    | summarize LogOnCount=count() by EventID, Account
+    | where EventID == 4624 
+    | summarize LogOnCount=count() by  EventID, Account
     | project LogOnCount, Account
     | join kind = inner( 
      SecurityEvent  
-    | where EventID == "4634" 
-    | summarize LogOffCount=count() by EventID, Account
+    | where EventID == 4634 
+    | summarize LogOffCount=count() by  EventID, Account
     | project LogOffCount, Account
     ) on Account
     ```
@@ -334,7 +347,7 @@ lab:
 1. 在“查询”窗口中将“事件范围”更改回“过去 24 小时” 。
 
 
-### <a name="task-6-work-with-string-data-in-kql"></a>任务 6：使用 KQL 处理字符串数据
+### 任务 6：使用 KQL 处理字符串数据
 
 在此任务中，你将使用 KQL 语句处理结构化和非结构化的字符串字段。
 
@@ -348,10 +361,10 @@ lab:
 
     ```KQL
     SecurityEvent  
-    | where EventID == '4672' and AccountType == 'User' 
+    | where EventID == 4672 and AccountType == 'User' 
     | extend Account_Name = extract(@"^(.*\\)?([^@]*)(@.*)?$", 2, tolower(Account))
     | summarize LoginCount = count() by Account_Name
-    | where Account_Name != ""
+    | where Account_Name != "" 
     | where LoginCount < 10
     ```
 
@@ -366,7 +379,7 @@ lab:
     "Event: NotifySliceRelease (resourceName=PipelineScheduler, totalSlices=27, sliceNumber=22, lockTime=02/17/2016 08:41:01, releaseTime=02/17/2016 08:41:00, previousLockTime=02/17/2016 08:40:01)",
     "Event: NotifySliceRelease (resourceName=PipelineScheduler, totalSlices=27, sliceNumber=16, lockTime=02/17/2016 08:41:00, releaseTime=02/17/2016 08:41:00, previousLockTime=02/17/2016 08:40:00)"
     ];
-    Traces  
+    Traces   
     | parse EventText with * "resourceName=" resourceName ", totalSlices=" totalSlices:long * "sliceNumber=" sliceNumber:long * "lockTime=" lockTime ", releaseTime=" releaseTime:date "," * "previousLockTime=" previousLockTime:date ")" *  
     | project resourceName, totalSlices, sliceNumber, lockTime, releaseTime, previousLockTime
     ```
@@ -380,13 +393,10 @@ lab:
 1. 以下示例演示如何为 SigninLogs 拆分打包字段。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
 
     ```KQL
-    SigninLogs | extend OS = DeviceDetail.operatingSystem, Browser = DeviceDetail.browser
-    | extend CAPol0Name = tostring(ConditionalAccessPolicies[0].displayName), CAPol0Result = tostring(ConditionalAccessPolicies[0].result)
-    | extend CAPol1Name = tostring(ConditionalAccessPolicies[1].displayName), CAPol1Result = tostring(ConditionalAccessPolicies[1].result)
-    | extend CAPol2Name = tostring(ConditionalAccessPolicies[2].displayName), CAPol2Result = tostring(ConditionalAccessPolicies[2].result)
-    | extend StatusCode = tostring(Status.errorCode), StatusDetails = tostring(Status.additionalDetails)
-    | extend Date = startofday(TimeGenerated), City = tostring(LocationDetails.city)
-    | summarize count() by Date, Identity, UserDisplayName, UserPrincipalName, IPAddress, City, ResultType, ResultDescription, StatusCode, StatusDetails, CAPol0Name, CAPol0Result, CAPol1Name, CAPol1Result, CAPol2Name, CAPol2Result
+    SigninLogs | extend OS = DeviceDetail.operatingSystem, Browser = DeviceDetail.browser 
+    | extend StatusCode = tostring(Status.errorCode), StatusDetails = tostring(Status.additionalDetails) 
+    | extend Date = startofday(TimeGenerated) 
+    | summarize count() by Date, Identity, UserDisplayName, UserPrincipalName, IPAddress, ResultType, ResultDescription, StatusCode, StatusDetails 
     | sort by Date
     ```
 
@@ -395,24 +405,26 @@ lab:
 1. 以下语句演示了用于操作存储在字符串字段中的 JSON 的运算符。 许多日志以 JSON 格式提交数据，这要求了解如何将 JSON 数据转换为可查询的字段。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
 
     ```KQL
-    SigninLogs | extend Location =  todynamic(LocationDetails)
-    | extend City =  Location.city
-    | extend City2 = Location["city"]
-    | project Location, City, City2
+    SigninLogs | extend AuthDetails =  todynamic(AuthenticationDetails) 
+    | extend AuthMethod =  AuthDetails[0].authenticationMethod 
+    | extend AuthResult = AuthDetails[0].["authenticationStepResultDetail"] 
+    | project AuthMethod, AuthResult, AuthDetails 
     ```
 
 1. 以下语句演示了 mv-expand 运算符，该运算符将动态数组转换为行（多值展开）。
 
     ```KQL
-    SigninLogs | mv-expand Location = todynamic(LocationDetails)
+    SigninLogs | mv-expand AuthDetails = todynamic(AuthenticationDetails) 
+    | project AuthDetails
     ```
+
+1. 选择“>”展开第一行，然后在 AuthDetails 旁边再次选择该符号以查看展开的结果。
 
 1. 以下语句演示了 mv-apply 运算符，该运算符将子查询应用于每条记录并返回所有子查询结果的并集。
 
     ```KQL
-    SigninLogs  
-    | mv-apply Location = todynamic(LocationDetails) on 
-    ( where Location.countryOrRegion == "ES")
+    SigninLogs | mv-apply AuthDetails = todynamic(AuthenticationDetails) on
+    (where AuthDetails.authenticationMethod == "Password")
     ```
 
 1. 函数是一种日志查询，可使用保存的名称作为命令在其他日志查询中使用。 若要创建函数，请在运行查询后，选择“保存”按钮，然后从下拉列表中选择“另存为函数”  。 在“函数名称”框中输入所需的名称（例如：PrivLogins），然后输入一个旧类别（例如 ：“常规”），然后选择“保存”。 通过使用函数别名，该功能将以 KQL 提供：
@@ -423,4 +435,4 @@ lab:
     PrivLogins  
     ```
 
-## <a name="you-have-completed-the-lab"></a>你已完成本实验室。
+## 你已完成本实验室。

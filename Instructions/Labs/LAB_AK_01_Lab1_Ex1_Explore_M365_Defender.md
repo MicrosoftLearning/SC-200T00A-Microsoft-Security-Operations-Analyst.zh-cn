@@ -4,16 +4,20 @@ lab:
   module: Learning Path 1 - Mitigate threats using Microsoft 365 Defender
 ---
 
-# <a name="learning-path-1---lab-1---exercise-1---explore-microsoft-365-defender"></a>学习路径 1 - 实验室 1 - 练习 1 - 探索 Microsoft 365 Defender
+# 学习路径 1 - 实验室 1 - 练习 1 - 探索 Microsoft 365 Defender
 
-## <a name="lab-scenario"></a>实验室方案
+## 实验室方案
 
 ![M365 Defender](../Media/SC-200-Lab_M1_L1_Ex1.png)
 
 你是一家公司的安全运营分析师，你所在公司正在实现 Microsoft 365 Defender。 首先，在 EOP 和 Microsoft Defender for Office 365 中分配预设的安全策略。
 
+>                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Explore%20Microsoft%20365%20Defender)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
-### <a name="task-1-obtain-your-microsoft-365-credentials"></a>任务 1：获取 Microsoft 365 凭据
+>注意：WWL 租户 - 使用条款 如果在讲师引导式培训过程中向你提供租户，请注意，提供租户的目的是支持讲师引导式培训中的动手实验室 。 租户不应共享或用于动手实验室以外的用途。 本课程使用的租户为试用租户，课程结束后无法使用或访问，不符合扩展条件。 租户不得转换为付费订阅。 在本课程中获得的租户仍然是 Microsoft Corporation 的财产，我们保留随时获取访问权限和收回的权利。 
+
+
+### 任务 1：获取 Microsoft 365 凭据
 
 启动实验室后，你将获得一个免费试用版租户，可在 Microsoft 虚拟实验室环境中访问。 系统会自动向该租户分配一个唯一用户名和密码。 你必须检索此用户名和密码，以便在 Microsoft 虚拟实验室环境中登录 Azure 和 Microsoft 365。 
 
@@ -23,7 +27,7 @@ lab:
 - 租户密码。 这是由实验室托管提供者提供的管理员帐户的密码。
 
 
-### <a name="task-2-apply-microsoft-defender-for-office-365-preset-security-policies"></a>任务 2：应用 Microsoft Defender for Office 365 预设的安全策略
+### 任务 2：应用 Microsoft Defender for Office 365 预设的安全策略
 
 在此任务中，你将在 Microsoft 365 安全门户中为 Exchange Online Protection (EOP) 和 Microsoft Defender for Office 365 分配预设安全策略。
 
@@ -39,7 +43,7 @@ lab:
 
     >**注意：** 如果收到消息“操作无法完成。 请稍后再试。 如果问题持续出现，请联系 Microsoft 支持部门。”， 单击“确定”即可继续。  
 
-1. 如果显示，请关闭 Microsoft 365 Defender 快速导览。
+1. 如果显示，请关闭 Microsoft 365 Defender 快速导览弹出窗口。 提示：在本实验室的后面部分，需要等到 Defender 工作区预配完成，在这段时间内，你可以浏览引导教程，了解有关 Microsoft 365 Defender 的详细信息。
 
 1. 在导航菜单中的“电子邮件与协作”区域下，选择“策略与规则”。
 
@@ -79,14 +83,24 @@ lab:
 
     >**注意：** 如果你收到信息“URI 'https://outlook.office365.com/psws/service.svc/AntiPhishPolicy ' 对 PUT 操作无效。*对于 PUT 操作，URI 必须指向单个资源。”* ， 只需选择“确定”，然后选择“取消”以返回到主页 。 你将看到“严格保护已启用”选项启用。
 
-### <a name="task-3-preparing-the-microsoft-365-defender-workspace"></a>任务 3：准备 Microsoft 365 Defender 工作区
+### 任务 3：准备 Microsoft 365 Defender 工作区
 
-1. 在 Microsoft 365 Defender 门户中，从左侧“导航”菜单中选择“设置” 。
+1. 在 Microsoft 365 Defender 门户的左侧导航菜单中，选择“主页” 。
 
-1. 在“设置”页面上，选择“Microsoft 365 Defender” 。 你将看到咖啡杯图像和一条消息，消息显示：挂起！我们正在为数据准备新空间并将其连接起来。 完成这一过程需要几分钟时间，因此请让页面保持打开状态，但要确保最终完成，因为它是下一个实验室所必需的。 
+    >注意：可能需要一直滚动到菜单顶部。
+
+1. 在门户“主页”上，会显示“欢迎使用 Microsoft 365 Defender” 。
+
+1. 向下滚动图块，直到找到标记为“Microsoft 365 Defender”并显示“启用 Microsoft 365 Defender”消息的图块 。
+
+    >提示：它应位于图块的右下角。
+
+1. 选择显示“启用新功能”的按钮。
+
+1. 你将在页面顶部看到简要显示了“正在加载和初始化”消息，然后你将咖啡杯的图像和一条消息，内容如下：“请稍等！我们正在为你的数据准备新的空间并将它们连接起来”。 大约需要 5 分钟才能完成。 使页面保持打开状态并确保它已完成，因为下一个实验室需要它。
 
     >**注意：** 如果收到错误消息“我们未计划到它会失败，但出现了问题。” 请稍后重试此步骤，或在下一实验室之前重试。
 
-1. 当新空间成功完成时，你将看到 Microsoft 365 Defender 的帐户、电子邮件通知、预览功能和流式处理 API 的设置。
+1. 新空间成功完成后，你将看到 Microsoft 365 Defender 的帐户、电子邮件通知、警报服务设置、权限和角色以及流式处理 API 等常规设置。 你还将看到“预览功能”已打开。
 
-## <a name="you-have-completed-the-lab"></a>你已完成本实验室。
+## 你已完成本实验室

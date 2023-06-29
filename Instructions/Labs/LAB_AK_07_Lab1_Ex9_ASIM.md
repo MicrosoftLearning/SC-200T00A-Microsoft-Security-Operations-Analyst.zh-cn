@@ -4,17 +4,19 @@ lab:
   module: Learning Path 7 - Create detections and perform investigations using Microsoft Sentinel
 ---
 
-# <a name="learning-path-7---lab-1---exercise-9---create-asim-parsers"></a>学习路径 7 - 实验室 1 - 练习 9 - 创建 ASIM 分析程序
+# 学习路径 7 - 实验室 1 - 练习 9 - 部署 ASIM 分析程序
 
-## <a name="lab-scenario"></a>实验室方案
+## 实验室方案
 
-你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 需要为特定 Windows 注册表事件建模 ASIM 分析程序。  这些简化的分析程序将稍后按照 ASIM 分析程序注册表事件规范化标准完成（ https://docs.microsoft.com/en-us/azure/sentinel/registry-event-normalization-schema) 。
+你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 需要为特定 Windows 注册表事件建模 ASIM 分析程序。 这些简化分析程序将在稍后按照[高级安全信息模型 (ASIM) 注册表事件规范化架构参考](https://docs.microsoft.com/en-us/azure/sentinel/registry-event-normalization-schema)来完成。
 
->重要提示：此实验室需要将较长的 KQL ASIM 分析程序脚本输入到 Microsoft Sentinel 中。 这些脚本是在此实验室开始时通过下载文件提供的。 另一个下载这些脚本的位置是： https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/tree/master/Allfiles
 
-### <a name="task-1-develop-kql-function-for-microsoft-365-defender-registry-event"></a>任务 1：为 Microsoft 365 Defender 注册表事件开发 KQL 函数 
+>                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Create%20Advanced%20Security%20Information%20Model%20Parsers)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
-在此任务中，将创建一个函数，它是 DeviceRegistryEvents 的工作区分析程序。 
+
+### 任务 1：部署注册表架构 ASIM 分析程序。 
+
+在此任务中，你将从 Microsoft Sentinel GitHub 存储库部署注册表架构分析程序。
 
 1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：**Pa55w.rd**。  
 
@@ -28,257 +30,48 @@ lab:
 
 1. 选择之前创建的 Microsoft Sentinel 工作区。
 
-1. 选择“日志”页。
+1. 在页面左侧的“内容管理”区域下，选择“社区”页。
 
-1. 打开已下载的 SC200_module7_ASIM_Parser_scripts.txt，然后复制任务 1 脚本 KQL 语句并将其粘贴到新的查询选项卡。
+1. 在右窗格中，选择“加入社区内容”链接。 这会在 Microsoft Edge 浏览器中打开一个新选项卡展示 Microsoft Sentinel GitHub 内容。 提示：可能需要向右滚动才能看到链接。 或者，请改为单击以下链接：[GitHub 上的 Microsoft Sentinel](https://github.com/Azure/Azure-Sentinel)。
 
-    >注意：下面的脚本仅供参考；请花点时间查看 KQL 查询。
+1. 选择 ASIM 文件夹。 在这里，你可以部署包含所有 ASIM 分析程序的模板，但我们仅重点介绍注册表架构。
 
-    ```KQL
-    let RegistryType = datatable (TypeCode: string, TypeName: string) [
-    "None", "Reg_None",
-    "String", "Reg_Sz",
-    "ExpandString", "Reg_Expand_Sz",
-    "Binary", "Reg_Binary",
-    "Dword", "Reg_DWord",
-    "MultiString", "Reg_Multi_Sz",
-    "QWord", "Reg_QWord"
-    ];
-    let RegistryEvents_M365D=() {
-    DeviceRegistryEvents
-    | extend
-        // Event
-        EventOriginalUid = tostring(ReportId),
-        EventCount = int(1), 
-        EventProduct = 'M365 Defender for Endpoint',
-        EventVendor = 'Microsoft', 
-        EventSchemaVersion = '0.1.0', 
-        EventStartTime = TimeGenerated, 
-        EventEndTime = TimeGenerated, 
-        EventType = ActionType,
-        // Registry
-        RegistryKey = iff (ActionType in ("RegistryKeyDeleted", "RegistryValueDeleted"), PreviousRegistryKey, RegistryKey),
-        RegistryValue = iff (ActionType == "RegistryValueDeleted", PreviousRegistryValueName, RegistryValueName),
-        // RegistryValueType -- original name is fine
-        // RegistryValueData -- original name is fine
-        RegistryKeyModified = iff (ActionType == "RegistryKeyRenamed", PreviousRegistryKey, ""),
-        RegistryValueModified = iff (ActionType == "RegistryValueSet", PreviousRegistryValueName, ""),
-        // RegistryValueTypeModified -- Not provided by Defender
-        RegistryValueDataModified = PreviousRegistryValueData
-    | lookup RegistryType on $left.RegistryValueType == $right.TypeCode
-    | extend RegistryValueType = TypeName
-    | project-away
-        TypeName,
-        PreviousRegistryKey,
-        PreviousRegistryValueName,
-        PreviousRegistryValueData
-    // Device
-    | extend
-        DvcHostname = DeviceName,
-        DvcId = DeviceId,
-        Dvc = DeviceName
-    // Users
-    | extend
-        ActorUsername = iff (InitiatingProcessAccountDomain == '', InitiatingProcessAccountName, strcat(InitiatingProcessAccountDomain, '\\', InitiatingProcessAccountName)), 
-        ActorUsernameType = iff(InitiatingProcessAccountDomain == '', 'Simple', 'Windows'), 
-        ActorUserIdType = 'SID'
-    | project-away InitiatingProcessAccountDomain, InitiatingProcessAccountName
-    | project-rename
-    ActorUserId = InitiatingProcessAccountSid, 
-    ActorUserAadId = InitiatingProcessAccountObjectId, 
-    ActorUserUpn = InitiatingProcessAccountUpn
-    // Processes
-    | extend
-    ActingProcessId = tostring(InitiatingProcessId), 
-    ParentProcessId = tostring(InitiatingProcessParentId) 
-    | project-away InitiatingProcessId, InitiatingProcessParentId
-    | project-rename
-    ParentProcessName = InitiatingProcessParentFileName, 
-    ParentProcessCreationTime = InitiatingProcessParentCreationTime, 
-    ActingProcessName = InitiatingProcessFolderPath, 
-    ActingProcessFileName = InitiatingProcessFileName,
-    ActingProcessCommandLine = InitiatingProcessCommandLine, 
-    ActingProcessMD5 = InitiatingProcessMD5, 
-    ActingProcessSHA1 = InitiatingProcessSHA1, //OK
-    ActingProcessSHA256 = InitiatingProcessSHA256, 
-    ActingProcessIntegrityLevel = InitiatingProcessIntegrityLevel, 
-    ActingProcessTokenElevation = InitiatingProcessTokenElevation, 
-    ActingProcessCreationTime = InitiatingProcessCreationTime 
-    // -- aliases
-    | extend 
-    Username = ActorUsername,
-    UserId = ActorUserId,
-    UserIdType = ActorUserIdType,
-    User = ActorUsername,
-    CommandLine = ActingProcessCommandLine,
-    Process = ActingProcessName
-    };
-    RegistryEvents_M365D
-    ```
+1. 向下滚动，在“注册表”旁边，选择“部署到 Azure ”按钮 。
 
-1. 选择“运行”以确认 KQL 有效。
+1. 对于“资源组”，请选择 Sentinel 工作区所在的 RG-Defender。
 
-1. 选择“保存”，然后选择“另存为函数”。
+1. 对于“工作区”，请键入 Sentinel 工作区名称，例如 uniquenameDefender 。
 
-1. 在“另存为函数”下设置以下内容：
+1. 保留其他默认值，然后选择“查看 + 创建”。
 
-    |设置|值|
-    |---|---|
-    |函数名称|vimRegEvtM365D|
-    |旧类别|MyASIM|
+1. 选择“创建”以部署模板。 注意不同资源的名称。
 
-1. 再选择“保存”。
+1. 在 Azure 门户的搜索栏中，键入“Sentinel”，然后选择“Microsoft Sentinel”。
 
-1. 在“新建查询”选项卡中，输入“vimRegEvtM365D”，然后选择“运行”。
+1. 选择之前创建的 Microsoft Sentinel 工作区。
+
+1. 在“常规”左侧菜单下选择“日志”。
+
+1. 根据需要选择 >>，打开“架构和筛选器”边栏选项卡。
+
+1. 选择“函数”选项卡（在“表”和“查询”选项卡旁边）。 提示：可能需要选择省略号图标 (...) 才能选择该选项卡 。
+
+1. 展开“工作区函数”。 注意，名称对应于你刚刚部署的模板。
+
+1. 将鼠标悬停在 vimRegistryEventMicrosoftSecurityEvents 工作区分析程序上，然后选择“加载函数代码”。
+
+1. 查看正在分析事件 ID 4657 的 KQL，以简化对 Microsoft Sentinel 工作区中的数据的分析。
+
+1. 运行查询。 不应获得任何结果或错误，它仅用于验证目的。
+
+1. 返回到“架构和筛选器”边栏选项卡，现在将鼠标悬停到 inRegistry 统一分析程序上，然后选择“加载函数代码”。
+
+1. 注意，统一分析程序使用 union 运算符一次运行所有工作区分析程序。 如果为注册表架构开发分析程序，则需要在此处添加它。
+
+1. 运行查询。 不应获得任何结果或错误，它仅用于验证目的。
+
+1. 此统一分析程序现在可用于 Analytics 规则或搜寻查询。
 
 
-### <a name="task-2-develop-kql-function-for-securityevent-table"></a>任务 2：为 SecurityEvent 表开发 KQL 函数。 
-
-在此任务中，将创建一个函数，它是 SecurityEvent 的工作区分析程序。
-
-1. 新建查询选项卡。
-
-1. 返回到已下载的 SC200_module7_ASIM_Parser_scripts.txt，然后复制“任务 2 脚本”KQL 语句并将其粘贴到新的查询选项卡。
-
-    >注意：下面的脚本仅供参考；请花点时间查看 KQL 查询。
-
-    ```KQL
-    let RegistryType = datatable (TypeCode: string, TypeName: string) [
-    "%%1872", "Reg_None",
-    "%%1873", "Reg_Sz",
-    "%%1874", "Reg_Expand_Sz",
-    "%%1875", "Reg_Binary",
-    "%%1876", "Reg_DWord",
-    "%%1879", "Reg_Multi_Sz",
-    "%%1883", "Reg_QWord"
-    ];
-    let RegistryAction = datatable (EventOriginalSubType: string, EventType: string) [
-        "%%1904", "RegistryValueSet",
-        "%%1905", "RegistryValueSet",      
-        "%%1906", "RegistryValueDeleted"             
-    ];
-    let Hives = datatable (KeyPrefix: string, Hive: string) [
-        "MACHINE", "HKEY_LOCAL_MACHINE",
-        "USER", "HKEY_USERS",   
-    ];
-    let RegistryEvents=() {
-        SecurityEvent
-        // -- Filter
-        | where EventID == 4657          
-        // Event
-        | extend
-            EventCount = int(1), 
-            EventVendor = 'Microsoft', 
-            EventProduct = 'Security Events', 
-            EventSchemaVersion = '0.1.0', 
-            EventStartTime = todatetime(TimeGenerated), 
-            EventEndTime = todatetime(TimeGenerated),
-            EventOriginalType = tostring(EventID) 
-        | project-rename
-            EventOriginalSubType = OperationType,
-            EventOriginalUid = EventOriginId
-        | lookup RegistryAction on EventOriginalSubType
-        // Registry
-        // Normalize key hive
-        | parse ObjectName with "\\REGISTRY\\" KeyPrefix "\\" Key
-        | lookup Hives on KeyPrefix
-        | extend RegistryKey = strcat (Hive, "\\", Key)
-        | project-away Hive, Key, KeyPrefix, ObjectName
-        | project-rename
-            RegistryValue = ObjectValueName
-        | extend
-            RegistryValueData = iff (EventOriginalSubType == "%%1906", OldValue, NewValue), 
-            RegistryKeyModified = iff (EventOriginalSubType == "%%1905", RegistryKey, ""),
-            RegistryValueModified = iff (EventOriginalSubType == "%%1905", RegistryValue, ""),
-            RegistryValueDataModified = iff (EventOriginalSubType == "%%1905", OldValue, "")
-        | lookup RegistryType on $left.NewValueType == $right.TypeCode
-        | project-rename RegistryValueType = TypeName
-        | lookup RegistryType on $left.OldValueType == $right.TypeCode
-        | project-rename RegistryValueTypeModified = TypeName
-        | project-away OldValue, NewValue, OldValueType, NewValueType
-        // Device
-        | extend
-            DvcId = SourceComputerId,
-            DvcHostname = Computer,
-            DvcOs = 'Windows'
-        // User
-        | project-rename
-            ActorUserId = SubjectUserSid, 
-            ActorSessionId = SubjectLogonId, 
-            ActorDomainName = SubjectDomainName
-        | extend
-            ActorUserIdType = 'SID',
-            ActorUsername = iff (ActorDomainName == '-', SubjectUserName, SubjectAccount), 
-            ActorUsernameType = iff(ActorDomainName == '-', 'Simple', 'Windows'),
-            ActingProcessId = tostring(toint(ProcessId)) 
-        // Process 
-        | project-rename
-            ActingProcessName = ProcessName
-        // -- Aliases
-        | extend
-            User = ActorUsername,
-            UserId = ActorUserId,
-            Dvc = DvcHostname,
-            Process = ActingProcessName
-        // -- Remove potentially confusing
-        | project-away 
-            SubjectUserName,
-            SubjectAccount
-    };
-    RegistryEvents
-    ```
-
-1. 选择“运行”以确认 KQL 有效。
-
-1. 选择“保存”，然后选择“另存为函数”。
-
-1. 在“另存为函数”下设置以下内容：
-
-    |设置|值|
-    |---|---|
-    |函数名称|vimRegEvtSecurityEvent|
-    |旧类别|MyASIM|
-
-1. 再选择“保存”。
-
-1. 在新查询选项卡中，输入“vimRegEvtSecurityEvent”，然后选择“运行” 。
-
-
-### <a name="task-3-create-a-unifying-workspace-parser"></a>任务 3：创建一个统一的工作区分析程序。 
-
-在此任务中，将创建合并前两个函数的统一分析程序函数。  
-
-1. 新建查询选项卡。
-
-1. 在“新建查询”选项卡中输入以下 KQL 语句：
-
-    ```KQL
-    union isfuzzy=true
-    vimRegEvtM365D,
-    vimRegEvtSecurityEvent
-    ```
-
-1. 选择“运行”以确认 KQL 有效。
-
-1. 选择“保存”，然后选择“另存为函数”。
-
-1. 在“另存为函数”下设置以下内容：
-
-    |设置|值|
-    |---|---|
-    |函数名称|imRegEvt|
-    |旧类别|MyASIM|
-
-1. 再选择“保存”。
-
-1. 在新查询选项卡中，输入“imRegEvt”，然后选择“运行” 。
-
-1. 将查询更新为以下内容，然后选择“运行”：
-
-    ```KQL
-    imRegEvt
-    | where ActionType == 'RegistryValueSet'
-    ```
-
-## <a name="proceed-to-exercise-10"></a>继续完成练习 10
+## 继续完成练习 10
 

@@ -4,19 +4,37 @@ lab:
   module: Learning Path 7 - Create detections and perform investigations using Microsoft Sentinel
 ---
 
-# <a name="learning-path-7---lab-1---exercise-7---create-detections"></a>学习路径 7 - 实验室 1 - 练习 7 - 创建检测
+# 学习路径 7 - 实验室 1 - 练习 7 - 创建检测
 
-## <a name="lab-scenario"></a>实验室方案
+## 实验室方案
 
 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你将使用 Log Analytics KQL 查询，并从这里创建自定义分析规则，以帮助发现环境中的威胁和异常行为。
 
 分析规则将在你的整个环境中搜索特定事件或事件集，在达到特定事件阈值或条件时发出警报，生成故障事件以供 SOC 进行会审和调查，并通过自动化跟踪和修正流程来响应威胁。
 
-### <a name="task-1-attack-1-detection-with-defender-for-endpoint"></a>任务 1：使用 Defender for Endpoint 检测攻击 1
 
-在此任务中，你将在配置了 Microsoft Defender for Endpoint 的主机 (Win1) 上创建针对攻击 1 的检测。
+>                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Create%20detections)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
-1. 如果你已离开此页面，在 Microsoft Sentinel 门户中，选择“常规”部分中的“日志”。
+
+### 任务 1：持久性攻击检测
+
+>**重要提示：** 接下来的步骤将在另一台计算机上完成，而不是你之前使用的计算机。 查找虚拟机名称引用。
+
+在此任务中，你将为上一练习的第一个攻击创建检测。
+
+1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：**Pa55w.rd**。  
+
+1. 在 Microsoft Edge 浏览器中，导航到 Azure 门户 (https://portal.azure.com )。
+
+1. 在“登录”对话框中，复制粘贴实验室托管提供者提供的租户电子邮件帐户，然后选择“下一步”  。
+
+1. 在“输入密码”对话框中，复制粘贴实验室托管提供者提供的租户密码，然后选择“登录”  。
+
+1. 在 Azure 门户的搜索栏中，键入“Sentinel”，然后选择“Microsoft Sentinel”。
+
+1. 选择之前创建的 Microsoft Sentinel 工作区。
+
+1. 在“常规”部分选择“日志”。
 
 1. 再次运行以下 KQL 语句，以召回包含此数据的表：
 
@@ -24,51 +42,25 @@ lab:
     search "temp\\startup.bat"
     ```
 
-1. 此检测将重点关注来自 Defender for Endpoint 的数据。 运行以下 KQL 语句：
+    >注意：显示事件的结果可能需要长达 5 分钟的时间。 请等到它完成。 如果未显示，请确保已按照上一练习中的指示重启 WINServer，并且已完成学习路径 6 实验室练习 2 的任务 3。
 
-    ```KQL
-    search in (Device*) "temp\\startup.bat"
-    ```
-
-1. DeviceRegistryEvents 表中的数据已经规范化，便于进行查询。 展开该行以查看与记录相关的所有列。
-
-    >重要提示：如果在结果中看不到 DeviceRegistryEvents 表，则以下两个查询的替代方法是使用 DeviceProcessEvents 表作为替换项 。 也就是说，可使用下面提供的两个示例之一，具体取决于你在上一查询中看到表。
+1. SecurityEvent 表中的数据已经规范化，便于进行查询。 展开该行以查看与记录相关的所有列。
 
 1. 从结果中，我们现在知道了 Threat Actor 正在使用 reg.exe 向注册表项添加项，程序位于 C:\temp。运行以下语句，将查询中的搜索运算符替换为 where 运算符 :
 
     ```KQL
-    DeviceRegistryEvents | where ActionType == "RegistryValueSet"
-    | where InitiatingProcessFileName == "reg.exe"
-    | where RegistryValueData startswith "c:\\temp"
-    ```
-
-    或者，可以使用 DeviceProcessEvents 表运行以下 KQL 查询：
-
-    ```KQL
-    DeviceProcessEvents | where ActionType == "ProcessCreated"
-    | where FileName == "reg.exe"
-    | where ProcessCommandLine contains "c:\\temp"
+    SecurityEvent | where Activity startswith "4688" 
+    | where Process == "reg.exe" 
+    | where CommandLine startswith "REG" 
     ```
 
 1. 请务必尽可能多地提供关于警报的上下文，为安全运营中心分析师提供帮助。 这包括投影在调查关系图中使用的实体。 运行以下查询：
 
     ```KQL
-    DeviceRegistryEvents
-    | where ActionType == "RegistryValueSet"
-    | where InitiatingProcessFileName == "reg.exe"
-    | where RegistryValueData startswith "c:\\temp"
-    | extend timestamp = TimeGenerated, HostCustomEntity = DeviceName, AccountCustomEntity = InitiatingProcessAccountName
-    ```
-
-   ![屏幕快照](../Media/SC200_sysmon_query2.png)
-
-    或者，可以使用 DeviceProcessEvents 表运行以下 KQL 查询：
-
-    ```KQL
-    DeviceProcessEvents | where ActionType == "ProcessCreated"
-    | where FileName == "reg.exe"
-    | where ProcessCommandLine contains "c:\\temp"
-    | extend timestamp = TimeGenerated, HostCustomEntity = DeviceName, AccountCustomEntity = InitiatingProcessAccountName
+    SecurityEvent | where Activity startswith "4688" 
+    | where Process == "reg.exe" 
+    | where CommandLine startswith "REG" 
+    | extend timestamp = TimeGenerated, HostCustomEntity = Computer, AccountCustomEntity = SubjectUserName
     ```
 
 1. 你现在有一个不错的检测规则，接下来请在“日志”窗口中，选择命令栏中的“+ 新建预警规则”，然后选择“创建 Microsoft Sentinel 警报” 。 随后会创建新的计划规则。 提示：可能需要从命令栏中选择省略号 (...) 按钮。
@@ -77,14 +69,19 @@ lab:
 
     |设置|值|
     |---|---|
-    |名称|MDE Startup RegKey|
-    |说明|c:\temp 中的 MDE Startup Regkey|
+    |名称|**Startup RegKey**|
+    |说明|**c:\temp 中的 Startup Regkey**|
     |策略|**持久性**|
     |Severity|**高**|
 
 1. 选择“下一页:**设置规则逻辑 >”按钮**。
 
 1. 在“设置规则逻辑”选项卡上，“规则查询”应已填充 KQL 查询，以及“警报扩充 - 实体映射”下的实体  。
+
+    |实体|标识符|数据字段|
+    |:----|:----|:----|
+    |帐户|FullName|AccountCustomEntity|
+    |主机|主机名|HostCustomEntity|
 
 1. 对于“查询计划”，设置以下项：
 
@@ -104,9 +101,9 @@ lab:
 1. 在“查看”选项卡上，选择“创建”按钮以新建计划分析规则。
 
 
-### <a name="task-2-attack-2-detection-with-securityevent"></a>任务 2：使用 SecurityEvent 检测攻击 2
+### 任务 2：特权提升攻击检测
 
-在此任务中，你将在安装了安全事件连接器的主机 (Win2) 上创建针对攻击 2 的检测。
+在此任务中，你将为上一练习的第二个攻击创建检测。
 
 1. 如果你已离开此页面，在 Microsoft Sentinel 门户中，选择“常规”部分中的“日志”。
 
@@ -136,8 +133,6 @@ lab:
     ```
 
    ![屏幕快照](../Media/SC200_sysmon_attack3.png)
-
-    >**注意：** 实验室使用的数据集较小，因此该 KQL 可能不会返回预期结果。
 
 1. 扩展行以显示生成的列，在上一行中，我们在 KQL 查询投影的 UserName1 列下看到了添加的用户的名称 。 请务必尽可能多地提供关于警报的上下文，为安全操作分析师提供帮助。 这包括投影在调查关系图中使用的实体。 运行以下查询：
 
@@ -184,4 +179,4 @@ lab:
 
 1. 在“查看”选项卡上，选择“创建”按钮以新建计划分析规则。
 
-## <a name="proceed-to-exercise-8"></a>继续完成练习 8
+## 继续完成练习 8
