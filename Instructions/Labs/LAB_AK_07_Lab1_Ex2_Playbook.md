@@ -4,9 +4,9 @@ lab:
   module: Learning Path 7 - Create detections and perform investigations using Microsoft Sentinel
 ---
 
-# <a name="learning-path-7---lab-1---exercise-2---create-a-playbook"></a>学习路径 7 - 实验室 1 - 练习 2 - 创建 Playbook
+# 学习路径 7 - 实验室 1 - 练习 2 - 创建 Playbook
 
-## <a name="lab-scenario"></a>实验室方案
+## 实验室方案
 
 ![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex2.png)
 
@@ -14,8 +14,10 @@ lab:
 
 使用 playbook，可以帮助自动执行和协调威胁响应，与其他内部系统和外部系统集成，并可以设置为自动运行以响应特定警报或事件（分别由分析规则或自动化规则触发时）。 
 
+>                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Create%20a%20playbook)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
-### <a name="task-1-create-a-security-operations-center-team-in-microsoft-teams"></a>任务 1：在 Microsoft Teams 中创建安全运营中心团队
+
+### 任务 1：在 Microsoft Teams 中创建安全运营中心团队
 
 在此任务中，你将创建 Microsoft Teams 团队以便在实验室中使用。
 
@@ -46,7 +48,7 @@ lab:
 1. 输入频道名称“新建警报”，然后选择“添加”按钮。
 
 
-### <a name="task-2-create-a-playbook-in-microsoft-sentinel"></a>任务 2：在 Microsoft Sentinel 创建 Playbook
+### 任务 2：在 Microsoft Sentinel 创建 Playbook
 
 在此任务中，你将创建在 Microsoft Sentinel 用作 Playbook 的逻辑应用。
 
@@ -62,7 +64,7 @@ lab:
 
 1. 在页面左侧的“内容管理”区域下，选择“社区”页。
 
-1. 在右窗格中，选择“加入社区内容”链接。 这会在 Microsoft Edge 浏览器中打开一个新选项卡展示 Microsoft Sentinel GitHub 内容。
+1. 在右窗格中，选择“加入社区内容”链接。 这会在 Microsoft Edge 浏览器中打开一个新选项卡展示 Microsoft Sentinel GitHub 内容。 提示：可能需要向右滚动才能看到链接。 或者，请改为单击以下链接：[GitHub 上的 Microsoft Sentinel](https://github.com/Azure/Azure-Sentinel)。
 
 1. 选择“Solutions”文件夹。
 
@@ -70,9 +72,7 @@ lab:
 
 1. 选择“Post-Message-Teams”文件夹。
 
-1. 在“readme.md”框中，向下滚动到第二个“快速部署”选项“使用警报触发器进行部署”，并选择“部署到 Azure”按钮 。  
-
-    >**非常重要**：请注意，“事件”和“警报”是两个不同的 Microsoft Sentinel 触发器。 请确保选择“警报”（第二个）。
+1. 在 readme.md 框中，向下滚动到“快速部署”部分的“使用事件触发器进行部署(推荐)”，然后选择“部署到 Azure”按钮 。  
 
 1. 确保已选择 Azure 订阅。
 
@@ -80,14 +80,16 @@ lab:
 
 1. 将“区域”的默认值保留为“(US) 美国东部”。
 
-1. 确保“Playbook 名称”为 PostMessageTeams-OnAlert，然后选择“查看 + 创建”。 提示：如果名称不同，请返回到 GitHub 并选择“使用警报触发器部署”playbook。
+1. 将“playbook 名称”重命名为“PostMessageTeams-OnIncident”，然后选择“查看 + 创建”。
 
 1. 现在选择“创建”。 
 
     >**注意：** 请等待部署完成后再继续下一个任务。
 
+1. 重复该任务，但这次不再选择“使用事件触发器进行部署(推荐)”，而是选择“使用警报触发器进行部署”playbook。 提示：playbook 显示在刚刚在 GitHub 中部署的 playbook 下方。
 
-### <a name="task-3-update-a-playbook-in-microsoft-sentinel"></a>任务 3：在 Microsoft Sentinel 中更新 Playbook
+
+### 任务 3：在 Microsoft Sentinel 中更新 Playbook
 
 在此任务中，你将使用适当的连接信息更新创建的新 playbook。
 
@@ -97,7 +99,9 @@ lab:
 
 1. 在“配置”区域下选择“自动化”，然后选择“可用的 Playbook”选项卡。
 
-1. 选择“PostMessageTeams-OnAlert”playbook。 提示：如果未看到 playbook，请按 Ctrl+F5 刷新 Azure 门户页面。
+1. 如果看不到任何 playbook，请在命令栏中选择“刷新”。 你应该会看到在上一步中创建的两个 playbook，但它们具有不同的触发器种类。
+
+1. 选择 PostMessageTeams-OnAlert playbook 名称。
 
 1. 在 PostMessageTeams-OnAlert 的逻辑应用页的命令菜单中，选择“编辑”。
 
@@ -121,8 +125,9 @@ lab:
 
 1. 对“频道”字段进行相同的选择，选择字段末尾的“X”以清除内容。 字段将更改为一个下拉列表，其中列出了 SOC 团队的频道。 选择“新建警报”。
 
-1. 在命令栏上选择“保存”。
+1. 在命令栏上选择“保存”。 将来的实验室中将使用逻辑应用。
 
-将来的实验室中将使用逻辑应用。
+1. 重复该任务，但这次不再选择 PostMessageTeams-OnAlert，而是选择 PostMessageTeams-OnIncident playbook。 提示：无需创建连接，只需重复使用为此任务创建的连接。
 
-## <a name="proceed-to-exercise-3"></a>继续完成练习 3
+
+## 继续完成练习 3

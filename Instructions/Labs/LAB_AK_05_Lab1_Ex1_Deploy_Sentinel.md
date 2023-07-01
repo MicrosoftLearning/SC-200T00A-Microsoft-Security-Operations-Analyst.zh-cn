@@ -4,16 +4,18 @@ lab:
   module: Learning Path 5 - Configure your Microsoft Sentinel environment
 ---
 
-# <a name="learning-path-5---lab-1---exercise-1---configure-your-microsoft-sentinel-environment"></a>学习路径 5 - 实验室 1 - 练习 1 - 配置 Microsoft Sentinel 环境
+# 学习路径 5 - 实验室 1 - 练习 1 - 配置 Microsoft Sentinel 环境
 
-## <a name="lab-scenario"></a>实验室方案
+## 实验室方案
 
 ![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod5_L1_Ex1.png)
 
 你是一位安全运营分析师，你所在公司正在实现 Microsoft Sentinel。 你负责设置满足公司要求的 Microsoft Sentinel 环境，并最大程度降低成本、符合法规要求，同时为安全团队提供最易于管理的环境，以便其履行日常工作职责。
 
+>                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Configure%20your%20Microsoft%20Sentinel%20environment)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
-### <a name="task-1-initialize-the-microsoft-sentinel-workspace"></a>任务 1：初始化 Microsoft Sentinel 工作区
+
+### 任务 1：初始化 Microsoft Sentinel 工作区
 
 在此任务中，你将创建 Microsoft Sentinel 工作区。
 
@@ -38,7 +40,7 @@ lab:
 1. 浏览新建的 Microsoft Sentinel 工作区以熟悉用户界面选项。
 
 
-### <a name="task-2-create-a-watchlist"></a>任务 2：创建监视列表
+### 任务 2：创建监视列表
 
 在此任务中，你将在 Microsoft Sentinel 中创建监视列表。
 
@@ -93,7 +95,7 @@ lab:
 1. 通过选择右上方的“x”关闭“日志”窗口，然后选择“确定”以放弃未保存的编辑。
 
 
-### <a name="task-3-create-a-threat-indicator"></a>任务 3：创建威胁指标
+### 任务 3：创建威胁指标
 
 在此任务中，你将在 Microsoft Sentinel 中创建指标。
 
@@ -101,11 +103,13 @@ lab:
 
 1. 从命令栏中选择“+ 新增”。
 
-1. 查看“类型”下拉列表中的各种指标类型。 选择“domain-name”。 在“域”框中输入姓名首字母缩写。 例如 fmg.com。
+1. 查看“类型”下拉列表中的各种指标类型。 选择“domain-name”。 
+
+1. 对于“域”，请输入域名，例如键入 contoso.com。
 
 1. 对于“威胁类型”，请填写“恶意活动”，然后选择“确定” 。
 
-1. 对于“名称”，输入用于域的同一个值。 例如 fmg.com。
+1. 对于“名称”，输入用于域的同一个值。
 
 1. 将“有效期开始时间”字段设置为当天日期。
 
@@ -128,21 +132,23 @@ lab:
     ```
 
 
-### <a name="task-4-configure-log-retention"></a>任务 4：配置日志保留期
+### 任务 4：配置日志保留期
 
 在此任务中，将更改 SecurityEvent 表的保持期。
 
-1. 在 Microsoft Sentinel 的“配置”区域中，选择“设置”选项。
+1. 在 Microsoft Sentinel 的“配置”区域下，选择“设置”选项。
 
 1. 选择“工作区设置”。
 
-1. 在 Log Analytics 工作区中，选择“设置”区域中的“表(预览)”选项。
+1. 在 Log Analytics 工作区的“设置”区域下，选择“表”选项。
 
 1. 搜索并选择 SecurityEvent 表，然后选择省略号按钮 (...)。
 
 1. 选择“管理表”。
 
-1. 为“总保持期”选择“180 天”。 然后“保存”。
+1. 为“总保持期”选择“180 天”。 请注意，“存档期”仅 150 天，因为它从（默认）“交互保留期”开始使用 30 天 。
+
+1. 选择“保存”应用所做的更改。 
 
 
-## <a name="you-have-completed-the-lab"></a>你已完成本实验室。
+## 你已完成本实验室。

@@ -1,12 +1,12 @@
 ---
 lab:
-  title: 练习 3 - 创建计划查询
+  title: 练习 3 - 根据模板创建计划查询
   module: Learning Path 7 - Create detections and perform investigations using Microsoft Sentinel
 ---
 
-# <a name="learning-path-7---lab-1---exercise-3---create-a-scheduled-query"></a>学习路径 7 - 实验室 1 - 练习 3 - 创建计划查询
+# 学习路径 7 - 实验室 1 - 练习 3 - 根据模板创建计划查询
 
-## <a name="lab-scenario"></a>实验室方案
+## 实验室方案
 
 ![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex3.png)
 
@@ -14,8 +14,10 @@ lab:
 
 分析规则将在你的整个环境中搜索特定事件或事件集，在达到特定事件阈值或条件时发出警报，生成故障事件以供 SOC 进行会审和调查，并通过自动化跟踪和修正流程来响应威胁。
 
+>                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Create%20a%20scheduled%20query)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
-### <a name="task-1-create-a-scheduled-query"></a>任务 1：创建计划查询
+
+### 任务 1：创建计划查询
 
 在此任务中，你将创建一个计划查询，并将其连接到在上一个练习中创建的 Teams 频道。
 
@@ -31,43 +33,21 @@ lab:
 
 1. 从“配置”区域选择“分析”。
 
-1. 选择“+ 创建”按钮，然后选择“计划查询规则” 。
+1. 确保你位于命令栏中的“规则模板”选项卡中，并搜索“新建 CloudShell 用户”规则。
 
-1. 在“分析”规则向导中的“常规”选项卡上，键入名称“Azure AD 角色分配审核线索”。
+1. 在规则摘要边栏选项卡中，查看“数据源: Azure 活动”下的绿色图标，确保接收数据。
 
-1. 对于“策略”，请选择“持久性”。
+    >注意：如果未看到它处于连接状态，请确保已完成学习路径 6 实验室练习 1 的任务 3。
 
-1. 对于“严重性”，选择“低”。
+1. 选择“创建规则”以继续。
+
+1. 在 Analytics 规则向导的“常规”选项卡上，将“严重性”更改为“中” 。
 
 1. 选择“下一页:设置规则逻辑 >”按钮：
 
-1. 对于规则查询，粘贴以下 KQL 语句：
+1. 对于规则查询，请选择“查看查询结果”。 不应收到任何结果或任何错误。
 
-    >**警告：** 使用粘贴功能时，可以向虚拟机添加额外（管道）字符。 请确保先使用记事本粘贴以下查询。
-
-    ```KQL
-    AuditLogs  
-    | where isnotempty(InitiatedBy.user.userPrincipalName) and Result == 'success' and OperationName contains "member to role" and AADOperationType startswith "Assign"
-    | extend InitiatedByUPN = tostring(InitiatedBy.user.userPrincipalName)
-    | extend InitiatedFromIP = iff(tostring(AdditionalDetails.[7].value) == '', tostring(AdditionalDetails.[6].value), tostring(AdditionalDetails.[7].value))
-    | extend TargetUser = tostring(TargetResources.[2].displayName)
-    | extend TargetRoleName = tostring(TargetResources.[0].displayName)
-    | project TimeGenerated, InitiatedByUPN, InitiatedFromIP, TargetUser, TargetRoleName, AADOperationType, OperationName
-    ```
-
-1. 选择“查看查询结果”。 不应收到任何结果或任何错误。 如果收到错误，请查看查询是否与上一个 KQL 语句一样。 通过选择右上方的 X 关闭“日志”窗口，然后选择“确定”以放弃保存更改，并返回到向导 。
-
-1. 在“分析规则向导 - 创建新计划规则”选项卡中的“警报扩充”区域下，选择“实体映射”，然后选择以下值： 
-
-    - 对于“实体类型”下拉列表，请选择“帐户”。
-    - 对于“标识符”下拉列表，选择“FullName”。
-    - 对于“值”下拉列表，请选择“InitiatedByUPN”。
-
-1. 然后选择“添加新实体”并选择以下值：
-
-    - 对于“实体类型”下拉列表，请选择“IP”。
-    - 对于“标识符”下拉列表，选择“地址”。
-    - 对于“值”下拉列表，请选择“InitiatedFromIP”。
+1. 通过选择右上方的 X 关闭“日志”窗口，然后选择“确定”以放弃保存更改，并返回到向导 。
 
 1. 向下滚动并在“查询计划”下设置以下项：
 
@@ -88,9 +68,7 @@ lab:
 
 1. 选择底部的“下一步: 自动响应 >”按钮。
 
-1. 在“自动响应”选项卡的“警报自动化(经典)”区域下，选择在上一个练习中创建的“PostMessageTeams-OnAlert”playbook 。
-
-1. 在“自动化规则(预览版)”下，选择“添加新项”。
+1. 在“自动化规则”下的“自动响应”选项卡上，选择“新增” 。
 
 1. 对于“自动化规则名称”，请输入“第 2 层”。
 
@@ -98,42 +76,28 @@ lab:
 
 1. 然后，选择“分配给我”。 然后，选择“应用”。
 
+1. 向下滚动并选择“警报自动化(经典)”栏。
+
+1. 在下拉菜单中，选择在上一练习中创建的 playbook PostMessageTeams-OnAlert。
+
 1. 选择底部的“下一步: 查看 >”按钮。
   
 1. 选择“创建”。
 
 
-### <a name="task-2-test-our-new-rule"></a>任务 2：测试我们的新规则
+### 任务 2：测试我们的新规则
 
 在此任务中，你将测试新的计划查询规则。
 
-1. 在 Azure 门户的搜索栏中，键入“Azure Active Directory”。 然后选择“Azure Active Directory”。
+1. 在 Azure 门户的顶部栏中，选择与 Cloud Shell 对应的图标 >_。 如果显示分辨率太低，可能需要先选择省略号图标 (...)。
 
-1. 选择“管理”区域中的“用户”，以便显示“用户 - 所有用户”页。
+1. 选择 Powershell，然后选择“创建存储” 。 等待 Cloud Shell 预配完成。
 
-1. 选择列表中的用户“Christie Cline”，以便显示“Christie Cline - 个人资料”页。
+1. 关闭 Azure Cloud Shell 窗口。
 
-1. 选择“管理”区域中的“分配角色”，以便显示“Christie Cline - 分配角色”页。
+1. 在 Azure 门户的“搜索”栏中，键入“活动”，然后选择“活动日志”。
 
-1. 从命令栏中选择“+ 添加分配”。
-
-1. 在“目录角色”边栏选项卡中，选中“用户管理员”复选框。
-
-1. 选择 **添加** 。
-
-1. 选择命令栏中的“刷新”按钮以查看新的角色分配。 
-
-1. 通过选择两次右上方的“x”来关闭“Christie Cline - 分配角色”和“用户 - 所有用户”页。
-
-1. 在“Contoso - 概述”Azure Active Directory 页中的“监视”下，选择“审核日志”。
-
-1. 选择“导出数据设置”。 通过查看“诊断设置”下的信息，验证 Microsoft Sentinel 的“Azure Active Directory”数据连接器是否正确设置配置以将数据发送到 Log Analytics 工作区。
-
-1. 查看之前为 Sentinel 创建的 Log Analytics 工作区是否具有“诊断设置”条目 。
-
-1. 通过选择右上方的“x”关闭页面。
-
-1. 返回“Contoso - 审核日志”，选择“刷新”直到看到指示你之前在角色中所做更改的“类别：RoleManagement”的条目。
+1. 确保显示以下操作名称项：“列出存储帐户密钥”和“更新存储帐户创建” 。 前面查看的 KQL 查询将匹配这些操作以生成警报。 提示：可能需要选择“刷新”来更新列表 。
 
 1. 在 Azure 门户的搜索栏中，键入“Sentinel”，然后选择“Microsoft Sentinel”。
 
@@ -145,10 +109,11 @@ lab:
 
 1. 应该会看到新创建的事件。 
 
-    >注意：触发警报的事件可能至少需要 5 分钟才能处理。 你可以继续进行下一个练习，稍后再返回到这里。
+    >注意：触发警报的事件可能至少需要 5 分钟才能处理。 继续下一个练习，稍后你将返回到此视图。
 
 1. 选择“事件”并查看右侧边栏选项卡中的信息。
 
 1. 通过在 Microsoft Edge 浏览器中选择选项卡来返回到 Microsoft Teams。 如果已关闭它，只需打开新选项卡并键入 https://teams.microsoft.com 。 转到 SOC Teams，选择“新建警报”频道，并查看有关事件的消息帖子 。
 
-## <a name="proceed-to-exercise-4"></a>继续完成练习 4
+
+## 继续完成练习 4

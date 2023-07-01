@@ -12,6 +12,7 @@ lab:
 
 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你需要了解如何连接来自组织中多个数据源的日志数据。 下一个数据源是使用“通过旧版代理程序实现通用事件格式 (CEF)”连接器和 Syslog 连接器的 Linux 虚拟机。
 
+>                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Connect%20Linux%20hosts%20to%20Microsoft%20Sentinel%20using%20data%20connectors)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
 >**重要提示：** 下一个任务中有一些步骤是在不同的虚拟机中完成的。 查找虚拟机名称引用。
 
@@ -90,7 +91,7 @@ lab:
 
 1. 选择“为非 Azure Linux 计算机下载和安装代理”的链接。 
 
-    >**注意：** Log Analytics 工作区会显示 3 台 Windows 计算机已连接。 分别对应于之前连接的 WIN2、WINServer 和 AZWIN01 虚拟机。
+    >**注意：** Log Analytics 工作区会显示 2 台 Windows 计算机已连接。 分别对应于之前连接的 WINServer 和 AZWIN01 虚拟机。
 
 1. 选择“Linux 服务器”的选项卡。
 
@@ -133,7 +134,7 @@ lab:
 
 1. 在 Microsoft Sentinel 门户中，选择“配置”下的“设置”，然后选择“工作区设置”选项卡。
 
-1. 选择“设置”区域下的“旧代理管理” 。
+1. 在“经典”区域下选择“旧代理管理”。
 
 1. 选择“Syslog”选项卡。
 
@@ -143,7 +144,7 @@ lab:
 
 1. 再次选择“+ 添加设备”按钮。
 
-1. 从“设备名称”下拉菜单中选择“authpriv”。
+1. 在“设施名称”下拉菜单中选择 syslog。
 
 1. 选择“应用”以保存所做的更改。
 
