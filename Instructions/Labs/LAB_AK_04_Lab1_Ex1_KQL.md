@@ -387,13 +387,15 @@ lab:
 1. 以下语句演示如何使用动态字段，这些字段很特殊，因为它们可以采用其他数据类型的任何值。 在本例中，SigninLogs 表中的 DeviceDetail 字段属于动态类型。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
 
     ```KQL
-    SigninLogs | extend OS = DeviceDetail.operatingSystem
+    SigninLogs 
+    | extend OS = DeviceDetail.operatingSystem
     ```
 
 1. 以下示例演示如何为 SigninLogs 拆分打包字段。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
 
     ```KQL
-    SigninLogs | extend OS = DeviceDetail.operatingSystem, Browser = DeviceDetail.browser 
+    SigninLogs 
+    | extend OS = DeviceDetail.operatingSystem, Browser = DeviceDetail.browser 
     | extend StatusCode = tostring(Status.errorCode), StatusDetails = tostring(Status.additionalDetails) 
     | extend Date = startofday(TimeGenerated) 
     | summarize count() by Date, Identity, UserDisplayName, UserPrincipalName, IPAddress, ResultType, ResultDescription, StatusCode, StatusDetails 
@@ -405,7 +407,8 @@ lab:
 1. 以下语句演示了用于操作存储在字符串字段中的 JSON 的运算符。 许多日志以 JSON 格式提交数据，这要求了解如何将 JSON 数据转换为可查询的字段。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
 
     ```KQL
-    SigninLogs | extend AuthDetails =  todynamic(AuthenticationDetails) 
+    SigninLogs 
+    | extend AuthDetails =  todynamic(AuthenticationDetails) 
     | extend AuthMethod =  AuthDetails[0].authenticationMethod 
     | extend AuthResult = AuthDetails[0].["authenticationStepResultDetail"] 
     | project AuthMethod, AuthResult, AuthDetails 
@@ -414,7 +417,8 @@ lab:
 1. 以下语句演示了 mv-expand 运算符，该运算符将动态数组转换为行（多值展开）。
 
     ```KQL
-    SigninLogs | mv-expand AuthDetails = todynamic(AuthenticationDetails) 
+    SigninLogs 
+    | mv-expand AuthDetails = todynamic(AuthenticationDetails) 
     | project AuthDetails
     ```
 
@@ -423,7 +427,8 @@ lab:
 1. 以下语句演示了 mv-apply 运算符，该运算符将子查询应用于每条记录并返回所有子查询结果的并集。
 
     ```KQL
-    SigninLogs | mv-apply AuthDetails = todynamic(AuthenticationDetails) on
+    SigninLogs 
+    | mv-apply AuthDetails = todynamic(AuthenticationDetails) on
     (where AuthDetails.authenticationMethod == "Password")
     ```
 
