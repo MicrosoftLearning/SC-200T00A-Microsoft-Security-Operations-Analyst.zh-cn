@@ -23,7 +23,7 @@ lab:
 
 1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：**Pa55w.rd**。  
 
-1. 在 Microsoft Edge 浏览器中，打开新选项卡，然后导航到 Microsoft Teams 门户 (https://teams.microsoft.com) )。
+1. 在 Microsoft Edge 浏览器中，打开新标签页，然后导航到 Microsoft Teams 门户 (https://teams.microsoft.com) )。
 
 1. 在“登录”对话框中，复制粘贴实验室托管提供者提供的租户电子邮件帐户，然后选择“下一步”  。
 
@@ -64,7 +64,7 @@ lab:
 
 1. 在页面左侧的“内容管理”区域下，选择“社区”页。
 
-1. 在右窗格中，选择“加入社区内容”链接。 这会在 Microsoft Edge 浏览器中打开一个新选项卡展示 Microsoft Sentinel GitHub 内容。 提示：可能需要向右滚动才能看到链接。 或者，请改为单击以下链接：[GitHub 上的 Microsoft Sentinel](https://github.com/Azure/Azure-Sentinel)。
+1. 在右窗格中，选择“加入社区内容”链接。 这会在 Microsoft Edge 浏览器中打开一个新标签页来展示 Microsoft Sentinel GitHub 内容。 提示：可能需要向右滚动才能看到链接。 或者，请改为单击以下链接：[GitHub 上的 Microsoft Sentinel](https://github.com/Azure/Azure-Sentinel)。
 
 1. 选择“Solutions”文件夹。
 
@@ -86,9 +86,6 @@ lab:
 
     >**注意：** 请等待部署完成后再继续下一个任务。
 
-1. 重复该任务，但这次不再选择“使用事件触发器进行部署(推荐)”，而是选择“使用警报触发器进行部署”playbook。 提示：playbook 显示在刚刚在 GitHub 中部署的 playbook 下方。
-
-
 ### 任务 3：在 Microsoft Sentinel 中更新 Playbook
 
 在此任务中，你将使用适当的连接信息更新创建的新 playbook。
@@ -99,35 +96,26 @@ lab:
 
 1. 在“配置”区域下选择“自动化”，然后选择“可用的 Playbook”选项卡。
 
-1. 如果看不到任何 playbook，请在命令栏中选择“刷新”。 你应该会看到在上一步中创建的两个 playbook，但它们具有不同的触发器种类。
+1. 如果看不到任何 playbook，请在命令栏中选择“刷新”。 应会看到使用“Microsoft Sentinel 事件触发器类型”从上一步创建的 playbook。
 
-1. 选择 PostMessageTeams-OnAlert playbook 名称。
+1. 选择“PostMessageTeams”playbook 名称。
 
 1. 在 PostMessageTeams-OnAlert 的逻辑应用页的命令菜单中，选择“编辑”。
 
-1. 选择第一个块，Microsoft Sentinel 警报。
+1. 选择第一个块“Microsoft Sentinel 事件(预览)”。
 
 1. 选择“更改连接”链接。
 
 1. 选择“添加新项”，然后选择“登录” 。 当系统提示时，在新窗口中，选择 Azure 订阅管理员凭据。 现在，块的最后一行应显示“已连接到 your-admin-username”。
 
-1. 现在，选择第二个块“警报 - 获取事件”。
-
-1. 选择“更改连接”链接。
-
-1. 在“显示名称”下选择具有 Azure 管理员用户名的连接。 提示：admin@ZZZZZZ.onmicrosoft.com。 现在，块的最后一行应显示“已连接到 your-admin-username”。
-
-1. 现在，选择第三个块“连接”。
+1. 现在，选择第二个块“连接”。
 
 1. 选择“添加新项”，在系统提示时选择 Azure 管理员凭据。 现在，块的最后一行应显示“已连接到 your-admin-username”。
 
-1. 该块现已重命名为“发布消息 (V3)”，在“团队”字段的末尾，选择“X”以清除内容。 该字段将改为列出 Microsoft Teams 中各个可用团队的下拉列表。 选择“SOC”。
+1. 该块现已重命名为“发布消息 (V3) (预览)”，在“团队”字段的末尾，选择“X”以清除内容。 该字段将改为列出 Microsoft Teams 中各个可用团队的下拉列表。 选择“SOC”。
 
 1. 对“频道”字段进行相同的选择，选择字段末尾的“X”以清除内容。 字段将更改为一个下拉列表，其中列出了 SOC 团队的频道。 选择“新建警报”。
 
 1. 在命令栏上选择“保存”。 将来的实验室中将使用逻辑应用。
-
-1. 重复该任务，但这次不再选择 PostMessageTeams-OnAlert，而是选择 PostMessageTeams-OnIncident playbook。 提示：无需创建连接，只需重复使用为此任务创建的连接。
-
 
 ## 继续完成练习 3

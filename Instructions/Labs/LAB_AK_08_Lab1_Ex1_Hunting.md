@@ -43,7 +43,8 @@ lab:
 
     ```KQL
     let lookback = 2d; 
-    SecurityEvent | where TimeGenerated >= ago(lookback) 
+    SecurityEvent 
+    | where TimeGenerated >= ago(lookback) 
     | where EventID == 4688 and Process =~ "powershell.exe"
     | extend PwshParam = trim(@"[^/\\]*powershell(.exe)+" , CommandLine) 
     | project TimeGenerated, Computer, SubjectUserName, PwshParam 
@@ -77,7 +78,8 @@ lab:
 
     ```KQL
     let lookback = 2d; 
-    SecurityEvent | where TimeGenerated >= ago(lookback) 
+    SecurityEvent 
+    | where TimeGenerated >= ago(lookback) 
     | where EventID == 4688 and Process =~ "powershell.exe"
     | extend PwshParam = trim(@"[^/\\]*powershell(.exe)+" , CommandLine) 
     | project TimeGenerated, Computer, SubjectUserName, PwshParam 
@@ -149,7 +151,8 @@ lab:
 
     ```KQL
     let lookback = 2d; 
-    SecurityEvent | where TimeGenerated >= ago(lookback) 
+    SecurityEvent 
+    | where TimeGenerated >= ago(lookback) 
     | where EventID == 4688 and Process =~ "powershell.exe"
     | extend PwshParam = trim(@"[^/\\]*powershell(.exe)+" , CommandLine) 
     | project TimeGenerated, Computer, SubjectUserName, PwshParam 
@@ -170,12 +173,9 @@ lab:
 
 1. 向下滚动，选择“下一步: 事件设置>”按钮。
 
-1. 对于“事件设置”选项卡，保留默认值并选择“下一页: “下一步: 自动响应 >”按钮。
+1. 对于“事件设置”选项卡，保留默认值并选择“下一步: 查看和创建 >”按钮。
 
-1. 对于“自动响应”选项卡，选择“警报自动化(经典)”下的“PostMessageTeams-OnAlert”，然后选择“下一页: 审阅”按钮。
-
-1. 在“查看”选项卡上，选择“创建”按钮以新建计划分析规则。
-
+1. 在“查看和创建”选项卡上，选择“保存”按钮以创建并保存新的计划分析规则。
 
 ### 任务 3：创建搜索
 
