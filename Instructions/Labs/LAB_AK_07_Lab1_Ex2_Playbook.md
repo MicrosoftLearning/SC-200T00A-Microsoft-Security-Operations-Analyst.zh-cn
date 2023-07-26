@@ -102,6 +102,8 @@ lab:
 
 1. 在 PostMessageTeams-OnAlert 的逻辑应用页的命令菜单中，选择“编辑”。
 
+    >**注意：** 可能需要刷新页面。
+
 1. 选择第一个块“Microsoft Sentinel 事件(预览)”。
 
 1. 选择“更改连接”链接。
