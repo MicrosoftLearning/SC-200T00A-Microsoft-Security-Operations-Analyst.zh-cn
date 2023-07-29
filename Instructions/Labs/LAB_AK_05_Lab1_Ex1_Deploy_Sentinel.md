@@ -107,7 +107,9 @@ lab:
 
 1. 对于“域”，请输入域名，例如键入 contoso.com。
 
-1. 对于“威胁类型”，请填写“恶意活动”，然后选择“确定” 。
+1. 对于“威胁类型”，请选择“+ 添加”，然后键入“恶意活动”。  选择“确定”。
+
+1. 输入“说明”
 
 1. 对于“名称”，输入用于域的同一个值。
 
@@ -128,7 +130,8 @@ lab:
 1. 向右滚动结果以查看“DomainName”列。 还可以运行以下 KQL 语句，这样就可以仅查看“DomainName”列。 
 
     ```KQL
-    ThreatIntelligenceIndicator | project DomainName
+    ThreatIntelligenceIndicator 
+    | project DomainName
     ```
 
 

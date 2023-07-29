@@ -21,7 +21,7 @@ lab:
 
 1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：**Pa55w.rd**。  
 
-1. 在 Edge 浏览器中，导航到 Azure 门户 (https://portal.azure.com) )。
+1. 在 Microsoft Edge 浏览器中，导航到 Azure 门户 (https://portal.azure.com) )。
 
 1. 在“登录”对话框中，复制粘贴实验室托管提供者提供的租户电子邮件帐户，然后选择“下一步”  。
 
@@ -31,23 +31,20 @@ lab:
 
 1. 选择你在前面实验室中创建的 Microsoft Sentinel 工作区。
 
-1. 从“配置”区域选择“分析”。 默认情况下，会显示“有效规则”。
+1. 从“配置”区域选择“分析”。
 
-1. 注意“基于 Microsoft Defender for Cloud 创建事件”。 此规则是由“模块 6 - 练习 1 - 任务 4”中配置的 Defender for Cloud 连接器激活的。
+1. 选择命令栏中的“+ 创建”按钮，然后选择“Microsoft 事件创建规则” 。
 
-1. 单击命令栏中的“+ 创建”按钮，然后选择“Microsoft 事件创建规则” 。
-
-1. 在“名称”下，写下“基于 Defender for Endpoint 创建事件”。
+1. 在“名称”下，输入“基于 Defender for Endpoint 创建事件”。
 
 1. 向下滚动，在“Microsoft 安全服务”下选择“Microsoft Defender for Endpoint”。
 
 1. 在“按严重性筛选”下，选择“自定义”选项，为严重级别选择“低”、“中”和“高”，然后返回到规则   。
 
-1. 选择底部的自动响应”按钮，然后选择“下一步:审阅”按钮。
+1. 选择“下一步: 自动响应”按钮，然后选择“下一步: 查看和创建”按钮。 
 
-1. 查看所做的更改，然后选择“创建”按钮。 如果 Defender for Endpoint 中存在警报，则会保存 Analytics 规则并创建事件。
+1. 查看所做的更改并选择“保存”按钮。 如果 Defender for Endpoint 中存在警报，则会保存 Analytics 规则并创建事件。
 
-1. 现在，你将拥有一种 Fusion 和两种 Microsoft 安全警报类型。
-
+1. 现在，你将拥有一种 Fusion 和两种 Microsoft 安全警报类型。 
 
 ## 继续进行练习 2

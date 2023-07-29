@@ -49,7 +49,8 @@ lab:
 1. 从结果中，我们现在知道了 Threat Actor 正在使用 reg.exe 向注册表项添加项，程序位于 C:\temp。运行以下语句，将查询中的搜索运算符替换为 where 运算符 :
 
     ```KQL
-    SecurityEvent | where Activity startswith "4688" 
+    SecurityEvent 
+    | where Activity startswith "4688" 
     | where Process == "reg.exe" 
     | where CommandLine startswith "REG" 
     ```
@@ -57,7 +58,8 @@ lab:
 1. 请务必尽可能多地提供关于警报的上下文，为安全运营中心分析师提供帮助。 这包括投影在调查关系图中使用的实体。 运行以下查询：
 
     ```KQL
-    SecurityEvent | where Activity startswith "4688" 
+    SecurityEvent 
+    | where Activity startswith "4688" 
     | where Process == "reg.exe" 
     | where CommandLine startswith "REG" 
     | extend timestamp = TimeGenerated, HostCustomEntity = Computer, AccountCustomEntity = SubjectUserName
@@ -69,10 +71,10 @@ lab:
 
     |设置|值|
     |---|---|
-    |名称|**Startup RegKey**|
-    |说明|**c:\temp 中的 Startup Regkey**|
-    |策略|**持久性**|
-    |Severity|**高**|
+    |名称|Startup RegKey|
+    |说明|c:\temp 中的 Startup RegKey|
+    |策略|持久性|
+    |严重性|高|
 
 1. 选择“下一页:**设置规则逻辑 >”按钮**。
 
@@ -83,12 +85,14 @@ lab:
     |帐户|FullName|AccountCustomEntity|
     |主机|主机名|HostCustomEntity|
 
+1. 如果未为主机实体选择主机名，请从下拉列表中选择它。
+
 1. 对于“查询计划”，设置以下项：
 
     |设置|值|
     |---|---|
     |运行查询的时间间隔|5 分钟|
-    |查看最近多久的数据|1 天|
+    |查找上次的数据|1 天|
 
     >**注意：** 我们特意针对同一数据生成了多个事件。 这样，实验室就可使用这些警报。
 
@@ -96,10 +100,24 @@ lab:
 
 1. 对于“事件设置”选项卡，保留默认值并选择“下一页: “下一步: 自动响应 >”按钮。
 
-1. 对于“自动响应”选项卡，选择“警报自动化(经典)”下的“PostMessageTeams-OnAlert”，然后选择“下一页: 审阅”按钮。
+1. 在“自动化规则”下的“自动响应”选项卡上，选择“新增” 。
 
-1. 在“查看”选项卡上，选择“创建”按钮以新建计划分析规则。
+1. 使用表中的设置配置自动化规则。
 
+    |设置|值|
+    |:----|:----|
+    |自动化规则名称|Startup RegKey|
+    |触发器|              创建事件时|
+    |操作 |运行攻略|
+    |playbook |PostMessageTeams-OnAlert|
+
+    >**注意：** 你已为 playbook 分配了权限，因此它将可用。
+
+1. 选择“应用”
+
+1. 选择“下一步: 查看并创建 >”按钮。
+  
+1. 在“查看并创建”选项卡上，选择“创建”按钮以新建计划分析规则。
 
 ### 任务 2：特权提升攻击检测
 
@@ -110,20 +128,23 @@ lab:
 1. 运行以下 KQL 语句以标识任何引用管理员的条目：
 
     ```KQL
-    search "administrators" | summarize count() by $table
+    search "administrators" 
+    | summarize count() by $table
     ```
 
 1. 结果可能会显示不同表中的事件，但在我们的案例中，我们想要调查 SecurityEvent 表。 我们查找的 EventID 和 Event 为“4732 - 成员已添加到启用了安全性的本地组”。 通过此操作，我们将确定将成员添加到特权组。 运行以下 KQL 查询以确认：
 
     ```KQL
-    SecurityEvent | where EventID == 4732
+    SecurityEvent 
+    | where EventID == 4732
     | where TargetAccount == "Builtin\\Administrators"
     ```
 
 1. 展开该行以查看与记录相关的所有列。 不会显示添加为管理员的帐户的用户名。 问题在于未存储该用户名，我们具有的是安全标识符 (SID)。 运行以下 KQL，将 SID 与添加到 Administrators 组的用户名匹配：
 
     ```KQL
-    SecurityEvent | where EventID == 4732
+    SecurityEvent 
+    | where EventID == 4732
     | where TargetAccount == "Builtin\\Administrators"
     | extend Acct = MemberSid, MachId = SourceComputerId  
     | join kind=leftouter (
@@ -137,7 +158,8 @@ lab:
 1. 扩展行以显示生成的列，在上一行中，我们在 KQL 查询投影的 UserName1 列下看到了添加的用户的名称 。 请务必尽可能多地提供关于警报的上下文，为安全操作分析师提供帮助。 这包括投影在调查关系图中使用的实体。 运行以下查询：
 
     ```KQL
-    SecurityEvent | where EventID == 4732
+    SecurityEvent 
+    | where EventID == 4732
     | where TargetAccount == "Builtin\\Administrators"
     | extend Acct = MemberSid, MachId = SourceComputerId  
     | join kind=leftouter (
@@ -167,7 +189,7 @@ lab:
     |设置|值|
     |---|---|
     |运行查询的时间间隔|5 分钟|
-    |查看最近多久的数据|1 天|
+    |查找上次的数据|1 天|
 
     >**注意：** 我们特意针对同一数据生成了多个事件。 这样，实验室就可使用这些警报。
 
@@ -175,8 +197,23 @@ lab:
 
 1. 对于“事件设置”选项卡，保留默认值并选择“下一页: “下一步: 自动响应 >”按钮。
 
-1. 对于“自动响应”选项卡，选择“警报自动化(经典)”下的“PostMessageTeams-OnAlert”，然后选择“下一页: 审阅”按钮。
+1. 在“自动化规则”下的“自动响应”选项卡上，选择“新增” 。
 
-1. 在“查看”选项卡上，选择“创建”按钮以新建计划分析规则。
+1. 使用表中的设置配置自动化规则。
+
+   |设置|值|
+   |:----|:----|
+   |自动化规则名称|SecurityEvents 本地管理员用户添加操作|
+   |触发器|              创建事件时|
+   |操作 |运行攻略|
+   |playbook |PostMessageTeams-OnAlert|
+
+   >**注意：** 你已为 playbook 分配了权限，因此它将可用。
+
+1. 选择“应用”
+
+1. 选择“下一步: 查看并创建 >”按钮。
+  
+1. 在“查看并创建”选项卡上，选择“创建”按钮以新建计划分析规则。
 
 ## 继续完成练习 8

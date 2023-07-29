@@ -26,7 +26,6 @@ lab:
 - 租户后缀 ID。 此 ID 适用于将在所有实验室中用来登录 Microsoft 365 的 onmicrosoft.com 帐户。 其格式为 {username}@ZZZZZZ.onmicrosoft.com，其中 ZZZZZZ 是实验室托管提供者提供的唯一租户后缀 ID。 记录此 ZZZZZZ 值以供稍后使用。 当有任何实验室步骤指示你登录 Microsoft 365 门户时，都必须输入在此处获取的 ZZZZZZ 值。
 - 租户密码。 这是由实验室托管提供者提供的管理员帐户的密码。
 
-
 ### 任务 2：应用 Microsoft Defender for Office 365 预设的安全策略
 
 在此任务中，你将在 Microsoft 365 安全门户中为 Exchange Online Protection (EOP) 和 Microsoft Defender for Office 365 分配预设安全策略。
@@ -57,7 +56,9 @@ lab:
 
 1. 在“标准保护”下，选择“管理保护设置”。 提示：如果看到此选项灰显，请使用 Ctrl+F5 刷新浏览器。
 
-1. 在“应用 Exchange Online Protection”部分中，选择“特定收件人”，然后在“域”下开始编写租户的域名，选择它，然后选择“下一步”。 提示：租户的域名与管理员帐户的域名相同，可能与 WWLx####.onmicrosoft.com 类似。 请注意，此配置适用于防垃圾邮件、出站垃圾邮件筛选器、防恶意软件和防钓鱼的策略。 
+1. 在“应用 Exchange Online Protection”部分中，选择“特定收件人”，然后在“域”下开始编写租户的域名，选择它，然后选择“下一步”。
+
+    >提示：租户的域名与管理员帐户的域名相同，可能与 WWLx######.onmicrosoft.com 类似。 请注意，此配置适用于防垃圾邮件、出站垃圾邮件筛选器、防恶意软件和防钓鱼的策略。
 
 1. 在“应用 Defender for Office 365 保护”部分，应用与上一步相同的配置，然后选择“下一步”。 请注意，此配置适用于防钓鱼、安全附件、安全链接的策略。
 
