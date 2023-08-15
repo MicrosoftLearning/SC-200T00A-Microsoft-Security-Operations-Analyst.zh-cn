@@ -8,7 +8,7 @@ lab:
 
 ## 实验室方案
 
-![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex8.png)
+![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex10.png)
 
 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 将数据源连接到 Microsoft Sentinel 后，可以使用采用 Microsoft Sentinel 的 Azure Monitor 工作簿来可视化和监视数据，这在创建自定义仪表板方面提供了多样性。 
 

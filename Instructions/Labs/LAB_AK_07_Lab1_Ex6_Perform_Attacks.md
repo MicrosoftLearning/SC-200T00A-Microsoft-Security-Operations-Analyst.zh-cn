@@ -8,7 +8,7 @@ lab:
 
 ## 实验室方案
 
-![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex5.png)
+![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex6.png)
 
 你将模拟稍后将用于在 Microsoft Sentinel 中检测和调查的攻击。
 
@@ -68,7 +68,7 @@ lab:
 
 1. 选择“是”以创建新文件并将以下 PowerShell 脚本复制到 c2.ps1。
 
-    >**注意：** 粘贴到虚拟机中的长度可能有限。 确保脚本在 c2.ps1 文件中的外观与在这些说明中一致。
+    >注意：粘贴到虚拟机文件中可能不会显示完整的脚本长度。 确保脚本与 c2.ps1 文件中的指令匹配。
 
     ```PowerShell
     param(
