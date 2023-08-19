@@ -8,6 +8,8 @@ lab:
 
 ## 实验室方案
 
+![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex9.png)
+
 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 需要为特定 Windows 注册表事件建模 ASIM 分析程序。 这些简化分析程序将在稍后按照[高级安全信息模型 (ASIM) 注册表事件规范化架构参考](https://docs.microsoft.com/en-us/azure/sentinel/registry-event-normalization-schema)来完成。
 
 

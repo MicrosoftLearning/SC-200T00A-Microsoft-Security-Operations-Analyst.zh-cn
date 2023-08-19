@@ -8,6 +8,7 @@ lab:
 
 ## 实验室方案
 
+![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex8.png)
 
 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你已创建“计划”规则和“Microsoft 安全分析”规则。 环境中也启用了“融合”和“异常分析”规则。 现在，可以调查他们创建的事件。
 
