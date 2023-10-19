@@ -241,7 +241,7 @@ In this task, you will load sample security alerts and review the alert details.
 
 1. 在“基本信息”选项卡中，选择“范围”下的省略号按钮 (...)，然后从下拉列表中选择你的“Azure Pass - 赞助”订阅，然后单击“选择”  。
 
-1. 选择“参数”选项卡，从“主要 Log Analytics 工作区”下拉列表中选择“uniquenameDefender”工作区。 此操作将应用订阅配置，以将信息发送到 Log Analytics 工作区。
+1. 选择“参数”选项卡，从“主要 Log Analytics 工作区”下拉列表中选择你的工作区 。 此操作将应用订阅配置，以将信息发送到 Log Analytics 工作区。
 
 1. 选择“修正”选项卡，然后选择“创建修正任务”复选框 。 此操作会将策略分配应用于现有的 Azure 资源。
 
@@ -335,7 +335,68 @@ In this task, you will load sample security alerts and review the alert details.
 
 1. 等待几分钟，然后选择“刷新”以查看列出的新数据收集规则。
 
-### 任务 5：连接非 Azure Windows 计算机
+### 任务 5：安装 Azure Arc 并连接本地服务器
+
+在此任务中，你将在本地服务器上安装 Azure Arc，以便更轻松地加入。
+
+>**重要提示：** 接下来的步骤将在另一台计算机上完成，而不是你之前使用的计算机。 查找虚拟机名称引用。
+
+1. 使用以下密码以管理员身份登录到 WINServer 虚拟机：Passw0rd!  （如果需要）。  
+
+1. 打开 Microsoft Edge 浏览器并导航到 Azure 门户 (https://portal.azure.com )。
+
+1. 在“登录”对话框中，复制粘贴实验室托管提供者提供的租户电子邮件帐户，然后选择“下一步”  。
+
+1. 在“输入密码”对话框中，复制粘贴实验室托管提供者提供的租户密码，然后选择“登录”  。
+
+1. 在 Azure 门户的搜索栏中，键入“Arc”，然后选择“Azure Arc”。
+
+1. 在“**基础结构**”下的导航窗格中，选择“**计算机**”
+
+1. 选择“ **+ 添加/创建**”，然后选择“**添加计算机**”。
+
+1. 在“添加单个服务器”部分选择“生成脚本”。
+
+1. 通读“先决条件”选项卡，然后选择“下一步”以继续。
+
+1. 在“使用 Azure Arc 添加服务器”页面中，在“项目详细信息”下选择之前创建的资源组 。 提示：RG-Defender
+
+    >**注意：** 如果尚未创建资源组，请打开另一个选项卡并创建资源组，然后重新开始。
+
+1. 查看“服务器详细信息”和“连接方法”选项 。 保留默认值并选择“下一步”，以转到“标记”选项卡。
+
+1. 查看默认可用的标记。 选择“下一步”，转到“下载并运行脚本”选项卡。
+
+1. 向下滚动并选择“下载”按钮。 提示：如果浏览器阻止下载，请在浏览器中执行操作以允许下载。 在 Microsoft Edge 浏览器中，根据需要选择省略号按钮 (...)，然后选择“保留”。
+
+1. 右键单击 Windows 的“开始”按钮，然后选择“Windows PowerShell (管理员)”。
+
+1. 在“用户名”中输入“Administrator”，在“密码”中输入“Passw0rd!”  （如果收到 UAC 提示）。
+
+1. 输入：cd C:\Users\Administrator\Downloads
+
+    >重要提示：如果没有此目录，最有可能意味着你使用的是错误的计算机。 返回任务 4 的开头，更改为 WINServer 并重新启动。
+
+1. 键入“Set-ExecutionPolicy -ExecutionPolicy Unrestricted”，然后按 Enter。
+
+1. 输入“A”，表示全部接受，然后按 Enter。
+
+1. 键入“.\OnboardingScript.ps1”，然后按 Enter。  
+
+    >**重要提示：** 如果收到错误“无法识别术语 .\OnboardingScript.ps1...”，请确保是在 WINServer 虚拟机中执行任务 4 的步骤。 其他问题可能是由于多次下载导致文件名称更改，请在运行目录中搜索“.\OnboardingScript (1).ps1”或其他文件编号。
+
+1. 输入 R 以运行一次，然后按 Enter（这可能需要几分钟时间）。
+
+1. 安装过程将打开新的 Edge 浏览器标签页，以对 Azure Arc 代理进行身份验证。 选择管理员帐户，等待消息“身份验证完成”，然后返回到 Windows PowerShell 窗口。
+
+1. 安装完成后，返回到下载脚本的 Azure 门户页面，然后选择“关闭”。 关闭“**使用 Azure Arc 添加服务器**”，以返回到 Azure Arc“**计算机**”页面。
+
+1. 选择“刷新”，直到显示 WINServer 服务器名称，且状态为“已连接”。
+
+    >注意：这可能需要几分钟。
+
+
+### 任务 6：保护本地服务器
 
 在此任务中，需要将连接到 Azure Arc 的非 Azure Windows 虚拟机添加到 Microsoft Sentinel。  
 
@@ -347,7 +408,7 @@ In this task, you will load sample security alerts and review the alert details.
 
 1. 选择“下一步: 资源”和“+ 添加资源”。 
 
-1. 展开 RG-Defender（或你创建的资源组），然后选择 WINServer 。
+1. 展开你创建的资源组，然后选择“WINServer”。
 
     >重要说明：如果未看到 WINServer，请参阅在此服务器中安装 Azure Arc 的学习路径 3 练习 1 任务 4。
 
@@ -525,12 +586,20 @@ cd \
 mkdir temp
 cd temp
 ```
-1. 攻击 1 - 复制并运行此命令：
+
+1. 复制并运行此命令：
 
 ```
 REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "SOC Test" /t REG_SZ /F /D "C:\temp\startup.bat"
 ```
 
+### 任务 2：创建 C2（命令和控制）攻击
+
+1. 使用密码“Pa55w.rd”以管理员身份登录到 `WIN1` 虚拟机。  
+
+1. 在任务栏的搜索框中，输入“Command”。  命令提示符将显示在搜索结果中。  右键单击命令提示符，并选择“以管理员身份运行”。 确认显示的任何用户帐户控制提示。
+1. 
+1. 
 1. 攻击 2 - 复制并运行此命令：
 
 ```
