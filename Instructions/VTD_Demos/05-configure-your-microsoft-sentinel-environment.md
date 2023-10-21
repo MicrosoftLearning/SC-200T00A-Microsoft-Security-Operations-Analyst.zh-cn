@@ -1,14 +1,14 @@
-# <a name="module-5-configure-your-microsoft-sentinel-environment"></a>模块 5 配置 Microsoft Sentinel 环境
+# 模块 5 配置 Microsoft Sentinel 环境
 
 备注：能否成功完成本演示取决于是否完成[先决条件文档](00-prerequisites.md)中的所有步骤。 
 
-## <a name="explore-the-microsoft-sentinel-interface"></a>浏览 Microsoft Sentinel 界面
+## 浏览 Microsoft Sentinel 界面
 
 1. 完成[先决条件部分](00-prerequisites.md#deploy-azure-sentinel-workspace-for-demo-in-module-4)后，返回到之前创建的 Microsoft Sentinel 实例。
 
 1. 浏览新建的 Microsoft Sentinel 工作区以熟悉用户界面选项。
 
-## <a name="create-a-watchlist"></a>创建 Watchlist。
+## 创建监视列表
 
 在此任务中，你将创建一个 Watchlist。
 
@@ -58,7 +58,7 @@ _GetWatchlist('HighValueHosts')
 
 现在，可以在自己的 KQL 语句中使用 _GetWatchlist('HighValueHosts') 来访问列表。 要引用的列将是主机名。
 
-## <a name="create-a-threat-indicator"></a>创建威胁指标。
+## 创建威胁指标。
 
 在此任务中，你将创建一个指标。
 
@@ -91,4 +91,4 @@ ThreatIntelligenceIndicator
 ThreatIntelligenceIndicator 
 | project DomainName
 ```
-## <a name="you-have-completed-the-demo"></a>你已完成本演示。
+## 你已完成本演示。

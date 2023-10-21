@@ -1,10 +1,10 @@
-# <a name="module-2-demo---mitigate-attacks-with-microsoft-defender-for-endpoint"></a>模块 2 演示 - 使用 Microsoft Defender for Endpoint 缓解攻击
+# 模块 2 演示 - 使用 Microsoft Defender for Endpoint 缓解攻击
 
 
 
-备注：能否成功完成本演示取决于是否完成[先决条件文档](00-prerequisites.md)中的所有步骤。 
+备注：能否成功完成本演示取决于是否完成[先决条件文档](00-prerequisites.md)中的所有步骤。
 
-## <a name="simulated-attacks"></a>模拟攻击
+## 模拟攻击
 
 在此任务中，你将运行一次模拟攻击来探索 Microsoft Defender for Endpoint 的功能。
 
@@ -22,4 +22,4 @@
     1. 打开事件页面并单击“管理事件”。 单击“解决事件”以解决所有活动警报。
 
 
-## <a name="you-have-completed-the-demo"></a>你已完成本演示。
+## 你已完成本演示
