@@ -91,7 +91,7 @@ lab:
 
 1. 返回到打开 Microsoft Sentinel 门户的 Microsoft Edge 浏览器，并通过选择右上角的“x”关闭“通过旧版代理程序实现通用事件格式 (CEF)”数据连接器页。
 
-1. 1. 在 Microsoft Sentinel 左侧菜单中，向下滚动到“内容管理”部分，然后选择“内容中心”。
+1. 在 Microsoft Sentinel 左侧菜单中，向下滚动到“内容管理”部分，然后选择“内容中心”。
 
 1. 在“内容中心”，搜索“Syslog”解决方案并从列表中选择它。
 

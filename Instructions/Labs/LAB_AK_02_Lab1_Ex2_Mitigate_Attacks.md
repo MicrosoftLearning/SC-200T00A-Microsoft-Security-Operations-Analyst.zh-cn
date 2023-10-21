@@ -8,7 +8,7 @@ lab:
 
 ## 实验室方案
 
-![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod2_L1_Ex2.png)
+![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod2_L1_Ex2_10_19.png)
 
 你是一家公司的安全操作分析师，你的公司正在实施 Microsoft Defender for Endpoint。 你的主管计划加入一些设备，以深入了解安全运营 (SecOps) 团队响应程序所需的更改。
 
@@ -53,7 +53,7 @@ lab:
 
 1. 在新浏览器选项卡中，找到名为“运行模拟”（第 5 页，从步骤 2 开始）的部分，并按步骤运行攻击。 提示：模拟文件 RS4_WinATP-Intro-Invoice.docm 可以在门户中找到，就在上一步中选择的“阅读演练”下方，通过选择“获取模拟文件”按钮获取 。 
 
-1. 重复最后 3 步以运行另一个教程，即“自动调查(无文件攻击)”。
+<!--- 1. Repeat the last 3 steps to run another tutorial, *Automated investigation (fileless attack)*. This is no longer working due to win1 AV --->
 
 
 ### 任务 3：调查攻击
