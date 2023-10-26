@@ -86,7 +86,7 @@ lab:
 
 1. 在“管理权限”页上，选择在上一个实验室中创建的“RG-Playbooks”资源组，然后选择“应用”。 
 
-1. 在下拉菜单中，选择在上一练习中创建的 playbook PostMessageTeams-OnAlert。
+1. 在下拉菜单中，选择在上一练习中创建的 playbook PostMessageTeams-OnIncident。
 
 1. 选择“应用”
 
