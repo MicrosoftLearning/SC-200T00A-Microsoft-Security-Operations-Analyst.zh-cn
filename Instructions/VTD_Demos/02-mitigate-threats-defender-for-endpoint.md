@@ -1,7 +1,5 @@
 # 模块 2 演示 - 使用 Microsoft Defender for Endpoint 缓解攻击
 
-
-
 备注：能否成功完成本演示取决于是否完成[先决条件文档](00-prerequisites.md)中的所有步骤。
 
 ## 模拟攻击
