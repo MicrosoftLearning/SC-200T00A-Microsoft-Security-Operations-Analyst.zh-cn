@@ -14,8 +14,7 @@ lab:
 
 使用 playbook，可以帮助自动执行和协调威胁响应，与其他内部系统和外部系统集成，并可以设置为自动运行以响应特定警报或事件（分别由分析规则或自动化规则触发时）。 
 
->                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Create%20a%20playbook)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
-
+>                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Create%20a%20playbook)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
 ### 任务 1：在 Microsoft Teams 中创建安全运营中心团队
 
@@ -31,9 +30,9 @@ lab:
 
 1. 关闭任何可能出现的 Teams 弹出窗口。
 
-1. 如果尚未选择，请在左侧菜单上选择“团队”，然后在底部选择“加入或创建团队” 。
+1. 如果尚未选择，请在左侧菜单中选择“团队”，然后在顶部选择加号图标。![](../Media/plus-sign-icon-lab.png)
 
-1. 在主窗口中选择“创建团队”按钮。
+1. 选择“创建团队”选项。
 
 1. 选择“从头开始”按钮。
 
@@ -52,21 +51,23 @@ lab:
 
 在此任务中，你将创建在 Microsoft Sentinel 用作 Playbook 的逻辑应用。
 
-1. 在 Microsoft Edge 浏览器中，导航到 Azure 门户 (https://portal.azure.com )。
+1. 在 Microsoft Edge 浏览器中，导航到 [GitHub 上的 Microsoft Sentinel](https://github.com/Azure/Azure-Sentinel)。
 
-1. 在“登录”对话框中，复制粘贴实验室托管提供者提供的租户电子邮件帐户，然后选择“下一步”  。
+<!--- the Azure portal at https://portal.azure.com.
 
-1. 在“输入密码”对话框中，复制粘贴实验室托管提供者提供的租户密码，然后选择“登录”  。
+1. In the **Sign in** dialog box, copy and paste in the **Tenant Email** account provided by your lab hosting provider and then select **Next**.
 
-1. 在 Azure 门户的搜索栏中，键入“Sentinel”，然后选择“Microsoft Sentinel”。
+1. In the **Enter password** dialog box, copy and paste in the **Tenant Password** provided by your lab hosting provider and then select **Sign in**.
 
-1. 选择之前创建的 Microsoft Sentinel 工作区。
+1. In the Search bar of the Azure portal, type *Sentinel*, then select **Microsoft Sentinel**.
 
-1. 在页面左侧的“内容管理”区域下，选择“社区”页。
+1. Select your Microsoft Sentinel Workspace you created earlier.
 
-1. 在右窗格中，选择“加入社区内容”链接。 这会在 Microsoft Edge 浏览器中打开一个新标签页来展示 Microsoft Sentinel GitHub 内容。 提示：可能需要向右滚动才能看到链接。 或者，请改为单击以下链接：[GitHub 上的 Microsoft Sentinel](https://github.com/Azure/Azure-Sentinel)。
+1. Select the **Community** page under the *Content management* area on the left side of the page.
 
-1. 选择“Solutions”文件夹。
+1. On the right pane, select the **Onboard community content** link. This opens a new tab in the Microsoft Edge Browser for Microsoft Sentinel GitHub content. **Hint:** You might need to scroll right to see the link. Alternatively, follow this link instead: [Microsoft Sentinel on GitHub](https://github.com/Azure/Azure-Sentinel). --->
+
+1. 向下滚动并选择“解决方案”文件夹。
 
 1. 接下来，选择“SentinelSOARessentials”文件夹，然后选择“Playbooks”文件夹。 
 
@@ -98,9 +99,9 @@ lab:
 
 1. 如果看不到任何 playbook，请在命令栏中选择“刷新”。 应会看到使用“Microsoft Sentinel 事件触发器类型”从上一步创建的 playbook。
 
-1. 选择“PostMessageTeams”playbook 名称。
+1. 选择“PostMessageTeams-OnAlert”剧本名称。
 
-1. 在 PostMessageTeams 的逻辑应用页的命令菜单中，选择“编辑”。
+1. 在 PostMessageTeams-OnIncident 逻辑应用页的命令菜单中，选择“编辑”。
 
     >**注意：** 可能需要刷新页面。
 
