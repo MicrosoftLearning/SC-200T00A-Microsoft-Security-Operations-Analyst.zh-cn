@@ -12,7 +12,7 @@ lab:
 
 你是一位安全运营分析师，你所在公司正在实现 Microsoft Sentinel。 你负责执行日志数据分析，以便搜索恶意活动、显示可视化效果并执行威胁搜寻。 为了查询日志数据，你使用 Kusto 查询语言 (KQL)。
 
->                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Create%20queries%20for%20Microsoft%20Sentinel%20using%20Kusto%20Query%20Language)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
+>**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Create%20queries%20for%20Microsoft%20Sentinel%20using%20Kusto%20Query%20Language)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
 >**重要提示：** 此实验室需要将大量 KQL 脚本输入到 Microsoft Sentinel 中。 这些脚本是在此实验室开始时的文件中提供的。 另一个下载这些脚本的位置是： https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/tree/master/Allfiles
 
@@ -113,8 +113,7 @@ lab:
     | where Account in (suspiciousAccounts)
     ```
 
-    >**
-          **提示：在“查询”窗口中选择省略号 (...)，然后选择“设置查询格式”，可以轻松地重新设置查询格式****。
+    >**** 提示：在“查询”窗口中选择省略号 (...)，然后选择“设置查询格式”，可以轻松地重新设置查询格式****。
 
 1. 以下语句演示了将 let 语句用于声明动态表的用法。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
 

@@ -12,7 +12,7 @@ lab:
 
 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你需要了解如何连接来自组织中多个数据源的日志数据。 下一个数据源是 Azure 内部和外部的 Windows 虚拟机，例如本地环境或其他公共云。
 
->                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Connect%20Windows%20devices%20to%20Microsoft%20Sentinel%20using%20data%20connectors)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
+>**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Connect%20Windows%20devices%20to%20Microsoft%20Sentinel%20using%20data%20connectors)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
 
 ### 任务 1：在 Azure 中创建 Windows 虚拟机
@@ -51,7 +51,7 @@ lab:
 
 1. 查看虚拟机的“大小”。 如果它显示为空，请选择“查看所有大小”，在“Azure 用户最常用的大小”下选择第一个 VM 大小，然后选择“选择”。
 
-    >注意：如果看到消息“Azure Automanage 不支持此映像。若要禁用此功能，请导航到“管理”选项卡。否则，请选择受支持的映像。” 转到“管理”选项卡并禁用“Automanage”。 之后创建过程便会成功。
+    >注意：如果看到消息“Azure Automanage 不支持此映像。若要禁用此功能，请导航到“管理”选项卡。否则，请选择受支持的映像******。” 转到“管理”选项卡并禁用“Automanage”。 之后创建过程便会成功。
 
 1. 向下滚动，输入你选择的用户名。 提示：避免使用保留字，如 admin 或 root。
 
@@ -69,7 +69,7 @@ lab:
 
 在此任务中，需要将 Azure Windows 虚拟机连接到 Microsoft Sentinel。
 
-1. 在 Azure 门户的搜索栏中，键入“Sentinel”，然后选择“Microsoft Sentinel”。
+1. 在 Azure 门户的“搜索”栏中，键入 Sentinel，然后选择 Microsoft Sentinel。
 
 1. 选择之前创建的 Microsoft Sentinel 工作区。
 
@@ -81,13 +81,13 @@ lab:
 
 1. 安装完成后，选择“管理”
 
-    >注意：“Windows 安全事件”解决方案安装“通过 AMA 收集的 Windows 安全事件”和“通过旧版代理程序的安全事件”数据连接器。   外加 2 个工作簿、20 个分析规则和 43 个搜寻查询。
+    >注意：“Windows 安全事件”解决方案安装“通过 AMA 收集的 Windows 安全事件”和“通过旧版代理程序的安全事件”数据连接器。 外加 2 个工作簿、20 个分析规则和 43 个搜寻查询。
 
 1. 选择“通过 AMA 收集的 Windows 安全事件”数据连接器，然后在连接器信息窗格上选择“打开连接器页面”。
 
-1. 在“说明”选项卡下的“配置”部分，选择“创建数据收集规则”。 
+1. 在“说明”选项卡下的“配置”部分，选择“创建数据收集规则”。
 
-1. 为“规则名称”输入“AZWINDCR”，然后选择“下一步: 资源”。 
+1. 为“规则名称”输入“AZWINDCR”，然后选择“下一步: 资源”。
 
 1. 选择“+ 添加资源”，以选择我们创建的虚拟机。
 
@@ -109,9 +109,9 @@ lab:
 
 1. 确保你位于 Microsoft Sentinel 工作区中的“通过 AMA 数据连接器收集的 Windows 安全事件”配置中。
 
-1. 在“说明”选项卡中的“配置”部分下，通过选择铅笔图标编辑“AZWINDCR”数据收集规则。 
+1. 在“说明”选项卡中的“配置”部分下，通过选择铅笔图标编辑“AZWINDCR”数据收集规则。
 
-1. 选择“下一步: 资源”和“+ 添加资源”。 
+1. 选择“下一步: 资源”和“+ 添加资源”。
 
 1. 展开 RG-Defender（或你创建的资源组），然后选择 WINServer 。
 

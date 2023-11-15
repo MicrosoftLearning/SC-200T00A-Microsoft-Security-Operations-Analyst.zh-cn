@@ -10,7 +10,7 @@ lab:
 
 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你已创建“计划”规则和“Microsoft 安全分析”规则。  需要在 Azure DevOps 存储库中集中分析规则。  然后将 Sentinel 连接到 Azure DevOps 存储库并导入内容。 
 
->                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Use%20repositories%20in%20Microsoft%20Sentinel)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
+>**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Use%20repositories%20in%20Microsoft%20Sentinel)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
 
 ### 任务 1：创建并导出分析规则
@@ -68,7 +68,7 @@ lab:
 
 1. 选择“上传文件”。
 
-1. 选择“浏览”，然后从“下载”目录中选择“Azure_Sentinel_analytic_rule.json”文件。 
+1. 选择“浏览”，然后从“下载”目录中选择“Azure_Sentinel_analytic_rule.json”文件。
 
 1. 选择“提交”。
 
