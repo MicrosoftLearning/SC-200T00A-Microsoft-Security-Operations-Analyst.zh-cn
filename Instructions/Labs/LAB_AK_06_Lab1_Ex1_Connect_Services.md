@@ -12,7 +12,7 @@ lab:
 
 你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你需要了解如何连接来自组织中多个数据源的日志数据。 组织的数据来自 Microsoft 365、Microsoft 365 Defender、Azure 资源、非 Azure 虚拟机等。首先开始连接 Microsoft 源。
 
->                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Connect%20data%20to%20Microsoft%20Sentinel%20using%20data%20connectors)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
+>**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Connect%20data%20to%20Microsoft%20Sentinel%20using%20data%20connectors)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
 
 ### 任务 1：访问 Microsoft Sentinel 工作区
@@ -41,7 +41,7 @@ lab:
 
 1. 在“分析规则向导”中，选择“下一步:自动响应”，然后选择“下一步:查看并创建” 。
 
-1. 选择“保存”。
+1. 选择“保存”****。
 
 ### 任务 2：连接 Microsoft Defender for Cloud 数据连接器
 
@@ -51,11 +51,11 @@ lab:
 
 1. 在“内容中心”，搜索“Microsoft Defender for Cloud”解决方案，并从列表中选择它。
 
-1. 在“Microsoft Defender for Cloud”解决方案页面上，选择“安装”。
+1. 在“Microsoft Defender for Cloud”解决方案页面上，选择“安装”******。
 
 1. 安装完成后，选择“管理”
 
-    >注意：“Microsoft Defender for Cloud”解决方案会安装“Microsoft Defender for Cloud”数据连接器和分析规则。 
+    >注意：“Microsoft Defender for Cloud”解决方案会安装“Microsoft Defender for Cloud”数据连接器和分析规则。
 
 1. 选择“Microsoft Defender for Cloud”数据连接器，然后选择“打开连接器页面”。
 
@@ -79,11 +79,11 @@ lab:
 
 1. 安装完成后，选择“管理”
 
-    >注意：“Azure 活动”解决方案会安装“Azure 活动”数据连接器、12 个分析规则、14 个搜寻查询和 1 个工作簿。 
+    >注意：“Azure 活动”解决方案会安装“Azure 活动”数据连接器、12 个分析规则、14 个搜寻查询和 1 个工作簿。
 
 1. 选择“Azure 活动”数据连接器，然后选择“打开连接器页面”。
 
-1. 在“说明”选项卡下的“配置”区域中，向下滚动到“2.  连接订阅...”，并选择“启动 Azure Policy 分配向导>”。
+1. 在“说明”选项卡下的“配置”区域中，向下滚动到“2. 连接订阅...”，并选择“启动 Azure Policy 分配向导>”。
 
 1. 在“基本信息”选项卡中，选择“范围”下的省略号按钮 (...)，然后从下拉列表中选择你的“Azure Pass - 赞助”订阅，然后单击“选择”  。
 

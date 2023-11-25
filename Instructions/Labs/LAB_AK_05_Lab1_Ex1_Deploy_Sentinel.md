@@ -12,7 +12,7 @@ lab:
 
 你是一位安全运营分析师，你所在公司正在实现 Microsoft Sentinel。 你负责设置满足公司要求的 Microsoft Sentinel 环境，并最大程度降低成本、符合法规要求，同时为安全团队提供最易于管理的环境，以便其履行日常工作职责。
 
->                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Configure%20your%20Microsoft%20Sentinel%20environment)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
+>**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Configure%20your%20Microsoft%20Sentinel%20environment)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
 
 ### 任务 1：初始化 Microsoft Sentinel 工作区
@@ -31,7 +31,7 @@ lab:
 
 1. 在 Azure 门户的搜索栏中，键入“Sentinel”，然后选择“Microsoft Sentinel”。
 
-1. 选择“+ 新建”。 
+1. 选择“+ 新建”。
 
 1. 接下来，选择之前创建的 Log Analytics 工作区（例如 uniquenameDefender），然后选择“添加”。 激活可能需要几分钟的时间。
 
@@ -107,7 +107,7 @@ lab:
 
 1. 对于“域”，请输入域名，例如键入 contoso.com。
 
-1. 对于“威胁类型”，请选择“+ 添加”，然后键入“恶意活动”。  选择“确定”。
+1. 对于“威胁类型”，请选择“+ 添加”，然后键入“恶意活动”。 选择“确定”****。
 
 1. 输入“说明”
 
@@ -151,7 +151,7 @@ lab:
 
 1. 为“总保持期”选择“180 天”。 请注意，“存档期”仅 150 天，因为它从（默认）“交互保留期”开始使用 30 天 。
 
-1. 选择“保存”应用所做的更改。 
+1. 选择“保存”应用所做的更改。
 
 
 ## 你已完成本实验室。

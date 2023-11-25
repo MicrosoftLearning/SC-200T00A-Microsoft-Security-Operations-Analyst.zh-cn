@@ -13,7 +13,7 @@ lab:
 你将模拟稍后将用于在 Microsoft Sentinel 中检测和调查的攻击。
 
 
->                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Perform%20simulated%20attacks)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
+>**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Perform%20simulated%20attacks)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
 
 ### 任务 1：通过注册表项添加进行持久性攻击
@@ -68,7 +68,7 @@ lab:
 
 1. 选择“是”以创建新文件并将以下 PowerShell 脚本复制到 c2.ps1。
 
-    >注意：粘贴到虚拟机文件中可能不会显示完整的脚本长度。 确保脚本与 c2.ps1 文件中的指令匹配。
+    >注意：粘贴到虚拟机文件中可能不会显示完整的脚本长度。**** 确保脚本与 c2.ps1 文件中的指令匹配**。
 
     ```PowerShell
     param(

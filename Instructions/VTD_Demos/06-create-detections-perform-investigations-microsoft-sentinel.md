@@ -18,14 +18,14 @@
 
 1. 选择之前创建的 Microsoft Sentinel 工作区。
 
-1. 在 `Microsoft Sentinel` 中，转到 `Threat management` 菜单部分并选择“事件”
+1. 在 `Microsoft Sentinel` 中，转到 `Threat management` 菜单部分并选择“事件”****
 
 1. 你应该会看到一个事件，该事件与你在创建的 `NRT` 规则中配置的 `Severity` 和 `Title` 匹配
 
 1. 选择 `Incident`，`detail` 窗格随即打开
 
-1. `Owner` 分配应为 Operator1（从 `Automation rule` 创建），`Tactics and techniques` 应是“特权提升”（来自 `NRT` 规则） 
+1. `Owner` 分配应为 Operator1（从 `Automation rule` 创建），`Tactics and techniques` 应是“特权提升”（来自 `NRT` 规则）********
 
-1. 选择“查看完整的详细信息”，查看所有 `Incident management` 功能和 `Incident actions`
+1. 选择“查看完整的详细信息”，查看所有 `Incident management` 功能和 `Incident actions`****
 
 ## 你已完成本演示

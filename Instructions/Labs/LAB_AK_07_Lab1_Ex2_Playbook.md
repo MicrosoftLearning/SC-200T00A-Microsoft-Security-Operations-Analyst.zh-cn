@@ -14,7 +14,7 @@ lab:
 
 使用 playbook，可以帮助自动执行和协调威胁响应，与其他内部系统和外部系统集成，并可以设置为自动运行以响应特定警报或事件（分别由分析规则或自动化规则触发时）。 
 
->                **注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Create%20a%20playbook)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
+>**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Create%20a%20playbook)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
 ### 任务 1：在 Microsoft Teams 中创建安全运营中心团队
 
@@ -30,9 +30,9 @@ lab:
 
 1. 关闭任何可能出现的 Teams 弹出窗口。
 
-1. 如果尚未选择，请在左侧菜单中选择“团队”，然后在顶部选择加号图标。![](../Media/plus-sign-icon-lab.png)
+1. 如果尚未选择，请在左侧菜单中选择“团队”，然后在顶部选择加号图标。****![](../Media/plus-sign-icon-lab.png)
 
-1. 选择“创建团队”选项。
+1. 选择“创建团队”选项。****
 
 1. 选择“从头开始”按钮。
 
@@ -69,7 +69,7 @@ lab:
 
 1. 向下滚动并选择“解决方案”文件夹。
 
-1. 接下来，选择“SentinelSOARessentials”文件夹，然后选择“Playbooks”文件夹。 
+1. 接下来，选择“SentinelSOARessentials”文件夹，然后选择“Playbooks”文件夹。
 
 1. 选择“Post-Message-Teams”文件夹。
 
