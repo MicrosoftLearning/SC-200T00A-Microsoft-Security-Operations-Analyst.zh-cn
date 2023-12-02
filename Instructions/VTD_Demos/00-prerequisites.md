@@ -62,7 +62,7 @@
 
 注意：在托管实验室环境中，系统应已为你选择数据存储位置。 它应位于适当的地理位置，用于管理此培训租户。 你仍可以选择数据保留长度，但这不是必需的。
 
-1. 在“设置”中，选择“终结点”。 
+1. 在“设置”中，选择“终结点”。
 
 1. 在“设备管理”部分选择“加入”。
 
@@ -129,7 +129,7 @@
 
 1. 选择“下一步”  。
 
-1. . 在“设备”选项卡中，对操作系统条件选择“Windows 10”，然后选择“下一步” 。
+1. 。 在“设备”选项卡中，对操作系统条件选择“Windows 10”，然后选择“下一步” 。
 
 1. 在“预览设备”选项卡上，选择“显示预览”以查看 WIN1 虚拟机。 选择“下一步”  。 
 提示：如果没有在预览列表中看到虚拟机，请返回并同时为操作系统条件选择“无”。 尚未填充 VM 的数据。
@@ -179,7 +179,7 @@ In this task, you will load sample security alerts and review the alert details.
 
 1. 在 Azure 门户的搜索栏中，键入“Sentinel”，然后选择“Microsoft Sentinel”。
 
-1. 选择“+ 新建”。 
+1. 选择“+ 新建”。
 
 1. 接下来，选择“新建工作区”。
 
@@ -229,19 +229,19 @@ In this task, you will load sample security alerts and review the alert details.
 
 1. 在“内容中心”，搜索“Azure 活动”解决方案并从列表中选择它。
 
-1. 在“Microsoft Defender for Cloud”解决方案页面上，选择“安装”。
+1. 在“Microsoft Defender for Cloud”解决方案页面上，选择“安装”******。
 
 1. 安装完成后，选择“管理”
 
-    >注意：“Azure 活动”解决方案会安装“Azure 活动”数据连接器、12 个分析规则、14 个搜寻查询和 1 个工作簿。 
+    >注意：“Azure 活动”解决方案会安装“Azure 活动”数据连接器、12 个分析规则、14 个搜寻查询和 1 个工作簿。
 
 1. 选择“Azure 活动”数据连接器，然后选择“打开连接器页面”。
 
-1. 在“说明”选项卡下的“配置”区域中，向下滚动到“2.  连接订阅...”，并选择“启动 Azure Policy 分配向导>”。
+1. 在“说明”选项卡下的“配置”区域中，向下滚动到“2. 连接订阅...”，并选择“启动 Azure Policy 分配向导>”。
 
 1. 在“基本信息”选项卡中，选择“范围”下的省略号按钮 (...)，然后从下拉列表中选择你的“Azure Pass - 赞助”订阅，然后单击“选择”  。
 
-1. 选择“参数”选项卡，从“主要 Log Analytics 工作区”下拉列表中选择你的工作区 。 此操作将应用订阅配置，以将信息发送到 Log Analytics 工作区。
+1. 选择“参数”选项卡，从“主要 Log Analytics 工作区”下拉列表中选择你的工作区********。 此操作将应用订阅配置，以将信息发送到 Log Analytics 工作区。
 
 1. 选择“修正”选项卡，然后选择“创建修正任务”复选框 。 此操作会将策略分配应用于现有的 Azure 资源。
 
@@ -285,7 +285,7 @@ In this task, you will load sample security alerts and review the alert details.
 
 1. 查看虚拟机的“大小”。 如果它显示为空，请选择“查看所有大小”，在“Azure 用户最常用的大小”下选择第一个 VM 大小，然后选择“选择”。
 
-    >注意：如果看到消息“Azure Automanage 不支持此映像。若要禁用此功能，请导航到“管理”选项卡。否则，请选择受支持的映像。” 转到“管理”选项卡并禁用“Automanage”。 之后创建过程便会成功。
+    >注意：如果看到消息“Azure Automanage 不支持此映像。若要禁用此功能，请导航到“管理”选项卡。否则，请选择受支持的映像******。” 转到“管理”选项卡并禁用“Automanage”。 之后创建过程便会成功。
 
 1. 向下滚动，输入你选择的用户名。 提示：避免使用保留字，如 admin 或 root。
 
@@ -303,7 +303,7 @@ In this task, you will load sample security alerts and review the alert details.
 
 在此任务中，需要将 Azure Windows 虚拟机连接到 Microsoft Sentinel。
 
-1. 在 Azure 门户的搜索栏中，键入“Sentinel”，然后选择“Microsoft Sentinel”。
+1. 在 Azure 门户的“搜索”栏中，键入 Sentinel，然后选择 Microsoft Sentinel。
 
 1. 选择之前创建的 Microsoft Sentinel 工作区。
 
@@ -315,13 +315,13 @@ In this task, you will load sample security alerts and review the alert details.
 
 1. 安装完成后，选择“管理”
 
-    >注意：“Windows 安全事件”解决方案安装“通过 AMA 收集的 Windows 安全事件”和“通过旧版代理程序的安全事件”数据连接器。   外加 2 个工作簿、20 个分析规则和 43 个搜寻查询。
+    >注意：“Windows 安全事件”解决方案安装“通过 AMA 收集的 Windows 安全事件”和“通过旧版代理程序的安全事件”数据连接器。 外加 2 个工作簿、20 个分析规则和 43 个搜寻查询。
 
 1. 选择“通过 AMA 收集的 Windows 安全事件”数据连接器，然后在连接器信息窗格上选择“打开连接器页面”。
 
-1. 在“说明”选项卡下的“配置”部分，选择“创建数据收集规则”。 
+1. 在“说明”选项卡下的“配置”部分，选择“创建数据收集规则”。
 
-1. 为“规则名称”输入“AZWINDCR”，然后选择“下一步: 资源”。 
+1. 为“规则名称”输入“AZWINDCR”，然后选择“下一步: 资源”。
 
 1. 选择“+ 添加资源”，以选择我们创建的虚拟机。
 
@@ -341,7 +341,7 @@ In this task, you will load sample security alerts and review the alert details.
 
 >**重要提示：** 接下来的步骤将在另一台计算机上完成，而不是你之前使用的计算机。 查找虚拟机名称引用。
 
-1. 使用以下密码以管理员身份登录到 WINServer 虚拟机：Passw0rd!  （如果需要）。  
+1. 使用以下密码以管理员身份登录到 WINServer 虚拟机：Passw0rd! （如果需要）。  
 
 1. 打开 Microsoft Edge 浏览器并导航到 Azure 门户 (https://portal.azure.com )。
 
@@ -353,7 +353,7 @@ In this task, you will load sample security alerts and review the alert details.
 
 1. 在“**基础结构**”下的导航窗格中，选择“**计算机**”
 
-1. 选择“ **+ 添加/创建**”，然后选择“**添加计算机**”。
+1. 选择“**+ 添加/创建**”，然后选择“**添加计算机**”。
 
 1. 在“添加单个服务器”部分选择“生成脚本”。
 
@@ -371,7 +371,7 @@ In this task, you will load sample security alerts and review the alert details.
 
 1. 右键单击 Windows 的“开始”按钮，然后选择“Windows PowerShell (管理员)”。
 
-1. 在“用户名”中输入“Administrator”，在“密码”中输入“Passw0rd!”  （如果收到 UAC 提示）。
+1. 在“用户名”中输入“Administrator”，在“密码”中输入“Passw0rd!” （如果收到 UAC 提示）。
 
 1. 输入：cd C:\Users\Administrator\Downloads
 
@@ -404,11 +404,11 @@ In this task, you will load sample security alerts and review the alert details.
 
 1. 确保你位于 Microsoft Sentinel 工作区中的“通过 AMA 数据连接器收集的 Windows 安全事件”配置中。
 
-1. 在“说明”选项卡中的“配置”部分下，通过选择铅笔图标编辑“AZWINDCR”数据收集规则。 
+1. 在“说明”选项卡中的“配置”部分下，通过选择铅笔图标编辑“AZWINDCR”数据收集规则。
 
-1. 选择“下一步: 资源”和“+ 添加资源”。 
+1. 选择“下一步: 资源”和“+ 添加资源”。
 
-1. 展开你创建的资源组，然后选择“WINServer”。
+1. 展开你创建的资源组，然后选择“WINServer”****。
 
     >重要说明：如果未看到 WINServer，请参阅在此服务器中安装 Azure Arc 的学习路径 3 练习 1 任务 4。
 
@@ -605,7 +605,7 @@ REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "SOC Test" /t RE
 ```
 notepad c2.ps1
 ```
-选择“是”以创建新文件并将以下 PowerShell 脚本复制到 c2.ps1，然后选择“保存”。 
+选择“是”以创建新文件并将以下 PowerShell 脚本复制到 c2.ps1，然后选择“保存”。
 
 **备注** 粘贴到虚拟机可能有长度限制。  将此脚本分为三部分进行粘贴，以便将所有脚本粘贴到虚拟机中。  确保脚本在记事本 c2.ps1 文件中的外观与在这些说明中一致。
 
@@ -680,9 +680,9 @@ powershell
 
 1. 选择之前创建的 `AZWIN01` 虚拟网络。  
 
-1. 在左侧菜单中，向下滚动到“操作”，选择“运行命令” 
+1. 在左侧菜单中，向下滚动到“操作”，选择“运行命令”
 
-1. 在“运行命令”窗格中，选择“RunPowerShellScript” 
+1. 在“运行命令”窗格中，选择“RunPowerShellScript”
 
 1. 将以下用于模拟管理员帐户创建的命令复制到 `PowerShell Script` 窗体中，然后选择“运行”
 
