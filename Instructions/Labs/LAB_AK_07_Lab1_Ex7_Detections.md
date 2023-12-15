@@ -208,7 +208,7 @@ lab:
    |自动化规则名称|SecurityEvents 本地管理员用户添加操作|
    |触发器|创建事件时|
    |操作 |运行攻略|
-   |playbook |PostMessageTeams-OnAlert|
+   |playbook |PostMessageTeams-OnIncident|
 
    >**注意：** 你已为 playbook 分配了权限，因此它将可用。
 
