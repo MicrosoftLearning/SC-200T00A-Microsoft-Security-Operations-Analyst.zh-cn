@@ -55,9 +55,9 @@ lab:
 
 1. 安装完成后，选择“管理”
 
-    >注意：“Microsoft Defender for Cloud”解决方案会安装“Microsoft Defender for Cloud”数据连接器和分析规则。
+    >**备注：** Microsoft Defender for Cloud** 解决方案安装基于订阅的 Microsoft Defender for Cloud（旧版）** 数据连接器、基于租户的 Microsoft Defender for Cloud（预览版）** 数据连接器和分析规则。
 
-1. 选择“Microsoft Defender for Cloud”数据连接器，然后选择“打开连接器页面”。
+1. 选择“基于订阅的 Microsoft Defender for Cloud（旧版）** 数据连接器”复选框，然后选择“打开连接器页”****。
 
 1. 在“说明”选项卡下的“配置”部分，选中“Azure Pass - 赞助”订阅的复选框，并将“状态”选项滑动到右侧  。
 
