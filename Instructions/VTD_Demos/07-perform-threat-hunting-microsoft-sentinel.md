@@ -1,8 +1,8 @@
-# <a name="module-7---threat-hunting-in-microsoft-sentinel"></a>模块 7 - 在 Microsoft Sentinel 中执行威胁搜寻
+# 模块 7 - 在 Microsoft Sentinel 中执行威胁搜寻
 
 备注：能否成功完成本演示取决于是否完成[先决条件文档](00-prerequisites.md)中的所有步骤。 
 
-## <a name="create-a-hunting-query"></a>创建搜寻查询
+## 创建搜寻查询
 
 在此任务中，你将创建搜寻查询、为结果添加书签并创建 Livestream。
 
@@ -55,7 +55,7 @@ DeviceEvents | where TimeGenerated >= ago(lookback)
 
 1. 从命令栏选择“新建查询”。
 
-1. 在“创建自定义查询”窗口中，为“名称”输入“C2 Hunt” 
+1. 在“创建自定义查询”窗口中，为“名称”输入“C2 Hunt”
 
 1. 对于“自定义查询”，输入以下 KQL 语句：
 
@@ -113,4 +113,4 @@ DeviceEvents | where TimeGenerated >= ago(lookback)
 
 1. 选择“添加到 livestream”。
 
-## <a name="you-have-completed-the-demo"></a>你已完成本演示。
+## 你已完成本演示。
