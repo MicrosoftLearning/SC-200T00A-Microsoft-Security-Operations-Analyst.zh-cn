@@ -684,7 +684,7 @@ powershell
 
 1. 在“运行命令”窗格中，选择“RunPowerShellScript”
 
-1. 将以下用于模拟管理员帐户创建的命令复制到 `PowerShell Script` 窗体中，然后选择“运行”
+1. 将以下用于模拟管理员帐户创建的命令复制到 `PowerShell Script` 窗体中，然后选择**运行**
 
     ```CommandPrompt
     net user theusernametoadd /add
@@ -692,6 +692,6 @@ powershell
     net localgroup administrators theusernametoadd /add
     ```
 
->注：请确保每行只有一个命令，并且可以通过更改用户名重新运行命令。
+>**注意：** 请确保每行只有一个命令，并且可以通过更改用户名重新运行命令。
 
 1. 在 `Output` 窗口中，应会看到 `The command completed successfully` 三次

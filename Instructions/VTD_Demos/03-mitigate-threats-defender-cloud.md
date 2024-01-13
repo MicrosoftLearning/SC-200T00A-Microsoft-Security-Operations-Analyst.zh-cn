@@ -1,8 +1,8 @@
-# <a name="module-3---mitigate-threats-using-microsoft-defender-for-cloud"></a>模块 3 - 使用 Microsoft Defender for Cloud 缓解威胁
+# 模块 3 - 使用 Microsoft Defender for Cloud 缓解威胁
 
 备注：能否成功完成本演示取决于是否完成[先决条件文档](00-prerequisites.md)中的所有步骤。 
 
-## <a name="mitigate-security-alerts"></a>缓解安全警报
+## 缓解安全警报
 
 在此任务中，你将加载示例安全警报并查看警报详细信息。
 
@@ -18,4 +18,4 @@
 
     D. 查看“执行操作”信息。 请注意，可用于执行操作的按钮取决于警报类型。
 
-## <a name="you-have-completed-the-lab"></a>你已完成本实验室。
+## 你已完成本实验室。
