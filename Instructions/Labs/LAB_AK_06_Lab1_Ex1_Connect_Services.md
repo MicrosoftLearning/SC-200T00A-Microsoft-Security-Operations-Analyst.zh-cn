@@ -51,9 +51,11 @@ lab:
 
 1. 在“内容中心”，搜索“Microsoft Defender for Cloud”解决方案，并从列表中选择它。
 
-1. 在“Microsoft Defender for Cloud”解决方案页面上，选择“安装”******。
+1. 在“Microsoft Defender for Cloud”解决方案详细信息页面上，选择“安装”******。
 
-1. 安装完成后，选择“管理”
+1. 安装完成后，搜索 Microsoft Defender for Cloud**** 解决方案并选择它。
+
+1. 在“Microsoft Defender for Cloud”解决方案详细信息页面上，选择“管理”******
 
     >**备注：** Microsoft Defender for Cloud** 解决方案安装基于订阅的 Microsoft Defender for Cloud（旧版）** 数据连接器、基于租户的 Microsoft Defender for Cloud（预览版）** 数据连接器和分析规则。
 
@@ -65,7 +67,7 @@ lab:
 
 1. 现在，“状态”应该是“已连接”，并且“双向同步”应该是“已启用”。
 
-1. 向下滚动，在“创建事件 - 推荐!” 区域中，验证“从此连接服务中生成的所有警报自动创建事件”是否已启用。
+    <!--- 1. Scroll down and under the *Create incidents - Recommended!* area, verify that *Create incidents automatically from all alerts generated in this connected service* is **Enabled**. --->
 
 ### 任务 3：连接 Azure 活动数据连接器
 
