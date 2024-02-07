@@ -124,7 +124,7 @@ lab:
 
 1. 在“添加单个服务器”部分选择“生成脚本”。
 
-1. 通读“先决条件”选项卡，然后选择“下一步”以继续。
+    <!--- 1. Read through the *Prerequisites* tab and then select **Next** to continue.--->
 
 1. 在“使用 Azure Arc 添加服务器”页面中，在“项目详细信息”下选择之前创建的资源组 。 提示：RG-Defender
 
