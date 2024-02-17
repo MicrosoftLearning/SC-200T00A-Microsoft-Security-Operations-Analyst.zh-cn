@@ -12,10 +12,9 @@ lab:
 
 你是一家公司的安全操作分析师，你的公司正在实施 Microsoft Defender for Endpoint。 你的主管计划加入一些设备，以深入了解安全运营 (SecOps) 团队响应程序所需的更改。
 
-为了探索 Defender for Endpoint 的攻击缓解功能，你将运行两次模拟攻击。
+要探索 Defender for Endpoint 攻击缓解功能，你将验证设备载入是否成功，并调查在该过程中创建的警报和事件。
 
 >**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Mitigate%20attacks%20with%20Microsoft%20Defender%20for%20Endpoint)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
-
 
 ### 任务 1：验证设备加入
 
@@ -33,50 +32,58 @@ lab:
 
 1. 向下滚动，在“2. 运行检测测试”部分，选择“复制”按钮以复制检测测试脚本。  
 
-1. 在 WIN1 虚拟机的 Windows 搜索栏中，键入“CMD”，然后在命令提示符应用的右窗格上，选择“以管理员身份运行” 。 
+1. 在 WIN1 虚拟机的 Windows 搜索栏中，键入“CMD”，然后在命令提示符应用的右窗格上，选择“以管理员身份运行” 。
 
 1. 显示“用户帐户控制”窗口时，选择“是”以允许应用运行。 
 
 1. 粘贴脚本的方法是右键单击“管理员:**命令提示符”窗口，并按 Enter 键运行** 。
 
-    >**注意：** 窗口在运行脚本后自动关闭。
+    >**注意：** 该窗口会在成功运行脚本后自动关闭，并在几分钟后，在 Microsoft Defender XDR 门户中生成警报。
 
-### 任务 2：模拟攻击
+<!--- ### Task 2: Simulated Attacks
 
->**注意：** 门户的“评估实验室”和“教程和模拟”部分不再可用。 以下步骤仅供参考。 有关模拟攻击的演示，请参阅[交互式实验室模拟](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Mitigate%20attacks%20with%20Microsoft%20Defender%20for%20Endpoint)****。 我们正在努力寻找模拟攻击的替代项。
+>**Note:** The Evaluation lab and the Tutorials & simulations section of the portal is no longer available. Please refer to the **[interactive lab simulation](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Mitigate%20attacks%20with%20Microsoft%20Defender%20for%20Endpoint)** for a demonstration of the simulated attacks.
 
-1. 在左侧菜单的“终结点”下，选择“评估和教程”，然后选择左侧的“教程和模拟”  。
+1. From the left menu, under **Endpoints**, select **Evaluation & tutorials** and then select **Tutorials & simulations** from the left side.
 
-1. 选择“教程”选项卡。
+1. Select the **Tutorials** tab.
 
-1. 在“自动调查(后门)”下，你将看到一条描述方案的消息。 在此段落下，单击“阅读演练”。 此时将打开一个新的浏览器选项卡，其中包含执行模拟的说明。
+1. Under *Automated investigation (backdoor)* you will see a message describing the scenario. Below this paragraph, click **Read the walkthrough**. A new browser tab opens which includes instructions to perform the simulation.
 
-1. 在新浏览器选项卡中，找到名为“运行模拟”（第 5 页，从步骤 2 开始）的部分，并按步骤运行攻击。 提示：模拟文件 RS4_WinATP-Intro-Invoice.docm 可以在门户中找到，就在上一步中选择的“阅读演练”下方，通过选择“获取模拟文件”按钮获取 。
+1. In the new browser tab, locate the section named **Run the simulation** (page 5, starting at step 2) and follow the steps to run the attack. **Hint:** The simulation file *RS4_WinATP-Intro-Invoice.docm* can be found back in portal, just below the **Read the walkthrough** you selected in the previous step by selecting the **Get simulation file** button.
 
     <!--- 1. Repeat the last 3 steps to run another tutorial, *Automated investigation (fileless attack)*. This is no longer working due to win1 AV --->
 
-### 任务 3：调查攻击
+### 任务 2：调查警报和事件
 
-1. 在 Microsoft Defender XDR 门户中，从左侧菜单栏中选择“事件和警报”，然后选择“事件”********。
+在此任务中，你将调查上一任务中载入检测测试脚本生成的警报和事件。
 
-1. 右窗格中有一个名为“在一个终结点上检测到多个威胁系列”的新事件。 选择事件名称以加载其详细信息。
+1. 在 Microsoft Defender XDR 门户中，从左侧菜单栏中选择“事件和警报”，然后选择“警报”********。
 
-    <!---    >**Note:** You should see both *Bloodhound* and Mimikatz* alerts in the **Alerts** pane. In **Assets/Devices**, the *win1* computer will now have a **Risk level** of *High*. --->
+1. 在“警报”窗格中，选择名为“可疑 PowerShell”命令行”的警报以加载其详细信息******。
 
-1. 选中“管理事件”按钮，此时将显示一个新的窗口边栏选项卡。 
+1. 查看“警报情景”时间线，然后查看“详细信息”和“建议”选项卡******。
 
-1. 在“事件标记”下，键入“模拟”，然后选择“模拟(新建)”以创建新标记。******** 
+    >**注意：** 在警报“详细信息”选项卡下，可以向下滚动到“事件详细信息”部分，然后选择“一个终结点上的执行事件”链接以打开该事件******。
 
-1. 选择切换“分配给”，将用户帐户（我）添加为事件所有者。 
+1. 在 Microsoft Defender XDR 门户中，从左侧菜单栏选择“事件和警报”，然后选择“事件”********
 
-1. 在“分类”下，展开下拉菜单。 
+1. 右侧窗格中会出现名为“一个终结点上的执行事件”的新事件**。 选择事件名称以加载其详细信息。
 
-1. 在“参考性预期活动”下，选择“安全测试” 。 
+1. 选择“管理事件”链接（带有铅笔图标），并显示一个新的窗口边栏选项卡****。
+
+1. 在“事件标记”下，键入“模拟”，然后选择“模拟(新建)”以创建新标记。********
+
+1. 选择切换“分配给”，将用户帐户（我）添加为事件所有者。
+
+1. 在“分类”下，展开下拉菜单。
+
+1. 在“参考性预期活动”下，选择“安全测试” 。
 
 1. 根据需要添加任何注释，然后选择“保存”以更新事件并结束。
 
-1. 查看“攻击情景、警报、资产、调查、证据和响应”以及“摘要”选项卡的内容。 设备和用户位于“资产”选项卡下。“攻击情景”选项卡显示“事件图”。 提示：某些选项卡可能由于显示器的大小而被隐藏。 选择省略号选项卡 (...) 显示它们。
+1. 查看“攻击情景、警报、资产、调查、证据和响应”以及“摘要”选项卡的内容。 设备和用户位于“资产”选项卡下**。在实际事件中，“攻击情景”选项卡会显示“事件图”****。 提示：某些选项卡可能由于显示器的大小而被隐藏。 选择省略号选项卡 (...) 显示它们。
 
-    >**警告：** 此处的模拟攻击非常适合实践式学习。 在使用 Azure 租户提供的课程时，请仅执行为本实验室提供的说明中的攻击。  在此租户完成此培训课程后，可以执行其他模拟攻击。**
+<!---    >**Warning:** The simulated attacks here are an excellent source of learning through practice. Only perform the attacks in the instructions provided for this lab when using the course provided Azure tenant.  You may perform other simulated attacks *after* this training course is complete with this tenant. --->
 
-## 你已完成本实验室。
+## 你已完成本实验室
