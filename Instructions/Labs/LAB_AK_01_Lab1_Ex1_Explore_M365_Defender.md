@@ -1,16 +1,16 @@
 ---
 lab:
-  title: 练习 1 - 探索 Microsoft 365 Defender
-  module: Learning Path 1 - Mitigate threats using Microsoft 365 Defender
+  title: 练习 1 - 探索 Microsoft Defender XDR
+  module: Learning Path 1 - Mitigate threats using Microsoft Defender XDR
 ---
 
-# 学习路径 1 - 实验室 1 - 练习 1 - 探索 Microsoft 365 Defender
+# 学习路径 1 - 实验室 1 - 练习 1 - 探索 Microsoft Defender XDR
 
 ## 实验室方案
 
 ![M365 Defender](../Media/SC-200-Lab_M1_L1_Ex1.png)
 
-你是一家公司的安全运营分析师，你所在公司正在实现 Microsoft 365 Defender。 首先，在 EOP 和 Microsoft Defender for Office 365 中分配预设的安全策略。
+你是一家公司的安全运营分析师，你所在公司正在实现 Microsoft Defender XDR。 首先，在 EOP 和 Microsoft Defender for Office 365 中分配预设的安全策略。
 
 >**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Explore%20Microsoft%20365%20Defender)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
 
@@ -34,7 +34,7 @@ lab:
 
 1. 启动 Microsoft Edge 浏览器。
 
-1. 在 Microsoft Edge 浏览器中，转到 Microsoft 365 Defender 门户 (https://security.microsoft.com) )。
+1. 在 Microsoft Edge 浏览器中，转到 Microsoft Defender XDR 门户 (https://security.microsoft.com)。
 
 1. 在“登录”对话框中，复制并粘贴实验室托管提供者为管理员用户名提供的租户电子邮件帐户，然后选择“下一步” 。
 
@@ -42,7 +42,7 @@ lab:
 
     >**注意：** 如果收到消息“操作无法完成。 请稍后再试。 如果问题持续出现，请联系 Microsoft 支持部门。”， 单击“确定”即可继续。  
 
-1. 如果显示，请关闭 Microsoft 365 Defender 快速导览弹出窗口。 提示：在本实验室的后面部分，需要等到 Defender 工作区预配完成，在这段时间内，你可以浏览引导教程，了解有关 Microsoft 365 Defender 的详细信息。
+1. 如果显示，请关闭 Microsoft Defender XDR 快速导览弹出窗口。 提示****：在本实验室的后面部分，需要等到 Defender 工作区预配完成，在这段时间内，你可以浏览引导式教程，了解有关 Microsoft Defender XDR 的详细信息。
 
 1. 在导航菜单中的“电子邮件与协作”区域下，选择“策略与规则”。
 
@@ -86,24 +86,20 @@ lab:
 
     >**注意：** 如果你收到信息“URI 'https://outlook.office365.com/psws/service.svc/AntiPhishPolicy ' 对 PUT 操作无效。*对于 PUT 操作，URI 必须指向单个资源。”* ， 只需选择“确定”，然后选择“取消”以返回到主页 。 你将看到“严格保护已启用”选项启用。
 
-### 任务 3：准备 Microsoft 365 Defender 工作区
+### 任务 3：准备 Microsoft Defender XDR 工作区
 
-1. 在 Microsoft 365 Defender 门户的左侧导航菜单中，选择“主页” 。
+1. 在 Microsoft Defender 门户的左侧导航菜单中，选择“主页”********。
 
     >注意：可能需要一直滚动到菜单顶部。
 
-1. 在门户“主页”上，会显示“欢迎使用 Microsoft 365 Defender” 。
+1. 在“主页”门户页上，将显示“在一个位置获取 SIEM 和 XDR”横幅********。
 
-1. 向下滚动图块，直到找到标记为“Microsoft 365 Defender”并显示“启用 Microsoft 365 Defender”消息的图块 。
+1. 向下滚动菜单项到“资产”并选择“设备”********。
 
-    >提示：它应位于图块的右下角。
+1. 应会启动部署 Defender XDR 工作区的过程，并在页面顶部显示简要消息“正在加载和初始化”，然后将显示一张咖啡杯的图像和一条消息**：“请稍等！我们正在为你的数据准备新的空间并将它们连接起来”。 大约需要 5 分钟才能完成。 使页面保持打开状态并确保它已完成，因为下一个实验室需要它。
 
-1. 选择显示“启用新功能”的按钮。
+    >**注意：** 如果未显示消息“请稍候！ 我们正在为你的数据准备新空间并连接它们”，或者虽然“设置”>“Microsoft Defender XDR”>“帐户”页已打开，但你看到消息“无法加载数据存储位置。 请稍后重试”，请从”常规“菜单中选择”警报服务设置“，或转到导航菜单，向下滚动到“资产”部分并选择”设备”。
 
-1. 你将在页面顶部看到简要显示了“正在加载和初始化”消息，然后你将咖啡杯的图像和一条消息，内容如下：“请稍等！我们正在为你的数据准备新的空间并将它们连接起来”。 大约需要 5 分钟才能完成。 使页面保持打开状态并确保它已完成，因为下一个实验室需要它。
-
-    >**注意：** 如果未显示消息“请稍候！ 我们正在为你的数据准备新空间并连接它们”，或者虽然“设置”>“Microsoft 365 Defender”>“帐户”页已打开，但你看到消息“无法加载数据存储位置。 请稍后重试”，请从”常规“菜单中选择”警报服务设置“，或转到导航菜单，向下滚动到“资产”部分并选择”设备”。
-
-1. 新空间成功完成后，你将看到 Microsoft 365 Defender 的帐户、电子邮件通知、警报服务设置、权限和角色以及流式处理 API 等常规设置。 你还将看到“预览功能”已打开。
+1. 新空间成功完成后，你将看到 Microsoft Defender XDR 的帐户、电子邮件通知、警报服务设置、权限和角色以及流式处理 API 等常规设置。 你还将看到“预览功能”已打开。
 
 ## 你已完成本实验室
