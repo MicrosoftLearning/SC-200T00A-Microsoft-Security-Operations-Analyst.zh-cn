@@ -33,15 +33,7 @@ lab:
 
 1. 选择你在上一个实验室中创建的 Microsoft Sentinel 工作区。
 
-1. 从导航菜单中选择“分析”。
-
-1. 在规则模板中搜索并选择“基于 Microsoft Defender for Cloud 创建事件”。
-
-1. 在规则信息窗格中选择“创建规则”，或选择省略号 (...) 和“+ 创建规则”。********
-
-1. 在“分析规则向导”中，选择“下一步:自动响应”，然后选择“下一步:查看并创建” 。
-
-1. 选择“保存”****。
+1. 继续执行下一个任务。
 
 ### 任务 2：连接 Microsoft Defender for Cloud 数据连接器
 
@@ -57,7 +49,7 @@ lab:
 
 1. 在“Microsoft Defender for Cloud”解决方案详细信息页面上，选择“管理”******
 
-    >**备注：** Microsoft Defender for Cloud** 解决方案安装基于订阅的 Microsoft Defender for Cloud（旧版）** 数据连接器、基于租户的 Microsoft Defender for Cloud（预览版）** 数据连接器和分析规则。
+    >**备注：** Microsoft Defender for Cloud** 解决方案安装基于订阅的 Microsoft Defender for Cloud（旧版）** 数据连接器、基于租户的 Microsoft Defender for Cloud（预览版）** 数据连接器和分析规则。 当租户具有多个订阅时，将使用 *基于租户的 Microsoft Defender for Cloud（预览版）* 数据连接器。
 
 1. 选择“基于订阅的 Microsoft Defender for Cloud（旧版）** 数据连接器”复选框，然后选择“打开连接器页”****。
 
