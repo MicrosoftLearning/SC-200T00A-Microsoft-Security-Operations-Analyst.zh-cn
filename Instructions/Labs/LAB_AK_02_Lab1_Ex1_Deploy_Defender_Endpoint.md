@@ -23,13 +23,13 @@ lab:
 
 ### 任务 1：初始化 Microsoft Defender for Endpoint
 
-在此任务中，你将执行 Microsoft Defender for Endpoint 门户的初始化。
+在此任务中，你将执行 Microsoft Defender for Endpoint 的初始化。
 
 1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：Pa55w.rd 。  
 
-1. 如果你尚未处于 Microsoft 365 Defender 门户，请启动 Microsoft Edge 浏览器。
+1. 如果你尚未处于 Microsoft Defender XDR 门户，请启动 Microsoft Edge 浏览器。
 
-1. 在 Microsoft Edge 浏览器中，转到 Microsoft 365 Defender 门户 (https://security.microsoft.com) )。
+1. 在 Microsoft Edge 浏览器中，转到 Defender XDR 门户 (https://security.microsoft.com)。
 
 1. 在“登录”对话框中，复制并粘贴实验室托管提供者为管理员用户名提供的租户电子邮件帐户，然后选择“下一步” 。
 
@@ -37,7 +37,7 @@ lab:
 
     >提示：可以在“资源”选项卡上找到管理员的租户电子邮件帐户和密码。
 
-1. 在 Microsoft 365 Defender 门户中，从左侧“导航”菜单中选择“设置” 。
+1. 在 Defender XDR 门户中，从左侧“导航”菜单中选择“设置”********。
 
 1. 在“设置”页面上，选择“设备发现”。 
 
@@ -80,7 +80,7 @@ lab:
 
 在此任务中，你将配置用于设备组的角色。
 
-1. 在 Microsoft 365 Defender 门户中，从左侧菜单栏中选择“设置”，然后选择“终结点” 。 
+1. 在 Microsoft Defender XDR 门户中，从左侧菜单栏中选择“设置”，然后选择“终结点”********。 
 
 1. 在“权限”区域下选择“角色”。
 
@@ -107,7 +107,7 @@ lab:
 
 在此任务中，你将配置允许访问控制和自动化配置的设备组。
 
-1. 在 Microsoft 365 Defender 门户中，从左侧菜单栏中选择“设置”，然后选择“终结点” 。 
+1. 在 Microsoft Defender XDR 门户中，从左侧菜单栏中选择“设置”，然后选择“终结点”********。 
 
 1. 在“权限”区域中，选择“设备组”。
 

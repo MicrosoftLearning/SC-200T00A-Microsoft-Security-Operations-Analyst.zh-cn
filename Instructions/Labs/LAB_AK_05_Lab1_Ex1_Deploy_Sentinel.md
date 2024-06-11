@@ -37,8 +37,9 @@ lab:
 
     >**注意：** 如果在此处未看到 Log Analytics 工作区，请参阅模块 3 练习 1 任务 2 以创建一个工作区。
 
-1. 浏览新建的 Microsoft Sentinel 工作区以熟悉用户界面选项。
+1. 在 Microsoft Sentinel 中，你应处于“常规”部分的“资讯与指南”中，并看到一个声明“Microsoft Sentinel 免费试用版已激活”的通知************。 按 **“确认”** 按钮。
 
+1. 浏览新建的 Microsoft Sentinel 工作区以熟悉用户界面选项。
 
 ### 任务 2：创建监视列表
 
