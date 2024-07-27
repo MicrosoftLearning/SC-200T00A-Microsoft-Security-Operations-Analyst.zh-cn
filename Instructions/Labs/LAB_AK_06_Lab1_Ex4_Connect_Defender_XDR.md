@@ -12,6 +12,8 @@ lab:
 
 你是一家公司的安全运营分析师，你所在公司同时部署了 Microsoft Defender XDR 和 Microsoft Sentinel。 你需要做好统一安全操作平台的准备工作，该平台用于将 Microsoft Sentinel 连接到 Defender XDR。 你下一步将安装 Defender XDR 内容中心解决方案，并将 Defender XDR 数据连接器部署到 Microsoft Sentinel。
 
+>**重要提示：** 请注意，Azure Microsoft Sentinel 门户和 Microsoft Defender XDR Sentinel 门户之间存在功能差异 **[门户功能差异](https://learn.microsoft.com/azure/sentinel/microsoft-sentinel-defender-portal#capability-differences-between-portals)**。
+
 ### 任务 1：连接 Defender XDR
 
 在此任务中，你将部署 Microsoft Defender XDR 连接器。
