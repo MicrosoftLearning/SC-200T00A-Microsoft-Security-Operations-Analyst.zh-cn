@@ -10,7 +10,7 @@ lab:
 
 ![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod3_L1_Ex1.png)
 
-你是一名安全运营分析师，你所在公司正在使用 Microsoft Defender for Cloud 实现云工作负载保护。  在此实验室中，你将启用 Microsoft Defender for Cloud。
+你是一名安全运营分析师，你所在公司正在使用 Microsoft Defender for Cloud 实现云工作负载保护。 在此实验室中，你将启用 Microsoft Defender for Cloud。
 
 >**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Enable%20Microsoft%20Defender%20for%20Cloud)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
 
@@ -23,7 +23,7 @@ lab:
 
 1. 打开 Microsoft Edge 浏览器，如果已打开浏览器，则打开新选项卡。
 
-1. 在 Microsoft Edge 浏览器中，导航到 Azure 门户 (https://portal.azure.com) )。
+1. 在 Microsoft Edge 浏览器中，导航到 Azure 门户 (<https://portal.azure.com> )。
 
 1. 在“登录”对话框中，复制并粘贴实验室托管提供者为管理员用户名提供的租户电子邮件帐户，然后选择“下一步” 。
 
@@ -50,7 +50,7 @@ lab:
 
 ### 任务 2：创建 Log Analytics 工作区
 
-在此任务中，你将创建一个 Log Analytics 工作区，以与 Microsoft Defender for Cloud 配合使用。
+在此任务中，你将创建一个 Log Analytics 工作区，以与 Azure 监视、Microsoft Sentinel 和 Microsoft Defender for Cloud 配合使用。
 
 1. 在 Azure 门户的搜索栏中，键入“Log Analytics 工作区”，然后选择相同的服务名称。
 
@@ -108,9 +108,9 @@ lab:
 
 >**重要提示：** 接下来的步骤将在另一台计算机上完成，而不是你之前使用的计算机。 查找虚拟机名称引用。
 
-1. 使用以下密码以管理员身份登录到 WINServer 虚拟机：Passw0rd! （如果需要）。  
+1. 使用以下密码以管理员身份登录到 WINServer 虚拟机：Passw0rd! 如有必要。  
 
-1. 打开 Microsoft Edge 浏览器并导航到 Azure 门户 (https://portal.azure.com )。
+1. 打开 Microsoft Edge 浏览器并导航到 Azure 门户 (<https://portal.azure.com> )。
 
 1. 在“登录”对话框中，复制粘贴实验室托管提供者提供的租户电子邮件帐户，然后选择“下一步”  。
 
@@ -136,7 +136,7 @@ lab:
 
 1. 查看默认可用的标记。 选择“下一步”，转到“下载并运行脚本”选项卡。
 
-1. 向下滚动并选择“下载”按钮。 提示：如果浏览器阻止下载，请在浏览器中执行操作以允许下载。 在 Microsoft Edge 浏览器中，根据需要选择省略号按钮 (...)，然后选择“保留”。
+1. 向下滚动并选择“下载”按钮。 提示：如果浏览器阻止下载，请在浏览器中执行操作以允许下载。 在 Microsoft Edge 浏览器中，根据需要选择省略号按钮 (...)，然后选择“保留”****。
 
 1. 右键单击 Windows 的“开始”按钮，然后选择“Windows PowerShell (管理员)”。
 
@@ -156,7 +156,7 @@ lab:
 
 1. 输入 R 以运行一次，然后按 Enter（这可能需要几分钟时间）。
 
-1. 安装过程将打开新的 Edge 浏览器标签页，以对 Azure Arc 代理进行身份验证。 选择管理员帐户，等待消息“身份验证完成”，然后返回到 Windows PowerShell 窗口。
+1. 安装过程将打开新的 Microsoft Edge 浏览器标签页，以对 Azure Arc 代理进行身份验证。 选择管理员帐户，等待消息“身份验证完成”，然后返回到 Windows PowerShell 窗口。
 
 1. 安装完成后，返回到下载脚本的 Azure 门户页面，然后选择“关闭”。 关闭“**使用 Azure Arc 添加服务器**”，以返回到 Azure Arc“**计算机**”页面。
 
@@ -167,7 +167,7 @@ lab:
 
 ### 任务 5：保护本地服务器
 
-在此任务中，你将通过在“WINServer”虚拟机上添加“数据收集规则 (DCR)”来手动安装“Azure Monitor 代理”。
+在此任务中，你将通过在“WINServer”**** 虚拟机上添加“数据收集规则 (DCR)”** 来手动安装“Azure Monitor 代理”**。
 
 1. 转到“Microsoft Defender for Cloud”，然后在左菜单中选择“入门”页面 。
 
@@ -175,7 +175,7 @@ lab:
 
 1. 向下滚动并选择“添加非 Azure 服务器”部分下的“配置”。
 
-1. 选择之前创建的工作区旁边的“升级”。 这可能需要几分钟时间，请等待，直到看到通知“工作区 uniquenameDefender 的 Microsoft Defender 计划已成功保存!”。
+1. 选择之前创建的工作区旁边的“升级”。 这可能需要几分钟的时间。 请等待，直到看到通知“工作区 uniquenameDefender 的 Microsoft Defender 计划已成功保存!”**。
 
 1. 选择之前创建的工作区旁边的“+ 添加服务器”。
 
@@ -189,7 +189,7 @@ lab:
 
 1. 可以保留默认的“美国东部”区域，也可以选择其他首选位置。
 
-1. 选择“平台类型”的“Windows”单选按钮，然后选择“下一步: 资源”。
+1. 选择“平台类型”** 的“Windows”**** 单选按钮，然后选择“下一步资源”****。
 
 1. 在“资源”选项卡中，选择“+ 添加资源” 。
 
@@ -197,7 +197,7 @@ lab:
 
     >注意：如果未显示“WINServer”，则可能需要将“资源类型”的列筛选器设置为“Server-Azure Arc”。
 
-1. 选择“下一步: 收集和传送”
+1. 选择“下一步: 收集和传递”****。
 
 1. 在“收集和传送”选项卡中，选择“+ 添加数据源”
 
@@ -205,7 +205,7 @@ lab:
 
     >注意：对于本实验室，可以选择“Windows 事件日志”。 这些选择稍后可以修改。
 
-1. 单击“目标”选项卡****
+1. 选择“目标”**** 选项卡
 
 1. 在“目标类型”下拉列表中选择“Azure Monitor 日志”********
 
@@ -213,7 +213,7 @@ lab:
 
 1. 选择工作区名称“提示”：**** 从“帐户或命名空间”下拉列表中选择“RG-Defender”******
 
-1.  选择“添加数据源”，然后选择“查看 + 创建”
+1. 选择“添加数据源”，然后选择“查看 + 创建”
 
 1. 显示“验证通过”后，选择“创建”。
 
