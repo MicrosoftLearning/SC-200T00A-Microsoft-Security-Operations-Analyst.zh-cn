@@ -46,7 +46,7 @@ lab:
 
 在此任务中，你将创建 Azure DevOps 存储库。
 
-1. 在浏览器中打开另一个标签页，然后导航到 (https://aexprodcus1.vsaex.visualstudio.com/me?mkt=en-US) 。
+1. 在浏览器中打开另一个标签页，然后导航到 <https://aexprodcus1.vsaex.visualstudio.com/me?mkt=en-US> 。
 
 1. 在“我们需要更多详细信息”页上，选择“继续” 。
 

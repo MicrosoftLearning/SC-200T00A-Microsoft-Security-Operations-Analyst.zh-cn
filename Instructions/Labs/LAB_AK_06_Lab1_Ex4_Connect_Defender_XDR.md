@@ -40,8 +40,6 @@ lab:
 
 1. 在“Microsoft Defender XDR”** 解决方案详细信息页上，选择“管理”****
 
->**注意：***Microsoft Defender XDR* 解决方案安装 *Microsoft Defender XDR* 数据连接器、搜寻查询、工作簿和分析规则。
-
 1. 选中“Microsoft Defender XDR 数据连接器”复选框，然后选择“打开连接器页面”。******
 
 1. ******** 在“配置”部分的“说明”选项卡下，取消选中复选框“关闭这些产品的所有 Microsoft 事件创建规则”。**“建议”，然后选择“连接事件和警报”按钮。****
@@ -58,7 +56,7 @@ lab:
 
 1. 启动 Microsoft Edge 浏览器。
 
-1. 在 Microsoft Edge 浏览器中，转到 Microsoft Defender XDR 门户 (https://security.microsoft.com)。
+1. 在 Edge 浏览器中，转到 Microsoft Defender XDR 门户 <https://security.microsoft.com>。
 
 1. 在“登录”对话框中，复制并粘贴实验室托管提供者为管理员用户名提供的租户电子邮件帐户，然后选择“下一步” 。
 
@@ -80,7 +78,7 @@ lab:
 
 1. 你应该会看到消息“正在连接工作区”**，然后看到消息“工作区已成功连接”**。
 
-1. 选择“关闭”**** 按钮。 
+1. 选择“关闭”**** 按钮。
 
 1. 在“Defender XDR”**** 门户的“主页”**** 屏幕上，应该会在顶部看到一个横幅，其中显示消息“你的统一 SIEM 和 XDR 已准备就绪”**。 选择“开始搜寻”按钮****。
 
@@ -88,6 +86,6 @@ lab:
 
 1. 展开左侧主菜单窗格（如果已折叠）并展开新的 Microsoft Sentinel**** 菜单项。 应该会看到“威胁管理”**、“内容管理”** 和“配置”** 选择。
 
- >**注意：** 某些功能在公共预览版中可能不可用，用户界面可能与实验说明有所不同。 此外，Microsoft Sentinel 和 Microsoft Defender XDR 之间的同步可能需要几分钟才能完成，因此你可能看不到所有已安装的数据连接器**。
+ >**注意：** Microsoft Sentinel 和 Microsoft Defender XDR 之间的同步可能需要几分钟才能完成，因此你可能看不到所有已安装的*数据连接器*，例如。
 
 ## 你已完成本实验

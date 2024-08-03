@@ -23,7 +23,7 @@ lab:
 
 1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：Pa55w.rd 。  
 
-1. 在 Microsoft Edge 浏览器中，打开 Azure 门户 (https://portal.azure.com))。
+1. 在 Microsoft Edge 浏览器中，打开 Azure 门户 <https://portal.azure.com>。
 
 1. 在“登录”对话框中，复制粘贴实验室托管提供者提供的租户电子邮件帐户，然后选择“下一步”  。
 
