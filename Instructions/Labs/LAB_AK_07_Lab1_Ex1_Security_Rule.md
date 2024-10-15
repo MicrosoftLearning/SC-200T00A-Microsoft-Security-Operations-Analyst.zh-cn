@@ -10,9 +10,11 @@ lab:
 
 ![实验室概述。](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex1.png)
 
-你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你需要了解如何使用 Microsoft Sentinel 检测和缓解威胁。 首先，需要按严重性将来自 Defender for Cloud 的警报筛选到 Microsoft Sentinel 中。 
+你是一位安全运营分析师，你所在公司已实现 Microsoft Sentinel。 你需要了解如何使用 Microsoft Sentinel 检测和缓解威胁。 首先，需要按严重性将来自 Defender for Cloud 的警报筛选到 Microsoft Sentinel 中。
 
 >**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Modify%20a%20Microsoft%20Security%20rule)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。 
+
+>**重要说明：** 如果已完成上一个实验室“*学习路径 6 - 实验 1 - 练习 4 - 使用数据连接器将 Defender XDR 连接到 Microsoft Sentinel*”，则可以跳过此实验室并继续下一个练习。
 
 
 ### 任务 1：激活 Microsoft 安全规则

