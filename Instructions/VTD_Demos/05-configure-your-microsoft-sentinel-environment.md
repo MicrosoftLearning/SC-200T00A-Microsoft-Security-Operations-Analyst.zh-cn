@@ -1,6 +1,8 @@
 # 模块 5 配置 Microsoft Sentinel 环境
 
-备注：能否成功完成本演示取决于是否完成[先决条件文档](00-prerequisites.md)中的所有步骤。 
+备注：能否成功完成本演示取决于是否完成[先决条件文档](00-prerequisites.md)中的所有步骤。
+
+**重要说明：** VTD-5002-FY25 不需要此演示。
 
 ## 浏览 Microsoft Sentinel 界面
 

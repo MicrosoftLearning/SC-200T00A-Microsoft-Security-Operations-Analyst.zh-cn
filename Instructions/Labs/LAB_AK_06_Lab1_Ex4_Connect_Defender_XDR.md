@@ -88,4 +88,4 @@ lab:
 
  >**注意：** Microsoft Sentinel 和 Microsoft Defender XDR 之间的同步可能需要几分钟才能完成，因此你可能看不到所有已安装的*数据连接器*，例如。
 
-## 你已完成本实验
+## 已完成实验室 - 请继续“学习路径 7 - 实验室 1 - 练习 2 - 在 Microsoft Sentinel 中创建 Playbook”

@@ -18,6 +18,8 @@
 
 ## 激活 Azure Pass
 
+>**备注：** 某些演示需要连接到 Microsoft 365 E5 租户的 Azure 订阅。 如果 Azure 通行证不可用，则可以使用自己的 Azure 订阅和 Microsoft 365 E5 租户。 访问 [Microsoft 365 开发人员计划](https://developer.microsoft.com/microsoft-365/dev-program/)网站，请求成员身份，并设置免费的 Microsoft 365 E5 开发人员订阅。
+
 ## 部署 Defender for Endpoint
 
 ### 获取 Microsoft 365 凭据
@@ -36,31 +38,29 @@
 
 1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：**Pa55w.rd**。  
 
-1. 在 Microsoft Edge 浏览器中，转到 Microsoft 365 Defender 门户 (https://security.microsoft.com) )。
+1. 在 Edge 浏览器中，转到 Microsoft Defender 门户 (https://security.microsoft.com))。
 
 1. 在“登录”对话框中，复制并粘贴实验室托管提供者为管理员用户名提供的租户电子邮件帐户，然后选择“下一步” 。
 
 1. 在“输入密码”对话框中，复制粘贴实验室托管提供者提供的管理员的租户密码，然后选择“登录” 。
 
-在 Microsoft 365 Defender 门户的左侧导航菜单中，选择“主页” 。
+在 Microsoft Defender 门户的左侧导航菜单中，选择“主页”********。
 
     >**Note:** You may need to scroll all the way to the menu top.
 
-1. 在门户“主页”上，会显示“欢迎使用 Microsoft 365 Defender” 。
+1. 在门户“**主页**”上，会显示“**欢迎使用 Microsoft Defender**”。
 
-1. 向下滚动图块，直到找到标记为“Microsoft 365 Defender”并显示“启用 Microsoft 365 Defender”消息的图块 。
+1. 向下滚动菜单项到“资产”并选择“设备”********。
 
-    >提示：它应位于图块的右下角。
+1. 应会启动部署 Defender XDR 工作区的过程，并在页面顶部显示简要消息“正在加载和初始化”，然后将显示一张咖啡杯的图像和一条消息**：“请稍等！我们正在为你的数据准备新的空间并将它们连接起来”。 这大约需要 5 分钟才能完成。 使页面保持打开状态并确保它已完成，因为下一个实验室需要它**。
 
-1. 选择显示“启用新功能”的按钮。
+    >**注意：** 忽略显示“无法检索某些数据”的弹出错误消息**。 如果没有出现消息“请稍候！ 我们正在为你的数据准备新空间并连接它们”，或者虽然“设置”>“Microsoft Defender XDR”>“帐户”页已打开，但你看到消息“无法加载数据存储位置。** 请稍后重试，从“常规”菜单中选择“警报服务设置”。
 
-1. 你将在页面顶部看到简要显示了“正在加载和初始化”消息，然后你将咖啡杯的图像和一条消息，内容如下：“请稍等！我们正在为你的数据准备新的空间并将它们连接起来”。 大约需要 5 分钟才能完成。 使页面保持打开状态并确保它已完成，因为下一个实验室需要它。
-
-    >**注意：** 如果未显示消息“请稍候！ 我们正在为你的数据准备新空间并连接它们”，或者虽然“设置”>“Microsoft 365 Defender”>“帐户”页已打开，但你看到消息“无法加载数据存储位置。 请稍后重试”，请从”常规“菜单中选择”警报服务设置“，或转到导航菜单，向下滚动到“资产”部分并选择”设备”。
+1. 新工作区初始化成功完成后，在“主页”**** 门户页上，将显示“在一个位置获取 SIEM 和 XDR”**** 横幅。 在“设置”**** 中，现已打开帐户、电子邮件通知、**预览功能**、警报服务设置、权限和角色和流式处理 API Microsoft Defender XDR 常规设置。
 
 1. 新空间成功完成后，你将看到 Microsoft 365 Defender 的帐户、电子邮件通知、警报服务设置、权限和角色以及流式处理 API 等常规设置。 你还将看到“预览功能”已打开。
 
-注意：在托管实验室环境中，系统应已为你选择数据存储位置。 它应位于适当的地理位置，用于管理此培训租户。 你仍可以选择数据保留长度，但这不是必需的。
+    >**备注：** 在托管实验室环境中，数据存储位置应当已为你选择好。 它应位于适当的地理位置，用于管理此培训租户。 你仍可以选择数据保留长度，但这不是必需的。
 
 1. 在“设置”中，选择“终结点”。
 
@@ -395,7 +395,6 @@ In this task, you will load sample security alerts and review the alert details.
 
     >注意：这可能需要几分钟。
 
-
 ### 任务 6：保护本地服务器
 
 在此任务中，需要将连接到 Azure Arc 的非 Azure Windows 虚拟机添加到 Microsoft Sentinel。  
@@ -418,6 +417,37 @@ In this task, you will load sample security alerts and review the alert details.
 
 1. 显示“验证通过”后，选择“创建”。
 
+### 任务 7：连接 Defender XDR
+
+在此任务中，你将部署 Microsoft Defender XDR 连接器。
+
+1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：**Pa55w.rd**。  
+
+1. 在 Microsoft Edge 浏览器中，导航到 Azure 门户 (<https://portal.azure.com>)。
+
+1. 在“登录”对话框中，复制粘贴实验室托管提供者提供的租户电子邮件帐户，然后选择“下一步”  。
+
+1. 在“输入密码”对话框中，复制粘贴实验室托管提供者提供的租户密码，然后选择“登录”  。
+
+1. 在 Azure 门户的“搜索”栏中，键入 Sentinel，然后选择 Microsoft Sentinel。
+
+1. 选择之前创建的 Microsoft Sentinel 工作区。
+
+1. 在 Microsoft Sentinel 左侧菜单中，向下滚动到“内容管理”部分，然后选择“内容中心”。
+
+1. 在“内容中心”，搜索“Microsoft Defender XDR”解决方案，并从列表中选择它。******
+
+1. 在“Microsoft Defender XDR”** 解决方案详细信息页上，选择“安装”****。
+
+1. 安装完成后，搜索 Microsoft Defender XDR**** 解决方案并选择它。
+
+1. 在“Microsoft Defender XDR”** 解决方案详细信息页上，选择“管理”****
+
+1. 选中“Microsoft Defender XDR 数据连接器”复选框，然后选择“打开连接器页面”。******
+
+1. ******** 在“配置”部分的“说明”选项卡下，取消选中复选框“关闭这些产品的所有 Microsoft 事件创建规则”。**“建议”，然后选择“连接事件和警报”按钮。****
+
+1. 应会看到一条指示连接成功的消息。
 
 <!--- ### Task 4: Connect the Microsoft Defender for Cloud connector.
 
