@@ -12,8 +12,6 @@ lab:
 
 你是一家公司的安全运营分析师，你所在公司正在实现 Microsoft Defender XDR。 首先，分配 Exchange Online Protection (EOP) 和 Microsoft Defender for Office 365 中使用的预设的安全策略。
 
->**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Explore%20Microsoft%20365%20Defender)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
-
 >注意：WWL 租户 - 使用条款 如果在讲师引导式培训过程中向你提供租户，请注意，提供租户的目的是支持讲师引导式培训中的动手实验室 。 租户不应共享或用于动手实验室以外的用途。 本课程使用的租户为试用租户，课程结束后无法使用或访问，不符合扩展条件。 租户不得转换为付费订阅。 在本课程中获得的租户仍然是 Microsoft Corporation 的财产，我们保留随时获取访问权限和收回的权利。 
 
 
@@ -34,7 +32,7 @@ lab:
 
 1. 启动 Microsoft Edge 浏览器。
 
-1. 在 Microsoft Edge 浏览器中，转到 Microsoft Defender XDR 门户 (https://security.microsoft.com)。
+1. 在 Microsoft Edge 浏览器中，转到 Microsoft Defender XDR 门户，网址为 (<https://security.microsoft.com>)。
 
 1. 在“登录”对话框中，复制并粘贴实验室托管提供者为管理员用户名提供的租户电子邮件帐户，然后选择“下一步” 。
 
@@ -70,7 +68,7 @@ lab:
 
 1. 阅读“查看并确认更改”下的内容，选择“确认”以应用更改，然后选择“完成”以完成 。
 
-    >**注意：** 如果你收到信息“URI 'https://outlook.office365.com/psws/service.svc/AntiPhishPolicy ' 对 PUT 操作无效。*对于 PUT 操作，URI 必须指向单个资源。”* ， 只需选择“确定”，然后选择“取消”以返回到主页 。 你将看到“标准保护已启用”选项启用。
+    >**注意：** 如果你收到信息“URI '<https://outlook.office365.com/psws/service.svc/AntiPhishPolicy> ' 对 PUT 操作无效。*对于 PUT 操作，URI 必须指向单个资源。”* ， 只需选择“确定”，然后选择“取消”以返回到主页 。 你将看到“标准保护已启用”选项启用。
 
 1. 在“严格保护”下，选择“管理保护设置”。 提示：在“电子邮件与协作 - 策略与规则 - 威胁策略 - 预设安全策略”下找到“严格保护”。
 
