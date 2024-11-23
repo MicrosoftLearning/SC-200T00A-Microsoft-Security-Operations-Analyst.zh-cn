@@ -12,10 +12,7 @@ lab:
 
 你是一位安全运营分析师，你所在公司正在实现 Microsoft Sentinel。 你负责执行日志数据分析，以便搜索恶意活动、显示可视化效果并执行威胁搜寻。 为了查询日志数据，你使用 Kusto 查询语言 (KQL)。
 
->**注意：** 我们提供 **[交互式实验室模拟](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Create%20queries%20for%20Microsoft%20Sentinel%20using%20Kusto%20Query%20Language)** ，让你能以自己的节奏点击浏览实验室。 你可能会发现交互式模拟与托管实验室之间存在细微差异，但演示的核心概念和思想是相同的。
-
->**重要提示：** 此实验室需要将大量 KQL 脚本输入到 Microsoft Sentinel 中。 这些脚本是在此实验室开始时的文件中提供的。 另一个下载这些脚本的位置是： https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/tree/master/Allfiles
-
+>**重要提示：** 此实验室需要将大量 KQL 脚本输入到 Microsoft Sentinel 中。 这些脚本是在此实验室开始时的文件中提供的。 另一个下载这些脚本的位置是： <https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/tree/master/Allfiles>
 
 ### 任务 1：访问 KQL 测试区域
 
@@ -23,7 +20,7 @@ lab:
 
 1. 使用密码 Pa55w.rd 以管理员身份登录到 WIN1 虚拟机 。  
 
-1. 在浏览器中转到 https://aka.ms/lademo。 使用 MOD 管理员凭据登录。
+1. 在浏览器中转到 <https://aka.ms/lademo>。 使用 MOD 管理员凭据登录。
 
 1. 关闭出现的 Log Analytics 视频弹出窗口。
 
@@ -48,7 +45,7 @@ lab:
 
 >重要说明：对于每个查询，都应先从查询窗口中清除之前的语句，或是在最后打开的选项卡（最多 25 个）之后选择 + 打开一个新的查询窗口 。
 
-1. 以下语句演示 search 运算符，该运算符在表的所有列中搜索值。 
+1. 以下语句演示 search 运算符，该运算符在表的所有列中搜索值。
 
 1. 在查询窗口中将时间范围更改为“过去 30 分钟”。
 
@@ -97,7 +94,7 @@ lab:
  
     ```
 
-1. 下面的语句演示了将 let 语句用于声明变量的用法。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
+1. 下面的语句演示了将 let 语句用于声明变量的用法。 在“查询”窗口中，输入以下语句，然后选择“运行”：
 
     ```KQL
     let timeOffset = 1h;
@@ -107,7 +104,7 @@ lab:
     | where EventID != discardEventId
     ```
 
-1. 以下语句演示了将 let 语句用于声明动态列表的用法。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
+1. 以下语句演示了将 let 语句用于声明动态列表的用法。 在“查询”窗口中，输入以下语句，然后选择“运行”：
 
     ```KQL
     let suspiciousAccounts = datatable(account: string) [
@@ -121,7 +118,7 @@ lab:
 
     >**** 提示：在“查询”窗口中选择省略号 (...)，然后选择“设置查询格式”，可以轻松地重新设置查询格式****。
 
-1. 以下语句演示了将 let 语句用于声明动态表的用法。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
+1. 以下语句演示了将 let 语句用于声明动态表的用法。 在“查询”窗口中，输入以下语句，然后选择“运行”：
 
     ```KQL
     let LowActivityAccounts =
@@ -332,7 +329,7 @@ lab:
     | summarize count() by Type
     ```
 
-1. 以下语句演示了 join 运算符，该运算符通过匹配每个表中指定列的值来合并两个表的行以形成新表。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
+1. 以下语句演示了 join 运算符，该运算符通过匹配每个表中指定列的值来合并两个表的行以形成新表。 在“查询”窗口中，输入以下语句，然后选择“运行”：
 
     ```KQL
     SecurityEvent  
@@ -388,6 +385,8 @@ lab:
     | parse EventText with * "resourceName=" resourceName ", totalSlices=" totalSlices:long * "sliceNumber=" sliceNumber:long * "lockTime=" lockTime ", releaseTime=" releaseTime:date "," * "previousLockTime=" previousLockTime:date ")" *  
     | project resourceName, totalSlices, sliceNumber, lockTime, releaseTime, previousLockTime
     ```
+
+>**重要说明：** 以下查询当前不会在用于此实验室的 lademo 环境中生成结果。 已移除 *SigninLogs* 表中的条目。 但是，KQL 查询演示了重要的概念和用例，因此请花时间查看它们。
 
 1. 以下语句演示如何使用动态字段，这些字段很特殊，因为它们可以采用其他数据类型的任何值。 在本例中，SigninLogs 表中的 DeviceDetail 字段属于动态类型。 在“查询”窗口中，输入以下语句，然后选择“运行”： 
 
@@ -445,4 +444,4 @@ lab:
     PrivLogins  
     ```
 
-## 你已完成本实验室。
+## 你已完成本实验室
