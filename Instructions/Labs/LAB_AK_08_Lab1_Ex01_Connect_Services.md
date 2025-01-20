@@ -20,6 +20,8 @@ lab:
 
 在此任务中，你将访问 Microsoft Sentinel 工作区。
 
+>**备注：** 已在名称为 **defenderWorkspace** 的 Azure 订阅中预先部署了 Microsoft Sentinel，并且已安装所需的*内容中心*解决方案。
+
 1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：Pa55w.rd 。  
 
 1. 打开 Microsoft Edge 浏览器。
@@ -30,9 +32,9 @@ lab:
 
 1. 在“输入密码”对话框中，复制粘贴实验室托管提供者提供的租户密码，然后选择“登录”  。
 
-1. 在 Azure 门户的搜索栏中，键入“Sentinel”，然后选择“Microsoft Sentinel”。
+1. 在 Azure 门户的“搜索”栏中，键入 Sentinel，然后选择 Microsoft Sentinel。
 
-1. 选择你在上一个实验室中创建的 Microsoft Sentinel 工作区。
+1. 选择 Microsoft Sentinel **defenderWorkspace**。
 
 1. 继续执行下一个任务。
 
@@ -40,23 +42,19 @@ lab:
 
 在此任务中，你将连接 Microsoft Defender for Cloud 数据连接器。
 
-1. 在 Microsoft Sentinel 左侧菜单中，向下滚动到“内容管理”部分，然后选择“内容中心”。
+   >**重要提示：** 若要*启用*双向同步，请查看学习路径 5、练习 1、任务 1，然后从 *Microsoft Defender for Cloud* 导航菜单中选择“**设置**”，以验证是否已加入所有符合条件的 Azure 订阅。
+
+1. 在 Microsoft Sentinel 导航菜单中，向下滚动到“**内容管理**”部分，然后选择“**内容中心**”。
 
 1. 在“内容中心”，搜索“Microsoft Defender for Cloud”解决方案，并从列表中选择它。
 
-1. 在“Microsoft Defender for Cloud”解决方案详细信息页面上，选择“安装”******。
-
-1. 安装完成后，搜索 Microsoft Defender for Cloud**** 解决方案并选择它。
-
-1. 在“Microsoft Defender for Cloud”解决方案详细信息页面上，选择“管理”******
+1. 在 *Microsoft Defender for Cloud* 解决方案详细信息页上，选择“**管理**”。
 
     >**备注：** Microsoft Defender for Cloud** 解决方案安装基于订阅的 Microsoft Defender for Cloud（旧版）** 数据连接器、基于租户的 Microsoft Defender for Cloud（预览版）** 数据连接器和分析规则。 当租户具有多个订阅时，将使用 *基于租户的 Microsoft Defender for Cloud（预览版）* 数据连接器。
 
 1. 选择“基于订阅的 Microsoft Defender for Cloud（旧版）** 数据连接器”复选框，然后选择“打开连接器页”****。
 
 1. 在“说明”选项卡下的“配置”部分，选中“Azure Pass - 赞助”订阅的复选框，并将“状态”选项滑动到右侧  。
-
-    >注意：如果切换回断开连接，请查看学习路径 3 练习 1 任务 1，为帐户分配适当的权限。
 
 1. 现在，“状态”应该是“已连接”，并且“双向同步”应该是“已启用”。
 
@@ -66,13 +64,11 @@ lab:
 
 在此任务中，你将连接“Azure 活动”数据连接器。
 
-1. 在 Microsoft Sentinel 左侧菜单中，向下滚动到“内容管理”部分，然后选择“内容中心”。
+1. 在 Microsoft Sentinel 导航菜单中，向下滚动到“*内容管理*”部分，然后选择“**内容中心**”。
 
 1. 在“内容中心”，搜索“Azure 活动”解决方案并从列表中选择它。
 
-1. 在“Azure 活动”解决方案页中，选择“安装”。
-
-1. 安装完成后，选择“管理”
+1. 在“*Azure 活动*”解决方案页上，选择“**管理**”。
 
     >注意：“Azure 活动”解决方案会安装“Azure 活动”数据连接器、12 个分析规则、14 个搜寻查询和 1 个工作簿。
 

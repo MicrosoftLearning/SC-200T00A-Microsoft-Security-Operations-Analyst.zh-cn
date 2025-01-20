@@ -66,81 +66,81 @@ lab:
 
 1. 选择“创建”。 等待创建资源，这可能需要几分钟的时间。
 
-### 任务 2：在本地服务器上安装 Azure Arc
+<!--- ### Task 2: Install Azure Arc on an On-Premises Server
 
-在此任务中，你将在本地服务器上安装 Azure Arc，以便更轻松地加入。
+In this task, you install Azure Arc on an on-premises server to make onboarding easier.
 
->**重要提示：** 接下来的步骤将在另一台计算机上完成，而不是你之前使用的计算机。 查找虚拟机名称引用。
+>**Important:** The next steps are done in a different machine than the one you were previously working. Look for the Virtual Machine name references.
 
-1. 使用以下密码以管理员身份登录到 WINServer 虚拟机：Passw0rd! 如有必要。  
+1. Log in to **WINServer** virtual machine as Administrator with the password: **Passw0rd!** if necessary.  
 
-1. 打开 Microsoft Edge 浏览器并导航到 Azure 门户 (<https://portal.azure.com> )。
+1. Open the Microsoft Edge browser and navigate to the Azure portal at <https://portal.azure.com>.
 
-1. 在“登录”对话框中，复制粘贴实验室托管提供者提供的租户电子邮件帐户，然后选择“下一步”  。
+1. In the **Sign in** dialog box, copy, and paste in the **Tenant Email** account provided by your lab hosting provider and then select **Next**.
 
-1. 在“输入密码”对话框中，复制粘贴实验室托管提供者提供的租户密码，然后选择“登录”  。
+1. In the **Enter password** dialog box, copy, and paste in the **Tenant Password** provided by your lab hosting provider and then select **Sign in**.
 
-1. 在 Azure 门户的搜索栏中，键入“Arc”，然后选择“Azure Arc”。
+1. In the Search bar of the Azure portal, type *Arc*, then select **Azure Arc**.
 
-1. 在“Azure Arc 资源”下的导航窗格中选择“计算机”********
+1. In the navigation pane under **Azure Arc resources** select **Machines**
 
-1. 选择“**+ 添加/创建**”，然后选择“**添加计算机**”。
+1. Select **+ Add/Create**, then select **Add a machine**.
 
-1. 在“添加单个服务器”部分选择“生成脚本”。
+1. Select **Generate script** from the "Add a single server" section.
 
-1. 在“使用 Azure Arc 添加服务器”页面中，在“项目详细信息”下选择之前创建的资源组 。 提示：RG-Defender
+1. In the *Add a server with Azure Arc* page, select the Resource group you created earlier under *Project details*. **Hint:** *RG-Defender*
 
-    >**注意：** 如果尚未创建资源组，请打开另一个选项卡并创建资源组，然后重新开始。
+    >**Note:** If you haven't already created a resource group, open another tab and create the resource group and start over.
 
-1. 对于“区域”，请从下拉列表中选择“(美国)美国东部”。
+1. For *Region*, select **(US) East Us** from the drop-down list.
 
-1. 查看“服务器详细信息”和“连接方法”选项 。 保留默认值并选择“下一步”，以转到“标记”选项卡。
+1. Review the *Server details* and *Connectivity method* options. Keep the default values and select **Next** to get to the Tags tab.
 
-1. 查看默认可用的标记。 选择“下一步”，转到“下载并运行脚本”选项卡。
+1. Review the default available tags. Select **Next** to get to the Download and run script tab.
 
-1. 向下滚动并选择“下载”按钮。 提示：如果浏览器阻止下载，请在浏览器中执行操作以允许下载。 在 Microsoft Edge 浏览器中，根据需要选择省略号按钮 (...)，然后选择“保留”****。
+1. Scroll down and select the **Download** button. **Hint:** if your browser blocks the download, take action in the browser to allow it. In Microsoft Edge Browser, select the ellipsis button (...) if needed and then select **Keep**.
 
-1. 右键单击 Windows 的“开始”按钮，然后选择“Windows PowerShell (管理员)”。
+1. Right-click the Windows Start button and select **Windows PowerShell (Admin)**.
 
-1. 在“用户名”中输入“Administrator”，在“密码”中输入“Passw0rd!” （如果收到 UAC 提示）。
+1. Enter *Administrator* for "Username" and *Passw0rd!* for "Password" if you get a UAC prompt.
 
-1. 输入：cd C:\Users\Administrator\Downloads
+1. Enter: cd C:\Users\Administrator\Downloads
 
-    >重要提示：如果没有此目录，最有可能意味着你使用的是错误的计算机。 返回任务 4 的开头，更改为 WINServer 并重新启动。
+    >**Important:** If you do not have this directory, most likely means that you are in the wrong machine. Go back to the beginning of Task 4 and change to WINServer and start over.
 
-1. 键入“Set-ExecutionPolicy -ExecutionPolicy Unrestricted”，然后按 Enter。
+1. Type *Set-ExecutionPolicy -ExecutionPolicy Unrestricted* and press enter.
 
-1. 输入“A”，表示全部接受，然后按 Enter。
+1. Enter **A** for Yes to All and press enter.
 
-1. 键入“.\OnboardingScript.ps1”，然后按 Enter。  
+1. Type *.\OnboardingScript.ps1* and press enter.  
 
-    >**重要提示：** 如果收到错误“无法识别术语 .\OnboardingScript.ps1...”，请确保是在 WINServer 虚拟机中执行任务 4 的步骤。 其他问题可能是由于多次下载导致文件名称更改，请在运行目录中搜索“.\OnboardingScript (1).ps1”或其他文件编号。
+    >**Important:** If you get the error *"The term .\OnboardingScript.ps1 is not recognized..."*, make sure you are doing the steps for Task 4 in the WINServer virtual machine. Other issue might be that the name of the file changed due to multiple downloads, search for *".\OnboardingScript (1).ps1"* or other file numbers in the running directory.
 
-1. 输入 R 以运行一次，然后按 Enter（这可能需要几分钟时间）。
+1. Enter **R** to Run once and press enter (this may take a couple minutes).
 
-1. 安装过程将打开新的 Microsoft Edge 浏览器标签页，以对 Azure Arc 代理进行身份验证。 选择管理员帐户，等待消息“身份验证完成”，然后返回到 Windows PowerShell 窗口。
+1. The setup process opens a new Microsoft Edge browser tab to authenticate the Azure Arc agent. Select your admin account, wait for the message "Authentication complete" and then go back to the Windows PowerShell window.
 
-1. 安装完成后，返回到下载脚本的 Azure 门户页面，然后选择“关闭”。 关闭“**使用 Azure Arc 添加服务器**”，以返回到 Azure Arc“**计算机**”页面。
+1. When the installation finishes, go back to the Azure portal page where you downloaded the script and select **Close**. Close the **Add servers with Azure Arc** to go back to the Azure Arc **Machines** page.
 
-1. 选择“刷新”，直到显示 WINServer 服务器名称，且状态为“已连接”。
+1. Select **Refresh** until WINServer server name appears and the Status is *Connected*.
 
-    >注意：这可能需要几分钟。
+    >**Note:** This could take a couple of minutes. --->
 
-### 任务 3：连接 Azure Windows 虚拟机
+### 任务 2：连接 Azure Windows 虚拟机
 
 在此任务中，需要将 Azure Windows 虚拟机连接到 Microsoft Sentinel。
 
+>**备注：** 已在名称为 **defenderWorkspace** 的 Azure 订阅中预先部署了 Microsoft Sentinel，并且已安装所需的*内容中心*解决方案。
+
 1. 在 Azure 门户的“搜索”栏中，键入 Sentinel，然后选择 Microsoft Sentinel。
 
-1. 选择之前创建的 Microsoft Sentinel 工作区。
+1. 选择 Microsoft Sentinel **defenderWorkspace**。
 
-1. 1. 在 Microsoft Sentinel 左侧菜单中，向下滚动到“内容管理”部分，然后选择“内容中心”。
+1. 在 Microsoft Sentinel 左侧导航菜单中，向下滚动到“*内容管理*”部分，然后选择“**内容中心**”。
 
 1. 在“内容中心”，搜索“Windows 安全事件”解决方案，并从列表中选择它。
 
-1. 在“Windows 安全事件”解决方案页上，选择“安装”。
-
-1. 安装完成后，选择“管理”
+1. 在“*Windows 安全事件*”解决方案页上，选择“**管理**”。
 
     >注意：“Windows 安全事件”解决方案安装“通过 AMA 收集的 Windows 安全事件”和“通过旧版代理程序的安全事件”数据连接器。 外加 2 个工作簿、20 个分析规则和 43 个搜寻查询。
 

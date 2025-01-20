@@ -22,6 +22,8 @@ Microsoft Sentinel 可让你跨数据创建自定义工作簿，并且还附带�
 
 在此任务中，你将探索 Microsoft Sentinel 工作簿模板。
 
+>**备注：** Microsoft Sentinel 已在 Azure 订阅中预先部署了名称 **defenderWorkspace**，并且已安装所需的“*内容中心*”解决方案。
+
 1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：**Pa55w.rd**。  
 
 1. 在 Microsoft Edge 浏览器中，导航到 Azure 门户 (<https://portal.azure.com> )。
@@ -32,7 +34,7 @@ Microsoft Sentinel 可让你跨数据创建自定义工作簿，并且还附带�
 
 1. 在 Azure 门户的搜索栏中，键入“Sentinel”，然后选择“Microsoft Sentinel”。
 
-1. 选择 Microsoft Sentinel 工作区。
+1. 选择 Microsoft Sentinel **defenderWorkspace**。
 
 1. 选择导航菜单的“*威胁管理*”部分下的“**工作簿**”。
 

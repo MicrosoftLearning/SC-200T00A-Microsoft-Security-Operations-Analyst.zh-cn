@@ -18,6 +18,8 @@ lab:
 
 在此任务中，将在 Microsoft Sentinel 中启用实体行为分析。
 
+>**备注：** Microsoft Sentinel 已在 Azure 订阅中预先部署了名称 **defenderWorkspace**，并且已安装所需的“*内容中心*”解决方案。
+
 1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：**Pa55w.rd**。  
 
 1. 在“登录”对话框中，复制粘贴实验室托管提供者提供的租户电子邮件帐户，然后选择“下一步”  。
@@ -26,7 +28,7 @@ lab:
 
 1. 在 Azure 门户的搜索栏中，键入“Sentinel”，然后选择“Microsoft Sentinel”。
 
-1. 选择 Microsoft Sentinel 工作区。
+1. 选择 Microsoft Sentinel **defenderWorkspace**。
 
 1. 在左侧边栏选项卡的“配置”区域下，选择 Analytics。
 
