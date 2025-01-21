@@ -22,6 +22,8 @@ lab:
 
 在此任务中，你将调查一个事件。
 
+>**备注：** 已在你的 Azure 订阅中使用名称 **defenderWorkspace** 预先部署了 Microsoft Sentinel，并且已安装所需的*内容中心*解决方案。
+
 1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：**Pa55w.rd**。  
 
 1. 在 Microsoft Edge 浏览器中，导航到 Azure 门户 (<https://portal.azure.com> )。
@@ -32,7 +34,7 @@ lab:
 
 1. 在 Azure 门户的搜索栏中，键入“Sentinel”，然后选择“Microsoft Sentinel”。
 
-1. 选择 Microsoft Sentinel 工作区。
+1. 选择 Microsoft Sentinel **defenderWorkspace**。
 
 1. 选择“事件”页面。
 

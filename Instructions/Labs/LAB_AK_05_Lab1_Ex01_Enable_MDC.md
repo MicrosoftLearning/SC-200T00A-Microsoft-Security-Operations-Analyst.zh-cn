@@ -22,8 +22,6 @@ lab:
 
 1. 在 Microsoft Edge 浏览器中，导航到 Azure 门户 (<https://portal.azure.com> )。
   
-    >**备注：** 为实验室的“*用户名*”和“*密码*”选择“**资源**”选项卡。 使用此实验室的 **<LabUser-XXXXXXXX@LODSPRODXXX.onmicrosoft.com>** 帐户。
-
 1. 在“登录”对话框中，复制并粘贴实验室托管提供者为管理员用户名提供的租户电子邮件帐户，然后选择“下一步” 。
 
 1. 在“输入密码”对话框中，复制粘贴实验室托管提供者提供的管理员的租户密码，然后选择“登录” 。
@@ -56,7 +54,7 @@ lab:
 
 1. Close the Defender plans page by selecting the 'X' on the upper right of the page to go back to the **Environment settings**. --->
 
-### 任务 3：了解 Microsoft Defender for Cloud 仪表板
+### 任务 2：理解 Microsoft Defender for Cloud 仪表板
 
 1. 在 Microsoft Azure 门户的搜索栏中，键入 *Defender*，然后选择“Microsoft Defender for Cloud”****。
 

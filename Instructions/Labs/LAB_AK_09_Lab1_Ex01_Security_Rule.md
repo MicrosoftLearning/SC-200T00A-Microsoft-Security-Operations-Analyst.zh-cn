@@ -20,6 +20,8 @@ lab:
 
 在此任务中，你将激活 Microsoft 安全规则。
 
+>**备注：** Microsoft Sentinel 已在 Azure 订阅中预先部署了名称 **defenderWorkspace**，并且已安装所需的“*内容中心*”解决方案。
+
 1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：**Pa55w.rd**。  
 
 1. 在 Microsoft Edge 浏览器中，导航到 Azure 门户 (<https://portal.azure.com>)。
@@ -30,7 +32,7 @@ lab:
 
 1. 在 Azure 门户的“搜索”栏中，键入 Sentinel，然后选择 Microsoft Sentinel。
 
-1. 选择提供的 Microsoft Sentinel 工作区。
+1. 选择 Microsoft Sentinel **defenderWorkspace**。
 
 1. 从“配置”区域选择“分析”。
 

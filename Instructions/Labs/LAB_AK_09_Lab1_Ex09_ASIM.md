@@ -20,6 +20,8 @@ lab:
 
 在此任务中，你将查看 Microsoft Sentinel 部署随附的注册表架构分析程序。
 
+>**备注：** 已在名称为 **defenderWorkspace** 的 Azure 订阅中预先部署了 Microsoft Sentinel，并且已安装所需的*内容中心*解决方案。
+
 1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：**Pa55w.rd**。  
 
 1. 在 Microsoft Edge 浏览器中，导航到 Azure 门户 (<https://portal.azure.com> )。
@@ -30,7 +32,7 @@ lab:
 
 1. 在 Azure 门户的“搜索”栏中，键入 Sentinel，然后选择 Microsoft Sentinel。
 
-1. 选择 Microsoft Sentinel 工作区。
+1. 选择 Microsoft Sentinel **defenderWorkspace**。
 
 <!--- 1. In the Edge browser, open a new tab (Ctrl+T) and navigate to the Microsoft Sentinel GitHub ASIM page <https://github.com/Azure/Azure-Sentinel/tree/master/ASIM>.
 
@@ -50,7 +52,7 @@ lab:
 
 1. After the deployment completes return to the *Microsoft Sentinel* tab. --->
 
-1. 在“常规”左侧菜单下选择“日志”。
+1. 选择导航菜单的“*常规*”部分下的“**日志**”。
 
 1. 根据需要选择 >>，打开“架构和筛选器”边栏选项卡。
 
