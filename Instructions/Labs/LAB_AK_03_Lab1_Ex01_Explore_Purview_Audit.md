@@ -20,7 +20,7 @@ lab:
 
 1. 启动 Microsoft Edge 浏览器。
 
-1. 在 Microsoft Edge 浏览器中，转到 Microsoft Defender XDR 门户，网址为 (<https://security.microsoft.com>)。
+1. 在 Microsoft Edge 浏览器中，转到 Microsoft Defender XDR 门户 (<https://security.microsoft.com>)。
 
 1. 在“登录”对话框中，复制并粘贴实验室托管提供者为管理员用户名提供的租户电子邮件帐户，然后选择“下一步” 。
 
@@ -30,7 +30,9 @@ lab:
 
 1. 在“**更多资源**”窗格中，选择“*Microsoft Purview 门户*”磁贴上的“**打开**”按钮。
 
-1. 当 Microsoft Purview 门户打开时，有关*新的 Microsoft Purview 门户*的消息将显示在屏幕上。 选择同意数据流披露条款和隐私声明的选项，然后选择“**立即试用**”。
+1. Microsoft Purview 门户打开时，将显示一条消息，指出“*合规性门户已停用*”。 此消息将超时，并将你重定向到新的 *Microsoft Purview 门户*。
+
+1. 在“*欢迎使用新的 Microsoft Purview 门户*”消息中，选择同意数据流披露条款和隐私声明的选项，然后选择“**立即试用**”。
 
     ![显示“欢迎使用新的 Microsoft Purview 门户屏幕”的屏幕截图。](../Media/welcome-purview-portal.png)
 

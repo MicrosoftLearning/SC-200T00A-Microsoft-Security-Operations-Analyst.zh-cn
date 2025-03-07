@@ -66,71 +66,51 @@ lab:
 
 1. 选择“创建”。 等待创建资源，这可能需要几分钟的时间。
 
-<!--- ### Task 2: Install Azure Arc on an On-Premises Server
+### 任务 2：将本地服务器连接到 Azure
 
-In this task, you install Azure Arc on an on-premises server to make onboarding easier.
+在此任务中，将把本地服务器连接到 Azure 订阅。 Azure Arc 已在此服务器上预安装。 服务器将在接下来的练习中用于运行模拟攻击，随后将在 Microsoft Sentinel 中检测和调查这些攻击。
 
->**Important:** The next steps are done in a different machine than the one you were previously working. Look for the Virtual Machine name references.
+>**重要提示：** 接下来的步骤将在另一台计算机上完成，而不是你之前使用的计算机。
 
-1. Log in to **WINServer** virtual machine as Administrator with the password: **Passw0rd!** if necessary.  
+1. 使用以下密码以管理员身份登录到 WINServer 虚拟机：Passw0rd! 如有必要。  
 
-1. Open the Microsoft Edge browser and navigate to the Azure portal at <https://portal.azure.com>.
+    >**备注：** 如上所述，已在 **WINServer** 计算机上预先安装 Azure Arc。 现在，将把此计算机连接到 Azure 订阅。
 
-1. In the **Sign in** dialog box, copy, and paste in the **Tenant Email** account provided by your lab hosting provider and then select **Next**.
+1. 在 *WINServer* 计算机上，选择“*搜索*”图标并键入 **cmd**。
 
-1. In the **Enter password** dialog box, copy, and paste in the **Tenant Password** provided by your lab hosting provider and then select **Sign in**.
+1. 在搜索结果中，右键单击“*命令提示符*”，然后选择“**以管理员身份运行**”。
 
-1. In the Search bar of the Azure portal, type *Arc*, then select **Azure Arc**.
+1. 在命令提示符窗口中，键入以下命令。 *请勿按 Enter*：
 
-1. In the navigation pane under **Azure Arc resources** select **Machines**
+    ```cmd
+    azcmagent connect -g "defender-RG" -l "EastUS" -s "Subscription ID string"
+    ```
 
-1. Select **+ Add/Create**, then select **Add a machine**.
+1. 将“**订阅 ID 字符串**”替换为实验室主机托管服务提供商提供的“*订阅 ID*”（*资源选项卡）。 请确保保留引号。
 
-1. Select **Generate script** from the "Add a single server" section.
+1. 键入 **Enter** 以运行命令（这可能需要几分钟时间）。
 
-1. In the *Add a server with Azure Arc* page, select the Resource group you created earlier under *Project details*. **Hint:** *RG-Defender*
+    >**备注**：如果看到“*如何打开此内容？*”浏览器选择窗口，请选择 **Microsoft Edge**。
 
-    >**Note:** If you haven't already created a resource group, open another tab and create the resource group and start over.
+1. 在“*登录*”对话框中，输入实验室托管提供商提供的“**租户电子邮件**”和“**租户密码**”，然后选择“**登录**”。 等待“*身份验证完成*”消息，关闭浏览器选项卡并返回到“*命令提示符*”窗口。
 
-1. For *Region*, select **(US) East Us** from the drop-down list.
+1. 命令运行完成后，将“*命令提示符*”窗口保持打开状态，并键入以下命令以确认连接是否成功：
 
-1. Review the *Server details* and *Connectivity method* options. Keep the default values and select **Next** to get to the Tags tab.
+    ```cmd
+    azcmagent show
+    ```
 
-1. Review the default available tags. Select **Next** to get to the Download and run script tab.
+1. 在命令输出中，验证“*代理状态*”是否为“**已连接**”。
 
-1. Scroll down and select the **Download** button. **Hint:** if your browser blocks the download, take action in the browser to allow it. In Microsoft Edge Browser, select the ellipsis button (...) if needed and then select **Keep**.
-
-1. Right-click the Windows Start button and select **Windows PowerShell (Admin)**.
-
-1. Enter *Administrator* for "Username" and *Passw0rd!* for "Password" if you get a UAC prompt.
-
-1. Enter: cd C:\Users\Administrator\Downloads
-
-    >**Important:** If you do not have this directory, most likely means that you are in the wrong machine. Go back to the beginning of Task 4 and change to WINServer and start over.
-
-1. Type *Set-ExecutionPolicy -ExecutionPolicy Unrestricted* and press enter.
-
-1. Enter **A** for Yes to All and press enter.
-
-1. Type *.\OnboardingScript.ps1* and press enter.  
-
-    >**Important:** If you get the error *"The term .\OnboardingScript.ps1 is not recognized..."*, make sure you are doing the steps for Task 4 in the WINServer virtual machine. Other issue might be that the name of the file changed due to multiple downloads, search for *".\OnboardingScript (1).ps1"* or other file numbers in the running directory.
-
-1. Enter **R** to Run once and press enter (this may take a couple minutes).
-
-1. The setup process opens a new Microsoft Edge browser tab to authenticate the Azure Arc agent. Select your admin account, wait for the message "Authentication complete" and then go back to the Windows PowerShell window.
-
-1. When the installation finishes, go back to the Azure portal page where you downloaded the script and select **Close**. Close the **Add servers with Azure Arc** to go back to the Azure Arc **Machines** page.
-
-1. Select **Refresh** until WINServer server name appears and the Status is *Connected*.
-
-    >**Note:** This could take a couple of minutes. --->
-
-### 任务 2：连接 Azure Windows 虚拟机
+### 任务 3：连接 Azure Windows 虚拟机
 
 在此任务中，需要将 Azure Windows 虚拟机连接到 Microsoft Sentinel。
 
->**备注：** 已在名称为 **defenderWorkspace** 的 Azure 订阅中预先部署了 Microsoft Sentinel，并且已安装所需的*内容中心*解决方案。
+>**备注：** Microsoft Sentinel 已在 Azure 订阅中预先部署了名称 **defenderWorkspace**，并且已安装所需的“*内容中心*”解决方案。
+
+1. 使用密码 Pa55w.rd 以管理员身份登录到 WIN1 虚拟机 。  
+
+1. 如有必要，打开 Microsoft Edge 浏览器，导航到 Azure 门户（网址为：<https://portal.azure.com>），然后使用提供的凭据登录。
 
 1. 在 Azure 门户的“搜索”栏中，键入 Sentinel，然后选择 Microsoft Sentinel。
 
@@ -146,15 +126,17 @@ In this task, you install Azure Arc on an on-premises server to make onboarding 
 
 1. 选择“通过 AMA 收集的 Windows 安全事件”数据连接器，然后在连接器信息窗格上选择“打开连接器页面”。
 
-1. 在“说明”选项卡下的“配置”部分，选择“创建数据收集规则”。
+1. 在“配置”部分，选择“创建数据收集规则”。
 
 1. 为“规则名称”输入“AZWINDCR”，然后选择“下一步: 资源”。
 
-1. 选择“+ 添加资源”，以选择我们创建的虚拟机。
+1. 在“*资源*”选项卡的“*范围*”下，展开“*MOC 订阅*”。
 
-1. 展开“**RG-AZWIN01**”，然后选择“**AZWIN01**”。
+    >**提示**：可选择“*范围*”列前面的“>”来展开整个“*范围*”层次结构。
 
-1. 选择“应用”，然后选择“下一步: 收集” 。
+1. 展开“**defender-RG**”，然后选择“**AZWIN01**”。
+
+1. 选择“**下一步: 收集**”。
 
 1. 查看不同的安全事件收集选项。 保留所有安全事件，然后选择“下一步: 查看 + 创建”。
 
@@ -170,17 +152,15 @@ In this task, you install Azure Arc on an on-premises server to make onboarding 
 
 1. 确保你位于 Microsoft Sentinel 工作区中的“通过 AMA 数据连接器收集的 Windows 安全事件”配置中。
 
-1. 在“说明”选项卡中的“配置”部分下，通过选择铅笔图标编辑“AZWINDCR”数据收集规则。
+1. 在“*配置*”部分中，选择“*铅笔*”图标编辑 **AZWINDCR***数据收集规则*。
 
-1. 选择“下一页:**资源”，并在“资源”选项卡上的“范围”下展开你的订阅。********
+1. 选择“**下一步: 资源**”，并在“*资源*”选项卡的“*范围*”下展开“*MOC 订阅*”。
 
-    >提示****：可选择“范围”列前面的“>”来展开整个范围层次结构。****
+    >**提示**：可选择“*范围*”列前面的“>”来展开整个“*范围*”层次结构。
 
-1. 展开 RG-Defender（或你创建的资源组），然后选择 WINServer 。
+1. 展开“**defender-RG**”（或你创建的资源组），然后选择“**WINServer**”。
 
     >重要说明：如果未看到 WINServer，请参阅在此服务器中安装 Azure Arc 的学习路径 3 练习 1 任务 4。
-
-1. 选择“应用”。
 
 1. 依次选择“下一步: 收集”、“下一步: 查看 + 创建” 。
 
