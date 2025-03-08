@@ -113,7 +113,7 @@ lab:
     |自动化规则名称|Startup RegKey|
     |触发器|创建事件时|
     |操作 |运行攻略|
-    |playbook |PostMessageTeams-OnIncident|
+    |playbook |Defender_XDR_Ransomware_Playbook_SecOps-Tasks|
 
     >**注意：** 你已为 playbook 分配了权限，因此它将可用。
 

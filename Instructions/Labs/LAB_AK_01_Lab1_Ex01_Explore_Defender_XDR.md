@@ -35,7 +35,7 @@ lab:
 
 1. 启动 Microsoft Edge 浏览器。
 
-1. 在 Microsoft Edge 浏览器中，转到 Microsoft Defender XDR 门户，网址为 (<https://security.microsoft.com>)。
+1. 在 Microsoft Edge 浏览器中，转到 Microsoft Defender XDR 门户 (<https://security.microsoft.com>)。
 
 1. 在“登录”对话框中，复制并粘贴实验室托管提供者为管理员用户名提供的租户电子邮件帐户，然后选择“下一步” 。
 
