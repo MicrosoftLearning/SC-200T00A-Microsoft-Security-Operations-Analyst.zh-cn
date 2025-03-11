@@ -60,6 +60,8 @@ lab:
 
 在此任务中，你将使用适当的连接信息更新创建的新 playbook。
 
+1. 完成上一个任务后，你应位于“*Defender_XDR_Ransomware_Playbook_SecOps-Tasks | 逻辑应用设计器*”页。 如果没有，请完成下面的步骤 1-5。
+
 1. 在 Azure 门户的“搜索”栏中，键入 Sentinel，然后选择 Microsoft Sentinel。
 
 1. 选择 Microsoft Sentinel 工作区。
@@ -68,9 +70,9 @@ lab:
 
 1. 如果看不到任何 playbook，请在命令栏中选择“刷新”。 应会显示在上一步中创建的 Playbook。
 
-1. 选择 **Defender_XDR_Ransomware_Playbook_SecOps_Tasks** playbook 名称。
+1. 选择 **Defender_XDR_Ransomware_Playbook_SecOps_Tasks** playbook 名称链接。
 
-1. 在 **Defender_XDR_Ransomware_Playbook_for_SecOps_Tasks** 的逻辑应用页上的命令菜单中，选择“编辑”。
+1. 在 **Defender_XDR_Ransomware_Playbook_for_SecOps_Tasks** 的逻辑应用设计器页上的命令菜单中，选择“编辑”。
 
     >**注意：** 可能需要刷新页面。
 
@@ -80,13 +82,13 @@ lab:
 
 1. 选择“添加新项”，然后选择“登录” 。 当系统提示时，在新窗口中，选择 Azure 订阅管理员凭据。 现在，块的最后一行应显示“已连接到 your-admin-username”。
 
-1. 在逻辑拆分下方，选择“将任务添加到事件”。
+<!--- 1. Below within the logic split (+ sign), select Add an action to incident.--->
 
 1. 在命令栏上选择“保存”。 将来的实验室中将使用逻辑应用。
 
 ### 任务 3：创建自动化规则
 
-1. 在 Microsoft Sentinel 中，转到“配置”下的“自动化”。
+1. 在 Microsoft Sentinel 中，展开 导航菜单中的“*配置*”并选择“*自动化*”。
 
 1. 选择“创建”，然后选择自动化规则。
 
@@ -96,7 +98,7 @@ lab:
 
 1. 将分析规则名称保留为“全部”。
 
-1. 单击“添加”并选择“And”。
+1. 选择“**+ 添加**”并选择“*条件（和）*”。
 
 1. 从下拉列表中选择“策略”。
 
@@ -120,6 +122,6 @@ lab:
 
 1. 选择底部的“应用”。****
 
-在这里，根据你的角色，你将继续执行更多的架构师练习，或者转向分析师练习。
+现已在 Microsoft Sentinel 中创建 playbook 和自动化规则。
 
 ## 继续完成练习 3
