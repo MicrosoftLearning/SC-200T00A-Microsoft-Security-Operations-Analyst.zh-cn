@@ -57,6 +57,7 @@ lab:
     net localgroup administrators theusernametoadd /add
     ```
 
+
 ### 任务 3：通过 DNS 进行命令和控制攻击
 
 1. 复制并运行以下命令以创建一个脚本，用于模拟对 C2 服务器的 DNS 查询：
