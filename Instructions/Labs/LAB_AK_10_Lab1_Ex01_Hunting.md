@@ -14,169 +14,17 @@ lab:
 
 >**重要说明：** 学习路径 #10 的实验室练习是在*独立*环境中进行的。 如果在完成实验室前退出，则需要重新运行配置。
 
-如果不重新运行以下先决条件任务，在学习路径 9 实验练习中创建的日志数据将无法在本实验室中使用。
+>**备注：** 如果不重新运行练习 5 中的任务 1 和 2，以及练习 6 中 WIN1 服务器上的“*攻击 3*”，则无法在本实验室中使用在学习路径 9 实验练习中创建的日志数据。 可以通过选择以下链接，在新的浏览器选项卡中打开这些指令：
 
-<!--- **[Lab 09 Exercise 5](https://microsoftlearning.github.io/SC-200T00A-Microsoft-Security-Operations-Analyst/Instructions/Labs/LAB_AK_09_Lab1_Ex05_Attacks.html)**
+**[实验室 09 练习 5](https://microsoftlearning.github.io/SC-200T00A-Microsoft-Security-Operations-Analyst/Instructions/Labs/LAB_AK_09_Lab1_Ex05_Attacks.html)**
 
-**[Lab 09 Exercise 6](https://microsoftlearning.github.io/SC-200T00A-Microsoft-Security-Operations-Analyst/Instructions/Labs/LAB_AK_09_Lab1_Ex06_Perform_Attacks.html)** --->
+**[实验室 09 练习 6](https://microsoftlearning.github.io/SC-200T00A-Microsoft-Security-Operations-Analyst/Instructions/Labs/LAB_AK_09_Lab1_Ex06_Perform_Attacks.html)**
 
-### 完成本实验室的估计时间：45 - 60 分钟
-
-### 先决条件任务 1：连接到本地服务器
-
-在此任务中，将把本地服务器连接到 Azure 订阅。 Azure Arc 已在此服务器上预安装。 服务器将在接下来的练习中用于运行模拟攻击，随后将在 Microsoft Sentinel 中检测和调查这些攻击。
-
->**重要提示：** 接下来的步骤将在另一台计算机上完成，而不是你之前使用的计算机。 在引用选项卡中查找虚拟机名称。
-
-1. 使用以下密码以管理员身份登录到 WINServer 虚拟机：Passw0rd! 如有必要。  
-
-如上所述，已在 **WINServer** 计算机上安装了 Azure Arc。 现在，将把此计算机连接到 Azure 订阅。
-
-1. 在 *WINServer* 计算机上，选择“*搜索*”图标并键入 **cmd**。
-
-1. 在搜索结果中，右键单击“*命令提示符*”，然后选择“**以管理员身份运行**”。
-
-1. 在命令提示符窗口中，键入以下命令。 *请勿按 Enter*：
-
-    ```cmd
-    azcmagent connect -g "defender-RG" -l "EastUS" -s "Subscription ID string"
-    ```
-
-1. 将“**订阅 ID 字符串**”替换为实验室主机托管服务提供商提供的“*订阅 ID*”（*资源选项卡）。 请确保保留引号。
-
-1. 键入 **Enter** 以运行命令（这可能需要几分钟时间）。
-
-    >**备注**：如果看到“*如何打开此内容？*”浏览器选择窗口，请选择 **Microsoft Edge**。
-
-1. 在“*登录*”对话框中，输入实验室托管提供商提供的“**租户电子邮件**”和“**租户密码**”，然后选择“**登录**”。 等待“*身份验证完成*”消息，关闭浏览器选项卡并返回到“*命令提示符*”窗口。
-
-1. 命令运行完成后，将“*命令提示符*”窗口保持打开状态，并键入以下命令以确认连接是否成功：
-
-    ```cmd
-    azcmagent show
-    ```
-
-1. 在命令输出中，验证“*代理状态*”是否为“**已连接**”。
-
-## 先决条件任务 2：连接非 Azure Windows 计算机
-
-在此任务中，将向 Microsoft Sentinel 添加一台已连接 Azure Arc 的本地计算机。  
-
->**备注：** 已在你的 Azure 订阅中使用名称 **defenderWorkspace** 预先部署了 Microsoft Sentinel，并且已安装所需的*内容中心*解决方案。
-
-1. 使用密码 Pa55w.rd 以管理员身份登录到 WIN1 虚拟机 。  
-
-1. 在 Microsoft Edge 浏览器中，导航到 Azure 门户 (<https://portal.azure.com> )。
-
-1. 在“登录”对话框中，复制粘贴实验室托管提供者提供的租户电子邮件帐户，然后选择“下一步”  。
-
-1. 在“输入密码”对话框中，复制粘贴实验室托管提供者提供的租户密码，然后选择“登录”  。
-
-1. 在 Azure 门户的“搜索”栏中，键入 Sentinel，然后选择 Microsoft Sentinel。
-
-1. 选择 Microsoft Sentinel **defenderWorkspace**。
-
-1. 在 Microsoft Sentinel 左侧导航菜单中，向下滚动到“*配置*”部分，然后选择“**数据连接器**”。
-
-1. 在“*数据连接器*”中，搜索“**通过 AMA 的 Windows 安全事件**”解决方案，然后从列表中选择它。
-
-1. 在“*通过 AMA 的 Windows 安全事件*”详细内容窗格中，选择“**打开连接器页面**”。
-
-    >注意：“Windows 安全事件”解决方案安装“通过 AMA 收集的 Windows 安全事件”和“通过旧版代理程序的安全事件”数据连接器。 外加 2 个工作簿、20 个分析规则和 43 个搜寻查询。
-
-1. 在“说明”选项卡下的“配置”部分，选择“创建数据收集规则”。
-
-1. 为“规则名称”输入“AZWINDCR”，然后选择“下一步: 资源”。
-
-1. 在“*资源*”选项卡上的“*范围*”下，展开“*订阅*”。
-
-    >**提示**：可选择“*范围*”列前面的“>”来展开整个“*范围*”层次结构。
-
-1. 展开 **defender-RG** 资源组，然后选择 **WINServer**。
-
-1. 选择“**下一步: 收集**”，并保留选中的“*所有安全事件*”。
-
-1. 在完成时选择“下一步:  查看 + 创建”。
-
-1. 显示“验证通过”后，选择“创建”。
-
-### 先决条件任务 3：通过 DNS 进行命令和控制攻击
-
->**重要提示：** 接下来的步骤将在另一台计算机上完成，而不是你之前使用的计算机。 在引用选项卡中查找虚拟机名称。
-
-1. 使用以下密码以管理员身份登录到 WINServer 虚拟机：Passw0rd! 如有必要。
-
-1. 在 *WINServer* 计算机上，选择“*搜索*”图标并键入 **cmd**。
-
-1. 在搜索结果中，右键单击“*命令提示符*”，然后选择“**以管理员身份运行**”。
-
-1. 复制并运行以下命令以创建一个脚本，用于模拟对 C2 服务器的 DNS 查询：
-
-    ```CommandPrompt
-    notepad c2.ps1
-    ```
-
-1. 选择“是”以创建新文件并将以下 PowerShell 脚本复制到 c2.ps1。
-
-    >注意：粘贴到虚拟机文件中可能不会显示完整的脚本长度。**** 确保脚本与 c2.ps1 文件中的指令匹配**。
-
-    ```PowerShell
-    param(
-        [string]$Domain = "microsoft.com",
-        [string]$Subdomain = "subdomain",
-        [string]$Sub2domain = "sub2domain",
-        [string]$Sub3domain = "sub3domain",
-        [string]$QueryType = "TXT",
-        [int]$C2Interval = 8,
-        [int]$C2Jitter = 20,
-        [int]$RunTime = 240
-    )
-    $RunStart = Get-Date
-    $RunEnd = $RunStart.addminutes($RunTime)
-    $x2 = 1
-    $x3 = 1 
-    Do {
-        $TimeNow = Get-Date
-        Resolve-DnsName -type $QueryType $Subdomain".$(Get-Random -Minimum 1 -Maximum 999999)."$Domain -QuickTimeout
-        if ($x2 -eq 3 )
-        {
-            Resolve-DnsName -type $QueryType $Sub2domain".$(Get-Random -Minimum 1 -Maximum 999999)."$Domain -QuickTimeout
-            $x2 = 1
-        }
-        else
-        {
-            $x2 = $x2 + 1
-        }    
-        if ($x3 -eq 7 )
-        {
-            Resolve-DnsName -type $QueryType $Sub3domain".$(Get-Random -Minimum 1 -Maximum 999999)."$Domain -QuickTimeout
-            $x3 = 1
-        }
-        else
-        {
-            $x3 = $x3 + 1
-        }
-        $Jitter = ((Get-Random -Minimum -$C2Jitter -Maximum $C2Jitter) / 100 + 1) +$C2Interval
-        Start-Sleep -Seconds $Jitter
-    }
-    Until ($TimeNow -ge $RunEnd)
-    ```
-
-1. 在“记事本”菜单中，选择“文件”，然后选择“保存” 。 
-
-1. 返回命令提示符窗口，输入以下命令并按 Enter 键。 
-
-    >注意：你将看到 DNS 解析错误。 这是正常情况。
-
-    ```CommandPrompt
-    Start PowerShell.exe -file c2.ps1
-    ```
-
->**重要提示：** 请勿关闭这些窗口。 让此 PowerShell 脚本在后台运行。 该命令需要在数小时内生成日志条目。 在此脚本运行期间，你可以继续进行下一项任务和下一个练习。 此任务创建的数据稍后将在威胁搜寻中使用。 此过程不会创造大量的数据或处理。
+### 完成本实验室的估计时间：40 分钟
 
 ### 任务 1：创建搜寻查询
 
-在此任务中，将创建搜寻查询、将结果加入书签并创建 Livestream。
+在此任务中，你将创建搜寻查询、为结果添加书签并创建 Livestream。
 
 >**备注：** Microsoft Sentinel 已在 Azure 订阅中预先部署了名称 **defenderWorkspace**，并且已安装所需的“*内容中心*”解决方案。
 
@@ -268,7 +116,7 @@ lab:
 
 1. 在中间窗格中选择“书签”选项卡。
 
-1. 在结果列表中选择你创建的书签。
+1. 在结果列表中选择你刚刚创建的书签。
 
 1. 在右窗格中，向下滚动并选择“调查”按钮。 提示：可能需要几分钟时间才能显示调查图。
 
@@ -286,7 +134,7 @@ lab:
 
 ### 任务 2：创建 NRT 查询规则
 
-在此任务中，将创建 NRT 分析查询规则，而不是使用 LiveStream。 NRT 规则每分钟运行一次，并回溯一分钟。 NRT 规则的优点是可以使用警报和事件创建逻辑。
+在此任务中，你将创建 NRT 分析查询规则，而不是使用 LiveStream。 NRT 规则每分钟运行一次，并回溯一分钟。 NRT 规则的优点是可以使用警报和事件创建逻辑。
 
 1. 在 Microsoft Sentinel 中的“配置”下选择“Analytics”页面。 
 
@@ -315,7 +163,7 @@ lab:
     | summarize min(TimeGenerated), count() by Computer, SubjectUserName, PwshParam
     ```
 
-1. 选择“**查看查询结果 >**”，确保查询没有任何错误。
+1. 选择“查看查询结果 >”，确保查询没有任何错误。
 
 1. 通过选择窗口右上方的“X”关闭“日志”窗口，然后选择“确定”以放弃更改 。 
 
@@ -325,7 +173,7 @@ lab:
 
     - 对于“实体类型”下拉列表，请选择“Host”。
     - 对于“标识符”下拉列表，选择“HostName”。
-    - 对于“*值*”下拉列表，选择“**计算机**”。
+    - 对于“值”下拉列表，选择“计算机”。
 
 1. 向下滚动，选择“下一步: 事件设置>”按钮。
 
@@ -337,9 +185,9 @@ lab:
 
 ### 任务 3：创建搜索作业
 
-在此任务中，将使用搜索作业查找 C2。
+在此任务中，你将使用搜索作业查找 C2。
 
-**备注：**“*还原*”操作会产生消耗 Azure 订阅额度的成本。 因此，不会在此实验室中执行还原操作。 但是，可以按照以下步骤在自己的环境中执行还原操作。
+<!--- >**Note:** The *Restore* operation incurs costs that can deplete your Azure Pass subscription credits. For that reason, you will not be performing the restore operation in this lab. However, you can follow the steps below to perform the restore operation in your own environment. --->
 
 1. 在 Microsoft Sentinel 的“常规”下，选择“搜索”页面。
 
@@ -375,7 +223,7 @@ lab:
 
 1. 选择“**帐户操作**”卡。
 
-1. 在详细内容窗格中，找到“*模拟覆盖范围*”，然后选择“*搜寻查询*”旁边的“**视图**”链接。
+1. 在详细信息窗格中，找到“*模拟覆盖范围*”，然后选择“*搜寻查询*”旁边的“**视图**”链接。
 
 1. 此链接将基于所选技术转到“搜寻”页上的“查询”选项卡的筛选视图。
 
@@ -383,7 +231,7 @@ lab:
 
 1. 选择筛选器上方屏幕中间附近的“**搜寻操作**”下拉菜单。
 
-1. 选择“**创建搜寻**”。 会为此新搜寻克隆你选定的所有查询。
+1. 选择“**创建新搜寻**”。 会为此新搜寻克隆你选定的所有查询。
 
 1. 填写搜寻名称和可选字段。 可通过说明来描述你的假设。 可在“假设”下拉菜单设置正在工作的假设的状态。
 
