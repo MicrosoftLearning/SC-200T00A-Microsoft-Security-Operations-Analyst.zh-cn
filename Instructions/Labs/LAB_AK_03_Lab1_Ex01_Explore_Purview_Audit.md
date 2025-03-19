@@ -10,6 +10,20 @@ lab:
 
 你是一家公司的安全运营分析师，所在公司正在实施 Microsoft Defender XDR 和 Microsoft Purview。 你正在协助 IT 合规性团队的同事配置 Purview 审核（标准）和审核（高级）。 其目标是确保准确记录对医疗保健机构网络中患者数据的所有访问和修改，以满足健康数据保护法规。
 
+>[!alert] 如果收到错误消息并且无法在此练习中启动审核记录，请使用以下步骤来解决此问题：
+>
+>1. 在 Windows 搜索窗体中键入 *PowerShell*，打开提升的 PowerShell 会话，然后选择“**以管理员身份运行**”。
+>1. 通过运行 `Install-Module -Name ExchangeOnlineManagement` 来安装 ExchangeOnlineManagement 模块
+>1. 通过运行 `Connect-ExchangeOnline` 连接到 ExchangeOnlineManagement
+>1. 出现提示时，通过输入实验室托管提供商的管理员用户名和密码登录。
+>1. 要验证是否已启用审核，请运行 `Get-AdminAuditLogConfig | FL UnifiedAuditLogIngestionEnabled`
+>1. 如果为 false，则关闭审核日志。
+>1. 要启用审核，请运行 `Set-AdminAuditLogConfig -UnifiedAuditLogIngestionEnabled $true`
+>1. 如果收到无法在组织中运行脚本的错误信息，请运行 `Enable-OrganizationCustomization`
+>1. 重试运行 `Set-AdminAuditLogConfig -UnifiedAuditLogIngestionEnabled $true`
+>1. 要确认已启用审核，请运行 `Get-AdminAuditLogConfig | FL UnifiedAuditLogIngestionEnabled`
+>1. 完成后，运行 `Disconnect-ExchangeOnline` 以结束会话
+
 ### 完成本实验室的预计时间：15 分钟
 
 ### 任务 1：启用 Purview 审核日志
