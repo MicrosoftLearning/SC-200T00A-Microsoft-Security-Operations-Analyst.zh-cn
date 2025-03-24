@@ -8,37 +8,33 @@
 
 ## 演示先决条件
 
-本课程的实验室需要 Microsoft 365 E5 许可的租户以及 Azure 订阅。
+本课程的实验室需要具有 Microsoft Defender for Endpoint P2 许可证和 Azure 订阅的 Microsoft 365 E5 许可租户。
 
-* 你可以为自己申请 Microsoft Learning Azure Pass。
-* 确保至少在进行演示前两周申请上述 Azure Pass。 收到 Pass 后，需要激活它。 
-* Azure Pass 的实际功能与公开可用的 Microsoft Azure 试用版订阅相同。 这意味着通行证的功能有限。
+* 与 SC-200 Microsoft 安全运营分析师课程一样，这些演示旨在在授权实验室托管环境中运行。
 * 实验室说明在 [SC-200 Microsoft Learning GitHub 存储库](https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/tree/master/Instructions/VTD_Demos/)中。
 * 确保将用于演示的计算机安装了新的 Microsoft Edge 浏览器。
 
-## 激活 Azure Pass
-
->**备注：** 某些演示需要连接到 Microsoft 365 E5 租户的 Azure 订阅。 如果 Azure 通行证不可用，则可以使用自己的 Azure 订阅和 Microsoft 365 E5 租户。 访问 [Microsoft 365 开发人员计划](https://developer.microsoft.com/microsoft-365/dev-program/)网站，请求成员身份，并设置免费的 Microsoft 365 E5 开发人员订阅。
+>**备注：** 某些演示需要连接到 Microsoft 365 E5 租户的 Azure 订阅。 你可以使用自己的 Azure 订阅和 Microsoft 365 E5 租户。 访问 [Microsoft 365 开发人员计划](https://developer.microsoft.com/microsoft-365/dev-program/)网站，请求成员身份，并设置免费的 Microsoft 365 E5 开发人员订阅。
 
 ## 部署 Defender for Endpoint
 
 ### 获取 Microsoft 365 凭据
 
-启动实验室后，Microsoft 虚拟实验室环境中将提供一个免费试用租户可供你访问。 系统会自动向该租户分配一个唯一用户名和密码。 你需要检索此用户名和密码，以便在 Microsoft 虚拟实验室环境中登录 Azure 和 Microsoft 365。
+启动实验室后，你可获得一个免费试用版租户，可在 Microsoft 虚拟实验室环境中访问。 系统自动向该租户分配一个唯一用户名和密码。 你需要检索此用户名和密码，以便在 Microsoft 虚拟实验室环境中登录 Azure 和 Microsoft 365。
 
-由于此课程可能由学习合作伙伴使用几个授权实验室托管提供者中的任何一个提供，因此，检索与租户关联的租户 ID 的相关实际步骤可能会因实验室托管提供者而有所不同。 因此，讲师将在课程中为你提供有关如何检索此信息的必要说明。 你应该记录以供稍后使用的信息包括：
+由于此课程可能由学习合作伙伴使用几个授权实验室托管提供者中的任何一个提供，因此，检索与租户关联的租户 ID 的相关实际步骤可能会因实验室托管提供者而有所不同。 因此，讲师将在课程中为你提供有关如何检索此信息的必要指令。 你应该记录以供稍后使用的信息包括：
 
-    - 租户后缀 ID。 此 ID 适用于将在整个实验室中用于登录 Microsoft 365 的 onmicrosoft.com 帐户。 其格式为 {username}@M365xZZZZZZ.onmicrosoft.com，其中 ZZZZZZ 是实验室托管提供者提供的唯一租户后缀 ID。 记录此 ZZZZZZ 值以供稍后使用。 当有任何实验室步骤指示你登录 Microsoft 365 门户时，都必须输入在此处获取的 ZZZZZZ 值。
-    - 租户密码。 这是由实验室托管提供者提供的管理员帐户的密码。
-    
+租户后缀 ID。 此 ID 适用于在整个实验室中用于登录 Microsoft 365 的 onmicrosoft.com 帐户。 其格式为 {username}@M365xZZZZZZ.onmicrosoft.com，其中 ZZZZZZ 是实验室托管提供者提供的唯一租户后缀 ID。 记录此 ZZZZZZ 值以供稍后使用。 当有任何实验室步骤指示你登录 Microsoft 365 门户时，都必须输入在此处获取的 ZZZZZZ 值。
+
+租户密码。 这是由实验室托管提供者提供的管理员帐户的密码。
 
 ### 初始化 Microsoft Defender for Endpoint
 
 在此任务中，你将执行 Microsoft Defender for Endpoint 的初始化。
 
-1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：**Pa55w.rd**。  
+1. 使用密码：**Pa55w.rd**，以管理员身份登录 WIN1 虚拟机。  
 
-1. 在 Edge 浏览器中，转到 Microsoft Defender 门户 (https://security.microsoft.com))。
+1. 在 Microsoft Edge 浏览器中，转到 Microsoft Defender 门户，网址为 (https://security.microsoft.com))。
 
 1. 在“登录”对话框中，复制并粘贴实验室托管提供者为管理员用户名提供的租户电子邮件帐户，然后选择“下一步” 。
 
@@ -56,13 +52,13 @@
 
     >**注意：** 忽略显示“无法检索某些数据”的弹出错误消息**。 如果没有出现消息“请稍候！ 我们正在为你的数据准备新空间并连接它们”，或者虽然“设置”>“Microsoft Defender XDR”>“帐户”页已打开，但你看到消息“无法加载数据存储位置。** 请稍后重试，从“常规”菜单中选择“警报服务设置”。
 
-1. 新工作区初始化成功完成后，在“主页”**** 门户页上，将显示“在一个位置获取 SIEM 和 XDR”**** 横幅。 在“设置”**** 中，现已打开帐户、电子邮件通知、**预览功能**、警报服务设置、权限和角色和流式处理 API Microsoft Defender XDR 常规设置。
+1. 新工作区初始化成功完成后，在“**主页**”门户页上，将显示“**在一个位置获取 SIEM 和 XDR**”的横幅。 在“**设置**”中，Microsoft Defender XDR 的帐户、电子邮件通知、**预览功能**、警报服务设置、权限、角色和流式处理 API 的 常规设置现已打开。
 
-1. 新空间成功完成后，你将看到 Microsoft 365 Defender 的帐户、电子邮件通知、警报服务设置、权限和角色以及流式处理 API 等常规设置。 你还将看到“预览功能”已打开。
+1. 新空间成功完成后，你将看到 Microsoft 365 Defender 的帐户、电子邮件通知、警报服务设置、权限、角色和流式处理 API 等常规设置。 你还将看到“预览功能”已打开****。
 
     >**备注：** 在托管实验室环境中，数据存储位置应当已为你选择好。 它应位于适当的地理位置，用于管理此培训租户。 你仍可以选择数据保留长度，但这不是必需的。
 
-1. 在“设置”中，选择“终结点”。
+1. 在“**设置**”中，选择“**终结点**”。
 
 1. 在“设备管理”部分选择“加入”。
 
@@ -131,8 +127,8 @@
 
 1. 。 在“设备”选项卡中，对操作系统条件选择“Windows 10”，然后选择“下一步” 。
 
-1. 在“预览设备”选项卡上，选择“显示预览”以查看 WIN1 虚拟机。 选择“下一步”  。 
-提示：如果没有在预览列表中看到虚拟机，请返回并同时为操作系统条件选择“无”。 尚未填充 VM 的数据。
+1. 在“预览设备”选项卡上，选择“**显示预览**”以查看 WIN1 虚拟机。 选择**下一步**。 
+**提示：** 如果没有在预览列表中看到虚拟机，请返回并同时为操作系统条件选择“*无*”。 尚未填充 VM 的数据。
 
 1. 在“用户访问权限”选项卡中，依次选择“sg-IT”和“添加所选组”
 
@@ -140,7 +136,7 @@
 
 1. 设备组配置已更改。 选择“应用更改”，检查匹配项并重新计算分组。
 
-1. 现在，你将有两个设备组；刚创建的“常规”设备组和具有相同修正级别的“未分组的设备（默认）”设备组。
+1. 现在，将有两个设备组；刚刚创建的“常规”设备组和具有相同修正级别的“未分组设备（默认）”设备组。
 
 <!--- 
 ## Deploy sample alerts for Demo in Module 3
@@ -169,7 +165,7 @@ In this task, you will load sample security alerts and review the alert details.
 
 在此任务中，你将创建 Microsoft Sentinel 工作区。
 
- >注：在以下演示中，需要有效的 Azure Pass 或其他 Azure 订阅。
+ >**备注：** 在以下演示中，需要有效的 Azure 订阅。
 
 1. 在 Microsoft Edge 浏览器中，导航到 Azure 门户 (https://portal.azure.com )。
 
@@ -177,7 +173,7 @@ In this task, you will load sample security alerts and review the alert details.
 
 1. 在“输入密码”对话框中，复制粘贴实验室托管提供者提供的租户密码，然后选择“登录”  。
 
-1. 在 Azure 门户的搜索栏中，键入“Sentinel”，然后选择“Microsoft Sentinel”。
+1. 在 Azure 门户的“搜索”栏中，键入 Sentinel，然后选择 Microsoft Sentinel。
 
 1. 选择“+ 新建”。
 
@@ -207,9 +203,9 @@ In this task, you will load sample security alerts and review the alert details.
 
 在此任务中，你将访问 Microsoft Sentinel 工作区。
 
-1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：**Pa55w.rd**。  
+1. 使用密码：**Pa55w.rd**，以管理员身份登录 WIN1 虚拟机。  
 
-1. 打开浏览器，搜索、下载并安装新的 Microsoft Edge 浏览器。 启动新的 Edge 浏览器。
+1. 打开浏览器，搜索、下载并安装新的 Microsoft Edge 浏览器。 启动新的 Microsoft Edge 浏览器。
 
 1. 在 Microsoft Edge 浏览器中，导航到 Azure 门户 (https://portal.azure.com )。
 
@@ -223,7 +219,7 @@ In this task, you will load sample security alerts and review the alert details.
 
 ### 任务 2：连接 Azure 活动数据连接器。
 
-在此任务中，你将连接“Azure 活动”数据连接器。
+在此任务中，你将连接“*Azure 活动*”数据连接器。
 
 1. 在 Microsoft Sentinel 左侧菜单中，向下滚动到“内容管理”部分，然后选择“内容中心”。
 
@@ -237,15 +233,15 @@ In this task, you will load sample security alerts and review the alert details.
 
 1. 选择“Azure 活动”数据连接器，然后选择“打开连接器页面”。
 
-1. 在“说明”选项卡下的“配置”区域中，向下滚动到“2. 连接订阅...”，并选择“启动 Azure Policy 分配向导>”。
+1. 在“说明”选项卡下的“配置”区域中，向下滚动到“2. 连接订阅...”，并选择“**启动 Azure Policy 分配向导>**”。
 
-1. 在“基本信息”选项卡中，选择“范围”下的省略号按钮 (...)，然后从下拉列表中选择你的“Azure Pass - 赞助”订阅，然后单击“选择”  。
+1. 在“**基本信息**”选项卡中，选择“**范围**”下的省略号按钮 (...)，并从下拉列表中选择托管的 Azure 订阅，然后选择“**选择**”。
 
-1. 选择“参数”选项卡，从“主要 Log Analytics 工作区”下拉列表中选择你的工作区********。 此操作将应用订阅配置，以将信息发送到 Log Analytics 工作区。
+1. 选择“参数”选项卡，从“主要 Log Analytics 工作区”下拉列表中选择你的工作区********。 此操作通过应用订阅配置将信息发送到 Log Analytics 工作区。
 
-1. 选择“修正”选项卡，然后选择“创建修正任务”复选框 。 此操作会将策略分配应用于现有的 Azure 资源。
+1. 选择**修正**选项卡，然后选择**创建修正任务**复选框 。 此操作会将策略应用于现有的 Azure 资源。
 
-1. 选择“查看 + 创建”按钮，检查配置。
+1. 选择**查看 + 创建**按钮，检查配置。
 
 1. 选择“创建”以完成操作。
 
@@ -253,7 +249,7 @@ In this task, you will load sample security alerts and review the alert details.
 
 在本任务中，你将在 Azure 中创建 Windows 虚拟机。
 
-1. 使用密码 Pa55w.rd 以管理员身份登录到 WIN1 虚拟机 。  
+1. 使用密码：**Pa55w.rd**，以管理员身份登录 **WIN1** 虚拟机。  
 
 1. 在 Microsoft Edge 浏览器中，导航到 Azure 门户 (https://portal.azure.com )。
 
@@ -261,7 +257,7 @@ In this task, you will load sample security alerts and review the alert details.
 
 1. 在“输入密码”对话框中，复制粘贴实验室托管提供者提供的租户密码，然后选择“登录”  。
 
-1. 选择“+ 创建资源”。 提示：如果已在 Azure 门户中，则可能需要从顶部栏中选择 Microsoft Azure 以返回主页。
+1. 选择“+ 创建资源”。 **提示：** 如果已在 Azure 门户中，则可能需要从顶部栏中选择 *Microsoft Azure* 以返回主页。
 
 1. 在“搜索服务和市场”框中，输入“Windows 10”并从下拉列表中选择“Microsoft Window 10”。
 
@@ -289,7 +285,7 @@ In this task, you will load sample security alerts and review the alert details.
 
 1. 向下滚动，输入你选择的用户名。 提示：避免使用保留字，如 admin 或 root。
 
-1. 输入你选择的密码。 提示：重新使用你的租户密码可能更简单。 可以在“资源”选项卡中找到它。
+1. 输入你选择的密码。 **提示：** 重新使用租户密码可能更简单。 可以在“资源”选项卡中找到它。
 
 1. 向下滚动到页面底部，选中“许可”下面的复选框，以确认你具有符合条件的许可证。
 
@@ -315,7 +311,7 @@ In this task, you will load sample security alerts and review the alert details.
 
 1. 安装完成后，选择“管理”
 
-    >注意：“Windows 安全事件”解决方案安装“通过 AMA 收集的 Windows 安全事件”和“通过旧版代理程序的安全事件”数据连接器。 外加 2 个工作簿、20 个分析规则和 43 个搜寻查询。
+    >**备注：**“*Windows 安全事件*”解决方案同时安装“*通过 AMA 收集的 Windows 安全事件*”和“*通过旧版代理程序的安全事件*”数据连接器。 外加 2 个工作簿、20 个分析规则和 43 个搜寻查询。
 
 1. 选择“通过 AMA 收集的 Windows 安全事件”数据连接器，然后在连接器信息窗格上选择“打开连接器页面”。
 
@@ -325,7 +321,7 @@ In this task, you will load sample security alerts and review the alert details.
 
 1. 选择“+ 添加资源”，以选择我们创建的虚拟机。
 
-1. 展开“RG-AZWIN01”，然后选择“AZWIN01” 。
+1. 展开“**RG-AZWIN01**”，然后选择“**AZWIN01**”。
 
 1. 选择“应用”，然后选择“下一步: 收集” 。
 
@@ -341,7 +337,7 @@ In this task, you will load sample security alerts and review the alert details.
 
 >**重要提示：** 接下来的步骤将在另一台计算机上完成，而不是你之前使用的计算机。 查找虚拟机名称引用。
 
-1. 使用以下密码以管理员身份登录到 WINServer 虚拟机：Passw0rd! （如果需要）。  
+1. 使用以下密码以管理员身份登录到 **WINServer** 虚拟机：**Passw0rd!** 如有必要。  
 
 1. 打开 Microsoft Edge 浏览器并导航到 Azure 门户 (https://portal.azure.com )。
 
@@ -367,7 +363,7 @@ In this task, you will load sample security alerts and review the alert details.
 
 1. 查看默认可用的标记。 选择“下一步”，转到“下载并运行脚本”选项卡。
 
-1. 向下滚动并选择“下载”按钮。 提示：如果浏览器阻止下载，请在浏览器中执行操作以允许下载。 在 Microsoft Edge 浏览器中，根据需要选择省略号按钮 (...)，然后选择“保留”。
+1. 向下滚动并选择“下载”按钮。 提示：如果浏览器阻止下载，请在浏览器中执行操作以允许下载。 在 Microsoft Edge 浏览器中，根据需要选择省略号按钮 (...)，然后选择“保留”****。
 
 1. 右键单击 Windows 的“开始”按钮，然后选择“Windows PowerShell (管理员)”。
 
@@ -387,9 +383,9 @@ In this task, you will load sample security alerts and review the alert details.
 
 1. 输入 R 以运行一次，然后按 Enter（这可能需要几分钟时间）。
 
-1. 安装过程将打开新的 Edge 浏览器标签页，以对 Azure Arc 代理进行身份验证。 选择管理员帐户，等待消息“身份验证完成”，然后返回到 Windows PowerShell 窗口。
+1. 安装过程将打开新的 Microsoft Edge 浏览器标签页，以对 Azure Arc 代理进行身份验证。 选择管理员帐户，等待消息“身份验证完成”，然后返回到 Windows PowerShell 窗口。
 
-1. 安装完成后，返回到下载脚本的 Azure 门户页面，然后选择“关闭”。 关闭“**使用 Azure Arc 添加服务器**”，以返回到 Azure Arc“**计算机**”页面。
+1. 安装完成后，返回到下载脚本的 Azure 门户页面，然后选择“**关闭**”。 关闭“**使用 Azure Arc 添加服务器**”，以返回到 Azure Arc“**计算机**”页面。
 
 1. 选择“刷新”，直到显示 WINServer 服务器名称，且状态为“已连接”。
 
@@ -421,7 +417,7 @@ In this task, you will load sample security alerts and review the alert details.
 
 在此任务中，你将部署 Microsoft Defender XDR 连接器。
 
-1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：**Pa55w.rd**。  
+1. 使用密码：**Pa55w.rd**，以管理员身份登录 WIN1 虚拟机。  
 
 1. 在 Microsoft Edge 浏览器中，导航到 Azure 门户 (<https://portal.azure.com>)。
 
@@ -604,9 +600,9 @@ You should still be connected to the WIN2 virtual machine.  The following instru
 
 ### 任务 1：攻击配置了 Defender for Endpoint 的 Windows
 
-在此任务中，你将在配置了 Microsoft Defender for Endpoint 的主机执行攻击。
+在此任务中，你将对配置了 Microsoft Defender for Endpoint 的主机执行攻击。
 
-1. 使用密码“Pa55w.rd”以管理员身份登录到 `WIN1` 虚拟机。  
+1. 使用密码：**Pa55w.rd**，以管理员身份登录到 `WIN1` WIN1 虚拟机。  
 
 1. 在任务栏的搜索框中，输入“Command”。  命令提示符将显示在搜索结果中。  右键单击命令提示符，并选择“以管理员身份运行”。 确认显示的任何用户帐户控制提示。
 
@@ -626,7 +622,7 @@ You should still be connected to the WIN2 virtual machine.  The following instru
 
 ### 任务 2：创建 C2（命令和控制）攻击
 
-1. 使用密码“Pa55w.rd”以管理员身份登录到 `WIN1` 虚拟机。  
+1. 使用密码：**Pa55w.rd**，以管理员身份登录到 `WIN1` WIN1 虚拟机。  
 
 1. 在任务栏的搜索框中，输入“Command”。  命令提示符将显示在搜索结果中。  右键单击命令提示符，并选择“以管理员身份运行”。 确认显示的任何用户帐户控制提示。
 
@@ -695,7 +691,7 @@ You should still be connected to the WIN2 virtual machine.  The following instru
     Until ($TimeNow -ge $RunEnd)
     ```
 
-在命令提示符中输入以下内容，在每一行中输入命令，并在每一行后按 Enter 键：
+在命令提示符下，输入以下内容。 在每一行中输入命令，并在每一行后按 Enter 键：
 
     ```PowerShell
     .\c2.ps1
@@ -706,13 +702,13 @@ You should still be connected to the WIN2 virtual machine.  The following instru
 
 ### 任务 2：攻击配置了 Azure Monitor 代理 (AMA) 的 Windows
 
-在此任务中，你将在配置了安全事件连接器和 Sysmon 的主机上执行攻击。
+在此任务中，你将对配置了安全事件连接器和 Sysmon 的主机执行攻击。
 
 1. 选择之前创建的 `AZWIN01` 虚拟网络。  
 
-1. 在左侧菜单中，向下滚动到“操作”，选择“运行命令”
+1. 在左侧导航菜单中，向下滚动到“**操作**”，然后选择“**运行命令**”
 
-1. 在“运行命令”窗格中，选择“RunPowerShellScript”
+1. 在**运行命令**窗格中，选择**RunPowerShellScript**
 
 1. 将以下用于模拟管理员帐户创建的命令复制到 `PowerShell Script` 窗体中，然后选择**运行**
 
