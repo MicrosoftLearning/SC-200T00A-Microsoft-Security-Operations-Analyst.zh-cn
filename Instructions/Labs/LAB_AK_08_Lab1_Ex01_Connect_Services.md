@@ -58,13 +58,15 @@ lab:
 
 1. 若要启用双向同步，请选择“**为所有订阅启用 Microsoft Defender**”链接。
 
-1. 在“*Microsoft Defender for Cloud - 入门*”页上，应选中 *MOC Subscription-XXXXXXXXXXXXXXXXXXXX* 的复选框，并且 *Microsoft Defender 计划*应显示“*启用 - 部分（剩余 30 个试用日）*”。
+    >**备注：** 可能需要滚动到右侧才能看到链接。
+
+1. 在“*Microsoft Defender for Cloud - 入门*”页上，应选中 *MOC Subscription-XXXXXXXXXXX* 的复选框，并且 *Microsoft Defender 计划*应显示“*启用 - 部分（剩余 30 个试用日）*”。
 
 1. 选择右上方的“**X（关闭）**”按钮，关闭“*入门*”页。 在 *Microsoft Defender for Cloud* 配置页上，执行以下操作：
 
 1. *MOC Subscription-XXXXXXXXX* 的“*状态*”现在应为“**已连接**”，并且“*双向同步*”应该是“*已启用*”。
 
-    <!--- 1. Scroll down and under the *Create incidents - Recommended!* area, verify that *Create incidents automatically from all alerts generated in this connected service* is **Enabled**. --->
+    >**注意：** 可能需要刷新页面。
 
 ### 任务 3：连接 Azure 活动数据连接器
 
@@ -76,13 +78,15 @@ lab:
 
 1. 在“*Azure 活动*”解决方案页上，选择“**管理**”。
 
-    >注意：“Azure 活动”解决方案会安装“Azure 活动”数据连接器、12 个分析规则、14 个搜寻查询和 1 个工作簿。
+    >**备注：**“*Azure 活动*”解决方案会安装“*Azure 活动*”数据连接器、13 个分析规则、14 个搜寻查询和 1 个工作簿。
 
 1. 选择“Azure 活动”数据连接器，然后选择“打开连接器页面”。
 
-1. 在“说明”选项卡下的“配置”区域中，向下滚动到“2. 连接订阅...”，并选择“启动 Azure Policy 分配向导>”。
+1. 在“说明”选项卡下的“配置”区域中，向下滚动到“2. 连接订阅...”，并选择“**启动 Azure Policy 分配向导>**”。
 
 1. 在“**基本信息**”选项卡中，选择“**范围**”下的省略号按钮 (...)，从下拉列表中选择“*MOC Subscription-lodxxxxxxxx*”订阅，然后单击“**选择**”。
+
+    >**备注：***请勿*选择可选资源组。
 
 1. 选择“参数”选项卡，从“主要 Log Analytics 工作区”下拉列表中选择“uniquenameDefender”工作区。 此操作将应用订阅配置，以将信息发送到 Log Analytics 工作区。
 
