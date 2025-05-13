@@ -16,17 +16,17 @@ lab:
 
 ### 任务 1：在 Microsoft Sentinel 创建 Playbook
 
-在此任务中，你将创建在 Microsoft Sentinel 用作 Playbook 的逻辑应用。
+在此任务中，你将创建在 Microsoft Sentinel 中用作 Playbook 的逻辑应用。
 
 >**备注：** Microsoft Sentinel 已在 Azure 订阅中预先部署了名称 **defenderWorkspace**，并且已安装所需的“*内容中心*”解决方案。
 
-1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：**Pa55w.rd**。  
+1. 使用密码：**Pa55w.rd**，以管理员身份登录 WIN1 虚拟机。  
 
 1. 在“登录”对话框中，复制粘贴实验室托管提供者提供的租户电子邮件帐户，然后选择“下一步”  。
 
 1. 在“输入密码”对话框中，复制粘贴实验室托管提供者提供的租户密码，然后选择“登录”  。
 
-1. 在 Azure 门户的搜索栏中，键入“Sentinel”，然后选择“Microsoft Sentinel”。
+1. 在 Azure 门户的“搜索”栏中，键入 Sentinel，然后选择 Microsoft Sentinel。
 
 1. 选择 Microsoft Sentinel **defenderWorkspace**。
 
@@ -46,7 +46,7 @@ lab:
 
 1. 对于资源组，选择“**新建**”并输入 **RG-Playbooks**，然后选择“确定”。
 
-1. 从 playbook 名称中移除 **for**（将超过 64 个字符的限制）。
+1. 从 playbook 名称中移除 **for** 和额外的 *underscores*（将超过 64 个字符的限制）。 它应读取 **Defender_XDR_Ransomware_Playbook_SecOps_Tasks**。
 
 1. 选择“连接”****。
 
@@ -66,7 +66,7 @@ lab:
 
 1. 选择 Microsoft Sentinel 工作区。
 
-1. 在“配置”区域下选择“自动化”，然后选择“可用的 Playbook”选项卡。
+1. 在“配置”区域下选择“自动化”，然后选择“*可用的 Playbook*”选项卡。
 
 1. 如果看不到任何 playbook，请在命令栏中选择“刷新”。 应会显示在上一步中创建的 Playbook。
 
@@ -78,33 +78,37 @@ lab:
 
 1. 选择第一个块“Microsoft Sentinel 事件”。
 
-1. 选择“更改连接”链接。
+1. 选择“**更改连接**”链接。
 
 1. 选择“添加新项”，然后选择“登录” 。 当系统提示时，在新窗口中，选择 Azure 订阅管理员凭据。 现在，块的最后一行应显示“已连接到 your-admin-username”。
 
 <!--- 1. Below within the logic split (+ sign), select Add an action to incident.--->
 
-1. 在命令栏上选择“保存”。 将来的实验室中将使用逻辑应用。
+1. 在命令栏上选择“保存”。
+
+1. 选择“**X**”关闭窗口。 将来的实验室中将使用逻辑应用。
 
 ### 任务 3：创建自动化规则
 
 1. 在 Microsoft Sentinel 中，展开 导航菜单中的“*配置*”并选择“*自动化*”。
 
-1. 选择“创建”，然后选择自动化规则。
+1. 选择“**+ 创建**”，然后选择“**自动化规则**”。
 
 1. 为规则命名
 
-1. 将事件提供程序保留为“全部”。
+1. 将“*触发器*”保留为“**创建事件时**”。
 
-1. 将分析规则名称保留为“全部”。
+1. 在“*条件*”下，将事件提供程序保留为“*全部*”。
+
+1. 将“*分析规则名称*”保留为“*全部*”。
 
 1. 选择“**+ 添加**”并选择“*条件（和）*”。
 
-1. 从下拉列表中选择“策略”。
+1. 从下拉列表中选择“**策略**”。
 
 1. 从下拉菜单中选择“**包含**”运算符。
 
-1. 选择以下策略：
+1. 选择以下策略 *Values*：
     - 侦测
     - 执行
     - 持久性
@@ -112,7 +116,7 @@ lab:
     - 外泄
     - 预攻击
 
-1. 在“操作”下，选择“运行 Playbook”。
+1. 在“操作”下，选择“**运行 Playbook**”。
 
 1. 选择“**管理 playbook 权限**链接”
 
@@ -121,6 +125,8 @@ lab:
 1. 从下拉列表中选择 **Defender_XDR_Ransomware_Playbook_SecOps_Tasks** playbook。
 
 1. 选择底部的“应用”。****
+
+1. 选择“*创建新自动化规则*”窗口上的 **X** 以将其关闭。
 
 现已在 Microsoft Sentinel 中创建 playbook 和自动化规则。
 
