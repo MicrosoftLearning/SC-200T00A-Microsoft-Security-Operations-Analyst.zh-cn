@@ -127,6 +127,8 @@ lab:
 
 在此任务中，你将为上一练习的第二个攻击创建检测。
 
+>**备注：** 我们已将 WINServer 计算机上的本地安全策略配置为日志 4732 事件。 这将在“*高级审核策略配置 > 系统审核策略 - 本地组策略对象 > 帐户管理 > 审核安全组管理：成功和失败*”中配置。
+
 1. 如果你已离开此页面，在 Microsoft Sentinel 门户中，选择“常规”部分中的“日志”。
 
 1. 运行以下 KQL 语句以标识任何引用管理员的条目：
@@ -217,7 +219,7 @@ lab:
    |自动化规则名称|SecurityEvents 本地管理员用户添加操作|
    |触发器|创建事件时|
    |操作 |运行攻略|
-   |playbook |PostMessageTeams-OnIncident|
+   |playbook |Defender_XDR_Ransomware_Playbook_SecOps-Tasks|
 
    >**注意：** 你已为 playbook 分配了权限，因此它将可用。
 
