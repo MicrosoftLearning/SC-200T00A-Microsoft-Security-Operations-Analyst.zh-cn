@@ -12,15 +12,20 @@ lab:
 
 你是一位安全运营分析师，你所在公司正在实现 Microsoft Sentinel。 你负责执行日志数据分析，以便搜索恶意活动、显示可视化效果并执行威胁搜寻。 为了查询日志数据，你使用 Kusto 查询语言 (KQL)。
 
->**备注：** 根据 Microsoft 的*安全未来计划* (SFI)，任何可被视为*个人身份信息* (PII) 的信息，例如位置、用户名、IP 地址、资源 ID 等。 已从 LA 演示表（如 *SigninLogs*）中删除。 对于某些查询，这可能会生成“*未找到任何结果*”的消息。
+>**重要说明：** 用于此实验室的 [LA 演示](https://aka.ms/lademo) Log Analytics 工作区正在迁移中。 如果无法访问环境，或者收到错误消息，可以尝试在自己已部署 Microsoft Sentinel 的 Azure 订阅中运行查询。 如果没有 Azure 订阅，请在开始之前创建一个[免费帐户](https://azure.microsoft.com/free/?azure-portal=true)。
 
->**重要提示：** 此实验室需要将大量 KQL 脚本输入到 Microsoft Sentinel 中。 这些脚本是在此实验室开始时的文件中提供的。 另一个下载这些脚本的位置是： <https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/tree/master/Allfiles>
+>**注意：** 如果选择使用此实验室的 [LA 演示](https://aka.ms/lademo) Log Analytics 工作区，则需要在查询窗口中设置自定义时间范围。 建议将自定义时间范围设置为 2025 年 4 月 1 日。
+
+<!--- 
+>**Note:** Per Microsoft's *Secure Future Initiative* (SFI), any information that could be considered *Personally Identifiable Information* (PII), such as locations, usernames, IP addresses, resource IDs etc.. have been removed from the LA Demo tables such as *SigninLogs*. This may produce *No results were found* messages for some queries. --->
+
+>**提示**本实验室需要在 Microsoft Sentinel 中输入大量 KQL 脚本。 这些脚本是在此实验室开始时的文件中提供的。 另一个下载这些脚本的位置是： <https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/tree/master/Allfiles>
 
 ### 完成本实验室的预计时间：60 分钟
 
 ### 任务 1：访问 KQL 测试区域
 
-在此任务中，你将访问 Log Analytics 环境，可在其中练习编写 KQL 语句。
+在本任务中，你将访问 Log Analytics 环境，并可在其中练习编写 KQL 语句。
 
   >**备注：** 如果收到默认时间段“*未找到任何结果*”的消息，请将“*时间范围*”更改为“*过去 7 天*”。
 
