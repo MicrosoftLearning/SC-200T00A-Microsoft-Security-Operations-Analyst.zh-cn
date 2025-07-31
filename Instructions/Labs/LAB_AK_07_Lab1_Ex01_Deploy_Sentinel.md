@@ -50,11 +50,11 @@ lab:
 
 1. 工作区部署完成后，从 Microsoft Azure“痕迹导航”菜单中选择“**主页**”。
 
-1. 门户的“*Azure 服务*”部分中应显示 **Microsoft Sentinel**。 选择它。
+1. 门户的“Azure 服务”部分中应显示“Microsoft Sentinel”磁贴******。 选择它。
 
 1. 从菜单项中选择“**+ 创建**”。
 
-1. 选择要在其中添加 Microsoft Sentinel 的工作区（在任务 1 中创建）。
+1. 选择在任务 1 中创建的“defenderWorkspace**。
 
 1. 选择 **添加** 。
 
@@ -62,7 +62,9 @@ lab:
 
 1. 在 Microsoft Azure“痕迹导航”菜单中，选择“**主页**”。
 
-1. 在 Azure 门户的搜索栏中输入“Log Analytics”，然后选择在任务 1 中创建的工作区。
+1. 在 Azure 门户的搜索栏中，键入“Log Analytics”，然后从“服务”部分选择“Log Analytics 工作区”******。
+
+1. 选择在任务 1 中创建的“defenderWorkspace**。
 
 1. 展开导航菜单中的“*设置*”部分，然后选择“**使用情况和估计成本**”。
 
