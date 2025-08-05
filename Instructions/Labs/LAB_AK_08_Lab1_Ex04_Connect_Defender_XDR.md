@@ -22,7 +22,7 @@ lab:
 
 1. 使用以下密码以管理员身份登录到 WIN1 虚拟机：**Pa55w.rd**。  
 
-1. 在 Microsoft Edge 浏览器中，选择以下链接打开模拟环境：[Azure 门户]( https://app.highlights.guide/start/1c894b46-4b0a-40cb-b0f0-1e1c86c615f3?token=16d48b6c-eace-4a1f-8050-098d29d23a89)****。
+1. 在 Microsoft Edge 浏览器中，选择以下链接打开模拟环境：[Azure 门户]( https://app.highlights.guide/start/1c894b46-4b0a-40cb-b0f0-1e1c86c615f3?token=16d48b6c-eace-4a1f-8050-098d29d23a89)。
 
 1. 在 Azure 门户主页** 上，选择 Microsoft Sentinel**** 图标。
 
